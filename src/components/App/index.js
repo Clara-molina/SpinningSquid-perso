@@ -21,9 +21,11 @@ function Communaute() {
 function Profile() {
   return <h2>Profile</h2>;
 }
+
 function Question() {
   return <h2>Question</h2>;
 }
+
 function Page404() {
   return <h2>Page404</h2>;
 }
@@ -33,18 +35,17 @@ const App = () => (
   <div className="app">
     <Router>
       <Header />
-    </Router>
-    <Router>
 
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/trouve-ton-skatepark" component={SearchMap} />
         <Route path="/trouve-ton-matos" component={Marketplace} />
         <Route path="/communaute" component={Communaute} />
-        <Route path="/question" component={Question} />
+        <Route path="/contact" component={Question} />
         <Route path="/profil" component={Profile} />
         <Route component={Page404} />
       </Switch>
+
     </Router>
   </div>
 );

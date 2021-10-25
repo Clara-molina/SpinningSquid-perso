@@ -1,12 +1,12 @@
-import React from "react";
-import GoogleMapReact from "google-map-react";
+import React from 'react';
+import GoogleMapReact from 'google-map-react';
 
 const location = {
-  address: "1600 Amphitheatre Parkway, Mountain View, california.",
+  address: '1600 Amphitheatre Parkway, Mountain View, california.',
   lat: 37.42216,
   lng: -122.08427,
 };
-const mapstyle = { width: "800px", height: "500px" };
+const mapstyle = { width: '800px', height: '500px' };
 
 const SearchMap = () => (
   <div className="map">
@@ -14,7 +14,7 @@ const SearchMap = () => (
 
     <div className="google-map">
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyAglZjyBm532ApJYhxUDEVnmIo0Zd_JsjY" }}
+        bootstrapURLKeys={{ key: 'AIzaSyAglZjyBm532ApJYhxUDEVnmIo0Zd_JsjY' }}
         defaultCenter={location}
         defaultZoom={8}
         style={mapstyle}

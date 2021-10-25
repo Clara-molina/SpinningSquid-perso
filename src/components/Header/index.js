@@ -1,39 +1,76 @@
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { slide as Menu } from 'react-burger-menu';
 
 import './header.scss';
 
 const Header = () => (
-  <nav className="menu">
-    <NavLink
-      className="menu-logo"
-      activeClassName="menu-link--active"
-      to="/"
-      exact
-    >
-      Logo
+  <>
+    <nav className="nav">
+      <div className="left-half-header">
+        <NavLink
+          className="nav-logo left-header"
+          to="/"
+          exact
+        >
+          Logo
+        </NavLink>
+      </div>
 
-    </NavLink>
-    <ul>
-      <li>
-        <Link to="/">Accueil</Link>
-      </li>
-      <li>
-        <Link to="/trouve-ton-skatepark">Trouve to skatepark</Link>
-      </li>
-      <li>
-        <Link to="/trouve-ton-matos">Trouve ton matos</Link>
-      </li>
-      <li>
-        <Link to="/communaute">Whassup ?!</Link>
-      </li>
-      <li>
-        <Link to="/profil">Connexion</Link>
-      </li>
-      <li>
-        <Link to="/contact">Question ?</Link>
-      </li>
-    </ul>
-  </nav>
+      <div className="right-half-header">
+        <NavLink
+          to="/"
+          exact
+          className="nav-link right-header"
+          activeClassName="nav-link--active"
+        >
+          Accueil
+        </NavLink>
+
+        <NavLink
+          to="/trouve-ton-skatepark"
+          className="nav-link right-header"
+          activeClassName="nav-link--active"
+        >
+          Trouve ton skatepark
+        </NavLink>
+
+        <NavLink
+          to="/communaute"
+          className="nav-link right-header"
+          activeClassName="nav-link--active"
+        >
+          Whassup ?!
+        </NavLink>
+
+        <NavLink
+          to="/profil"
+          className="nav-link right-header"
+          activeClassName="nav-link--active"
+        >
+          Connexion
+        </NavLink>
+
+        <NavLink
+          to="/contact"
+          className="nav-link right-header"
+          activeClassName="nav-link--active"
+        >
+          Question ?
+        </NavLink>
+
+        {/* Menu burger */}
+        <Menu className="hamMenu" right isOpen={false}>
+          <NavLink className="hamsub nav-link" to="/" exact activeClassName="nav-link--active">Accueil</NavLink>
+          <NavLink className="hamsub nav-link" to="/trouve-ton-skatepark" activeClassName="nav-link--active">Trouve ton skatepark</NavLink>
+          <NavLink className="hamsub nav-link" to="/communaute" activeClassName="nav-link--active">Whassup ?!</NavLink>
+          <NavLink className="hamsub nav-link" to="/profil" activeClassName="nav-link--active">Connexion</NavLink>
+          <NavLink className="hamsub nav-link" to="/contact" activeClassName="nav-link--active">Question</NavLink>
+        </Menu>
+
+      </div>
+    </nav>
+
+  </>
 );
 
 export default Header;
