@@ -59,12 +59,12 @@ const Header = () => (
         </NavLink>
 
         {/* Menu burger */}
-        <Menu className="hamMenu" right isOpen={false}>
-          <NavLink className="hamsub nav-link" to="/" exact activeClassName="nav-link--active">Accueil</NavLink>
-          <NavLink className="hamsub nav-link" to="/trouve-ton-skatepark" activeClassName="nav-link--active">Trouve ton skatepark</NavLink>
-          <NavLink className="hamsub nav-link" to="/communaute" activeClassName="nav-link--active">Whassup ?!</NavLink>
-          <NavLink className="hamsub nav-link" to="/profil" activeClassName="nav-link--active">Connexion</NavLink>
-          <NavLink className="hamsub nav-link" to="/contact" activeClassName="nav-link--active">Question</NavLink>
+        <Menu right isOpen={false}>
+          <NavLink className="nav-link" to="/" exact activeClassName="nav-link--active">Accueil</NavLink>
+          <NavLink className="nav-link" to="/trouve-ton-skatepark" activeClassName="nav-link--active">Trouve ton skatepark</NavLink>
+          <NavLink className="nav-link" to="/communaute" activeClassName="nav-link--active">Whassup ?!</NavLink>
+          <NavLink className="nav-link" to="/profil" activeClassName="nav-link--active">Connexion</NavLink>
+          <NavLink className="nav-link" to="/contact" activeClassName="nav-link--active">Question</NavLink>
         </Menu>
 
       </div>
