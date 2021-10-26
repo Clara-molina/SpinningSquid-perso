@@ -3,13 +3,10 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SearchMap from '../SearchMap';
 
 import Header from '../Header';
+import Home from '../Home';
 
 import './styles.css';
 import Footer from '../Footer';
-
-function Home() {
-  return <h2>Home</h2>;
-}
 
 function Marketplace() {
   return <h2>Marketplace</h2>;
