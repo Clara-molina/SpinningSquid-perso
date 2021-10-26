@@ -1,11 +1,11 @@
 // == Import
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import SearchMap from "../SearchMap";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import SearchMap from '../SearchMap';
 
-import Header from "../Header";
-import Profile from "src/containers/Profile";
+import Header from '../Header';
+import Profile from 'src/containers/Profile';
 
-import "./styles.css";
+import './styles.css';
 
 function Home() {
   return <h2>Home</h2>;
