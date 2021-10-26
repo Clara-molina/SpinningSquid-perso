@@ -40,6 +40,7 @@ const App = () => (
         <Route path="/profil" component={Profile} />
         <Route component={Page404} />
       </Switch>
+      <Footer />
     </Router>
   </div>
 );
