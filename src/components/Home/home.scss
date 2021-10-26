@@ -1,15 +1,22 @@
 @use 'src/styles/vars';
 
 .home-container {
-  background-color: vars.$black;
+  
+  
 
   .home-title {
-    color: vars.$orange;
+   display:block;
+   color: vars.$orange;
+   position: relative;
+   top: 200px;
   }
 
   .home-image {
+    
+    width: 100em;
     width: 100%;
-    height: auto;
+     height: auto;
+    position: absolute;
   }
 
   .home-p {
