@@ -1,8 +1,8 @@
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
 // on importe le composant de présentation
-import Profile from "src/components/Profile";
-import { updateField } from "src/actions/userActions";
+import Profile from 'src/components/Profile';
+import { updateField, submitLogin } from 'src/actions/userActions';
 
 // === mapStateToProps
 // si on a besoin de lire des informations dans le state
@@ -19,6 +19,10 @@ const mapDispatchToProps = (dispatch) => ({
   handleChange: (fieldName, fieldValue) => {
     const action = updateField(fieldName, fieldValue);
     dispatch(action);
+  },
+  handleSubmit: (event) => {
+    event.preventDefault();
+    dispatch(submitLogin());
   },
 });
 

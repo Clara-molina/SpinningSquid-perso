@@ -1,7 +1,7 @@
-import { UPDATE_FIELD } from 'src/actions/userActions';
+import { UPDATE_FIELD, SUCCESS_LOGIN } from 'src/actions/userActions';
 
 export const initialState = {
-  logged: false,
+  isLogged: false,
   trystate: 'initial State UserReducer OK',
   name: '',
   password: '',
@@ -23,12 +23,18 @@ const reducer = (state = initialState, action = {}) => {
           password: action.fieldValue,
         };
       }
-      console.log('ne rentre pas dans le if du reducer');
-      console.log(action);
       return state;
 
+    case SUCCESS_LOGIN:
+      console.log('on envoit ou?');
+      return {
+        ...state,
+        name: action.name,
+        token: action.token,
+        isLogged: true,
+      };
+
     default:
-      //console.log(state);
       return state;
   }
 };
