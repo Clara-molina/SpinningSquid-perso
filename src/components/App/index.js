@@ -4,12 +4,9 @@ import SearchMap from '../SearchMap';
 
 import Header from '../Header';
 import Profile from 'src/containers/Profile';
+import Home from '../Home';
 
 import './styles.css';
-
-function Home() {
-  return <h2>Home</h2>;
-}
 
 function Marketplace() {
   return <h2>Marketplace</h2>;
