@@ -1,11 +1,11 @@
 // == Import
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import SearchMap from '../SearchMap';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import SearchMap from "../SearchMap";
 
-import Header from '../Header';
+import Header from "../Header";
+import Profile from "src/containers/Profile";
 
-import './styles.css';
-import Footer from '../Footer';
+import "./styles.css";
 
 function Home() {
   return <h2>Home</h2>;
@@ -17,10 +17,6 @@ function Marketplace() {
 
 function Communaute() {
   return <h2>Communaute</h2>;
-}
-
-function Profile() {
-  return <h2>Profile</h2>;
 }
 
 function Question() {
@@ -46,8 +42,6 @@ const App = () => (
         <Route path="/profil" component={Profile} />
         <Route component={Page404} />
       </Switch>
-
-      <Footer />
     </Router>
   </div>
 );
