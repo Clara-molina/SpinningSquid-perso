@@ -5,6 +5,7 @@ import SearchMap from '../SearchMap';
 import Header from '../Header';
 import Profile from 'src/containers/Profile';
 import Home from '../Home';
+import Footer from '../Footer';
 
 import './styles.css';
 
