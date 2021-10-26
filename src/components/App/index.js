@@ -6,6 +6,7 @@ import Header from "../Header";
 import Profile from "src/containers/Profile";
 
 import "./styles.css";
+import Footer from "../Footer";
 
 function Home() {
   return <h2>Home</h2>;
@@ -42,6 +43,7 @@ const App = () => (
         <Route path="/profil" component={Profile} />
         <Route component={Page404} />
       </Switch>
+      <Footer />
     </Router>
   </div>
 );
