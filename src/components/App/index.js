@@ -1,7 +1,7 @@
 // == Import
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import SearchMap from '../SearchMap';
 
+import SearchMap from 'src/containers/SearchMap';
 import Header from '../Header';
 import Profile from 'src/containers/Profile';
 import Home from '../Home';
