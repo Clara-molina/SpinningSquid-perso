@@ -18,8 +18,16 @@
     color: vars.$grey;
   }
 
+  .nav-link:hover,
+  .nav-link:focus {
+    color: vars.$white;
+    border-bottom: vars.$orange solid 1px;
+    transition: 1s;
+  }
+
   .nav-link--active {
     color: vars.$white;
+    border-bottom: vars.$orange solid 1px;
   }
 
   .right-half-header {
@@ -41,7 +49,7 @@
 }
 
 
-@media (max-width: 700px) {
+@media (max-width: 770px) {
 
   .nav {
     width: 100%;
