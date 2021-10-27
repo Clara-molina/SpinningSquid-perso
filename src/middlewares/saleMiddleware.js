@@ -6,8 +6,6 @@ import {
 const saleMiddleware = {
 
   endPointSale: 'sale?_embed=true',
-  endPointSkatepark: 'skatepark?_embed=true',
-  endPointArticle: 'article?_embed=true',
 
   // Méthode permettant de récupérer tous les post sale
   async loadSalePost() {
