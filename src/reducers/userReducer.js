@@ -5,6 +5,7 @@ export const initialState = {
   trystate: 'initial State UserReducer OK',
   name: '',
   password: '',
+  email: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -21,6 +22,12 @@ const reducer = (state = initialState, action = {}) => {
         return {
           ...state,
           password: action.fieldValue,
+        };
+      }
+      if (action.fieldName === 'email') {
+        return {
+          ...state,
+          email: action.fieldValue,
         };
       }
       return state;

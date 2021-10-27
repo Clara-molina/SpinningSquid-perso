@@ -11,6 +11,7 @@ const mapStateToProps = (state) => ({
   trystate: state.user.trystate,
   name: state.user.name,
   password: state.user.password,
+  email: state.user.email,
 });
 
 // === mapDispatchToProps
