@@ -8,7 +8,7 @@ import Home from '../Home';
 import Footer from '../Footer';
 import Contact from '../Contact';
 
-import './styles.css';
+import './styles.scss';
 
 function Marketplace() {
   return <h2>Marketplace</h2>;

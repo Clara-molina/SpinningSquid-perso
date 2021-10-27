@@ -1,7 +1,6 @@
 @use 'src/styles/vars';
 
 .contact {
-background-color: vars.$grey;
 
   .contact-title {
     color: vars.$white;
@@ -18,12 +17,11 @@ background-color: vars.$grey;
     color: vars.$white;
 
     .contact-image {
-      height: 300px;
-      width: auto;
+      width: 50%;
     }
 
     .contact-form {
-
+      width: 50%;
       .contact-label {
 
       }
