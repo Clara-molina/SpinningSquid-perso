@@ -13,18 +13,4 @@ const saleMiddleware = {
 
     return response.data;
   },
-
-  // Méthode permettant de récupérer tous les post skatepark
-  async loadSkateparkPost() {
-    const response = await axios.get(baseURI + saleMiddleware.endPointSkatepark);
-
-    return response.data;
-  },
-
-  // Méthode permettant de récupérer tous les post article
-  async loadArticlePost() {
-    const response = await axios.get(baseURI + saleMiddleware.endPointArticle);
-
-    return response.data;
-  },
 };

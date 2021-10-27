@@ -1,4 +1,7 @@
 import axios from 'axios';
+import {
+  baseURI,
+} from '../routesBack';
 
 const articleMiddleware = {
 
@@ -10,4 +13,4 @@ const articleMiddleware = {
 
     return response.data;
   },
-}
+};
