@@ -8,34 +8,47 @@
     padding: 1em;
     font-size: 2em;
     height: 100px;
+    margin-bottom: 1em;
   }
 
   .contact-container {
     display: flex;
     margin: auto;
-    max-width: 800px;
+    max-width: 1000px;
     color: vars.$white;
 
     .contact-image {
       width: 50%;
+      height: auto;
+      margin-right: 1em;
     }
 
     .contact-form {
       width: 50%;
-      .contact-label {
 
+      .contact-label {
       }
 
       .contact-input {
-
+        display: flex;
+        width: 100%;
       }
 
       .contact-input-message {
-
+        width: 100%;
+        height: 150px;
       }
 
       .contact-button {
-
+        display: flex;
+        justify-content: center;
+        margin: 1em auto;
+        background-color: vars.$orange;
+        border-radius: 12px;
+        border: solid 1px;
+        width: 80px;
+        height: 30px;
+        font-size: 1.1em;
       }
     }
   }
