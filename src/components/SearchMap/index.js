@@ -1,5 +1,4 @@
 import GoogleMapReact from 'google-map-react';
-import { Link } from 'react-router-dom';
 import './searchMap.scss';
 
 const location = {
@@ -7,7 +6,6 @@ const location = {
   lat: 37.42216,
   lng: -122.08427,
 };
-const mapstyle = { width: '800px', height: '500px' };
 
 const SearchMap = () => (
   <div className="search">
@@ -59,20 +57,17 @@ const SearchMap = () => (
         </article>
       </div>
       <div className="search-map">
-
+        <GoogleMapReact
+          bootstrapURLKeys={{ key: 'AIzaSyAglZjyBm532ApJYhxUDEVnmIo0Zd_JsjY' }}
+          defaultCenter={location}
+          defaultZoom={8}
+        >
+          {/* <LocationPin lat={37.42216} lng={-122.08427} text={"test ici"} /> */}
+        </GoogleMapReact>
       </div>
     </div>
 
   </div>
 );
 
-// TODO affichage de la map a faire
-{/* <GoogleMapReact
-        bootstrapURLKeys={{ key: 'AIzaSyAglZjyBm532ApJYhxUDEVnmIo0Zd_JsjY' }}
-        defaultCenter={location}
-        defaultZoom={8}
-        style={mapstyle}
-      >
-        {/* <LocationPin lat={37.42216} lng={-122.08427} text={"test ici"} /> */}
-// </GoogleMapReact> */}
 export default SearchMap;
