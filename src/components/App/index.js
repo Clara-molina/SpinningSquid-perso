@@ -4,6 +4,7 @@ import SearchMap from '../SearchMap';
 
 import Header from '../Header';
 import Home from '../Home';
+import SearchSkateResults from '../SearchSkateResults';
 
 import './styles.css';
 import Footer from '../Footer';
@@ -38,11 +39,10 @@ const App = () => (
     <Router>
       <Header />
 
-      <Home />
-
       <Switch>
         <Route exact path="/" component={Homeshow} />
         <Route path="/trouve-ton-skatepark" component={SearchMap} />
+        <Route path="/results" component={SearchSkateResults} />
         <Route path="/trouve-ton-matos" component={Marketplace} />
         <Route path="/communaute" component={Communaute} />
         <Route path="/contact" component={Question} />
