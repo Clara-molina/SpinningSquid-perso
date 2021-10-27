@@ -1,0 +1,44 @@
+@use 'src/styles/vars';
+
+.contact {
+background-color: vars.$grey;
+
+  .contact-title {
+    color: vars.$white;
+    text-align: center;
+    padding: 1em;
+    font-size: 2em;
+    height: 100px;
+  }
+
+  .contact-container {
+    display: flex;
+    margin: auto;
+    max-width: 800px;
+    color: vars.$white;
+
+    .contact-image {
+      height: 300px;
+      width: auto;
+    }
+
+    .contact-form {
+
+      .contact-label {
+
+      }
+
+      .contact-input {
+
+      }
+
+      .contact-input-message {
+
+      }
+
+      .contact-button {
+
+      }
+    }
+  }
+}

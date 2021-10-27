@@ -6,6 +6,7 @@ import Header from '../Header';
 import Profile from 'src/containers/Profile';
 import Home from '../Home';
 import Footer from '../Footer';
+import Contact from '../Contact';
 
 import './styles.css';
 
@@ -15,10 +16,6 @@ function Marketplace() {
 
 function Communaute() {
   return <h2>Communaute</h2>;
-}
-
-function Question() {
-  return <h2>Question</h2>;
 }
 
 function Page404() {
@@ -36,7 +33,7 @@ const App = () => (
         <Route path="/trouve-ton-skatepark" component={SearchMap} />
         <Route path="/trouve-ton-matos" component={Marketplace} />
         <Route path="/communaute" component={Communaute} />
-        <Route path="/contact" component={Question} />
+        <Route path="/contact" component={Contact} />
         <Route path="/profil" component={Profile} />
         <Route component={Page404} />
       </Switch>
