@@ -16,7 +16,7 @@ const authMiddleware = (store) => (next) => (action) => {
       console.log('envoi requete name: ' + store.getState().user.name);
       console.log('envoi requete password: ' + store.getState().user.password);
       // store.dispatch(successLogin('toto', 'tokendeTOTO'));
-      axios.post('http://romain-talbot.vpnuser.lan/SpinningSquad_Apotheose/projet-skatepark/public/wp-json/jwt-auth/v1/token', {
+      axios.post(baseURIUser + '/token', {
         username: store.getState().user.name,
         password: store.getState().user.password,
       })
@@ -41,7 +41,7 @@ const authMiddleware = (store) => (next) => (action) => {
       console.log('envoi requete password: ' + store.getState().user.password);
       console.log('envoi requete email: ' + store.getState().user.email);
       // store.dispatch(successLogin('toto', 'tokendeTOTO'));
-      axios.post('http://romain-talbot.vpnuser.lan/SpinningSquad_Apotheose/projet-skatepark/public/wp-json/spinningsquid/v1/newuser-save', {
+      axios.post(baseSpinningSquid + '/newuser-save', {
         email: store.getState().user.email,
         username: store.getState().user.name,
         password: store.getState().user.password,

@@ -1,9 +1,9 @@
 import axios from 'axios';
+import {
+  baseURI,
+} from '../routesBack';
 
 const saleMiddleware = {
-
-  //! A changer pour la mise en prod
-  baseURI: 'http://romain-talbot.vpnuser.lan/SpinningSquad_Apotheose/projet-skatepark/public/wp-json/wp/v2/',
 
   endPointSale: 'sale?_embed=true',
   endPointSkatepark: 'skatepark?_embed=true',
@@ -11,21 +11,21 @@ const saleMiddleware = {
 
   // Méthode permettant de récupérer tous les post sale
   async loadSalePost() {
-    const response = await axios.get(saleMiddleware.baseURI + saleMiddleware.endPointSale);
+    const response = await axios.get(baseURI + saleMiddleware.endPointSale);
 
     return response.data;
   },
 
   // Méthode permettant de récupérer tous les post skatepark
   async loadSkateparkPost() {
-    const response = await axios.get(saleMiddleware.baseURI + saleMiddleware.endPointSkatepark);
+    const response = await axios.get(baseURI + saleMiddleware.endPointSkatepark);
 
     return response.data;
   },
 
   // Méthode permettant de récupérer tous les post article
   async loadArticlePost() {
-    const response = await axios.get(saleMiddleware.baseURI + saleMiddleware.endPointArticle);
+    const response = await axios.get(baseURI + saleMiddleware.endPointArticle);
 
     return response.data;
   },
