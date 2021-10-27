@@ -9,20 +9,13 @@ const SearchSkateResults = () => (
     <img className="searchresultimage" src={Img} alt="skatepark Achères" />
     <span className="searchresultstars">Etoiles</span>
 
-    <span className="star__container">
-      <input type="radio" name="rating" value="1" id="star-1" className="star__radio visuhide" />
-      <input type="radio" name="rating" value="2" id="star-2" className="star__radio visuhide" />
-      <input type="radio" name="rating" value="3" id="star-3" className="star__radio visuhide" />
-      <input type="radio" name="rating" value="4" id="star-4" className="star__radio visuhide" />
-      <input type="radio" name="rating" value="5" id="star-5" className="star__radio visuhide" />
-
-      <span className="star__item" htmlFor="star-1"><span className="visuhide">1 stars</span></span>
-      <span className="star__item" htmlFor="star-2"><span className="visuhide">2 stars</span></span>
-      <span className="star__item" htmlFor="star-3"><span className="visuhide">3 stars</span></span>
-      <span className="star__item" htmlFor="star-4"><span className="visuhide">4 stars</span></span>
-      <span className="star__item" htmlFor="star-5"><span className="visuhide">5 stars</span></span>
-    </span>
-
+    <div className="rating">
+      <a href="#5" title="Génial !">★</a>
+      <a href="#4" title="Chouette !">★</a>
+      <a href="#3" title="Fonctionnel">★</a>
+      <a href="#2" title="Bof">★</a>
+      <a href="#1" title="Nul">★</a>
+    </div>
     <span className="searchresultadress">Adresse : 227 Route Départementale 30, 78260 Achères</span>
     <span className="detailssearchresult">Parking</span>
     <span className="detailssearchresult">Poubelles</span>
