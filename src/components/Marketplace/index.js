@@ -6,6 +6,11 @@ const Marketplace = ({
   handleOnSearchArticleFieldChange,
   submitArticleSearch,
 }) => {
+  const handleOnChange = (event) => {
+    const inputId = event.target.id;
+    const inputValue = event.target.value;
+    handleOnSearchArticleFieldChange(inputId, inputValue);
+  };
   return (
     <div id="marketplace">
       <div className="search">
@@ -13,13 +18,13 @@ const Marketplace = ({
 
         <form className="search-form" onSubmit={submitArticleSearch}>
           <input
-            id="town-search"
+            id="marketplace-search"
             className="search-input"
             type="text"
-            name="town"
+            name="search"
             placeholder="Recherche"
             required
-            onChange={handleOnSearchArticleFieldChange}
+            onChange={handleOnChange}
           />
           <button className="button" type="submit">
             Rechercher
