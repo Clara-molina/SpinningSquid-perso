@@ -28,11 +28,14 @@
         text-align: center;
         font-size: 1.3em;
         margin-bottom: 0.6em;
+        padding-bottom: 0.3em;
+        border-bottom: solid 1px vars.$orange;
       }
 
       .form-register-input {
         display: flex;
         width: 100%;
+        margin: 0.5em 0;
       }
 
       .form-register-button {
@@ -58,11 +61,14 @@
         text-align: center;
         font-size: 1.3em;
         margin-bottom: 0.6em;
+        padding-bottom: 0.3em;
+        border-bottom: solid 1px vars.$orange;
       }
       
       .form-connection-input {
         display: flex;
         width: 100%;
+        margin: 0.5em 0;
       }
 
       .form-connection-button {

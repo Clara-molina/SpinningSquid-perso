@@ -8,8 +8,11 @@ import { updateField, submitLogin, submitRegister } from 'src/actions/userAction
 // si on a besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: élément à récupérer dans le state
-  trystate: state.user.trystate,
   name: state.user.name,
+  firstname: state.user.firstname,
+  street: state.user.street,
+  postal: state.user.postal,
+  city: state.user.city,
   password: state.user.password,
   email: state.user.email,
 });

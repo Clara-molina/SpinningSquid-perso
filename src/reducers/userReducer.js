@@ -2,10 +2,13 @@ import { UPDATE_FIELD, SUCCESS_LOGIN } from 'src/actions/userActions';
 
 export const initialState = {
   isLogged: false,
-  trystate: 'initial State UserReducer OK',
   name: '',
-  password: '',
+  firstname: '',
+  street: '',
+  postal: '',
+  city: '',
   email: '',
+  password: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -18,16 +21,45 @@ const reducer = (state = initialState, action = {}) => {
         };
       }
 
-      if (action.fieldName === 'password') {
+      if (action.fieldName === 'firstname') {
         return {
           ...state,
-          password: action.fieldValue,
+          firstname: action.fieldValue,
         };
       }
+
+      if (action.fieldName === 'street') {
+        return {
+          ...state,
+          street: action.fieldValue,
+        };
+      }
+
+      if (action.fieldName === 'postal') {
+        return {
+          ...state,
+          postal: action.fieldValue,
+        };
+      }
+
+      if (action.fieldName === 'city') {
+        return {
+          ...state,
+          city: action.fieldValue,
+        };
+      }
+
       if (action.fieldName === 'email') {
         return {
           ...state,
           email: action.fieldValue,
+        };
+      }
+
+      if (action.fieldName === 'password') {
+        return {
+          ...state,
+          password: action.fieldValue,
         };
       }
       return state;
