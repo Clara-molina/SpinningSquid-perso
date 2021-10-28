@@ -3,3 +3,41 @@ $grey: #6e6b6b;
 $white: #ffffff;
 $darkGrey: #292929;
 $orange: #ff8552;
+
+// Generic class
+.block {
+  height: auto;
+  max-width: 100%;
+  background-color: $grey;
+}
+
+.button {
+  height: 30px;
+  width: 100px;
+  background-color: $orange;
+  border-radius: 50px;
+  border: solid 1px $darkGrey;
+}
+.list {
+  display: flex;
+  align-items: center;
+  margin: 1em auto 0;
+  max-width: 1200px;
+}
+.list-item {
+  padding: 1em;
+  margin-bottom: 1em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: $white;
+}
+.list-item-image {
+  border: solid 1px;
+  height: 80px;
+  width: 80px;
+  margin-right: 1em;
+}
+.list-item-description {
+  margin: auto;
+}

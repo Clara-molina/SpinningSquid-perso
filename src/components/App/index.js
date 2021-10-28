@@ -7,7 +7,7 @@ import Profile from 'src/containers/Profile';
 import Home from 'src/components/Home';
 import Footer from 'src/components/Footer';
 import Contact from 'src/components/Contact';
-import Marketplace from 'src/components/Marketplace';
+import Marketplace from 'src/containers/Marketplace';
 
 import './styles.scss';
 

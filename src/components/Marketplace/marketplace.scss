@@ -1,95 +1,27 @@
 @use 'src/styles/vars';
 
 #marketplace {
+  .article-list {
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+  .list-item {
+    display: flex;
+    flex-direction: column;
+  }
+  .item-image {
+    height: 150px;
+    width: 150px;
+    background-color: #f0f;
+  }
 }
 
-.search {
-  height: auto;
-  max-width: 100%;
-  background-color: vars.$grey;
-
-  .search-title {
-    color: vars.$white;
-    text-align: center;
-    padding: 1em;
-    font-size: 2em;
-  }
-
-  .search-form {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin: auto;
-    height: 80px;
-    max-width: 800px;
-    background-color: vars.$grey;
-    color: vars.$white;
-
-    .search-label {
-    }
-
-    .search-input {
-      margin-left: 1em;
-    }
-
-    .search-selected {
-      margin-left: 1em;
-    }
-
-    .search-button {
-      height: 30px;
-      width: 100px;
-      background-color: vars.$orange;
-      border-radius: 12px;
-      border: solid 1px;
-    }
-  }
-
-  .search-result {
-    display: flex;
-    align-items: center;
-    margin: 1em auto 0;
-    max-width: 1200px;
-
-    .search-map {
-      width: 50%;
-      height: 500px;
-      border: solid 1px;
-    }
-
-    .search-list {
-      width: 50%;
-      height: auto;
-      padding: 2em;
-
-      .search-list-item {
-        padding: 1em;
-        margin-bottom: 1em;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        background-color: vars.$white;
-
-        .search-list-image {
-          border: solid 1px;
-          height: 80px;
-          width: 80px;
-          margin-right: 1em;
-        }
-
-        .search-list-description {
-          margin: auto;
-        }
-
-        .search-list-button {
-          margin-left: 2em;
-          background-color: vars.$orange;
-          border-radius: 12px;
-          border: solid 1px;
-          width: 60px;
-          height: 30px;
-        }
-      }
+@media (max-width: 764px) {
+  #marketplace {
+    .article-list {
+      grid-template-columns: 1fr;
     }
   }
 }
