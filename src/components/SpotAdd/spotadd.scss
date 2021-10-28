@@ -1,0 +1,41 @@
+@use 'src/styles/vars';
+
+.spotadd-container {
+  height: auto;
+  max-width: 1000px;
+
+  .spotadd-title {
+    color: vars.$white;
+    text-align: center;
+    padding: 1em;
+    font-size: 2em;
+  }
+
+  .spotadd-form {
+    margin: auto;
+    height: auto;
+    max-width: 800px;
+    background-color: vars.$grey;
+    color: vars.$white;
+
+    .spotadd-label-category {
+      
+    }
+
+    .spotadd-check-category {
+
+    }
+
+    .spotadd-input {
+
+    }
+
+    .spotadd-check-equipment{
+
+    }
+
+    .spotadd-radio {
+
+    }
+  }
+}
