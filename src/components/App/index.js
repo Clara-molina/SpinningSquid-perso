@@ -2,17 +2,14 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import SearchMap from 'src/containers/SearchMap';
-import Header from '../Header';
+import Header from 'src/components/Header';
 import Profile from 'src/containers/Profile';
-import Home from '../Home';
-import Footer from '../Footer';
-import Contact from '../Contact';
+import Home from 'src/components/Home';
+import Footer from 'src/components/Footer';
+import Contact from 'src/components/Contact';
+import Marketplace from 'src/components/Marketplace';
 
 import './styles.scss';
-
-function Marketplace() {
-  return <h2>Marketplace</h2>;
-}
 
 function Communaute() {
   return <h2>Communaute</h2>;
