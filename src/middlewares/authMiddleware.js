@@ -19,7 +19,7 @@ const authMiddleware = (store) => (next) => (action) => {
           console.log(response);
           const doneLogin = successLogin(
             response.data.usernanme,
-            response.data.token
+            response.data.token,
           );
           if (response.data.token) {
             const JSONInformationsObject = JSON.stringify(response.data);
@@ -35,8 +35,12 @@ const authMiddleware = (store) => (next) => (action) => {
     case SUBMIT_REGISTER:
       axios
         .post(baseSpinningSquid + '/newuser-save', {
-          email: store.getState().user.email,
           username: store.getState().user.name,
+          firstname: store.getState().user.firstname,
+          street: store.getState().user.street,
+          postal: store.getState().user.postal,
+          city: store.getState().user.city,
+          email: store.getState().user.email,
           password: store.getState().user.password,
         })
         .then((response) => {
