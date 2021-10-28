@@ -9,6 +9,7 @@ import Footer from 'src/components/Footer';
 import Contact from 'src/components/Contact';
 import Marketplace from 'src/containers/Marketplace';
 import SpotAdd from 'src/components/SpotAdd';
+import Community from 'src/components/Community';
 
 import './styles.scss';
 
@@ -31,7 +32,7 @@ const App = () => (
         <Route path="/trouve-ton-skatepark" component={SearchMap} />
         <Route path="/ajoute-ton-spot" component={SpotAdd} />
         <Route path="/trouve-ton-matos" component={Marketplace} />
-        <Route path="/communaute" component={Communaute} />
+        <Route path="/communaute" component={Community} />
         <Route path="/contact" component={Contact} />
         <Route path="/profil" component={Profile} />
         <Route component={Page404} />
