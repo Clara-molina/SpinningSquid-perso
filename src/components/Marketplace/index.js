@@ -20,16 +20,16 @@ const Marketplace = ({
             required
             onChange={handleOnSearchArticleFieldChange}
           />
-          <button className="search-button" type="submit">
+          <button className="button" type="submit">
             Rechercher
           </button>
         </form>
       </div>
-      <div className="article-list search">
-        <article className="search-list-item">
-          <img className="search-list-image" src=" " alt="" />
-          <p className="search-list-description">description du skatepark</p>
-          <button className="search-list-button" type="submit">
+      <div className="article-list">
+        <article className="list-item">
+          <img className="list-image" src=" " alt="" />
+          <p className="list-description">description du skatepark</p>
+          <button className="button" type="submit">
             Voir
           </button>
         </article>
