@@ -18,8 +18,10 @@ const Profile = ({
       <div className="container-forms">
         <form className="form-register" onSubmit={handleSubmitRegister}>
           <h2 className="form-register-title">Tu n'a pas de compte ? Crées-en un!</h2>
+          <label>Nom d'utilisateur</label>
+          <input id="username" type="text" className="form-register-input" required onChange={handleOnChange} />
           <label>Nom</label>
-          <input id="name" type="text" className="form-register-input" required onChange={handleOnChange} />
+          <input id="lastname" type="text" className="form-register-input" required onChange={handleOnChange} />
           <label>Prénom</label>
           <input id="firstname" type="text" className="form-register-input" required onChange={handleOnChange} />
           <label>Rue</label>
@@ -38,9 +40,9 @@ const Profile = ({
         <form className="form-connection" onSubmit={handleSubmitLogin}>
           <h2 className="form-connection-title">Tu a déjà un compte ? Connecte toi!</h2>
           <label>Email</label>
-          <input id="email" type="email" className="form-connection-input" required onChange={handleOnChange} />
+          <input id="email2" type="email" className="form-connection-input" required onChange={handleOnChange} />
           <label>Password</label>
-          <input id="password" type="password" className="form-connection-input" required onChange={handleOnChange} />
+          <input id="password2" type="password" className="form-connection-input" required onChange={handleOnChange} />
           <button className="form-connection-button" type="submit">Connexion</button>
         </form>
       </div>
