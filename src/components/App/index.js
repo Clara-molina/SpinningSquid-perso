@@ -8,6 +8,7 @@ import Home from 'src/components/Home';
 import Footer from 'src/components/Footer';
 import Contact from 'src/components/Contact';
 import Marketplace from 'src/components/Marketplace';
+import SpotAdd from 'src/components/SpotAdd';
 
 import './styles.scss';
 
@@ -28,12 +29,14 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/trouve-ton-skatepark" component={SearchMap} />
+        <Route path="/ajoute-ton-spot" component={SpotAdd} />
         <Route path="/trouve-ton-matos" component={Marketplace} />
         <Route path="/communaute" component={Communaute} />
         <Route path="/contact" component={Contact} />
         <Route path="/profil" component={Profile} />
         <Route component={Page404} />
       </Switch>
+
       <Footer />
     </Router>
   </div>
