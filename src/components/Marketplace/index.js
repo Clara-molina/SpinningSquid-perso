@@ -1,3 +1,4 @@
+import ArticleList from './ArticleList';
 import './marketplace.scss';
 
 const Marketplace = ({
@@ -25,15 +26,7 @@ const Marketplace = ({
           </button>
         </form>
       </div>
-      <div className="article-list">
-        <article className="list-item">
-          <img className="list-image" src=" " alt="" />
-          <p className="list-description">description du skatepark</p>
-          <button className="button" type="submit">
-            Voir
-          </button>
-        </article>
-      </div>
+      <ArticleList />
     </div>
   );
 };
