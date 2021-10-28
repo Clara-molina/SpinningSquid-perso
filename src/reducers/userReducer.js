@@ -2,7 +2,8 @@ import { UPDATE_FIELD, SUCCESS_LOGIN } from 'src/actions/userActions';
 
 export const initialState = {
   isLogged: false,
-  name: '',
+  username: '',
+  lastname: '',
   firstname: '',
   street: '',
   postal: '',
@@ -14,10 +15,17 @@ export const initialState = {
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case UPDATE_FIELD:
-      if (action.fieldName === 'name') {
+      if (action.fieldName === 'username') {
         return {
           ...state,
-          name: action.fieldValue,
+          username: action.fieldValue,
+        };
+      }
+
+      if (action.fieldName === 'lastname') {
+        return {
+          ...state,
+          lastname: action.fieldValue,
         };
       }
 

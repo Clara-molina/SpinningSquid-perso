@@ -35,7 +35,8 @@ const authMiddleware = (store) => (next) => (action) => {
     case SUBMIT_REGISTER:
       axios
         .post(baseSpinningSquid + '/newuser-save', {
-          username: store.getState().user.name,
+          username: store.getState().user.username,
+          lastname: store.getState().user.lastname,
           firstname: store.getState().user.firstname,
           street: store.getState().user.street,
           postal: store.getState().user.postal,
