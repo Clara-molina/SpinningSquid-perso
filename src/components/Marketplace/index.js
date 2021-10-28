@@ -14,12 +14,12 @@ const Marketplace = ({
   return (
     <div id="marketplace">
       <div className="search">
-        <h2 className="search-title">Trouve ton Matos</h2>
+        <h2 className="title search-title">Trouve ton Matos</h2>
 
-        <form className="search-form" onSubmit={submitArticleSearch}>
+        <form className="marketplace-form" onSubmit={submitArticleSearch}>
           <input
             id="marketplace-search"
-            className="search-input"
+            className="marketplace-input"
             type="text"
             name="search"
             placeholder="Recherche"
