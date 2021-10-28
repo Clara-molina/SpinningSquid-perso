@@ -2,19 +2,65 @@ import { UPDATE_FIELD, SUCCESS_LOGIN } from 'src/actions/userActions';
 
 export const initialState = {
   isLogged: false,
-  trystate: 'initial State UserReducer OK',
-  name: '',
-  password: '',
+  username: '',
+  lastname: '',
+  firstname: '',
+  street: '',
+  postal: '',
+  city: '',
   email: '',
+  password: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case UPDATE_FIELD:
-      if (action.fieldName === 'name') {
+      if (action.fieldName === 'username') {
         return {
           ...state,
-          name: action.fieldValue,
+          username: action.fieldValue,
+        };
+      }
+
+      if (action.fieldName === 'lastname') {
+        return {
+          ...state,
+          lastname: action.fieldValue,
+        };
+      }
+
+      if (action.fieldName === 'firstname') {
+        return {
+          ...state,
+          firstname: action.fieldValue,
+        };
+      }
+
+      if (action.fieldName === 'street') {
+        return {
+          ...state,
+          street: action.fieldValue,
+        };
+      }
+
+      if (action.fieldName === 'postal') {
+        return {
+          ...state,
+          postal: action.fieldValue,
+        };
+      }
+
+      if (action.fieldName === 'city') {
+        return {
+          ...state,
+          city: action.fieldValue,
+        };
+      }
+
+      if (action.fieldName === 'email') {
+        return {
+          ...state,
+          email: action.fieldValue,
         };
       }
 
@@ -22,12 +68,6 @@ const reducer = (state = initialState, action = {}) => {
         return {
           ...state,
           password: action.fieldValue,
-        };
-      }
-      if (action.fieldName === 'email') {
-        return {
-          ...state,
-          email: action.fieldValue,
         };
       }
       return state;

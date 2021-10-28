@@ -8,8 +8,13 @@ import {
 } from 'src/actions/userActions';
 
 const mapStateToProps = (state) => ({
-  trystate: state.user.trystate,
-  name: state.user.name,
+
+  username: state.user.username,
+  lastname: state.user.lastname,
+  firstname: state.user.firstname,
+  street: state.user.street,
+  postal: state.user.postal,
+  city: state.user.city,
   password: state.user.password,
   email: state.user.email,
 });

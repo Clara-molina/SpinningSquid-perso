@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { slide as Menu } from 'react-burger-menu';
+import logo from 'src/assets/img/logo1.png';
 
 import './header.scss';
 
@@ -7,11 +8,11 @@ const Header = () => (
   <nav className="nav">
     <div className="left-half-header">
       <NavLink
-        className="nav-logo left-header"
+        className="left-header"
         to="/"
         exact
       >
-        Logo
+        <img className="nav-logo" src={logo} alt="logo spinning squid" />
       </NavLink>
     </div>
 
