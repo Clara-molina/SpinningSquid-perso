@@ -1,4 +1,4 @@
-import contact from 'src/assets/img/contact.jpg';
+import contact from 'src/assets/img/logo-blanc.png';
 import './contact.scss';
 
 const Contact = () => (
