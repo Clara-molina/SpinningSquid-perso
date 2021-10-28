@@ -3,14 +3,14 @@ import {
   GET_SKATEPARK_LIST,
   successGetSkateparkList,
 } from 'src/actions/skateparkActions';
-import { baseURIUser } from 'src/routesBack';
+import { baseURI } from 'src/routesBack';
 
 const skateparkMiddleware = (store) => (next) => (action) => {
-  const endPointSkatepark = 'skatepark?_embed=true';
+  const endPointSkatepark = '/skatepark?_embed=true';
   switch (action.type) {
     case GET_SKATEPARK_LIST:
       // axios
-      //   .get(baseURIUser + endPointSkatepark)
+      //   .get(baseURI + endPointSkatepark)
       //   .then((response) => {
       //     console.log('response from API : ');
       //     console.log(response);
