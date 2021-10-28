@@ -1,17 +1,37 @@
 .searchresult {
+
 display:flex;
 flex-direction: column;
 text-align: center;
+margin-top: 2em;
+float:center;
+background: -webkit-linear-gradient(360deg,#030303 10%,#1f1f1f 360%);
+color: white;
+}
+
+
+
+.searchresulttitle {
+padding-top: 20px;
+padding-bottom: 20px;
+font-weight: bolder;
+font-size: 30px;
 
 }
 
 
 .searchresultimage {
-height: 675px;
-width: 1200px;
-align-self: center;
-padding-top: 3em;
-padding-bottom: 3em;
+float:center;
+max-width: 80%;
+max-height: 50%;
+object-fit: cover;
+object-position: bottom;
+margin-left: auto;  
+margin-right: auto;  
+padding-bottom: 20px;
+
+//a retirer après le test
+display: none;
 }
 
 
@@ -47,4 +67,25 @@ padding-bottom: 200px;
 .rating a:focus ~ a		{
   color: orange;
   cursor: pointer;
+}
+
+.searchresultadress {
+padding-bottom: 1em;
+
+
+// a retirer après le test
+padding-top : 30em;
+}
+
+
+.detailssearchresult {
+padding-top: 0.5em;
+padding-bottom: 0.5em;
+
+
+}
+
+.searchresultmap {
+padding-top: 2em;
+
 }
