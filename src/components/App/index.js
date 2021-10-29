@@ -1,32 +1,20 @@
 // == Import
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import SearchMap from '../SearchMap';
 
-import Header from '../Header';
-import Home from '../Home';
-import SearchSkateResults from '../SearchSkateResults';
+import SearchMap from 'src/containers/SearchMap';
+import Header from 'src/components/Header';
+import Profile from 'src/containers/Profile';
+import Home from 'src/components/Home';
+import Footer from 'src/components/Footer';
+import Contact from 'src/components/Contact';
+import Marketplace from 'src/containers/Marketplace';
+import SpotAdd from 'src/components/SpotAdd';
+import Community from 'src/components/Community';
 
-import './styles.css';
-import Footer from '../Footer';
-
-function Homeshow() {
-  return <h2>Home</h2>;
-}
-
-function Marketplace() {
-  return <h2>Marketplace</h2>;
-}
+import './styles.scss';
 
 function Communaute() {
   return <h2>Communaute</h2>;
-}
-
-function Profile() {
-  return <h2>Profile</h2>;
-}
-
-function Question() {
-  return <h2>Question</h2>;
 }
 
 function Page404() {
@@ -43,9 +31,10 @@ const App = () => (
         <Route exact path="/" component={Homeshow} />
         <Route path="/trouve-ton-skatepark" component={SearchMap} />
         <Route path="/results" component={SearchSkateResults} />
+        <Route path="/ajoute-ton-spot" component={SpotAdd} />
         <Route path="/trouve-ton-matos" component={Marketplace} />
-        <Route path="/communaute" component={Communaute} />
-        <Route path="/contact" component={Question} />
+        <Route path="/communaute" component={Community} />
+        <Route path="/contact" component={Contact} />
         <Route path="/profil" component={Profile} />
         <Route component={Page404} />
       </Switch>

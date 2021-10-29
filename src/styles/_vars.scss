@@ -1,5 +1,53 @@
 $black: #000000;
-$grey: #6e6b6b;
-$white: #FFFFFF;
 $darkGrey: #292929;
-$lightOrange: #FF8552;
+$grey: #6e6b6b;
+$lightGrey: #c2c2c2;
+$white: #ffffff;
+$orange: #ff8552;
+
+// Generic class
+.block {
+  height: auto;
+  max-width: 100%;
+  background-color: $grey;
+}
+.title {
+  color: $white;
+  text-align: center;
+  padding: 1em;
+  font-size: 2em;
+}
+.button {
+  height: 30px;
+  width: 100px;
+  background-color: $orange;
+  border-radius: 50px;
+  border: solid 1px $darkGrey;
+}
+.list {
+  display: flex;
+  align-items: center;
+  margin: 1em auto 0;
+  max-width: 1200px;
+}
+.list-item {
+  padding: 1em;
+  margin-bottom: 1em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: rgba(236, 236, 236, 0.8);
+}
+.list-item-image {
+  border: solid 1px;
+  height: 80px;
+  width: 80px;
+  margin-right: 1em;
+}
+.list-item-description {
+  margin: auto;
+}
+//éviter masquage par le footer
+.shadowDiv {
+  height: 76px;
+}

@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import './footer.scss';
 
 const Footer = () => (
-
   <nav className="navFooter">
     <NavLink
       className="navFooter-link"
@@ -31,7 +30,6 @@ const Footer = () => (
       Ici un link
     </NavLink>
   </nav>
-
 );
 
 export default Footer;
