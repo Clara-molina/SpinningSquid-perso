@@ -1,16 +1,17 @@
 // == Import
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import SearchMap from 'src/containers/SearchMap';
 import Header from 'src/components/Header';
-import Profile from 'src/containers/Profile';
-import Home from 'src/components/Home';
 import Footer from 'src/components/Footer';
-import Contact from 'src/components/Contact';
-import Marketplace from 'src/containers/Marketplace';
-import SpotAdd from 'src/components/SpotAdd';
-import Community from 'src/components/Community';
+import Home from 'src/components/Home';
+import SearchMap from 'src/containers/SearchMap';
 import SearchSkateResults from 'src/components/SearchSkateResults';
+import SpotAdd from 'src/components/SpotAdd';
+import Marketplace from 'src/containers/Marketplace';
+import Community from 'src/components/Community';
+import Contact from 'src/components/Contact';
+import Connection from 'src/containers/Connection';
+import Profile from 'src/components/Profile';
 
 import './styles.scss';
 
@@ -26,13 +27,14 @@ const App = () => (
 
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/trouve-ton-skatepark" component={SearchMap} />
-        <Route path="/ajoute-ton-spot" component={SpotAdd} />
+        <Route exact path="/trouve-ton-skatepark" component={SearchMap} />
+        <Route path="/trouve-ton-skatepark/ajoute-ton-spot" component={SpotAdd} />
+        <Route path="/trouve-ton-skatepark/resultat" component={SearchSkateResults} />
         <Route path="/trouve-ton-matos" component={Marketplace} />
-        <Route path="/resultat" component={SearchSkateResults} />
         <Route path="/communaute" component={Community} />
         <Route path="/contact" component={Contact} />
-        <Route path="/profil" component={Profile} />
+        <Route exact path="/connexion" component={Connection} />
+        <Route path="/connexion/profil" component={Profile} />
         <Route component={Page404} />
       </Switch>
 
