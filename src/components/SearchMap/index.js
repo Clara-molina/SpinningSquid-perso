@@ -1,4 +1,5 @@
 import GoogleMapReact from 'google-map-react';
+import { Link } from 'react-router-dom';
 import SearchList from './SearchList';
 import './searchMap.scss';
 
@@ -22,7 +23,8 @@ const SearchMap = ({
   callApiGet();
   return (
     <div className="search">
-      <h2 className="search-title">Trouve ton SkatePark</h2>
+      <h1 className="search-title">Trouve ton SkatePark</h1>
+      <button className="button-addspot" type="button"><Link to="/ajoute-ton-spot">Ajoute ton spot!</Link></button>
 
       <form className="search-form" onSubmit={submitSkateparkSearch}>
         <label className="search-label">
