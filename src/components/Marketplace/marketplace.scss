@@ -17,7 +17,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 50px;
-    background-color: vars.$lightGrey;
   }
   .list-item {
     display: flex;

@@ -3,9 +3,8 @@
 #community {
   display: flex;
   flex-direction: column;
-  background-color: vars.$lightGrey;
+
   .community-header {
-    background-color: vars.$grey;
   }
   .community-post {
     position: absolute;

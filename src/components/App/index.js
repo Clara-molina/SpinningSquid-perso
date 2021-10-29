@@ -13,10 +13,6 @@ import Community from 'src/components/Community';
 
 import './styles.scss';
 
-function Communaute() {
-  return <h2>Communaute</h2>;
-}
-
 function Page404() {
   return <h2>Page404</h2>;
 }
@@ -28,9 +24,8 @@ const App = () => (
       <Header />
 
       <Switch>
-        <Route exact path="/" component={Homeshow} />
+        <Route exact path="/" component={Home} />
         <Route path="/trouve-ton-skatepark" component={SearchMap} />
-        <Route path="/results" component={SearchSkateResults} />
         <Route path="/ajoute-ton-spot" component={SpotAdd} />
         <Route path="/trouve-ton-matos" component={Marketplace} />
         <Route path="/communaute" component={Community} />

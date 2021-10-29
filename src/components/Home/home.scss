@@ -1,33 +1,6 @@
 @use 'src/styles/vars';
 
 .home-container {
-<<<<<<< HEAD
-  
-  
-
-  .home-title {
-  //  display:block;
-  //  color: vars.$orange;
-  //  position: relative;
-  //  top: 200px;
-  background-image:url(../../assets/img/home.jpg);
-  background-repeat: no-repeat;
-  background-size:cover;
-  display: block !important;
-  width: 100em !important;
-  height: 100em !important;
-  color:red;
-  background-color:yellow;
-  }
-
-  .home-image {
-    
-    width: 100em;
-  //   width: 100%;
-  //  height: auto;
-   //  position: absolute;
-=======
-  background-color: vars.$black;
 
   .home-title {
    color: vars.$orange;
@@ -40,7 +13,6 @@
   .home-image {
     width: 100%;
     height: auto;
->>>>>>> refs/remotes/origin/dev
   }
 
   .home-p {
@@ -48,10 +20,7 @@
     color: vars.$white;
     width: 100%;
     height: 100px;
-<<<<<<< HEAD
-=======
     padding: 1em;
->>>>>>> refs/remotes/origin/dev
   }
 
   .home-nav {
@@ -59,19 +28,10 @@
     align-items: center;
     position: relative;
 
-<<<<<<< HEAD
-
-    .home-nav-image {
-      width: 50%;
-      height: auto;
-      margin: auto;
-
-=======
     .home-nav-image {
       width: 50%;
       height: auto;
       margin: 1em auto;
->>>>>>> refs/remotes/origin/dev
     }
 
     .home-nav-description {
@@ -79,18 +39,10 @@
       position: absolute;
       top: 50%;
       left: 35%;
-<<<<<<< HEAD
-      width: 300px;
-      height: 100px;
-      background-color: rgba( 000, 000, 000, .5);
-    }
-
-=======
       width: 35%;
       height: 20%;
       background-color: rgba( 000, 000, 000, .5);
     }
->>>>>>> refs/remotes/origin/dev
   }
 }
 
