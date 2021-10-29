@@ -2,23 +2,31 @@ import { UPDATE_FIELD, SUCCESS_LOGIN } from 'src/actions/userActions';
 
 export const initialState = {
   isLogged: false,
-  username: '',
+  usernameInscription: '',
+  passwordInscription: '',
+  email: '',
   lastname: '',
   firstname: '',
   street: '',
   postal: '',
   city: '',
-  email: '',
-  password: '',
+  usernameConnexion: '',
+  passwordConnexion: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case UPDATE_FIELD:
-      if (action.fieldName === 'username') {
+      if (action.fieldName === 'usernameInscription') {
         return {
           ...state,
-          username: action.fieldValue,
+          usernameInscription: action.fieldValue,
+        };
+      }
+      if (action.fieldName === 'usernameConnexion') {
+        return {
+          ...state,
+          usernameConnexion: action.fieldValue,
         };
       }
 
@@ -64,10 +72,16 @@ const reducer = (state = initialState, action = {}) => {
         };
       }
 
-      if (action.fieldName === 'password') {
+      if (action.fieldName === 'passwordConnexion') {
         return {
           ...state,
-          password: action.fieldValue,
+          passwordConnexion: action.fieldValue,
+        };
+      }
+      if (action.fieldName === 'passwordInscription') {
+        return {
+          ...state,
+          passwordInscription: action.fieldValue,
         };
       }
       return state;

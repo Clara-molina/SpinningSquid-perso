@@ -1,13 +1,12 @@
 @use 'src/styles/vars';
 
 .home-container {
-
   .home-title {
-   color: vars.$orange;
-   position: absolute;
-   top: 17%;
-   left: 38%;
-   font-size: 3em;
+    color: vars.$orange;
+    position: absolute;
+    top: 17%;
+    left: 38%;
+    font-size: 3em;
   }
 
   .home-image {
@@ -16,7 +15,12 @@
   }
 
   .home-p {
-    background: linear-gradient(to top, vars.$black, vars.$darkGrey, vars.$grey);
+    background: linear-gradient(
+      to top,
+      vars.$black,
+      vars.$darkGrey,
+      vars.$grey
+    );
     color: vars.$white;
     width: 100%;
     height: 100px;
@@ -41,9 +45,7 @@
       left: 35%;
       width: 35%;
       height: 20%;
-      background-color: rgba( 000, 000, 000, .5);
+      background-color: rgba(000, 000, 000, 0.5);
     }
   }
 }
-
-

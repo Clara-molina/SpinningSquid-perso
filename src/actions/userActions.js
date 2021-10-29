@@ -8,9 +8,8 @@ export const updateField = (fieldName, fieldValue) => ({
   fieldName: fieldName,
   fieldValue: fieldValue,
 });
-export const successLogin = (name, tokenAPI) => ({
+export const successLogin = (tokenAPI) => ({
   type: SUCCESS_LOGIN,
-  name: name,
   token: tokenAPI,
 });
 export const submitLogin = () => ({
