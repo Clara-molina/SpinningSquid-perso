@@ -121,7 +121,7 @@ const Profile = () => (
         <h2 className="profile-articles-title">Titre de l'annonce 2</h2>
       </Link>
     </div>
-  </div >
+  </div>
 
 );
 
