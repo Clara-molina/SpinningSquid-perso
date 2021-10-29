@@ -3,7 +3,6 @@
 .search {
   height: auto;
   max-width: 100%;
-  background-color: vars.$grey;
 
 
   .search-title {
@@ -11,6 +10,18 @@
     text-align: center;
     padding: 1em;
     font-size: 2em;
+  }
+
+  .button-addspot {
+    height: 30px;
+    width: 130px;
+    background-color: vars.$orange;
+    border-radius: 12px;
+    border: solid 1px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .search-form {
