@@ -24,7 +24,7 @@ const SearchMap = ({
   return (
     <div className="search">
       <h1 className="search-title">Trouve ton SkatePark</h1>
-      <button className="button-addspot" type="button"><Link to="/ajoute-ton-spot">Ajoute ton spot!</Link></button>
+      <button className="button-addspot" type="button"><Link to="/trouve-ton-skatepark/ajoute-ton-spot">Ajoute ton spot!</Link></button>
 
       <form className="search-form" onSubmit={submitSkateparkSearch}>
         <label className="search-label">

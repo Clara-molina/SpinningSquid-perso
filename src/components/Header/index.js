@@ -59,7 +59,7 @@ const Header = () => (
       </NavLink>
 
       <NavLink
-        to="/profil"
+        to="/connexion"
         className="nav-link right-header"
         activeClassName="nav-link--active"
       >
