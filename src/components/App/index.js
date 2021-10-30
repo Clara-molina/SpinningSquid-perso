@@ -9,6 +9,8 @@ import SearchSkateResults from 'src/components/SearchSkateResults';
 import SpotAdd from 'src/components/SpotAdd';
 import Marketplace from 'src/containers/Marketplace';
 import Community from 'src/components/Community';
+import DetailsPost from 'src/components/Community/DetailsPost';
+import AddPost from 'src/components/Community/AddPost';
 import Contact from 'src/components/Contact';
 import Connection from 'src/containers/Connection';
 import Profile from 'src/components/Profile';
@@ -28,10 +30,19 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/trouve-ton-skatepark" component={SearchMap} />
-        <Route path="/trouve-ton-skatepark/ajoute-ton-spot" component={SpotAdd} />
-        <Route path="/trouve-ton-skatepark/resultat" component={SearchSkateResults} />
-        <Route path="/trouve-ton-matos" component={Marketplace} />
-        <Route path="/communaute" component={Community} />
+        <Route
+          path="/trouve-ton-skatepark/ajoute-ton-spot"
+          component={SpotAdd}
+        />
+        <Route
+          path="/trouve-ton-skatepark/resultat"
+          component={SearchSkateResults}
+        />
+        <Route exact path="/trouve-ton-matos" component={Marketplace} />
+        <Route path="/trouve-ton-matos/details" component={Marketplace} />
+        <Route exact path="/communaute" component={Community} />
+        <Route path="/communaute/details" component={DetailsPost} />
+        <Route path="/communaute/ajoute-ton-evenement" component={AddPost} />
         <Route path="/contact" component={Contact} />
         <Route exact path="/connexion" component={Connection} />
         <Route path="/connexion/profil" component={Profile} />

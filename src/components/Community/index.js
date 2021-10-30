@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import PostList from './PostList';
 import './community.scss';
 
@@ -10,7 +11,9 @@ const Community = ({ eventList = [] }) => {
         </div>
       </div>
       <div className="community-post">
-        <button className="button">Proposer évenment</button>
+        <Link to="/communaute/ajoute-ton-evenement">
+          <button className="button">Proposer évenment</button>
+        </Link>
       </div>
       <PostList />
       <div className="shadowDiv"></div>
