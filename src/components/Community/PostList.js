@@ -4,6 +4,16 @@ const PostList = () => {
   return (
     <div className="community-eventList">
       <div className="eventList-item">
+        <div className="participants">
+          <div>
+            <p>150 participants</p>
+          </div>
+        </div>
+        <div className="participate-button">
+          <button id="participate-button" className="button">
+            J'y serai !
+          </button>
+        </div>
         <div className="item-image">
           <img src="" />
         </div>
@@ -25,6 +35,16 @@ const PostList = () => {
         </div>
       </div>
       <div className="eventList-item">
+        <div className="participants">
+          <div>
+            <p>150 participants</p>
+          </div>
+        </div>
+        <div className="participate-button">
+          <button id="participate-button" className="button">
+            J'y serai !
+          </button>
+        </div>
         <div className="item-image">
           <img src="" />
         </div>
@@ -46,6 +66,16 @@ const PostList = () => {
         </div>
       </div>
       <div className="eventList-item">
+        <div className="participants">
+          <div>
+            <p>150 participants</p>
+          </div>
+        </div>
+        <div className="participate-button">
+          <button id="participate-button" className="button">
+            J'y serai !
+          </button>
+        </div>
         <div className="item-image">
           <img src="" />
         </div>
@@ -67,6 +97,16 @@ const PostList = () => {
         </div>
       </div>
       <div className="eventList-item">
+        <div className="participants">
+          <div>
+            <p>150 participants</p>
+          </div>
+        </div>
+        <div className="participate-button">
+          <button id="participate-button" className="button">
+            J'y serai !
+          </button>
+        </div>
         <div className="item-image">
           <img src="" />
         </div>
