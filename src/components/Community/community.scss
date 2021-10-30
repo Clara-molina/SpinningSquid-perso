@@ -29,6 +29,8 @@
   }
   .eventList-item:nth-child(2n + 1) {
     flex-direction: row-reverse;
+    .description-resume {
+    }
     .description-link {
       text-align: right;
     }
@@ -80,6 +82,57 @@
       .description-link {
         text-align: center;
       }
+    }
+  }
+}
+
+//-------------------------------------------------
+//component AddPost
+//-------------------------------------------------
+#addpost {
+  margin: 2rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  .addpost-block {
+    display: flex;
+    flex-direction: row;
+    //background-color: vars.$lightGrey;
+  }
+  .addpost-image {
+    width: 60vw;
+    height: 45vh;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .addpost-charateristics {
+    padding: 2rem 0 0 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .characteristics-details div {
+      margin-bottom: 0.5rem;
+    }
+    .addpost-button {
+      margin-bottom: 3rem;
+      display: flex;
+      justify-content: center;
+      .button {
+        font-size: 1.2rem;
+        width: 140px;
+        height: 60px;
+      }
+    }
+  }
+  .addpost-description {
+    width: 100%;
+    padding: 2rem 0;
+    height: fit-content;
+    //background-color: blueviolet;
+    text-align: center;
+    #addpost-description {
+      width: 60vw;
+      height: 30vh;
     }
   }
 }
