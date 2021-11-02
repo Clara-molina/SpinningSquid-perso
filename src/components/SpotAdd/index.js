@@ -40,7 +40,7 @@ const SpotAdd = (props) => {
               id="category-street"
               className="spotadd-check-category"
               type="checkbox"
-              name="street"
+              name="streetspot"
             />
           </label>
         </div>
