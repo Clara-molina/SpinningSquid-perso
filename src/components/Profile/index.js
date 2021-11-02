@@ -4,10 +4,9 @@ import Popup from 'reactjs-popup';
 import { Link } from 'react-router-dom';
 
 const Profile = (props) => {
-  const nametry = props.usernameEdit;
   return (
     <div className="profile">
-      <h1 className="profile-title">Bienvenue {nametry}</h1>
+      <h1 className="profile-title">Bienvenue {props.usernameEdit}</h1>
 
       <div className="profile-container">
         <img className="profile-avatar" src={logo2} alt="avatar" />
