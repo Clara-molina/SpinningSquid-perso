@@ -31,6 +31,8 @@
     .home-nav-container {
       display: flex;
       align-items: center;
+      width: 50%;
+      
     
 
     }
@@ -45,9 +47,11 @@
 
 
     .home-nav-image {
-      width: 50%;
+      width: 100%;
       height: auto;
       margin: 1em auto;
+      margin-left: 25em;
+      align-self: flex-end;
     }
 
     .home-nav-description {

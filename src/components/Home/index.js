@@ -20,12 +20,16 @@ const Home = () => (
       </div>
     </Link>
     <Link to="/trouve-ton-matos" className="home-nav">
-      <img className="home-nav-image" src={image2} alt="skatepark" />
-      <p className="home-nav-description">Description de la page Trouve ton matos Animation au survol à faire</p>
+      <div className="home-nav-container">
+        <img className="home-nav-image" src={image2} alt="skatepark" />
+        <p className="home-nav-description">Description de la page Trouve ton matos Animation au survol à faire</p>
+      </div>
     </Link>
     <Link to="/communaute" className="home-nav">
-      <img className="home-nav-image" src={image3} alt="skatepark" />
-      <p className="home-nav-description">Description de la page Whassup ?! Animation au survol à faire</p>
+      <div className="home-nav-container">  
+        <img className="home-nav-image" src={image3} alt="skatepark" />
+        <p className="home-nav-description">Description de la page Whassup ?! Animation au survol à faire</p>
+      </div>
     </Link>
   </div>
 );
