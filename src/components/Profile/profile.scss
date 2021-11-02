@@ -59,32 +59,52 @@
       text-align: center;
     }
   }
-
-  
 }
 
 .modal {
   background-color: #ffffff;
   width: 800px;
-  height: 400px;
+  height: 450px;
+
+  .header {
+    width: 100%;
+    border-bottom: 1px solid gray;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 5px;
+  }
+
+  .form {
+    padding: 2em;
+
+    .content {
+      width: 600px;
+      height: 300px;
+      margin: auto;
+
+
+      .form-edit-label {
+        float: left;
+        padding: 0.3em;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .form-edit-input {
+        margin-left: 1em;
+        float: right;
+        width: 400px;
+
+      }
+    }
+      .actions {
+        padding: 10px 5px;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 1em;
+      }
+    
+  }
+
 }
-.modal > .header {
-  width: 100%;
-  border-bottom: 1px solid gray;
-  font-size: 1.5em;
-  text-align: center;
-  padding: 5px;
-}
-.modal > .form {
-}
-.modal > .content {
-  width: 100%;
-  padding: 2em;
-}
-.modal > .form-edit-input {
-  display: flex;
-  width: 100%;
-}
-.modal > .actions {
-  padding: 10px 5px;
-}
+

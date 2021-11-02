@@ -1,10 +1,12 @@
 import { NavLink } from 'react-router-dom';
 import { slide as Menu } from 'react-burger-menu';
 import logo from 'src/assets/img/logo1.png';
+import avatar from 'src/assets/img/logo2.png';
 
 import './header.scss';
 
-const Header = () => (
+const Header = ({ isLogged, handleLogout }) => (
+
   <nav className="nav">
     <div className="left-half-header">
       <NavLink className="left-header" to="/" exact>
@@ -54,13 +56,36 @@ const Header = () => (
         Question ?
       </NavLink>
 
-      <NavLink
-        to="/connexion"
-        className="nav-link right-header"
-        activeClassName="nav-link--active"
-      >
-        Connexion
-      </NavLink>
+      {!isLogged && (
+        <NavLink
+          to="/connexion"
+          exact
+          className="nav-link right-header"
+          activeClassName="nav-link--active"
+        >
+          Connexion
+        </NavLink>
+      )}
+
+      {isLogged && (
+        <NavLink
+          to="/"
+          className="nav-link right-header"
+          onClick={handleLogout}
+        >
+          Déconnexion
+        </NavLink>
+      )}
+
+      {isLogged && (
+        <NavLink
+          to="/connexion/profil"
+          className="right-header"
+          activeClassName="nav-link-avatar--active"
+        >
+          <img className="nav-link-avatar" src={avatar} alt="" />
+        </NavLink>
+      )}
 
       {/* Menu burger */}
       <Menu right isOpen={false}>

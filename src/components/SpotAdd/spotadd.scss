@@ -35,6 +35,7 @@
 
       .spotadd-check-category {
         margin-left: 1em;
+        cursor: pointer;
       }
     }
 
@@ -45,7 +46,7 @@
 
       .spotadd-input {
         width: 70%;
-        margin-left: 6em;
+        margin: 0.2em 0 0.2em 6em;
       }
     }
 
@@ -59,12 +60,13 @@
         align-items: center;
         flex-direction: row-reverse;
         justify-content: flex-end;
-        margin: 0 35%;
+        margin: 0.2em 35%;
         width: 100%;
       }
 
       .spotadd-check-equipment{
         margin-right: 0.7em;
+        cursor: pointer;
       }
     }
 
@@ -75,11 +77,11 @@
 
       .spotadd-label-image {
         margin-left: 4em;
-
       }
 
       .spotadd-input-image {
         margin-left: 3em;
+        cursor: pointer;
       }
     }
 
@@ -93,12 +95,13 @@
         align-items: center;
         flex-direction: row-reverse;
         justify-content: flex-end;
-        margin: 0 35%;
+        margin: 0.2em 35%;
         width: 100%;
       }
 
       .spotadd-radio {
         margin-right: 0.7em;
+        cursor: pointer;
       }
     }
 

@@ -26,7 +26,7 @@ const Profile = (props) => (
             <div className="header"> Modifie ton profil </div>
             <form className="form" onSubmit={props.handleSubmitUpdateProfile}>
               <div className="content">
-                <label htmlFor="usernameEdit">
+                <label className="form-edit-label" htmlFor="usernameEdit">
                   Nom d'utilisateur
                   <input
                     id="usernameEdit"
@@ -37,7 +37,7 @@ const Profile = (props) => (
                     onChange={props.handleChange}
                   />
                 </label>
-                <label htmlFor="lastnameEdit">
+                <label className="form-edit-label" htmlFor="lastnameEdit">
                   Nom
                   <input
                     id="lastnameEdit"
@@ -47,7 +47,7 @@ const Profile = (props) => (
                     onChange={props.handleChange}
                   />
                 </label>
-                <label htmlFor="firstnameEdit">
+                <label className="form-edit-label" htmlFor="firstnameEdit">
                   Prénom
                   <input
                     id="firstnameEdit"
@@ -57,7 +57,7 @@ const Profile = (props) => (
                     onChange={props.handleChange}
                   />
                 </label>
-                <label htmlFor="streetEdit">
+                <label className="form-edit-label" htmlFor="streetEdit">
                   Rue
                   <input
                     id="streetEdit"
@@ -67,7 +67,7 @@ const Profile = (props) => (
                     onChange={props.handleChange}
                   />
                 </label>
-                <label htmlFor="postalEdit">
+                <label className="form-edit-label" htmlFor="postalEdit">
                   Code postal
                   <input
                     id="postalEdit"
@@ -77,7 +77,7 @@ const Profile = (props) => (
                     onChange={props.handleChange}
                   />
                 </label>
-                <label htmlFor="cityEdit">
+                <label className="form-edit-label" htmlFor="cityEdit">
                   Ville
                   <input
                     id="cityEdit"
@@ -87,7 +87,7 @@ const Profile = (props) => (
                     onChange={props.handleChange}
                   />
                 </label>
-                <label htmlFor="emailEdit">
+                <label className="form-edit-label" htmlFor="emailEdit">
                   Email
                   <input
                     id="emailEdit"
@@ -97,7 +97,7 @@ const Profile = (props) => (
                     onChange={props.handleChange}
                   />
                 </label>
-                <label htmlFor="passwordEdit">
+                <label className="form-edit-label" htmlFor="passwordEdit">
                   Password
                   <input
                     id="passwordEdit"
@@ -110,8 +110,7 @@ const Profile = (props) => (
               </div>
               <div className="actions">
                 <button type="submit" className="button">
-                  {' '}
-                  Modifier{' '}
+                  Valider
                 </button>
                 <button
                   type="button"
