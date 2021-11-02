@@ -1,11 +1,11 @@
 import './spotadd.scss';
 
-const SpotAdd = ({ handleUploadLocalImage }) => {
+const SpotAdd = (props) => {
   return (
     <div className="spotadd-container">
       <h2 className="title">Ajoute ton Spot</h2>
 
-      <form className="spotadd-form" onSubmit="">
+      <form className="spotadd-form" onSubmit={props.handleSubmitAddPost}>
         <div className="spotadd-container-category">
           <label
             htmlFor="category-skatepark"
@@ -148,7 +148,7 @@ const SpotAdd = ({ handleUploadLocalImage }) => {
               accept="image/png, image/jpeg"
               multiple
               required
-              onChange={handleUploadLocalImage}
+              onChange={props.handleUploadLocalImage}
             />
           </label>
         </div>

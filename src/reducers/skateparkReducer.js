@@ -1,5 +1,8 @@
 import { UPDATE_FIELD } from 'src/actions/userActions';
-import { GET_SKATEPARK_LIST_SUCCESS } from 'src/actions/skateparkActions';
+import {
+  GET_SKATEPARK_LIST_SUCCESS,
+  SUBMIT_ADD_SPOT_SUCCESS,
+} from 'src/actions/skateparkActions';
 
 export const initialState = {
   skateparkLocationList: ['un', 'deux', 'trois'],
@@ -60,6 +63,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         responseAPI: action.responseAPI,
+      };
+    case SUBMIT_ADD_SPOT_SUCCESS:
+      return {
+        ...state,
+        message: action.message_success,
       };
     default:
       return state;
