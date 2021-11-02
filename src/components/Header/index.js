@@ -5,7 +5,7 @@ import avatar from 'src/assets/img/logo2.png';
 
 import './header.scss';
 
-const Header = ({ isLogged }) => (
+const Header = ({ isLogged, handleLogout }) => (
 
   <nav className="nav">
     <div className="left-half-header">
@@ -71,8 +71,7 @@ const Header = ({ isLogged }) => (
         <NavLink
           to="/"
           className="nav-link right-header"
-          activeClassName="nav-link--active"
-        // onClick={handleLogout}
+          onClick={handleLogout}
         >
           Déconnexion
         </NavLink>

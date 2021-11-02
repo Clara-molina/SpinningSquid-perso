@@ -1,4 +1,4 @@
-import { UPDATE_FIELD, SUCCESS_LOGIN } from 'src/actions/userActions';
+import { UPDATE_FIELD, SUCCESS_LOGIN, SUCCESS_LOGOUT } from 'src/actions/userActions';
 
 export const initialState = {
   isLogged: false,
@@ -168,6 +168,16 @@ const reducer = (state = initialState, action = {}) => {
         token: action.token,
         isLogged: true,
         username: action.usernameConnexion,
+      };
+
+    case SUCCESS_LOGOUT:
+      console.log('case: SUCCESS_LOGOUT');
+      return {
+        ...state,
+        token: '',
+        isLogged: false,
+        usernameConnexion: '',
+        passwordConnexion: '',
       };
 
     default:
