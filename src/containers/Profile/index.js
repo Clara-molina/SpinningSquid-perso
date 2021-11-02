@@ -1,36 +1,30 @@
 import { connect } from 'react-redux';
 
 import Profile from 'src/components/Profile';
-import {
-  updateField,
-  submitLogin,
-  submitRegister,
-} from 'src/actions/userActions';
+import { updateField, submitUpdateProfile } from 'src/actions/userActions';
 
 const mapStateToProps = (state) => ({
-
-  username: state.user.username,
-  lastname: state.user.lastname,
-  firstname: state.user.firstname,
-  street: state.user.street,
-  postal: state.user.postal,
-  city: state.user.city,
-  password: state.user.password,
-  email: state.user.email,
+  usernameEdit: state.user.profile.usernameEdit,
+  passwordEdit: state.user.profile.passwordEdit,
+  lastnameEdit: state.user.profile.lastnameEdit,
+  firstnameEdit: state.user.profile.firstnameEdit,
+  streetEdit: state.user.profile.streetEdit,
+  postalEdit: state.user.profile.postalEdit,
+  cityEdit: state.user.profile.cityEdit,
+  emailEdit: state.user.profile.emailEdit,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  handleChange: (fieldName, fieldValue) => {
-    const action = updateField(fieldName, fieldValue);
-    dispatch(action);
+  handleChange: (event) => {
+    const inputId = event.target.id;
+    const inputValue = event.target.value;
+    console.log(inputId);
+    console.log(inputValue);
+    dispatch(updateField(inputId, inputValue));
   },
-  handleSubmitLogin: (event) => {
+  handleSubmitUpdateProfile: (event) => {
     event.preventDefault();
-    dispatch(submitLogin());
-  },
-  handleSubmitRegister: (event) => {
-    event.preventDefault();
-    dispatch(submitRegister());
+    dispatch(submitUpdateProfile());
   },
 });
 

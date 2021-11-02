@@ -1,9 +1,9 @@
 @use 'src/styles/vars';
 
-.connection {
+.profile {
+  color: vars.$white;
 
-  .title-connection {
-    color: vars.$white;
+  .profile-title {
     text-align: center;
     padding: 1em;
     font-size: 2em;
@@ -11,77 +11,100 @@
     margin-bottom: 1em;
   }
 
-  .container-forms {
+  .profile-container {
+    width: 500px;
+    height: 100px;
+    border: solid 1px vars.$white;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     margin: auto;
-    max-width: 1000px;
-    height: 600px;
-    color: vars.$white;
-  
-    .form-register {
-      width: 50%;
-      padding: 1em;
-      margin-right: 2em;
 
-      .form-register-title {
-        color: vars.$white;
-        text-align: center;
-        font-size: 1.3em;
-        margin-bottom: 0.6em;
-        padding-bottom: 0.3em;
-        border-bottom: solid 1px vars.$orange;
-      }
-
-      .form-register-input {
-        display: flex;
-        width: 100%;
-        margin: 0.5em 0;
-      }
-
-      .form-register-button {
-        display: flex;
-        justify-content: center;
-        margin: 1em auto;
-        background-color: vars.$orange;
-        border-radius: 12px;
-        border: solid 1px;
-        width: 100px;
-        height: 30px;
-        font-size: 1.1em;
-      }
+    .profile-avatar {
+      width: 70px;
+      height: auto;
+      background-color: vars.$white;
+      border-radius: 50%;
+      padding: 0.2em;
     }
 
-    .form-connection {
-      width: 50%;
-      padding: 1em;
-      margin-left: 2em;
+    .profile-name {
 
-      .form-connection-title {
-        color: vars.$white;
-        text-align: center;
-        font-size: 1.3em;
-        margin-bottom: 0.6em;
-        padding-bottom: 0.3em;
-        border-bottom: solid 1px vars.$orange;
-      }
-      
-      .form-connection-input {
-        display: flex;
-        width: 100%;
-        margin: 0.5em 0;
-      }
+    }
 
-      .form-connection-button {
-        display: flex;
-        justify-content: center;
-        margin: 1em auto;
-        background-color: vars.$orange;
-        border-radius: 12px;
-        border: solid 1px;
-        width: 100px;
-        height: 30px;
-        font-size: 1.1em;
-      }
+    .profile-button-edit {
+      background-color: vars.$orange;
+      border-radius: 12px;
+      border: solid 1px;
+      width: 120px;
+      height: 30px;
+    }
+  }
+
+  .profile-articles {
+    width: 800px;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+
+    .profile-articles-img {
+      width: 300px;
+      height: 150px;
+      background-color: vars.$white;
+      margin-top: 2em;
+    }
+
+    .profile-articles-title {
+      text-align: center;
     }
   }
 }
+
+.modal {
+  background-color: #ffffff;
+  width: 800px;
+  height: 450px;
+
+  .header {
+    width: 100%;
+    border-bottom: 1px solid gray;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 5px;
+  }
+
+  .form {
+    padding: 2em;
+
+    .content {
+      width: 600px;
+      height: 300px;
+      margin: auto;
+
+
+      .form-edit-label {
+        float: left;
+        padding: 0.3em;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .form-edit-input {
+        margin-left: 1em;
+        float: right;
+        width: 400px;
+
+      }
+    }
+      .actions {
+        padding: 10px 5px;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 1em;
+      }
+    
+  }
+
+}
+

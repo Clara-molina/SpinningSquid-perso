@@ -8,6 +8,7 @@ export const initialState = {
   addStreet: 'initial street value into state',
   addPostal: 'initial postal value into state',
   addTown: 'initial town value into state',
+  addSpot: 'initial addSpot value into state',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -35,6 +36,24 @@ const reducer = (state = initialState, action = {}) => {
         return {
           ...state,
           addTown: action.fieldValue,
+        };
+      }
+      if (action.fieldName === 'uploadImage') {
+        return {
+          ...state,
+          addSpot: {
+            ...state.addspot,
+            uploadedImg: action.fieldValue,
+          },
+        };
+      }
+      if (action.fieldName === 'tryPromiseField') {
+        return {
+          ...state,
+          addSpot: {
+            ...state.addspot,
+            tryPromiseField: action.fieldValue,
+          },
         };
       }
     case GET_SKATEPARK_LIST_SUCCESS:
