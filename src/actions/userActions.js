@@ -9,9 +9,11 @@ export const updateField = (fieldName, fieldValue) => ({
   fieldName: fieldName,
   fieldValue: fieldValue,
 });
-export const successLogin = (tokenAPI) => ({
+export const successLogin = (tokenAPI, isLogged, usernameConnexion) => ({
   type: SUCCESS_LOGIN,
   token: tokenAPI,
+  isLogged: isLogged,
+  username: usernameConnexion,
 });
 export const submitLogin = () => ({
   type: SUBMIT_LOGIN,

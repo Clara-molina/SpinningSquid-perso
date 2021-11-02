@@ -8,12 +8,12 @@ import Contact from 'src/components/Contact';
 import DetailsArticle from 'src/components/Marketplace/DetailsArticle';
 import DetailsPost from 'src/components/Community/DetailsPost';
 import Footer from 'src/components/Footer';
-import Header from 'src/components/Header';
 import Home from 'src/components/Home';
 import PostArticle from 'src/components/Marketplace/PostArticle';
 import SearchSkateResults from 'src/components/SearchSkateResults';
 
 //Import Containers
+import Header from 'src/containers/Header';
 import Connection from 'src/containers/Connection';
 import Marketplace from 'src/containers/Marketplace';
 import Profile from 'src/containers/Profile';

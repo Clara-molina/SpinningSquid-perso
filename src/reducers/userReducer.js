@@ -167,6 +167,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         token: action.token,
         isLogged: true,
+        username: action.usernameConnexion,
       };
 
     default:
