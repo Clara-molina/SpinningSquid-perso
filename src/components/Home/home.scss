@@ -3,11 +3,11 @@
 .home-container {
 
   .home-title {
-   color: vars.$orange;
-   position: absolute;
-   top: 23%;
-   left: 40%;
-   font-size: 2em;
+    color: vars.$orange;
+    position: absolute;
+    top: 23%;
+    left: 40%;
+    font-size: 2em;
   }
 
   .home-image {
@@ -28,6 +28,22 @@
     align-items: center;
     position: relative;
 
+    .home-nav-container {
+      display: flex;
+      align-items: center;
+    
+
+    }
+
+    .home-nav-container:hover .home-nav-image{
+      filter: grayscale(100%);
+      transition: 0.5s;
+
+    }
+
+    
+
+
     .home-nav-image {
       width: 50%;
       height: auto;
@@ -37,13 +53,27 @@
     .home-nav-description {
       color: vars.$white;
       position: absolute;
-      top: 50%;
-      left: 35%;
-      width: 35%;
-      height: 20%;
-      background-color: rgba( 000, 000, 000, .5);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 730px;
+      line-height: 0px;
+      color: transparent;
+      font-size: 50px;
+      font-weight: 300;
+      text-transform: uppercase;
+      transition: 0.5s;
+
     }
+
+    .home-nav-container:hover .home-nav-description {
+      line-height: 50px;
+      color: white;
+      float: left;
+      margin: 0 15px;
+
+
+    }
+
+    
   }
 }
-
-

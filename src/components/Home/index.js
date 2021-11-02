@@ -14,8 +14,10 @@ const Home = () => (
     <p className="home-p">Présentation de Spinning Squid</p>
 
     <Link to="/trouve-ton-skatepark" className="home-nav">
-      <img className="home-nav-image" src={image1} alt="skatepark" />
-      <p className="home-nav-description">Description de la page Trouve ton skatepark Animation au survol à faire</p>
+      <div className="home-nav-container">
+        <img className="home-nav-image" src={image1} alt="skatepark" />
+        <p className="home-nav-description">Description de la page Trouve ton skatepark Animation au survol à faire</p>
+      </div>
     </Link>
     <Link to="/trouve-ton-matos" className="home-nav">
       <img className="home-nav-image" src={image2} alt="skatepark" />
