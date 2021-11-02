@@ -12,9 +12,10 @@ const mapDispatchToProps = (dispatch, state) => ({
   callApiGet: () => {
     dispatch(callGetSkateparkList());
   },
-  searchFieldTown: (fieldName, fieldValue) => {
-    const action = updateField(fieldName, fieldValue);
-    dispatch(action);
+  searchFieldTown: (event) => {
+    const inputId = event.target.id;
+    const inputValue = event.target.value;
+    dispatch(updateField(inputId, inputValue));
   },
   submitSkateparkSearch: (event) => {
     event.preventDefault();

@@ -1,3 +1,5 @@
+
+
 .searchresult {
 
 display:flex;
@@ -6,7 +8,8 @@ text-align: center;
 margin-top: 2em;
 float:center;
 color: white;
-background: radial-gradient(ellipse at top, #242424 0%, #000000 80%)
+background: radial-gradient(ellipse at top, #242424 0%, #000000 80%);
+font-family: 'Faster One';
 }
 
 
@@ -16,6 +19,7 @@ padding-top: 20px;
 padding-bottom: 20px;
 font-weight: bolder;
 font-size: 30px;
+font-family: 'Faster One';
 
 }
 
@@ -29,6 +33,7 @@ object-position: bottom;
 margin-left: auto;  
 margin-right: auto;  
 padding-bottom: 20px;
+font-family: 'Faster One';
 }
 
 

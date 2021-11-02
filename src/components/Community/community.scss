@@ -22,13 +22,56 @@
   }
   .eventList-item {
     margin: 2rem;
+    position: relative;
     display: flex;
     flex-direction: row;
     //background-color: vars.$orangeTransparent;
     background-color: rgba(255, 255, 255, 0.25);
+    .participants {
+      background-color: vars.$orange;
+      opacity: 0.9;
+      width: 150px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-bottom-right-radius: 25px;
+      border-bottom: 1px solid black;
+      border-left: 0;
+      border-right: 1px solid black;
+    }
+    .participate-button {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      #participate-button {
+        font-size: 1rem;
+      }
+    }
   }
   .eventList-item:nth-child(2n + 1) {
     flex-direction: row-reverse;
+    .participants {
+      left: unset;
+      top: 0;
+      right: 0;
+      border-bottom-right-radius: 0px;
+      border-bottom-left-radius: 25px;
+      border-bottom: 1px solid black;
+      border-left: 1px solid black;
+      border-right: 0;
+    }
+    .participate-button {
+      left: unset;
+      bottom: 1rem;
+      right: 1rem;
+      #participate-button {
+        font-size: 1rem;
+      }
+    }
     .description-link {
       text-align: right;
     }
@@ -80,6 +123,57 @@
       .description-link {
         text-align: center;
       }
+    }
+  }
+}
+
+//-------------------------------------------------
+//component AddPost
+//-------------------------------------------------
+#addpost {
+  margin: 2rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  .addpost-block {
+    display: flex;
+    flex-direction: row;
+    //background-color: vars.$lightGrey;
+  }
+  .addpost-image {
+    width: 60vw;
+    height: 45vh;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .addpost-charateristics {
+    padding: 2rem 0 0 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .characteristics-details div {
+      margin-bottom: 0.5rem;
+    }
+    .addpost-button {
+      margin-bottom: 3rem;
+      display: flex;
+      justify-content: center;
+      .button {
+        font-size: 1.2rem;
+        width: 140px;
+        height: 60px;
+      }
+    }
+  }
+  .addpost-description {
+    width: 100%;
+    padding: 2rem 0;
+    height: fit-content;
+    //background-color: blueviolet;
+    text-align: center;
+    #addpost-description {
+      width: 60vw;
+      height: 30vh;
     }
   }
 }

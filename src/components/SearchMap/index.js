@@ -9,24 +9,16 @@ const location = {
   lng: -122.08427,
 };
 
-const SearchMap = ({
-  skateparkLocationList = [],
-  searchFieldTown,
-  submitSkateparkSearch,
-  callApiGet,
-}) => {
-  const handleOnTownFieldChange = (event) => {
-    const inputId = event.target.id;
-    const inputValue = event.target.value;
-    searchFieldTown(inputId, inputValue);
-  };
-  callApiGet();
+const SearchMap = (props) => {
+  props.callApiGet();
   return (
     <div className="search">
       <h1 className="search-title">Trouve ton SkatePark</h1>
-      <button className="button-addspot" type="button"><Link to="/ajoute-ton-spot">Ajoute ton spot!</Link></button>
+      <button className="button-addspot" type="button">
+        <Link to="/trouve-ton-skatepark/ajoute-ton-spot">Ajoute ton spot!</Link>
+      </button>
 
-      <form className="search-form" onSubmit={submitSkateparkSearch}>
+      <form className="search-form" onSubmit={props.submitSkateparkSearch}>
         <label className="search-label">
           Ville :
           <input
@@ -35,7 +27,7 @@ const SearchMap = ({
             type="text"
             name="town"
             required
-            onChange={handleOnTownFieldChange}
+            onChange={props.searchFieldTown}
           />
         </label>
         <label className="search-label">
@@ -68,7 +60,7 @@ const SearchMap = ({
 
       <div className="search-result">
         <div className="search-list">
-          <SearchList itemList={skateparkLocationList} />
+          <SearchList itemList={props.skateparkLocationList} />
         </div>
         <div className="search-map">
           <GoogleMapReact

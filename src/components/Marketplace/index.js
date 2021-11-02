@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import ArticleList from './ArticleList';
 import './marketplace.scss';
 
@@ -15,7 +16,11 @@ const Marketplace = ({
     <div id="marketplace">
       <div className="search">
         <h2 className="title search-title">Trouve ton Matos</h2>
-
+        <div className="marketplace-post">
+          <Link to="/trouve-ton-matos/ajoute-ton-matos">
+            <button className="button">Poster une annonce</button>
+          </Link>
+        </div>
         <form className="marketplace-form" onSubmit={submitArticleSearch}>
           <input
             id="marketplace-search"
