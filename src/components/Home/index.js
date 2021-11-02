@@ -16,7 +16,7 @@ const Home = () => (
     <Link to="/trouve-ton-skatepark" className="home-nav">
       <div className="home-nav-container">
         <img className="home-nav-image" src={image1} alt="skatepark" />
-        <p className="home-nav-description">Description de la page Trouve ton skatepark Animation au survol à faire</p>
+        <p className="home-nav-description">Si tu cherches un Skatepark, ça se passe ici !</p>
       </div>
     </Link>
     <Link to="/trouve-ton-matos" className="home-nav">
@@ -26,7 +26,7 @@ const Home = () => (
       </div>
     </Link>
     <Link to="/communaute" className="home-nav">
-      <div className="home-nav-container">  
+      <div className="home-nav-container">
         <img className="home-nav-image" src={image3} alt="skatepark" />
         <p className="home-nav-description">Description de la page Whassup ?! Animation au survol à faire</p>
       </div>
