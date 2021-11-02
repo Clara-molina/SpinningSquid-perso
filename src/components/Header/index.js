@@ -61,6 +61,13 @@ const Header = () => (
       >
         Connexion
       </NavLink>
+      <NavLink
+        to="/connexion/profil"
+        className="nav-link right-header"
+        activeClassName="nav-link--active"
+      >
+        Profil
+      </NavLink>
 
       {/* Menu burger */}
       <Menu right isOpen={false}>
