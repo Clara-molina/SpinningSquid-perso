@@ -1,5 +1,6 @@
 export const UPDATE_FIELD = 'UPDATE_FIELD';
 export const SUBMIT_LOGIN = 'SUBMIT_LOGIN';
+export const SUBMIT_UPDATE_PROFILE = 'SUBMIT_UPDATE_PROFILE';
 export const SUBMIT_REGISTER = 'SUBMIT_REGISTER';
 export const SUCCESS_LOGIN = 'SUCCESS_LOGIN';
 
@@ -17,4 +18,7 @@ export const submitLogin = () => ({
 });
 export const submitRegister = () => ({
   type: SUBMIT_REGISTER,
+});
+export const submitUpdateProfile = () => ({
+  type: SUBMIT_UPDATE_PROFILE,
 });
