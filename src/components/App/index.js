@@ -11,14 +11,14 @@ import Footer from 'src/components/Footer';
 import Header from 'src/components/Header';
 import Home from 'src/components/Home';
 import PostArticle from 'src/components/Marketplace/PostArticle';
-import Profile from 'src/components/Profile';
 import SearchSkateResults from 'src/components/SearchSkateResults';
-import SpotAdd from 'src/components/SpotAdd';
 
 //Import Containers
 import Connection from 'src/containers/Connection';
 import Marketplace from 'src/containers/Marketplace';
+import Profile from 'src/containers/Profile';
 import SearchMap from 'src/containers/SearchMap';
+import SpotAdd from 'src/containers/SpotAdd';
 
 import './styles.scss';
 
@@ -54,7 +54,7 @@ const App = () => (
         <Route path="/communaute/ajoute-ton-evenement" component={AddPost} />
         <Route path="/contact" component={Contact} />
         <Route exact path="/connexion" component={Connection} />
-        <Route path="/connexion/profil" component={Profile} />
+        <Route exact path="/connexion/profil" component={Profile} />
         <Route component={Page404} />
       </Switch>
       <Footer />

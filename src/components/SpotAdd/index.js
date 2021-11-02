@@ -1,19 +1,11 @@
 import './spotadd.scss';
 
 const SpotAdd = ({ handleUploadLocalImage }) => {
-  const handleLoadLocalFile = (event) => {
-    event.preventDefault();
-    const { files } = event.target;
-    const localImageUrl = window.URL.createObjectURL(files[0]);
-
-    window.alert(localImageUrl);
-    //handleUploadLocalImage(localImageUrl);
-  };
   return (
     <div className="spotadd-container">
       <h2 className="title">Ajoute ton Spot</h2>
 
-      <form className="spotadd-form">
+      <form className="spotadd-form" onSubmit="">
         <div className="spotadd-container-category">
           <label
             htmlFor="category-skatepark"
@@ -149,14 +141,14 @@ const SpotAdd = ({ handleUploadLocalImage }) => {
           <label htmlFor="image" className="spotadd-label-image">
             Parcourir
             <input
-              id="image"
+              id="uploadImage"
               className="spotadd-input-image"
               type="file"
               name="image"
               accept="image/png, image/jpeg"
               multiple
               required
-              onChange={handleLoadLocalFile}
+              onChange={handleUploadLocalImage}
             />
           </label>
         </div>
