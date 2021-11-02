@@ -12,6 +12,7 @@ import Header from 'src/components/Header';
 import Home from 'src/components/Home';
 import PostArticle from 'src/components/Marketplace/PostArticle';
 import SearchSkateResults from 'src/components/SearchSkateResults';
+import NewsLetter from '../NewsLetter';
 
 //Import Containers
 import Connection from 'src/containers/Connection';
@@ -55,6 +56,7 @@ const App = () => (
         <Route path="/contact" component={Contact} />
         <Route exact path="/connexion" component={Connection} />
         <Route exact path="/connexion/profil" component={Profile} />
+        <Route path="/newsletter" component={NewsLetter} />
         <Route component={Page404} />
       </Switch>
       <Footer />
