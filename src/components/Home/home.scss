@@ -3,12 +3,27 @@
 
 .home-container {
 
+  .home-logo {
+    height : 300px;
+    width: 300px;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size: 12em;
+    font-family: 'Sedgwick Ave Display';
+    text-shadow: black 10px 10px 10px;
+    text-align: center;
+  }
+
   .home-title {
     color: vars.$orange;
     position: absolute;
-    top: 23%;
-    left: 40%;
-    font-size: 2em;
+    top: 12%;
+    left: 25%;
+    font-size: 12em;
+    font-family: 'Sedgwick Ave Display';
+    text-shadow: black 10px 10px 10px;
+    text-align: center;
   }
 
   .home-image {
@@ -37,8 +52,7 @@
     }
 
     .home-nav-container:hover .home-nav-image{
-      filter: grayscale(100%);
-      filter: blur(10px);
+      filter: grayscale(100%) blur(10px);
       transition: 0.5s;
 
     }

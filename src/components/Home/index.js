@@ -4,12 +4,14 @@ import imageHome from 'src/assets/img/home.jpg';
 import image1 from 'src/assets/img/1.jpg';
 import image2 from 'src/assets/img/2.jpg';
 import image3 from 'src/assets/img/3.jpg';
+import logo from 'src/assets/img/logo1.png';
 
 import './home.scss';
 
 const Home = () => (
   <div className="home-container">
     <h1 className="home-title">Spinning Squid</h1>
+    <img className="home-logo" src={logo} alt="logo spinning squid" />
     <img className="home-image" src={imageHome} alt="skatepark" />
     <p className="home-p">Présentation de Spinning Squid</p>
 
