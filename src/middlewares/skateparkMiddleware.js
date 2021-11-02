@@ -32,6 +32,8 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       break;
     case SUBMIT_ADD_SPOT:
       const endPointAdd_Spot = '/newskatepark-save';
+      console.log('on y passe youpi');
+      //console.log(store.getState().skatepark.addSpot.tryPromiseField);
       axios
         .post(baseSpinningSquid + endPointAdd_Spot,{
           skatepark:'test',
@@ -47,7 +49,7 @@ const skateparkMiddleware = (store) => (next) => (action) => {
           table:'test',
           benche:'test',
           state:'test',
-          image:store.getState().addSpot.tryPromiseField,
+          image:store.getState().skatepark.addSpot.tryPromiseField,
         })
         .then((response) => {
           console.log('response from API : ');
@@ -59,9 +61,9 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       .catch((error) => {
         console.warn(error);
       });
-      // store.dispatch(
-      //   successSubmitAddSpot(
-      //     'a remplacer par kekchose ou pas dans skateparkMiddleware'));
+      store.dispatch(
+        successSubmitAddSpot(
+          'a remplacer par kekchose ou pas dans skateparkMiddleware'));
 
       break;
     default:
