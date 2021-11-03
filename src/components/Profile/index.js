@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 
 const Profile = (props) => (
   <div className="profile">
-    <h1 className="profile-title">Bienvenue {props.usernameEdit}</h1>
+    <h1 className="profile-title">Bienvenue {props.usernameConnection}</h1>
 
     <div className="profile-container">
       <img className="profile-avatar" src={logo2} alt="avatar" />
-      <p className="profile-name">UserName</p>
+      <p className="profile-name">{props.usernameConnection}</p>
       <Popup
         trigger={
           (
@@ -129,11 +129,11 @@ const Profile = (props) => (
     </div>
 
     <div className="profile-articles">
-      <Link>
+      <Link to="">
         <img className="profile-articles-img" src="" alt="" />
         <h2 className="profile-articles-title">Titre de l'annonce 1</h2>
       </Link>
-      <Link>
+      <Link to="">
         <img className="profile-articles-img" src="" alt="" />
         <h2 className="profile-articles-title">Titre de l'annonce 2</h2>
       </Link>
