@@ -1,7 +1,6 @@
 import './spotadd.scss';
 
-const SpotAdd = (props) => {
-  return (
+const SpotAdd = (props) => (
     <div className="spotadd-container">
       <h2 className="title">Ajoute ton Spot</h2>
 
@@ -17,7 +16,6 @@ const SpotAdd = (props) => {
               className="spotadd-check-category"
               type="checkbox"
               name="skatepark"
-              checked
             />
           </label>
 
@@ -198,4 +196,5 @@ const SpotAdd = (props) => {
     </div>
   );
 };
+
 export default SpotAdd;
