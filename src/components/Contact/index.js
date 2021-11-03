@@ -14,11 +14,26 @@ const Contact = (props) => (
           type="text"
         />
         <label className="contact-label">Nom</label>
-        <input id="name" className="contact-input" type="text" />
+        <input
+          id="name"
+          onChange={props.handleChange}
+          className="contact-input"
+          type="text"
+        />
         <label className="contact-label">Email</label>
-        <input id="email" className="contact-input" type="email" />
+        <input
+          id="email"
+          onChange={props.handleChange}
+          className="contact-input"
+          type="email"
+        />
         <label className="contact-label"> Message</label>
-        <input id="message" className="contact-input-message" type="text" />
+        <input
+          id="message"
+          onChange={props.handleChange}
+          className="contact-input-message"
+          type="text"
+        />
 
         <button className="contact-button" type="submit">
           Envoyer

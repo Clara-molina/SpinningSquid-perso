@@ -42,7 +42,6 @@ const SpotAdd = (props) => (
             />
           </label>
         </div>
-
         <div className="spotadd-container-adress">
           <h2 className="spotadd-title">Adresse</h2>
           <input
@@ -195,6 +194,7 @@ const SpotAdd = (props) => (
         </button>
       </form>
     </div>
-);
+  );
+};
 
 export default SpotAdd;
