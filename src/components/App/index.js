@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './styles.scss';
 
 // Import Containers
-import Header from 'src/containers/Header/';
-
 import Connection from 'src/containers/Connection';
 import Contact from 'src/containers/Contact';
+import Header from 'src/containers/Header/';
 import Marketplace from 'src/containers/Marketplace';
+import NewsLetter from 'src/containers/NewsLetter';
 import Profile from 'src/containers/Profile';
 import SearchMap from 'src/containers/SearchMap';
 import SpotAdd from 'src/containers/SpotAdd';
@@ -22,7 +22,6 @@ import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
 import PostArticle from 'src/components/Marketplace/PostArticle';
 import SearchSkateResults from 'src/components/SearchSkateResults';
-import NewsLetter from 'src/components/NewsLetter';
 
 // Import page d'erreur
 import NotFound from 'src/components/NotFound';
