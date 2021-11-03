@@ -22,10 +22,10 @@ import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
 import PostArticle from 'src/components/Marketplace/PostArticle';
 import SearchSkateResults from 'src/components/SearchSkateResults';
-import NewsLetter from '../NewsLetter';
+import NewsLetter from 'src/components/NewsLetter';
 
 // Import page d'erreur
-import NotFound from '../NotFound';
+import NotFound from 'src/components/NotFound';
 
 // == Composant
 const App = () => (
