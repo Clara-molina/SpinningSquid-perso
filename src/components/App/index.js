@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //Import Components
 import AddPost from 'src/components/Community/AddPost';
 import Community from 'src/components/Community';
-import Contact from 'src/components/Contact';
 import DetailsArticle from 'src/components/Marketplace/DetailsArticle';
 import DetailsPost from 'src/components/Community/DetailsPost';
 import Footer from 'src/components/Footer';
@@ -15,6 +14,7 @@ import SearchSkateResults from 'src/components/SearchSkateResults';
 
 //Import Containers
 import Connection from 'src/containers/Connection';
+import Contact from 'src/containers/Contact';
 import Marketplace from 'src/containers/Marketplace';
 import Profile from 'src/containers/Profile';
 import SearchMap from 'src/containers/SearchMap';
