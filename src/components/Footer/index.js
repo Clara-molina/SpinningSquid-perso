@@ -13,12 +13,11 @@ const Footer = () => (
     </NavLink>
 
     <NavLink
-      to=""
       className="navFooter-link"
+      to="/newsletter"
       activeClassName="navFooter-link--active"
-      exact
     >
-      Ici un link
+      Newsletter
     </NavLink>
 
     <NavLink

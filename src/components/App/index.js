@@ -1,18 +1,11 @@
+/* eslint-disable import/no-extraneous-dependencies */
 // == Import
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import './styles.scss';
 
-//Import Components
-import AddPost from 'src/components/Community/AddPost';
-import Community from 'src/components/Community';
-import DetailsArticle from 'src/components/Marketplace/DetailsArticle';
-import DetailsPost from 'src/components/Community/DetailsPost';
-import Footer from 'src/components/Footer';
-import Header from 'src/components/Header';
-import Home from 'src/components/Home';
-import PostArticle from 'src/components/Marketplace/PostArticle';
-import SearchSkateResults from 'src/components/SearchSkateResults';
+// Import Containers
+import Header from 'src/containers/Header/';
 
-//Import Containers
 import Connection from 'src/containers/Connection';
 import Contact from 'src/containers/Contact';
 import Marketplace from 'src/containers/Marketplace';
@@ -20,11 +13,19 @@ import Profile from 'src/containers/Profile';
 import SearchMap from 'src/containers/SearchMap';
 import SpotAdd from 'src/containers/SpotAdd';
 
-import './styles.scss';
+// Import Components
+import AddPost from 'src/components/Community/AddPost';
+import Community from 'src/components/Community';
+import DetailsArticle from 'src/components/Marketplace/DetailsArticle';
+import DetailsPost from 'src/components/Community/DetailsPost';
+import Footer from 'src/components/Footer';
+import Home from 'src/components/Home';
+import PostArticle from 'src/components/Marketplace/PostArticle';
+import SearchSkateResults from 'src/components/SearchSkateResults';
+import NewsLetter from '../NewsLetter';
 
-function Page404() {
-  return <h2>Page404</h2>;
-}
+// Import page d'erreur
+import NotFound from '../NotFound';
 
 // == Composant
 const App = () => (
@@ -55,7 +56,8 @@ const App = () => (
         <Route path="/contact" component={Contact} />
         <Route exact path="/connexion" component={Connection} />
         <Route exact path="/connexion/profil" component={Profile} />
-        <Route component={Page404} />
+        <Route path="/newsletter" component={NewsLetter} />
+        <Route component={NotFound} />
       </Switch>
       <Footer />
     </Router>
