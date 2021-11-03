@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Contact from 'src/components/Contact';
 import logo from 'src/assets/img/logo-blanc.png';
 import { updateField } from 'src/actions/userActions';
+import { submitMessage } from 'src/actions/contactActions';
 
 const mapStateToProps = (state) => ({
   firstname: state.contact.firstname,
@@ -13,13 +14,12 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  handleChange: (fieldName, fieldValue) => {
-    const action = updateField(fieldName, fieldValue);
-    dispatch(action);
+  handleChange: (event) => {
+    dispatch(updateField(event.target.id, event.target.value));
   },
-  handleSubmitMessage: (fieldName, fieldValue) => {
-    const action = updateField(fieldName, fieldValue);
-    dispatch(action);
+  handleSubmitMessage: (event) => {
+    event.preventDefault();
+    dispatch(submitMessage());
   },
 });
 

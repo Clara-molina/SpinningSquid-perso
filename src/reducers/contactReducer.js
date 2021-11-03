@@ -14,44 +14,32 @@ const reducer = (state = initialState, action = {}) => {
       if (action.fieldName === 'firstname') {
         return {
           ...state,
-          contact: {
-            ...state.contact,
-            firstname: action.fieldValue,
-          },
+          firstname: action.fieldValue,
         };
       }
       if (action.fieldName === 'name') {
         return {
           ...state,
-          contact: {
-            ...state.contact,
-            name: action.fieldValue,
-          },
+          name: action.fieldValue,
         };
       }
       if (action.fieldName === 'email') {
         return {
           ...state,
-          contact: {
-            ...state.contact,
-            email: action.fieldValue,
-          },
+          email: action.fieldValue,
         };
       }
       if (action.fieldName === 'message') {
         return {
           ...state,
-          contact: {
-            ...state.contact,
-            message: action.fieldValue,
-          },
+          message: action.fieldValue,
         };
       }
 
     case SUBMIT_MESSAGE_SUCCESS:
       return {
         ...state,
-        message: action.message_success,
+        response_API: action.message_success,
       };
     default:
       return state;
