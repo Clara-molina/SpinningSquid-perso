@@ -4,6 +4,7 @@ import Profile from 'src/components/Profile';
 import { updateField, submitUpdateProfile } from 'src/actions/userActions';
 
 const mapStateToProps = (state) => ({
+  usernameConnection: state.user.usernameConnexion,
   usernameEdit: state.user.profile.usernameEdit,
   passwordEdit: state.user.profile.passwordEdit,
   lastnameEdit: state.user.profile.lastnameEdit,
