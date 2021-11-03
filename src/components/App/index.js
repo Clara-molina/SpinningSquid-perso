@@ -5,22 +5,23 @@ import './styles.scss';
 
 // Import Containers
 import Header from 'src/containers/Header/';
+
 import Connection from 'src/containers/Connection';
+import Contact from 'src/containers/Contact';
 import Marketplace from 'src/containers/Marketplace';
 import Profile from 'src/containers/Profile';
 import SearchMap from 'src/containers/SearchMap';
 import SpotAdd from 'src/containers/SpotAdd';
 
 // Import Components
-import AddPost from '../Community/AddPost';
-import Community from '../Community';
-import Contact from '../Contact';
-import DetailsArticle from '../Marketplace/DetailsArticle';
-import DetailsPost from '../Community/DetailsPost';
-import Footer from '../Footer';
-import Home from '../Home';
-import PostArticle from '../Marketplace/PostArticle';
-import SearchSkateResults from '../SearchSkateResults';
+import AddPost from 'src/components/Community/AddPost';
+import Community from 'src/components/Community';
+import DetailsArticle from 'src/components/Marketplace/DetailsArticle';
+import DetailsPost from 'src/components/Community/DetailsPost';
+import Footer from 'src/components/Footer';
+import Home from 'src/components/Home';
+import PostArticle from 'src/components/Marketplace/PostArticle';
+import SearchSkateResults from 'src/components/SearchSkateResults';
 import NewsLetter from '../NewsLetter';
 
 // Import page d'erreur

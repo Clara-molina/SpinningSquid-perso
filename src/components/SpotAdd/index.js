@@ -1,36 +1,49 @@
 import './spotadd.scss';
 
-const SpotAdd = ({ handleUploadLocalImage }) => (
-  <div className="spotadd-container">
-    <h2 className="title">Ajoute ton Spot</h2>
+const SpotAdd = (props) => {
+  return (
+    <div className="spotadd-container">
+      <h2 className="title">Ajoute ton Spot</h2>
 
-    <form className="spotadd-form" onSubmit="">
-      <div className="spotadd-container-category">
-        <label
-          htmlFor="category-skatepark"
-          className="spotadd-label-category"
-        >
-          SkatePark
-          <input
-            id="category-skatepark"
-            className="spotadd-check-category"
-            type="checkbox"
-            name="skatepark"
-          />
-        </label>
+      <form className="spotadd-form" onSubmit={props.handleSubmitAddPost}>
+        <div className="spotadd-container-category">
+          <label
+            htmlFor="category-skatepark"
+            className="spotadd-label-category"
+          >
+            SkatePark
+            <input
+              id="category-skatepark"
+              className="spotadd-check-category"
+              type="checkbox"
+              name="skatepark"
+              checked
+            />
+          </label>
 
-        <label
-          htmlFor="category-pumptrack"
-          className="spotadd-label-category"
-        >
-          PumpTrack
-          <input
-            id="category-pumptrack"
-            className="spotadd-check-category"
-            type="checkbox"
-            name="pumptrack"
-          />
-        </label>
+          <label
+            htmlFor="category-pumptrack"
+            className="spotadd-label-category"
+          >
+            PumpTrack
+            <input
+              id="category-pumptrack"
+              className="spotadd-check-category"
+              type="checkbox"
+              name="pumptrack"
+            />
+          </label>
+
+          <label htmlFor="category-street" className="spotadd-label-category">
+            Street
+            <input
+              id="category-street"
+              className="spotadd-check-category"
+              type="checkbox"
+              name="streetspot"
+            />
+          </label>
+        </div>
 
         <label htmlFor="category-street" className="spotadd-label-category">
           Street
@@ -134,22 +147,22 @@ const SpotAdd = ({ handleUploadLocalImage }) => (
         </label>
       </div>
 
-      <div className="spotadd-container-image">
-        <h2 className="spotadd-title">Image</h2>
-        <label htmlFor="image" className="spotadd-label-image">
-          Parcourir
-          <input
-            id="uploadImage"
-            className="spotadd-input-image"
-            type="file"
-            name="image"
-            accept="image/png, image/jpeg"
-            multiple
-            required
-            onChange={handleUploadLocalImage}
-          />
-        </label>
-      </div>
+        <div className="spotadd-container-image">
+          <h2 className="spotadd-title">Image</h2>
+          <label htmlFor="image" className="spotadd-label-image">
+            Parcourir
+            <input
+              id="uploadImage"
+              className="spotadd-input-image"
+              type="file"
+              name="image"
+              accept="image/png, image/jpeg"
+              multiple
+              required
+              onChange={props.handleUploadLocalImage}
+            />
+          </label>
+        </div>
 
       <div className="spotadd-container-state">
         <h2 className="spotadd-title">Etat</h2>

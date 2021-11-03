@@ -1,14 +1,18 @@
-import contact from 'src/assets/img/logo-blanc.png';
 import './contact.scss';
 
-const Contact = () => (
+const Contact = (props) => (
   <div className="contact">
     <h1 className="contact-title">Que puis-je pour toi jeune skateur ?</h1>
     <div className="contact-container">
-      <img className="contact-image" alt="" src={contact} />
-      <form className="contact-form">
+      <img className="contact-image" alt="" src={props.logo} />
+      <form className="contact-form" onSubmit={props.handleSubmitMessage}>
         <label className="contact-label">Prénom</label>
-        <input id="firstname" className="contact-input" type="text" />
+        <input
+          id="firstname"
+          onChange={props.handleChange}
+          className="contact-input"
+          type="text"
+        />
         <label className="contact-label">Nom</label>
         <input id="name" className="contact-input" type="text" />
         <label className="contact-label">Email</label>
@@ -16,7 +20,9 @@ const Contact = () => (
         <label className="contact-label"> Message</label>
         <input id="message" className="contact-input-message" type="text" />
 
-        <button className="contact-button" type="submit">Envoyer</button>
+        <button className="contact-button" type="submit">
+          Envoyer
+        </button>
       </form>
     </div>
   </div>

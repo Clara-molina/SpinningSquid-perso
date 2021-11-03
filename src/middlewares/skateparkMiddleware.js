@@ -2,8 +2,10 @@ import axios from 'axios';
 import {
   GET_SKATEPARK_LIST,
   successGetSkateparkList,
+  SUBMIT_ADD_SPOT,
+  successSubmitAddSpot,
 } from 'src/actions/skateparkActions';
-import { baseURI } from 'src/routesBack';
+import { baseURI, baseSpinningSquid } from 'src/routesBack';
 
 const skateparkMiddleware = (store) => (next) => (action) => {
   const endPointSkatepark = '/skatepark?_embed=true';
@@ -26,6 +28,42 @@ const skateparkMiddleware = (store) => (next) => (action) => {
           'a remplacer par le call API dans skateparkMiddleware'
         )
       );
+
+      break;
+    case SUBMIT_ADD_SPOT:
+      const endPointAdd_Spot = '/newskatepark-save';
+      console.log('on y passe youpi');
+      //console.log(store.getState().skatepark.addSpot.tryPromiseField);
+      axios
+        .post(baseSpinningSquid + endPointAdd_Spot,{
+          skatepark:'test',
+          pumptrack:'test',
+          street:'test',
+          streetspot:'test',
+          zipcode:'test',
+          city:'test',
+          parking:'test',
+          water:'test',
+          trashcan:'test',
+          lighting:'test',
+          table:'test',
+          benche:'test',
+          state:'test',
+          image:store.getState().skatepark.addSpot.tryPromiseField,
+        })
+        .then((response) => {
+          console.log('response from API : ');
+          console.log(response);
+      store.dispatch(
+        successGetSkateparkList('a remplacer par kekchose ou pas dans skateparkMiddleware')
+      );
+      })
+      .catch((error) => {
+        console.warn(error);
+      });
+      store.dispatch(
+        successSubmitAddSpot(
+          'a remplacer par kekchose ou pas dans skateparkMiddleware'));
 
       break;
     default:
