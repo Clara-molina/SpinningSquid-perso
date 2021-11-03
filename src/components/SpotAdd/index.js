@@ -43,16 +43,6 @@ const SpotAdd = (props) => (
           </label>
         </div>
 
-        <label htmlFor="category-street" className="spotadd-label-category">
-          Street
-          <input
-            id="category-street"
-            className="spotadd-check-category"
-            type="checkbox"
-            name="street"
-          />
-        </label>
-
         <div className="spotadd-container-adress">
           <h2 className="spotadd-title">Adresse</h2>
           <input
