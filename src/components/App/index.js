@@ -27,7 +27,9 @@ import SearchSkateResults from 'src/components/SearchSkateResults';
 import NotFound from 'src/components/NotFound';
 
 // == Composant
-const App = () => (
+const App = (props) => {
+  props.getLocalStorageDataToState();
+  return (
   <div className="app">
     <Router>
       <Header />
@@ -61,7 +63,7 @@ const App = () => (
       <Footer />
     </Router>
   </div>
-);
+)};
 
 // == Export
 export default App;
