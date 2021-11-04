@@ -24,12 +24,19 @@ const authMiddleware = (store) => (next) => (action) => {
             localStorage.setItem('userData', JSONInformationsObject);
           }
           store.dispatch(doneLogin);
+          window.alert(
+            `
+            Connexion réussie!
+            Bisous.
+            `
+          );
         })
         .catch((error) => {
           console.warn(error);
         });
 
       break;
+
     case SUBMIT_REGISTER:
       axios
         .post(baseSpinningSquid + '/newuser-save', {
@@ -59,6 +66,7 @@ const authMiddleware = (store) => (next) => (action) => {
         });
 
       break;
+
     case SUBMIT_UPDATE_PROFILE:
       console.log('Renseigner path update profile dans la requete axios');
       // axios

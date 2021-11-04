@@ -15,8 +15,8 @@ const enhancers = composeEnhancers(
     skateparkMiddleware,
     marketplaceMiddleware,
     contactMiddleware,
-    newsLetterMiddleware
-  )
+    newsLetterMiddleware,
+  ),
 );
 
 const store = createStore(reducer, enhancers);

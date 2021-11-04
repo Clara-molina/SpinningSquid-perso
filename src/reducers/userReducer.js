@@ -169,7 +169,6 @@ const reducer = (state = initialState, action = {}) => {
       console.log('case: SUCCESS_LOGIN');
       return {
         ...state,
-        token: action.token,
         isLogged: true,
         username: action.usernameConnexion,
       };
@@ -178,7 +177,6 @@ const reducer = (state = initialState, action = {}) => {
       console.log('case: SUCCESS_LOGOUT');
       return {
         ...state,
-        token: '',
         isLogged: false,
         usernameConnexion: '',
         passwordConnexion: '',
