@@ -41,6 +41,7 @@ const Profile = (props) => (
                     id="lastnameEdit"
                     type="text"
                     className="form-edit-input"
+                    value={props.lastnameEdit}
                     // required
                     onChange={props.handleChange}
                   />
@@ -51,6 +52,7 @@ const Profile = (props) => (
                     id="firstnameEdit"
                     type="text"
                     className="form-edit-input"
+                    value={props.firstnameEdit}
                     // required
                     onChange={props.handleChange}
                   />
@@ -61,6 +63,7 @@ const Profile = (props) => (
                     id="streetEdit"
                     type="text"
                     className="form-edit-input"
+                    value={props.streetEdit}
                     // required
                     onChange={props.handleChange}
                   />
@@ -71,6 +74,7 @@ const Profile = (props) => (
                     id="postalEdit"
                     type="text"
                     className="form-edit-input"
+                    value={props.postalEdit}
                     // required
                     onChange={props.handleChange}
                   />
@@ -81,6 +85,7 @@ const Profile = (props) => (
                     id="cityEdit"
                     type="text"
                     className="form-edit-input"
+                    value={props.cityEdit}
                     // required
                     onChange={props.handleChange}
                   />
@@ -91,6 +96,7 @@ const Profile = (props) => (
                     id="emailEdit"
                     type="email"
                     className="form-edit-input"
+                    value={props.emailEdit}
                     // required
                     onChange={props.handleChange}
                   />
@@ -101,6 +107,7 @@ const Profile = (props) => (
                     id="passwordEdit"
                     type="password"
                     className="form-edit-input"
+                    value={props.passwordEdit}
                     // required
                     onChange={props.handleChange}
                   />
