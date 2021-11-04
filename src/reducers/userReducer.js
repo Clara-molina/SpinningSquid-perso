@@ -1,4 +1,8 @@
-import { UPDATE_FIELD, SUCCESS_LOGIN, SUCCESS_LOGOUT } from 'src/actions/userActions';
+import {
+  UPDATE_FIELD,
+  SUCCESS_LOGIN,
+  SUCCESS_LOGOUT,
+} from 'src/actions/userActions';
 
 export const initialState = {
   isLogged: false,

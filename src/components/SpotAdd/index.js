@@ -5,6 +5,18 @@ const SpotAdd = (props) => (
     <h2 className="title">Ajoute ton Spot</h2>
 
     <form className="spotadd-form" onSubmit={props.handleSubmitAddPost}>
+      <div className="spotadd-container-title">
+        <label htmlFor="title-skatepark" className="spotadd-label-title">
+          Titre:
+          <input
+            id="titleSkatepark"
+            className="spotadd-check-title"
+            type="text"
+            name="skatepark"
+            onChange={props.handleChangeField}
+          />
+        </label>
+      </div>
       <div className="spotadd-container-category">
         <label htmlFor="category-skatepark" className="spotadd-label-category">
           SkatePark

@@ -36,6 +36,15 @@ const reducer = (state = initialState, action = {}) => {
           searchFieldTown: action.fieldValue,
         };
       }
+      if (action.fieldName === 'titleSkatepark') {
+        return {
+          ...state,
+          addSpot: {
+            ...state.addSpot,
+            title: action.fieldValue,
+          },
+        };
+      }
       if (action.fieldName === 'categorySkatepark') {
         return {
           ...state,
