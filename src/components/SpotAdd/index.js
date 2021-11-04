@@ -83,18 +83,18 @@ const SpotAdd = (props) => (
         <input
           id="addSpotlongitude"
           className="spotadd-input"
-          type="text"
-          name="town"
-          placeholder="Ville"
+          type="number"
+          name="longitude"
+          placeholder="longitude"
           required
           onChange={props.handleChangeField}
         />
         <input
-          id="addSpotlattitude"
+          id="addSpotlatitude"
           className="spotadd-input"
-          type="text"
-          name="town"
-          placeholder="Ville"
+          type="number"
+          name="latitude"
+          placeholder="latitude"
           required
           onChange={props.handleChangeField}
         />

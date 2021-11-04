@@ -17,6 +17,8 @@ export const initialState = {
     street: '',
     postal: '',
     town: '',
+    latitude: '',
+    longitude: '',
     parking: false,
     water: false,
     trashcan: false,
@@ -151,6 +153,24 @@ const reducer = (state = initialState, action = {}) => {
           addSpot: {
             ...state.addSpot,
             street: action.fieldValue,
+          },
+        };
+      }
+      if (action.fieldName === 'addSpotlongitude') {
+        return {
+          ...state,
+          addSpot: {
+            ...state.addSpot,
+            longitude: action.fieldValue,
+          },
+        };
+      }
+      if (action.fieldName === 'addSpotlatitude') {
+        return {
+          ...state,
+          addSpot: {
+            ...state.addSpot,
+            latitude: action.fieldValue,
           },
         };
       }
