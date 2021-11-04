@@ -31,6 +31,7 @@ const authMiddleware = (store) => (next) => (action) => {
             Bisous.
             `
           );
+          window.location.reload(false);
         })
         .catch((error) => {
           console.warn(error);
