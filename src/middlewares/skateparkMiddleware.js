@@ -36,6 +36,7 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       //console.log(store.getState().skatepark.addSpot.tryPromiseField);
       axios
         .post(baseSpinningSquid + endPointAdd_Spot, {
+          title: store.getState().skatepark.addSpot.title,
           skatepark: store.getState().skatepark.addSpot.categorySkatepark,
           pumptrack: store.getState().skatepark.addSpot.categoryPumptrack,
           street: store.getState().skatepark.addSpot.categoryStreet,
