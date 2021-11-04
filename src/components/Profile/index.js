@@ -12,11 +12,9 @@ const Profile = (props) => (
       <p className="profile-name">{props.usernameConnection}</p>
       <Popup
         trigger={
-          (
-            <button className="profile-button-edit" type="button">
-              Editer mon profil
-            </button>
-          )
+          <button className="profile-button-edit" type="button">
+            Editer mon profil
+          </button>
         }
         modal
         nested
@@ -105,6 +103,16 @@ const Profile = (props) => (
                     className="form-edit-input"
                     // required
                     onChange={props.handleChange}
+                  />
+                </label>
+                <label className="form-edit-label" htmlFor="passwordEdit">
+                  Avatar
+                  <input
+                    id="avatarImage"
+                    type="file"
+                    className="form-edit-input"
+                    // required
+                    onChange={props.handleUploadLocalImage}
                   />
                 </label>
               </div>

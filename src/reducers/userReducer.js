@@ -25,6 +25,7 @@ export const initialState = {
     streetEdit: '',
     postalEdit: '',
     cityEdit: '',
+    avatarImage: 'initial state',
   },
 };
 
@@ -160,6 +161,15 @@ const reducer = (state = initialState, action = {}) => {
           profile: {
             ...state.profile,
             passwordEdit: action.fieldValue,
+          },
+        };
+      }
+      if (action.fieldName === 'avatarImageEdit') {
+        return {
+          ...state,
+          profile: {
+            ...state.profile,
+            avatarImageEdit: action.fieldValue,
           },
         };
       }
