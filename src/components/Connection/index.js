@@ -119,6 +119,9 @@ const Connection = ({ handleChange, handleSubmitLogin, handleSubmitRegister }) =
             <button className="form-connection-button" type="submit">
               Connexion
             </button>
+          <button className="form-connection-button" type="submit">
+            Connexion
+          </button>
         </form>
       </div>
     </div>
