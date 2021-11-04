@@ -1,4 +1,4 @@
-//encodage image base64
+// encodage image base64
 export default function returnBase64Img(fileObject) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -10,4 +10,9 @@ export default function returnBase64Img(fileObject) {
       reject(error);
     };
   });
+}
+
+// Reset localStorage (déconnexion)
+export function resetStorage() {
+  localStorage.clear();
 }

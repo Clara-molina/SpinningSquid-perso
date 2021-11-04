@@ -1,12 +1,9 @@
 import { connect } from 'react-redux';
-import {
-  submitLogout
-} from 'src/actions/userActions';
+import { submitLogout } from 'src/actions/userActions';
 
 import Header from 'src/components/Header';
 
-const mapStateToProps = (state) => ({
-  isLogged: state.user.isLogged,
+const mapStateToProps = () => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
