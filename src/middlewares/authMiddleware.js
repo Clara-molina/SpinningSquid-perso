@@ -4,6 +4,7 @@ import {
   successLogin,
   SUBMIT_REGISTER,
   SUBMIT_UPDATE_PROFILE,
+  fillStateUserData,
 } from 'src/actions/userActions';
 import { baseURIUser, baseSpinningSquid } from 'src/routesBack';
 
@@ -23,8 +24,11 @@ const authMiddleware = (store) => (next) => (action) => {
             const JSONInformationsObject = JSON.stringify(response.data);
             localStorage.setItem('userData', JSONInformationsObject);
             localStorage.setItem('logged', true);
+            store.dispatch(doneLogin);
+            store.dispatch(fillStateUserData(localStorage.getItem('userData')));
           }
-          store.dispatch(doneLogin);
+
+
           window.location.reload(false);
         })
         .catch((error) => {

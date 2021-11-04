@@ -15,7 +15,10 @@ const skateparkMiddleware = (store) => (next) => (action) => {
         .get(baseURI + endPointSkatepark)
         .then((response) => {
           console.log('response from API : ');
-          console.log(response);
+          console.log(response.data);
+          console.log(response.data[0]);
+          console.log(response.data[0].meta);
+          console.log(response.data[0].meta.longitude);
       store.dispatch(
         successGetSkateparkList(response.data)
       );

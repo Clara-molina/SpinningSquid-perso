@@ -2,6 +2,7 @@ import {
   UPDATE_FIELD,
   SUCCESS_LOGIN,
   SUCCESS_LOGOUT,
+  FILL_STATE_BOOL,
   FILL_STATE_USERDATA,
 } from 'src/actions/userActions';
 
@@ -32,10 +33,18 @@ export const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case FILL_STATE_USERDATA:
+    case FILL_STATE_BOOL:
       return {
         ...state,
         isLogged: action.userData,
+      };
+    case FILL_STATE_USERDATA:
+      return {
+        ...state,
+        cityEdit: action.token,
+        firstnameEdit: action.displayName,
+        emailEdit: action.email,
+        usernameEdit: action.nicename,
       };
     case UPDATE_FIELD:
       if (action.fieldName === 'usernameInscription') {
