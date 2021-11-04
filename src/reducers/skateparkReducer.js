@@ -143,7 +143,7 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           addSpot: {
             ...state.addSpot,
-            street: action.fieldValue,
+            postal: action.fieldValue,
           },
         };
       }
@@ -152,7 +152,7 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           addSpot: {
             ...state.addSpot,
-            street: action.fieldValue,
+            town: action.fieldValue,
           },
         };
       }
