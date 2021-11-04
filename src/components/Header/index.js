@@ -6,9 +6,7 @@ import avatar from 'src/assets/img/logo2.png';
 import './header.scss';
 import { resetStorage } from '../../generic_functions';
 
-const Header = () => {
-  const logged = localStorage.getItem('logged');
-
+const Header = (props) => {
   return (
 
     <nav className="nav">
@@ -60,7 +58,7 @@ const Header = () => {
           Question ?
         </NavLink>
 
-        {!logged && (
+        {!props.isLogged && (
           <NavLink
             to="/connexion"
             exact
@@ -71,7 +69,7 @@ const Header = () => {
           </NavLink>
         )}
 
-        {logged && (
+        {props.isLogged && (
           <NavLink
             to="/"
             className="nav-link right-header"
@@ -81,7 +79,7 @@ const Header = () => {
           </NavLink>
         )}
 
-        {logged && (
+        {props.isLogged && (
           <NavLink
             to="/connexion/profil"
             className="right-header"

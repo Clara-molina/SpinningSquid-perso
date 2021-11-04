@@ -3,7 +3,8 @@ import { submitLogout } from 'src/actions/userActions';
 
 import Header from 'src/components/Header';
 
-const mapStateToProps = () => ({
+const mapStateToProps = (state) => ({
+  isLogged: state.user.isLogged,
 });
 
 const mapDispatchToProps = (dispatch) => ({
