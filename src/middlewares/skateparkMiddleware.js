@@ -11,23 +11,23 @@ const skateparkMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_SKATEPARK_LIST:
       const endPointSkatepark = '/skatepark?_embed=true';
-      // axios
-      //   .get(baseURI + endPointSkatepark)
-      //   .then((response) => {
-      //     console.log('response from API : ');
-      //     console.log(response);
-      // store.dispatch(
-      //   successGetSkateparkList(response.data)
-      // );
-      // })
-      // .catch((error) => {
-      //   console.warn(error);
-      // });
+      axios
+        .get(baseURI + endPointSkatepark)
+        .then((response) => {
+          console.log('response from API : ');
+          console.log(response);
       store.dispatch(
-        successGetSkateparkList(
-          'a remplacer par le call API dans skateparkMiddleware'
-        )
+        successGetSkateparkList(response.data)
       );
+      })
+      .catch((error) => {
+        console.warn(error);
+      });
+      // store.dispatch(
+      //   successGetSkateparkList(
+      //     'a remplacer par le call API dans skateparkMiddleware'
+      //   )
+      // );
 
       break;
     case SUBMIT_ADD_SPOT:
@@ -39,11 +39,11 @@ const skateparkMiddleware = (store) => (next) => (action) => {
           title: store.getState().skatepark.addSpot.title,
           skatepark: store.getState().skatepark.addSpot.categorySkatepark,
           pumptrack: store.getState().skatepark.addSpot.categoryPumptrack,
-          street: store.getState().skatepark.addSpot.categoryStreet,
-          streetspot: store.getState().skatepark.addSpot.street,
+          streetspot: store.getState().skatepark.addSpot.categoryStreet,
+          street: store.getState().skatepark.addSpot.street,
           zipcode: store.getState().skatepark.addSpot.postal,
           city: store.getState().skatepark.addSpot.town,
-          latitude: store.getState().skatepark.addSpot.lattitude,
+          latitude: store.getState().skatepark.addSpot.latitude,
           longitude: store.getState().skatepark.addSpot.longitude,
           parking: store.getState().skatepark.addSpot.parking,
           water: store.getState().skatepark.addSpot.water,
