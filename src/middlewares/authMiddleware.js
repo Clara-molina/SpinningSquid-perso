@@ -25,12 +25,6 @@ const authMiddleware = (store) => (next) => (action) => {
             localStorage.setItem('logged', true);
           }
           store.dispatch(doneLogin);
-          window.alert(
-            `
-            Connexion réussie!
-            Bisous.
-            `
-          );
         })
         .catch((error) => {
           console.warn(error);
@@ -55,9 +49,8 @@ const authMiddleware = (store) => (next) => (action) => {
           console.log(response);
           window.alert(
             `
-            Votre inscription a bien été enregistrée.
-            Rendez-vous dans la page de votre Profil
-            pour mettre à jour vos infos perso.
+            Ton inscription a bien été enregistrée.
+            Connecte toi.
             Bisous.
             `
           );
