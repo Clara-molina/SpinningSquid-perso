@@ -17,6 +17,7 @@ const skateparkMiddleware = (store) => (next) => (action) => {
           console.log('response from API : ');
           console.log(response.data);
           console.log(response.data[0]);
+          console.log(response.data[0].id);
           console.log(response.data[0].meta);
           console.log(response.data[0].meta.longitude);
       store.dispatch(

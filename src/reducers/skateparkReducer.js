@@ -5,9 +5,8 @@ import {
 } from 'src/actions/skateparkActions';
 
 export const initialState = {
-  skateparkLocationList: ['un', 'deux', 'trois'],
   searchFieldTown: 'searchFieldTown test state',
-  responseAPI: {},
+  skateparkListAPI: {},
   skateparkToDisplay_Id: 'initial state showDetails',
   addSpot: {
     title: '',
@@ -223,7 +222,7 @@ const reducer = (state = initialState, action = {}) => {
     case GET_SKATEPARK_LIST_SUCCESS:
       return {
         ...state,
-        responseAPI: action.responseAPI,
+        skateparkListAPI: action.responseAPI,
       };
     case SUBMIT_ADD_SPOT_SUCCESS:
       return {
