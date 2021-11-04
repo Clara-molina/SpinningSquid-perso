@@ -36,7 +36,6 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       //console.log(store.getState().skatepark.addSpot.tryPromiseField);
       axios
         .post(baseSpinningSquid + endPointAdd_Spot, {
-          title: store.getState().skatepark.addSpot.title,
           skatepark: store.getState().skatepark.addSpot.categorySkatepark,
           pumptrack: store.getState().skatepark.addSpot.categoryPumptrack,
           street: store.getState().skatepark.addSpot.categoryStreet,
@@ -60,15 +59,21 @@ const skateparkMiddleware = (store) => (next) => (action) => {
               'a remplacer par kekchose ou pas dans skateparkMiddleware'
             )
           );
+          window.alert(
+            `
+            L'ajout de skatepark a bien été enregistré.
+            Bisous.
+            `
+          );
         })
         .catch((error) => {
           console.warn(error);
         });
-      store.dispatch(
-        successSubmitAddSpot(
-          'a remplacer par kekchose ou pas dans skateparkMiddleware'
-        )
-      );
+      // store.dispatch(
+      //   successSubmitAddSpot(
+      //     'a remplacer par kekchose ou pas dans skateparkMiddleware'
+      //   )
+      // );
 
       break;
     default:
