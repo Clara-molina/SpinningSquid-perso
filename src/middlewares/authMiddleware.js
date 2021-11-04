@@ -25,14 +25,7 @@ const authMiddleware = (store) => (next) => (action) => {
             localStorage.setItem('logged', true);
           }
           store.dispatch(doneLogin);
-          window.alert(
-            `
-            Connexion réussie!
-            Bisous.
-            `
-          );
           window.location.reload(false);
-
         })
         .catch((error) => {
           console.warn(error);

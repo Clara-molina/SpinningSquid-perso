@@ -30,40 +30,41 @@ import NotFound from 'src/components/NotFound';
 const App = (props) => {
   props.getLocalStorageDataToState();
   return (
-  <div className="app">
-    <Router>
-      <Header />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/trouve-ton-skatepark" component={SearchMap} />
-        <Route
-          path="/trouve-ton-skatepark/ajoute-ton-spot"
-          component={SpotAdd}
-        />
-        <Route
-          path="/trouve-ton-skatepark/resultat"
-          component={SearchSkateResults}
-        />
-        <Route exact path="/trouve-ton-matos" component={Marketplace} />
-        <Route
-          exact
-          path="/trouve-ton-matos/ajoute-ton-matos"
-          component={PostArticle}
-        />
-        <Route path="/trouve-ton-matos/details" component={DetailsArticle} />
-        <Route exact path="/communaute" component={Community} />
-        <Route path="/communaute/details" component={DetailsPost} />
-        <Route path="/communaute/ajoute-ton-evenement" component={AddPost} />
-        <Route path="/contact" component={Contact} />
-        <Route exact path="/connexion" component={Connection} />
-        <Route exact path="/connexion/profil" component={Profile} />
-        <Route path="/newsletter" component={NewsLetter} />
-        <Route component={NotFound} />
-      </Switch>
-      <Footer />
-    </Router>
-  </div>
-)};
+    <div className="app">
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/trouve-ton-skatepark" component={SearchMap} />
+          <Route
+            path="/trouve-ton-skatepark/ajoute-ton-spot"
+            component={SpotAdd}
+          />
+          <Route
+            path="/trouve-ton-skatepark/resultat"
+            component={SearchSkateResults}
+          />
+          <Route exact path="/trouve-ton-matos" component={Marketplace} />
+          <Route
+            exact
+            path="/trouve-ton-matos/ajoute-ton-matos"
+            component={PostArticle}
+          />
+          <Route path="/trouve-ton-matos/details" component={DetailsArticle} />
+          <Route exact path="/communaute" component={Community} />
+          <Route path="/communaute/details" component={DetailsPost} />
+          <Route path="/communaute/ajoute-ton-evenement" component={AddPost} />
+          <Route path="/contact" component={Contact} />
+          <Route exact path="/connexion" component={Connection} />
+          <Route exact path="/connexion/profil" component={Profile} />
+          <Route path="/newsletter" component={NewsLetter} />
+          <Route component={NotFound} />
+        </Switch>
+        <Footer />
+      </Router>
+    </div>
+  );
+};
 
 // == Export
 export default App;
