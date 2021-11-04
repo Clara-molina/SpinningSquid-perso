@@ -10,6 +10,7 @@ export const initialState = {
   responseAPI: {},
   skateparkToDisplay_Id: 'initial state showDetails',
   addSpot: {
+    title: '',
     categorySkatepark: false,
     categoryPumptrack: false,
     categoryStreet: false,
