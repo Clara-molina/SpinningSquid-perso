@@ -13,11 +13,11 @@ const SpotAdd = (props) => {
           >
             SkatePark
             <input
-              id="category-skatepark"
+              id="categorySkatepark"
               className="spotadd-check-category"
               type="checkbox"
               name="skatepark"
-              checked
+              onChange={props.handleChangeCheckbox}
             />
           </label>
 
@@ -27,48 +27,53 @@ const SpotAdd = (props) => {
           >
             PumpTrack
             <input
-              id="category-pumptrack"
+              id="categoryPumptrack"
               className="spotadd-check-category"
               type="checkbox"
               name="pumptrack"
+              onChange={props.handleChangeCheckbox}
             />
           </label>
 
           <label htmlFor="category-street" className="spotadd-label-category">
             Street
             <input
-              id="category-street"
+              id="categoryStreet"
               className="spotadd-check-category"
               type="checkbox"
               name="streetspot"
+              onChange={props.handleChangeCheckbox}
             />
           </label>
         </div>
         <div className="spotadd-container-adress">
           <h2 className="spotadd-title">Adresse</h2>
           <input
-            id="street"
+            id="addSpotStreet"
             className="spotadd-input"
             type="text"
             name="street"
             placeholder="Rue"
             required
+            onChange={props.handleChangeField}
           />
           <input
-            id="postal"
+            id="addSpotPostal"
             className="spotadd-input"
             type="text"
             name="postal"
             placeholder="Code Postal"
             required
+            onChange={props.handleChangeField}
           />
           <input
-            id="town"
+            id="addSpotTown"
             className="spotadd-input"
             type="text"
             name="town"
             placeholder="Ville"
             required
+            onChange={props.handleChangeField}
           />
         </div>
 
@@ -81,6 +86,7 @@ const SpotAdd = (props) => {
               className="spotadd-check-equipment"
               type="checkbox"
               name="parking"
+              onChange={props.handleChangeCheckbox}
             />
           </label>
 
@@ -91,6 +97,7 @@ const SpotAdd = (props) => {
               className="spotadd-check-equipment"
               type="checkbox"
               name="water"
+              onChange={props.handleChangeCheckbox}
             />
           </label>
 
@@ -101,6 +108,7 @@ const SpotAdd = (props) => {
               className="spotadd-check-equipment"
               type="checkbox"
               name="trashcan"
+              onChange={props.handleChangeCheckbox}
             />
           </label>
 
@@ -111,6 +119,7 @@ const SpotAdd = (props) => {
               className="spotadd-check-equipment"
               type="checkbox"
               name="lighting"
+              onChange={props.handleChangeCheckbox}
             />
           </label>
 
@@ -121,6 +130,7 @@ const SpotAdd = (props) => {
               className="spotadd-check-equipment"
               type="checkbox"
               name="table"
+              onChange={props.handleChangeCheckbox}
             />
           </label>
 
@@ -131,6 +141,7 @@ const SpotAdd = (props) => {
               className="spotadd-check-equipment"
               type="checkbox"
               name="benche"
+              onChange={props.handleChangeCheckbox}
             />
           </label>
         </div>
@@ -157,37 +168,41 @@ const SpotAdd = (props) => {
           <label htmlFor="new" className="spotadd-label-state">
             Neuf
             <input
-              id="new"
+              id="addSpotNew"
               className="spotadd-radio"
               type="radio"
               name="state"
+              onChange={props.handleChangeCheckbox}
             />
           </label>
           <label htmlFor="good" className="spotadd-label-state">
             Bien
             <input
-              id="good"
+              id="addSpotGood"
               className="spotadd-radio"
               type="radio"
               name="state"
+              onChange={props.handleChangeCheckbox}
             />
           </label>
           <label htmlFor="way" className="spotadd-label-state">
             Moyen
             <input
-              id="way"
+              id="addSpotWay"
               className="spotadd-radio"
               type="radio"
               name="state"
+              onChange={props.handleChangeCheckbox}
             />
           </label>
           <label htmlFor="endoflife" className="spotadd-label-state">
             En fin de vie
             <input
-              id="endoflife"
+              id="addSpotEndoflife"
               className="spotadd-radio"
               type="radio"
               name="state"
+              onChange={props.handleChangeCheckbox}
             />
           </label>
         </div>
