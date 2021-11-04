@@ -35,7 +35,7 @@ const reducer = (state = initialState, action = {}) => {
     case FILL_STATE_USERDATA:
       return {
         ...state,
-        localStorageData: action.userData,
+        isLogged: action.userData,
       };
     case UPDATE_FIELD:
       if (action.fieldName === 'usernameInscription') {

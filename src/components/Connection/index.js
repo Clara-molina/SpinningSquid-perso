@@ -116,11 +116,9 @@ const Connection = ({ handleChange, handleSubmitLogin, handleSubmitRegister }) =
               onChange={handleOnChange}
             />
           </label>
-          <Link to="/connexion/profil">
             <button className="form-connection-button" type="submit">
               Connexion
             </button>
-          </Link>
         </form>
       </div>
     </div>
