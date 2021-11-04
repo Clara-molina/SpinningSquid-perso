@@ -22,6 +22,7 @@ const authMiddleware = (store) => (next) => (action) => {
           if (response.data.token) {
             const JSONInformationsObject = JSON.stringify(response.data);
             localStorage.setItem('userData', JSONInformationsObject);
+            localStorage.setItem('logged', true);
           }
           store.dispatch(doneLogin);
           window.alert(
