@@ -8,9 +8,9 @@ import {
 import { baseURI, baseSpinningSquid } from 'src/routesBack';
 
 const skateparkMiddleware = (store) => (next) => (action) => {
-  const endPointSkatepark = '/skatepark?_embed=true';
   switch (action.type) {
     case GET_SKATEPARK_LIST:
+      const endPointSkatepark = '/skatepark?_embed=true';
       // axios
       //   .get(baseURI + endPointSkatepark)
       //   .then((response) => {
@@ -35,35 +35,39 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       console.log('on y passe youpi');
       //console.log(store.getState().skatepark.addSpot.tryPromiseField);
       axios
-        .post(baseSpinningSquid + endPointAdd_Spot,{
-          skatepark:'test',
-          pumptrack:'test',
-          street:'test',
-          streetspot:'test',
-          zipcode:'test',
-          city:'test',
-          parking:'test',
-          water:'test',
-          trashcan:'test',
-          lighting:'test',
-          table:'test',
-          benche:'test',
-          state:'test',
-          image:store.getState().skatepark.addSpot.tryPromiseField,
+        .post(baseSpinningSquid + endPointAdd_Spot, {
+          skatepark: store.getState().skatepark.addSpot.categorySkatepark,
+          pumptrack: store.getState().skatepark.addSpot.categoryPumptrack,
+          street: store.getState().skatepark.addSpot.categoryStreet,
+          streetspot: store.getState().skatepark.addSpot.street,
+          zipcode: store.getState().skatepark.addSpot.postal,
+          city: store.getState().skatepark.addSpot.town,
+          parking: store.getState().skatepark.addSpot.parking,
+          water: store.getState().skatepark.addSpot.water,
+          trashcan: store.getState().skatepark.addSpot.trashcan,
+          lighting: store.getState().skatepark.addSpot.lighting,
+          table: store.getState().skatepark.addSpot.table,
+          benche: store.getState().skatepark.addSpot.benche,
+          state: store.getState().skatepark.addSpot.etatRadioBtn,
+          image: store.getState().skatepark.addSpot.tryPromiseField,
         })
         .then((response) => {
           console.log('response from API : ');
           console.log(response);
-      store.dispatch(
-        successGetSkateparkList('a remplacer par kekchose ou pas dans skateparkMiddleware')
-      );
-      })
-      .catch((error) => {
-        console.warn(error);
-      });
+          store.dispatch(
+            successGetSkateparkList(
+              'a remplacer par kekchose ou pas dans skateparkMiddleware'
+            )
+          );
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
       store.dispatch(
         successSubmitAddSpot(
-          'a remplacer par kekchose ou pas dans skateparkMiddleware'));
+          'a remplacer par kekchose ou pas dans skateparkMiddleware'
+        )
+      );
 
       break;
     default:

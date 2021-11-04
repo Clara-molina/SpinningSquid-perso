@@ -8,10 +8,22 @@ export const initialState = {
   skateparkLocationList: ['un', 'deux', 'trois'],
   searchFieldTown: 'searchFieldTown test state',
   responseAPI: {},
-  addStreet: 'initial street value into state',
-  addPostal: 'initial postal value into state',
-  addTown: 'initial town value into state',
-  addSpot: 'initial addSpot value into state',
+  skateparkToDisplay_Id: 'initial state showDetails',
+  addSpot: {
+    categorySkatepark: false,
+    categoryPumptrack: false,
+    categoryStreet: false,
+    street: '',
+    postal: '',
+    town: '',
+    parking: false,
+    water: false,
+    trashcan: false,
+    lighting: false,
+    table: false,
+    benche: false,
+    etatRadioBtn: 'initial etatRadioBtn value into state',
+  },
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -23,29 +35,119 @@ const reducer = (state = initialState, action = {}) => {
           searchFieldTown: action.fieldValue,
         };
       }
-      if (action.fieldName === 'street') {
+      if (action.fieldName === 'categorySkatepark') {
         return {
           ...state,
-          addStreet: action.fieldValue,
+          addSpot: {
+            ...state.addSpot,
+            categorySkatepark: action.fieldValue,
+          },
         };
       }
-      if (action.fieldName === 'postal') {
+      if (action.fieldName === 'categoryPumptrack') {
         return {
           ...state,
-          addPostal: action.fieldValue,
+          addSpot: {
+            ...state.addSpot,
+            categoryPumptrack: action.fieldValue,
+          },
         };
       }
-      if (action.fieldName === 'town') {
+      if (action.fieldName === 'categoryStreet') {
         return {
           ...state,
-          addTown: action.fieldValue,
+          addSpot: {
+            ...state.addSpot,
+            categoryStreet: action.fieldValue,
+          },
+        };
+      }
+      if (action.fieldName === 'parking') {
+        return {
+          ...state,
+          addSpot: {
+            ...state.addSpot,
+            parking: action.fieldValue,
+          },
+        };
+      }
+      if (action.fieldName === 'water') {
+        return {
+          ...state,
+          addSpot: {
+            ...state.addSpot,
+            water: action.fieldValue,
+          },
+        };
+      }
+      if (action.fieldName === 'trashcan') {
+        return {
+          ...state,
+          addSpot: {
+            ...state.addSpot,
+            trashcan: action.fieldValue,
+          },
+        };
+      }
+      if (action.fieldName === 'lighting') {
+        return {
+          ...state,
+          addSpot: {
+            ...state.addSpot,
+            lighting: action.fieldValue,
+          },
+        };
+      }
+      if (action.fieldName === 'table') {
+        return {
+          ...state,
+          addSpot: {
+            ...state.addSpot,
+            table: action.fieldValue,
+          },
+        };
+      }
+      if (action.fieldName === 'benche') {
+        return {
+          ...state,
+          addSpot: {
+            ...state.addSpot,
+            benche: action.fieldValue,
+          },
+        };
+      }
+      if (action.fieldName === 'addSpotStreet') {
+        return {
+          ...state,
+          addSpot: {
+            ...state.addSpot,
+            street: action.fieldValue,
+          },
+        };
+      }
+      if (action.fieldName === 'addSpotPostal') {
+        return {
+          ...state,
+          addSpot: {
+            ...state.addSpot,
+            street: action.fieldValue,
+          },
+        };
+      }
+      if (action.fieldName === 'addSpotTown') {
+        return {
+          ...state,
+          addSpot: {
+            ...state.addSpot,
+            street: action.fieldValue,
+          },
         };
       }
       if (action.fieldName === 'uploadImage') {
         return {
           ...state,
           addSpot: {
-            ...state.addspot,
+            ...state.addSpot,
             uploadedImg: action.fieldValue,
           },
         };
@@ -54,11 +156,48 @@ const reducer = (state = initialState, action = {}) => {
         return {
           ...state,
           addSpot: {
-            ...state.addspot,
+            ...state.addSpot,
             tryPromiseField: action.fieldValue,
           },
         };
       }
+      if (action.fieldName === 'addSpotNew') {
+        return {
+          ...state,
+          addSpot: {
+            ...state.addSpot,
+            etatRadioBtn: 'addSpotNew',
+          },
+        };
+      }
+      if (action.fieldName === 'addSpotGood') {
+        return {
+          ...state,
+          addSpot: {
+            ...state.addSpot,
+            etatRadioBtn: 'addSpotGood',
+          },
+        };
+      }
+      if (action.fieldName === 'addSpotWay') {
+        return {
+          ...state,
+          addSpot: {
+            ...state.addSpot,
+            etatRadioBtn: 'addSpotWay',
+          },
+        };
+      }
+      if (action.fieldName === 'addSpotEndoflife') {
+        return {
+          ...state,
+          addSpot: {
+            ...state.addSpot,
+            etatRadioBtn: 'addSpotEndoflife',
+          },
+        };
+      }
+
     case GET_SKATEPARK_LIST_SUCCESS:
       return {
         ...state,
