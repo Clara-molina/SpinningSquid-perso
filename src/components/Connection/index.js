@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './connection.scss';
 
 const Connection = ({ handleChange, handleSubmitLogin, handleSubmitRegister }) => {
@@ -115,9 +116,11 @@ const Connection = ({ handleChange, handleSubmitLogin, handleSubmitRegister }) =
               onChange={handleOnChange}
             />
           </label>
-          <button className="form-connection-button" type="submit">
-            Connexion
-          </button>
+          <Link to="/connexion/profil">
+            <button className="form-connection-button" type="submit">
+              Connexion
+            </button>
+          </Link>
         </form>
       </div>
     </div>
