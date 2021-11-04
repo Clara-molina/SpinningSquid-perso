@@ -24,6 +24,7 @@ export const initialState = {
     table: false,
     benche: false,
     etatRadioBtn: 'initial etatRadioBtn value into state',
+    uploadedImg: 'initial state',
   },
 };
 
@@ -159,15 +160,6 @@ const reducer = (state = initialState, action = {}) => {
           addSpot: {
             ...state.addSpot,
             uploadedImg: action.fieldValue,
-          },
-        };
-      }
-      if (action.fieldName === 'tryPromiseField') {
-        return {
-          ...state,
-          addSpot: {
-            ...state.addSpot,
-            tryPromiseField: action.fieldValue,
           },
         };
       }

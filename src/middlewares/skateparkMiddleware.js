@@ -43,6 +43,8 @@ const skateparkMiddleware = (store) => (next) => (action) => {
           streetspot: store.getState().skatepark.addSpot.street,
           zipcode: store.getState().skatepark.addSpot.postal,
           city: store.getState().skatepark.addSpot.town,
+          latitude: store.getState().skatepark.addSpot.lattitude,
+          longitude: store.getState().skatepark.addSpot.longitude,
           parking: store.getState().skatepark.addSpot.parking,
           water: store.getState().skatepark.addSpot.water,
           trashcan: store.getState().skatepark.addSpot.trashcan,
@@ -50,7 +52,7 @@ const skateparkMiddleware = (store) => (next) => (action) => {
           table: store.getState().skatepark.addSpot.table,
           benche: store.getState().skatepark.addSpot.benche,
           state: store.getState().skatepark.addSpot.etatRadioBtn,
-          image: store.getState().skatepark.addSpot.tryPromiseField,
+          image: store.getState().skatepark.addSpot.uploadedImg,
         })
         .then((response) => {
           console.log('response from API : ');
