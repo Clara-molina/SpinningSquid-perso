@@ -11,18 +11,19 @@ const skateparkMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_SKATEPARK_LIST:
       const endPointSkatepark = '/skatepark?_embed=true';
-      axios
-        .get(baseURI + endPointSkatepark)
-        .then((response) => {
-          console.log('response from API : ');
-          console.log(response);
-      store.dispatch(
-        successGetSkateparkList(response.data)
-      );
-      })
-      .catch((error) => {
-        console.warn(error);
-      });
+      // axios
+      //   .get(baseURI + endPointSkatepark)
+      //   .then((response) => {
+      //     console.log('response from API : ');
+      //     console.log(response);
+      // store.dispatch(
+      //   successGetSkateparkList(response.data)
+      // );
+      // })
+      // .catch((error) => {
+      //   console.warn(error);
+      // });
+      setTimeout(()=>{ console.log('retour setTimeOut API call') }, 3000);
       // store.dispatch(
       //   successGetSkateparkList(
       //     'a remplacer par le call API dans skateparkMiddleware'

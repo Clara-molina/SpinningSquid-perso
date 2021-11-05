@@ -1,15 +1,14 @@
 import { connect } from 'react-redux';
 import { updateField } from 'src/actions/userActions';
 import { callGetSkateparkList } from 'src/actions/skateparkActions';
-
 import SearchMap from 'src/components/SearchMap';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
     skateparkLocationList: state.skatepark.skateparkLocationList,
     responseAPI: state.skatepark.responseAPI,
   });
 
-const mapDispatchToProps = (dispatch, state) => ({
+const mapDispatchToProps = (dispatch) => ({
   callApiGet: () => {
     dispatch(callGetSkateparkList());
   },

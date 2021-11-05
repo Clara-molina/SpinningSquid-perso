@@ -63,7 +63,7 @@ const SearchMap = (props) => {
 
       <div className="search-result">
         <div className="search-list">
-          <SearchList itemList={props.responseAPI} />
+          { props.callApiOK && <SearchList itemList={props.responseAPI} />}
         </div>
         <div className="search-map">
           <GoogleMapReact
