@@ -2,6 +2,7 @@ import axios from 'axios';
 import {
   SUBMIT_LOGIN,
   successLogin,
+  successRegister,
   SUBMIT_REGISTER,
   SUBMIT_UPDATE_PROFILE,
 } from 'src/actions/userActions';
@@ -49,11 +50,11 @@ const authMiddleware = (store) => (next) => (action) => {
           console.log(response);
           window.alert(
             `
-            Ton inscription a bien été enregistrée.
-            Connecte toi.
-            Bisous.
+            Inscription réussie!
             `
           );
+          const clearInput = successRegister();
+          store.dispatch(clearInput);
         })
         .catch((error) => {
           console.warn(error);
