@@ -46,16 +46,14 @@
         display: flex;
         align-items: center;
         width: 50%;
-        margin-left: 25em;
-        margin-right: 25em;
-
-
+        justify-content: center;
+        margin: 0 auto;
+        position: relative;
       }
 
       .home-nav-container:hover .home-nav-image {
         filter: grayscale(100%) blur(10px);
         transition: 0.5s;
-
       }
 
       .home-nav-image {
@@ -67,10 +65,11 @@
       .home-nav-description {
         color: vars.$white;
         position: absolute;
-        left: 40%;
+        left: 50%;
+        top: 50%;
+        z-index: 1;
         transform: translate(-50%, -50%);
-        width: 500px;
-        line-height: 0px;
+        max-width: 100%;
         color: transparent;
         font-size: 50px;
         font-weight: 300;
@@ -121,36 +120,26 @@
     text-shadow: black 10px 10px 10px;
     text-align: center;
   }
-  .home-nav-container {
-    display: flex;
-    align-items: flex-start;
-    width: 50%;
-    margin-left: 5em !important;
-    margin-right: 25em;
 
-
+  .home-nav {
+    .home-nav-container {
+      display: flex;
+      align-items: flex-start;
+      width: 90%;
+    }
+  
+    .home-nav-description {
+      text-align: center !important;
+      --responsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 420px) / (1200 - 420))); 
+      --max-font: 25;
+      --min-font: 12;
+      font-size: var(--responsive) ;
+      color: white ;
+      text-shadow: black 20px 20px 20px ;
+    }
+  
   }
-
-  .home-nav-image {
-    align-self:flex-start !important;
-    width: 100% !important;
-    height: auto !important;
-    float: left;
-  }
-
-
-  .home-nav-description {
-    text-align: center !important;
-    --responsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 420px) / (1200 - 420))); 
-    --max-font: 25;
-    --min-font: 12;
-    font-size: var(--responsive) !important;
-    color: white !important;
-    text-shadow: black 20px 20px 20px !important;
-    margin: auto;
-    width: fit-content;
-  }
-
+ 
 
 
 
