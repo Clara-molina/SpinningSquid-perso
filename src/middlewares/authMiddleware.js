@@ -25,7 +25,6 @@ const authMiddleware = (store) => (next) => (action) => {
             localStorage.setItem('logged', true);
           }
           store.dispatch(doneLogin);
-          window.location.reload(false);
         })
         .catch((error) => {
           console.warn(error);

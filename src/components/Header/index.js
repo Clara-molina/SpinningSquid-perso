@@ -6,138 +6,136 @@ import avatar from 'src/assets/img/logo2.png';
 import './header.scss';
 import { resetStorage } from '../../generic_functions';
 
-const Header = (props) => {
-  return (
+const Header = ({ isLogged, handleLogout }) => (
 
-    <nav className="nav">
-      <div className="left-half-header">
-        <NavLink className="left-header" to="/" exact>
-          <img className="nav-logo" src={logo} alt="logo spinning squid" />
-        </NavLink>
-      </div>
+  <nav className="nav">
+    <div className="left-half-header">
+      <NavLink className="left-header" to="/" exact>
+        <img className="nav-logo" src={logo} alt="logo spinning squid" />
+      </NavLink>
+    </div>
 
-      <div className="right-half-header">
+    <div className="right-half-header">
+      <NavLink
+        to="/"
+        exact
+        className="nav-link right-header"
+        activeClassName="nav-link--active"
+      >
+        Accueil
+      </NavLink>
+
+      <NavLink
+        to="/trouve-ton-skatepark"
+        className="nav-link right-header"
+        activeClassName="nav-link--active"
+      >
+        Trouve ton Skatepark
+      </NavLink>
+
+      <NavLink
+        to="/trouve-ton-matos"
+        className="nav-link right-header"
+        activeClassName="nav-link--active"
+      >
+        Trouve ton Matos
+      </NavLink>
+
+      <NavLink
+        to="/communaute"
+        className="nav-link right-header"
+        activeClassName="nav-link--active"
+      >
+        Whassup ?!
+      </NavLink>
+
+      <NavLink
+        to="/contact"
+        className="nav-link right-header"
+        activeClassName="nav-link--active"
+      >
+        Question ?
+      </NavLink>
+
+      {!isLogged && (
         <NavLink
-          to="/"
+          to="/connexion"
           exact
           className="nav-link right-header"
           activeClassName="nav-link--active"
         >
+          Connexion
+        </NavLink>
+      )}
+
+      {isLogged && (
+        <NavLink
+          to="/"
+          className="nav-link right-header"
+          onClick={handleLogout}
+        >
+          Déconnexion
+        </NavLink>
+      )}
+
+      {isLogged && (
+        <NavLink
+          to="/connexion/profil"
+          className="right-header"
+          activeClassName="nav-link-avatar--active"
+        >
+          <img className="nav-link-avatar" src={avatar} alt="" />
+        </NavLink>
+      )}
+
+      {/* Menu burger */}
+      <Menu right isOpen={false}>
+        <NavLink
+          className="nav-link"
+          to="/"
+          exact
+          activeClassName="nav-link--active"
+        >
           Accueil
         </NavLink>
-
         <NavLink
+          className="nav-link"
           to="/trouve-ton-skatepark"
-          className="nav-link right-header"
           activeClassName="nav-link--active"
         >
           Trouve ton Skatepark
         </NavLink>
-
         <NavLink
+          className="nav-link"
           to="/trouve-ton-matos"
-          className="nav-link right-header"
           activeClassName="nav-link--active"
         >
           Trouve ton Matos
         </NavLink>
-
         <NavLink
+          className="nav-link"
           to="/communaute"
-          className="nav-link right-header"
           activeClassName="nav-link--active"
         >
           Whassup ?!
         </NavLink>
-
         <NavLink
+          className="nav-link"
           to="/contact"
-          className="nav-link right-header"
           activeClassName="nav-link--active"
         >
-          Question ?
+          Question
         </NavLink>
-
-        {!props.isLogged && (
-          <NavLink
-            to="/connexion"
-            exact
-            className="nav-link right-header"
-            activeClassName="nav-link--active"
-          >
-            Connexion
-          </NavLink>
-        )}
-
-        {props.isLogged && (
-          <NavLink
-            to="/"
-            className="nav-link right-header"
-            onClick={resetStorage}
-          >
-            Déconnexion
-          </NavLink>
-        )}
-
-        {props.isLogged && (
-          <NavLink
-            to="/connexion/profil"
-            className="right-header"
-            activeClassName="nav-link-avatar--active"
-          >
-            <img className="nav-link-avatar" src={avatar} alt="" />
-          </NavLink>
-        )}
-
-        {/* Menu burger */}
-        <Menu right isOpen={false}>
-          <NavLink
-            className="nav-link"
-            to="/"
-            exact
-            activeClassName="nav-link--active"
-          >
-            Accueil
-          </NavLink>
-          <NavLink
-            className="nav-link"
-            to="/trouve-ton-skatepark"
-            activeClassName="nav-link--active"
-          >
-            Trouve ton Skatepark
-          </NavLink>
-          <NavLink
-            className="nav-link"
-            to="/trouve-ton-matos"
-            activeClassName="nav-link--active"
-          >
-            Trouve ton Matos
-          </NavLink>
-          <NavLink
-            className="nav-link"
-            to="/communaute"
-            activeClassName="nav-link--active"
-          >
-            Whassup ?!
-          </NavLink>
-          <NavLink
-            className="nav-link"
-            to="/contact"
-            activeClassName="nav-link--active"
-          >
-            Question
-          </NavLink>
-          <NavLink
-            className="nav-link"
-            to="/connexion"
-            activeClassName="nav-link--active"
-          >
-            Connexion
-          </NavLink>
-        </Menu>
-      </div>
-    </nav>
-  );
-};
+        <NavLink
+          className="nav-link"
+          to="/connexion"
+          activeClassName="nav-link--active"
+        >
+          Connexion
+        </NavLink>
+      </Menu>
+    </div>
+  </nav>
+);
 
 export default Header;
