@@ -1,73 +1,101 @@
 import './spotadd.scss';
 
-const SpotAdd = ({ handleUploadLocalImage }) => (
+const SpotAdd = (props) => (
   <div className="spotadd-container">
     <h2 className="title">Ajoute ton Spot</h2>
 
-    <form className="spotadd-form" onSubmit="">
+    <form className="spotadd-form" onSubmit={props.handleSubmitAddPost}>
+      <div className="spotadd-container-title">
+        <h2 className="spotadd-title">Titre</h2>
+        <input
+          id="titleSkatepark"
+          className="spotadd-input-title"
+          type="text"
+          name="skatepark"
+          placeholder="SkatePark de Grenoble Centre"
+          onChange={props.handleChangeField}
+        />
+      </div>
       <div className="spotadd-container-category">
-        <label
-          htmlFor="category-skatepark"
-          className="spotadd-label-category"
-        >
+        <label htmlFor="category-skatepark" className="spotadd-label-category">
           SkatePark
           <input
-            id="category-skatepark"
+            id="categorySkatepark"
             className="spotadd-check-category"
             type="checkbox"
             name="skatepark"
+            onChange={props.handleChangeCheckbox}
           />
         </label>
 
-        <label
-          htmlFor="category-pumptrack"
-          className="spotadd-label-category"
-        >
+        <label htmlFor="category-pumptrack" className="spotadd-label-category">
           PumpTrack
           <input
-            id="category-pumptrack"
+            id="categoryPumptrack"
             className="spotadd-check-category"
             type="checkbox"
             name="pumptrack"
+            onChange={props.handleChangeCheckbox}
           />
         </label>
 
         <label htmlFor="category-street" className="spotadd-label-category">
           Street
           <input
-            id="category-street"
+            id="categoryStreet"
             className="spotadd-check-category"
             type="checkbox"
-            name="street"
+            name="streetspot"
+            onChange={props.handleChangeCheckbox}
           />
         </label>
       </div>
-
       <div className="spotadd-container-adress">
         <h2 className="spotadd-title">Adresse</h2>
         <input
-          id="street"
+          id="addSpotStreet"
           className="spotadd-input"
           type="text"
           name="street"
           placeholder="Rue"
           required
+          onChange={props.handleChangeField}
         />
         <input
-          id="postal"
+          id="addSpotPostal"
           className="spotadd-input"
           type="text"
           name="postal"
           placeholder="Code Postal"
           required
+          onChange={props.handleChangeField}
         />
         <input
-          id="town"
+          id="addSpotTown"
           className="spotadd-input"
           type="text"
           name="town"
           placeholder="Ville"
           required
+          onChange={props.handleChangeField}
+        />
+        <input
+          id="addSpotlongitude"
+          className="spotadd-input"
+          type="number"
+          name="longitude"
+          placeholder="longitude"
+          required
+          onChange={props.handleChangeField}
+        />
+        <input
+          id="addSpotlatitude"
+          className="spotadd-input"
+          type="number"
+          name="latitude"
+          placeholder="latitude"
+          required
+          onChange={props.handleChangeField}
         />
       </div>
 
@@ -80,6 +108,7 @@ const SpotAdd = ({ handleUploadLocalImage }) => (
             className="spotadd-check-equipment"
             type="checkbox"
             name="parking"
+            onChange={props.handleChangeCheckbox}
           />
         </label>
 
@@ -90,6 +119,7 @@ const SpotAdd = ({ handleUploadLocalImage }) => (
             className="spotadd-check-equipment"
             type="checkbox"
             name="water"
+            onChange={props.handleChangeCheckbox}
           />
         </label>
 
@@ -100,6 +130,7 @@ const SpotAdd = ({ handleUploadLocalImage }) => (
             className="spotadd-check-equipment"
             type="checkbox"
             name="trashcan"
+            onChange={props.handleChangeCheckbox}
           />
         </label>
 
@@ -110,6 +141,7 @@ const SpotAdd = ({ handleUploadLocalImage }) => (
             className="spotadd-check-equipment"
             type="checkbox"
             name="lighting"
+            onChange={props.handleChangeCheckbox}
           />
         </label>
 
@@ -120,6 +152,7 @@ const SpotAdd = ({ handleUploadLocalImage }) => (
             className="spotadd-check-equipment"
             type="checkbox"
             name="table"
+            onChange={props.handleChangeCheckbox}
           />
         </label>
 
@@ -130,6 +163,7 @@ const SpotAdd = ({ handleUploadLocalImage }) => (
             className="spotadd-check-equipment"
             type="checkbox"
             name="benche"
+            onChange={props.handleChangeCheckbox}
           />
         </label>
       </div>
@@ -146,7 +180,7 @@ const SpotAdd = ({ handleUploadLocalImage }) => (
             accept="image/png, image/jpeg"
             multiple
             required
-            onChange={handleUploadLocalImage}
+            onChange={props.handleUploadLocalImage}
           />
         </label>
       </div>
@@ -156,37 +190,41 @@ const SpotAdd = ({ handleUploadLocalImage }) => (
         <label htmlFor="new" className="spotadd-label-state">
           Neuf
           <input
-            id="new"
+            id="addSpotNew"
             className="spotadd-radio"
             type="radio"
             name="state"
+            onChange={props.handleChangeCheckbox}
           />
         </label>
         <label htmlFor="good" className="spotadd-label-state">
           Bien
           <input
-            id="good"
+            id="addSpotGood"
             className="spotadd-radio"
             type="radio"
             name="state"
+            onChange={props.handleChangeCheckbox}
           />
         </label>
         <label htmlFor="way" className="spotadd-label-state">
           Moyen
           <input
-            id="way"
+            id="addSpotWay"
             className="spotadd-radio"
             type="radio"
             name="state"
+            onChange={props.handleChangeCheckbox}
           />
         </label>
         <label htmlFor="endoflife" className="spotadd-label-state">
           En fin de vie
           <input
-            id="endoflife"
+            id="addSpotEndoflife"
             className="spotadd-radio"
             type="radio"
             name="state"
+            onChange={props.handleChangeCheckbox}
           />
         </label>
       </div>

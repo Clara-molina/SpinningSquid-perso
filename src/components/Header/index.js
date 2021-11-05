@@ -4,6 +4,7 @@ import logo from 'src/assets/img/logo1.png';
 import avatar from 'src/assets/img/logo2.png';
 
 import './header.scss';
+import { resetStorage } from '../../generic_functions';
 
 const Header = ({ isLogged, handleLogout }) => (
 

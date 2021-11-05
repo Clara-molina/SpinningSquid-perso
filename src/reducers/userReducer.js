@@ -1,4 +1,9 @@
-import { UPDATE_FIELD, SUCCESS_LOGIN, SUCCESS_LOGOUT } from 'src/actions/userActions';
+import {
+  UPDATE_FIELD,
+  SUCCESS_LOGIN,
+  SUCCESS_LOGOUT,
+  FILL_STATE_USERDATA,
+} from 'src/actions/userActions';
 
 export const initialState = {
   isLogged: false,
@@ -14,18 +19,24 @@ export const initialState = {
   passwordConnexion: '',
   profile: {
     usernameEdit: 'initial state name',
-    passwordEdit: '',
-    emailEdit: '',
-    lastnameEdit: '',
-    firstnameEdit: '',
-    streetEdit: '',
-    postalEdit: '',
-    cityEdit: '',
+    passwordEdit: 'initial state',
+    emailEdit: 'initial state',
+    lastnameEdit: 'initial state',
+    firstnameEdit: 'initial state',
+    streetEdit: 'initial state',
+    postalEdit: 'initial state',
+    cityEdit: 'initial state',
+    avatarImage: 'initial state',
   },
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case FILL_STATE_USERDATA:
+      return {
+        ...state,
+        isLogged: action.userData,
+      };
     case UPDATE_FIELD:
       if (action.fieldName === 'usernameInscription') {
         return {
@@ -159,13 +170,21 @@ const reducer = (state = initialState, action = {}) => {
           },
         };
       }
+      if (action.fieldName === 'avatarImageEdit') {
+        return {
+          ...state,
+          profile: {
+            ...state.profile,
+            avatarImageEdit: action.fieldValue,
+          },
+        };
+      }
       return state;
 
     case SUCCESS_LOGIN:
       console.log('case: SUCCESS_LOGIN');
       return {
         ...state,
-        token: action.token,
         isLogged: true,
         username: action.usernameConnexion,
       };
@@ -174,10 +193,10 @@ const reducer = (state = initialState, action = {}) => {
       console.log('case: SUCCESS_LOGOUT');
       return {
         ...state,
-        token: '',
         isLogged: false,
         usernameConnexion: '',
         passwordConnexion: '',
+        clear: localStorage.clear(),
       };
 
     default:

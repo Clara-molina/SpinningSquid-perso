@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './connection.scss';
 
 const Connection = ({ handleChange, handleSubmitLogin, handleSubmitRegister }) => {

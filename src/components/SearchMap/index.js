@@ -11,6 +11,9 @@ const location = {
 
 const SearchMap = (props) => {
   props.callApiGet();
+  const Marker = (props) => {
+    return <div className="iconeMarker">&#9733;</div>;
+  };
   return (
     <div className="search">
       <h1 className="search-title">Trouve ton SkatePark</h1>
@@ -70,7 +73,8 @@ const SearchMap = (props) => {
             defaultCenter={location}
             defaultZoom={8}
           >
-            {/* <LocationPin lat={37.42216} lng={-122.08427} text={"test ici"} /> */}
+            <Marker lat={37.42216} lng={-122.08427} />
+            <Marker lat={37.38216} lng={-122.08827} />
           </GoogleMapReact>
         </div>
       </div>

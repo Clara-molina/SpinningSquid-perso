@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import returnBase64Img from 'src/generic_functions';
 
 import Profile from 'src/components/Profile';
 import { updateField, submitUpdateProfile } from 'src/actions/userActions';
@@ -22,6 +23,19 @@ const mapDispatchToProps = (dispatch) => ({
     console.log(inputId);
     console.log(inputValue);
     dispatch(updateField(inputId, inputValue));
+  },
+  handleUploadLocalImage: async (event) => {
+    const imgName = event.target.id;
+    const imgValue = event.target.files[0];
+    const imgValueURL = URL.createObjectURL(event.target.files[0]);
+    //<img src={URL.createObjectURL(`data:image/jpeg;base64,${this.state.image}`)} />
+    const imgBase64 = await returnBase64Img(imgValue);
+    console.log(imgName);
+    console.log(imgValueURL);
+    console.log(imgBase64);
+    //dispatch(updateField(imgName, imgValue));
+    dispatch(updateField('avatarImageEdit', imgBase64));
+    console.log('commande envoyée');
   },
   handleSubmitUpdateProfile: (event) => {
     event.preventDefault();

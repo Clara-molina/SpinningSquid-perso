@@ -1,7 +1,5 @@
 import { connect } from 'react-redux';
-import {
-  submitLogout
-} from 'src/actions/userActions';
+import { submitLogout } from 'src/actions/userActions';
 
 import Header from 'src/components/Header';
 
@@ -10,8 +8,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  handleLogout: (event) => {
-    event.preventDefault();
+  handleLogout: () => {
     dispatch(submitLogout());
   },
 });

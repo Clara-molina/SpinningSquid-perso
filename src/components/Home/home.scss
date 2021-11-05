@@ -2,7 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sedgwick+Ave+Display&display=swap');
 
 .home-container {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dev
   .home-logo {
     height: 300px;
     width: 300px;
@@ -14,7 +17,6 @@
     text-shadow: black 10px 10px 10px;
     text-align: center;
   }
-
   .home-title {
     color: vars.$orange;
     position: absolute;
@@ -28,6 +30,7 @@
     .home-image {
       width: 100%;
       height: auto;
+<<<<<<< HEAD
       position:center;
     }
 
@@ -158,4 +161,58 @@
 
   }
 
+=======
+    }
+    .home-p {
+      background: linear-gradient(to top,
+          vars.$black,
+          vars.$darkGrey,
+          vars.$grey);
+      color: vars.$white;
+      width: 100%;
+      height: 100px;
+      padding: 1em;
+    }
+    .home-nav {
+      .home-nav-container {
+        display: flex;
+        align-items: center;
+        width: 50%;
+        margin-left: 25em;
+        margin-right: 25em;
+      }
+      .home-nav-container:hover .home-nav-image {
+        filter: grayscale(100%) blur(10px);
+        transition: 0.5s;
+      }
+      .home-nav-image {
+        width: 100%;
+        height: auto;
+        margin: 1em auto;
+        align-self: flex-end;
+      }
+      .home-nav-description {
+        color: vars.$white;
+        position: absolute;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        line-height: 0px;
+        color: transparent;
+        font-size: 50px;
+        font-weight: 300;
+        text-transform: uppercase;
+        transition: 0.5s;
+        font-family: 'Sedgwick Ave Display';
+      }
+      .home-nav-container:hover .home-nav-description {
+        line-height: 50px;
+        color: white;
+        float: left;
+        margin: 0;
+        text-shadow: black 10px 10px 10px;
+        font-family: 'Sedgwick Ave Display';
+      }
+    }
+>>>>>>> dev
 }

@@ -22,6 +22,7 @@ const authMiddleware = (store) => (next) => (action) => {
           if (response.data.token) {
             const JSONInformationsObject = JSON.stringify(response.data);
             localStorage.setItem('userData', JSONInformationsObject);
+            localStorage.setItem('logged', true);
           }
           store.dispatch(doneLogin);
         })
@@ -30,6 +31,7 @@ const authMiddleware = (store) => (next) => (action) => {
         });
 
       break;
+
     case SUBMIT_REGISTER:
       axios
         .post(baseSpinningSquid + '/newuser-save', {
@@ -47,9 +49,8 @@ const authMiddleware = (store) => (next) => (action) => {
           console.log(response);
           window.alert(
             `
-            Votre inscription a bien été enregistrée.
-            Rendez-vous dans la page de votre Profil
-            pour mettre à jour vos infos perso.
+            Ton inscription a bien été enregistrée.
+            Connecte toi.
             Bisous.
             `
           );
@@ -59,34 +60,36 @@ const authMiddleware = (store) => (next) => (action) => {
         });
 
       break;
+
     case SUBMIT_UPDATE_PROFILE:
       console.log('Renseigner path update profile dans la requete axios');
-      // axios
-      //   .post('à renseigner update profile', {
-      //     username: store.getState().user.profile.usernameEdit,
-      //     password: store.getState().user.profile.passwordEdit,
-      //     email: store.getState().user.profile.emailEdit,
-      //     lastname: store.getState().user.profile.lastnameEdit,
-      //     firstname: store.getState().user.profile.firstnameEdit,
-      //     street: store.getState().user.profile.streetEdit,
-      //     postal: store.getState().user.profile.postalEdit,
-      //     city: store.getState().user.profile.cityEdit,
-      //   })
-      //   .then((response) => {
-      //     console.log('response from API : ');
-      //     console.log(response);
-      //     window.alert(
-      //       `
-      //       La modification de votre profil a bien été enregistrée.
-      //       Rendez-vous dans la page de votre Profil pour
-      //       voir les modifications.
-      //       Bisous.
-      //       `
-      //     );
-      //   })
-      //   .catch((error) => {
-      //     console.warn(error);
-      //   });
+      axios
+        .post('à renseigner update profile', {
+          username: store.getState().user.profile.usernameEdit,
+          password: store.getState().user.profile.passwordEdit,
+          email: store.getState().user.profile.emailEdit,
+          lastname: store.getState().user.profile.lastnameEdit,
+          firstname: store.getState().user.profile.firstnameEdit,
+          street: store.getState().user.profile.streetEdit,
+          postal: store.getState().user.profile.postalEdit,
+          city: store.getState().user.profile.cityEdit,
+          avatarImage: store.getState().user.profile.avatarImageEdit,
+        })
+        .then((response) => {
+          console.log('response from API : ');
+          console.log(response);
+          window.alert(
+            `
+            La modification de votre profil a bien été enregistrée.
+            Rendez-vous dans la page de votre Profil pour
+            voir les modifications.
+            Bisous.
+            `
+          );
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
 
       break;
 

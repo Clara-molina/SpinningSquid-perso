@@ -12,11 +12,9 @@ const Profile = (props) => (
       <p className="profile-name">{props.usernameConnection}</p>
       <Popup
         trigger={
-          (
-            <button className="profile-button-edit" type="button">
-              Editer mon profil
-            </button>
-          )
+          <button className="profile-button-edit" type="button">
+            Editer mon profil
+          </button>
         }
         modal
         nested
@@ -43,6 +41,7 @@ const Profile = (props) => (
                     id="lastnameEdit"
                     type="text"
                     className="form-edit-input"
+                    value={props.lastnameEdit}
                     // required
                     onChange={props.handleChange}
                   />
@@ -53,6 +52,7 @@ const Profile = (props) => (
                     id="firstnameEdit"
                     type="text"
                     className="form-edit-input"
+                    value={props.firstnameEdit}
                     // required
                     onChange={props.handleChange}
                   />
@@ -63,6 +63,7 @@ const Profile = (props) => (
                     id="streetEdit"
                     type="text"
                     className="form-edit-input"
+                    value={props.streetEdit}
                     // required
                     onChange={props.handleChange}
                   />
@@ -73,6 +74,7 @@ const Profile = (props) => (
                     id="postalEdit"
                     type="text"
                     className="form-edit-input"
+                    value={props.postalEdit}
                     // required
                     onChange={props.handleChange}
                   />
@@ -83,6 +85,7 @@ const Profile = (props) => (
                     id="cityEdit"
                     type="text"
                     className="form-edit-input"
+                    value={props.cityEdit}
                     // required
                     onChange={props.handleChange}
                   />
@@ -93,6 +96,7 @@ const Profile = (props) => (
                     id="emailEdit"
                     type="email"
                     className="form-edit-input"
+                    value={props.emailEdit}
                     // required
                     onChange={props.handleChange}
                   />
@@ -103,8 +107,19 @@ const Profile = (props) => (
                     id="passwordEdit"
                     type="password"
                     className="form-edit-input"
+                    value={props.passwordEdit}
                     // required
                     onChange={props.handleChange}
+                  />
+                </label>
+                <label className="form-edit-label" htmlFor="passwordEdit">
+                  Avatar
+                  <input
+                    id="avatarImage"
+                    type="file"
+                    className="form-edit-input"
+                    // required
+                    onChange={props.handleUploadLocalImage}
                   />
                 </label>
               </div>
