@@ -3,6 +3,7 @@ import {
   SUCCESS_LOGIN,
   SUCCESS_LOGOUT,
   FILL_STATE_USERDATA,
+  SUCCESS_REGISTER,
 } from 'src/actions/userActions';
 
 export const initialState = {
@@ -197,6 +198,21 @@ const reducer = (state = initialState, action = {}) => {
         usernameConnexion: '',
         passwordConnexion: '',
         clear: localStorage.clear(),
+      };
+
+    case SUCCESS_REGISTER:
+      console.log('case: SUCCESS_REGISTER');
+      return {
+        ...state,
+        isLogged: false,
+        usernameInscription: '',
+        passwordInscription: '',
+        email: '',
+        lastname: '',
+        firstname: '',
+        street: '',
+        postal: '',
+        city: '',
       };
 
     default:
