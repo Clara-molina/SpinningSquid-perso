@@ -1,7 +1,7 @@
 @use 'src/styles/vars';
 
 .contact {
-
+  font-family: 'Righteous';
   .contact-title {
     color: vars.$white;
     text-align: center;
@@ -25,9 +25,6 @@
 
     .contact-form {
       width: 50%;
-
-      .contact-label {
-      }
 
       .contact-input {
         display: flex;

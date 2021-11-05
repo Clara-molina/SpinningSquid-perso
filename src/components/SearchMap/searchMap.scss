@@ -3,6 +3,7 @@
 .search {
   height: auto;
   max-width: 100%;
+  font-family: 'Righteous';
   .iconeMarker {
     height: 25px;
     width: 25px;
@@ -26,6 +27,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Righteous';
+    color: black;
+    border-color: vars.$orange;
+  box-shadow: 0 0 40px 40px vars.$orange inset, 0 0 0 0 vars.$orange;
+  transition: all 150ms ease-in-out;
+  
+  &:hover {
+    box-shadow: 0 0 10px 0 vars.$orange inset, 0 0 10px 4px vars.$orange;
+  }
   }
 
   .search-form {

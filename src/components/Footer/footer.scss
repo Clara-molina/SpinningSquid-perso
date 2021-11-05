@@ -7,11 +7,10 @@
   justify-content: space-around;
   padding: 30px;
   width: 100%;
-  position: absolute;
-  bottom: 0;
 
   .navFooter-link {
     color: vars.$grey;
+    font-family: 'Righteous';
   }
 
   .navFooter-link--active {

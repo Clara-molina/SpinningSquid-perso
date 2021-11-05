@@ -1,4 +1,5 @@
 @use 'src/styles/vars';
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sedgwick+Ave+Display&display=swap');
 
 .nav {
   background-color: vars.$black;
@@ -16,6 +17,7 @@
 
   .nav-link {
     color: vars.$grey;
+    font-family: 'Righteous';
   }
 
   .nav-link:hover,
@@ -59,9 +61,7 @@
     overflow: hidden;
   }
 
-  .nav-link-avatar--active {
-    
-  }
+
 
   .bm-burger-button {
     display: none;
@@ -70,6 +70,7 @@
 
 
 @media (max-width: 770px) {
+  
 
   .nav {
     width: 100%;
@@ -98,7 +99,7 @@
 
   .bm-burger-button {
     display: inline-block !important;
-    position: fixed;
+    position: absolute;
     width: 36px;
     height: 30px;
     right: 36px;
