@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import './connection.scss';
 
 const Connection = ({ handleChange, handleSubmitLogin, handleSubmitRegister }) => {
@@ -8,6 +7,12 @@ const Connection = ({ handleChange, handleSubmitLogin, handleSubmitRegister }) =
 
     handleChange(inputId, inputValue);
   };
+
+  // const history = useHistory();
+  // const handleClick = () => {
+  //   history.push('/connexion/profil');
+  // };
+
   return (
     <div className="connection">
       <h1 className="title-connection">Connecte toi et sinon, inscrit toi.</h1>
