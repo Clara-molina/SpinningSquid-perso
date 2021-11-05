@@ -64,16 +64,16 @@ const authMiddleware = (store) => (next) => (action) => {
     case SUBMIT_UPDATE_PROFILE:
       console.log('Renseigner path update profile dans la requete axios');
       axios
-        .post('à renseigner update profile', {
+        .post(baseSpinningSquid + '/user-edit', {
           username: store.getState().user.profile.usernameEdit,
           password: store.getState().user.profile.passwordEdit,
           email: store.getState().user.profile.emailEdit,
           lastname: store.getState().user.profile.lastnameEdit,
           firstname: store.getState().user.profile.firstnameEdit,
           street: store.getState().user.profile.streetEdit,
-          postal: store.getState().user.profile.postalEdit,
+          zipcode: store.getState().user.profile.postalEdit,
           city: store.getState().user.profile.cityEdit,
-          avatarImage: store.getState().user.profile.avatarImageEdit,
+          image: store.getState().user.profile.avatarImageEdit,
         })
         .then((response) => {
           console.log('response from API : ');
