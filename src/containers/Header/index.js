@@ -8,8 +8,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  handleLogout: (event) => {
-    event.preventDefault();
+  handleLogout: () => {
     dispatch(submitLogout());
   },
 });

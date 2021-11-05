@@ -196,6 +196,7 @@ const reducer = (state = initialState, action = {}) => {
         isLogged: false,
         usernameConnexion: '',
         passwordConnexion: '',
+        clear: localStorage.clear(),
       };
 
     default:
