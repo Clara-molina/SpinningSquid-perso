@@ -10,7 +10,10 @@ const location = {
 };
 
 const SearchMap = (props) => {
-  props.callApiGet();
+  if (!props.isLoading) {
+    props.callApiGet();
+    props.setOnLoading();
+  }
   const Marker = (props) => {
     return <div className="iconeMarker">&#9733;</div>;
   };
@@ -63,7 +66,7 @@ const SearchMap = (props) => {
 
       <div className="search-result">
         <div className="search-list">
-          { props.callApiOK && <SearchList itemList={props.responseAPI} />}
+          {props.isLoaded && <SearchList itemList={props.responseAPI} />}
         </div>
         <div className="search-map">
           <GoogleMapReact
