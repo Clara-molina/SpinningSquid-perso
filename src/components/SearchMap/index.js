@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import SearchList from './SearchList';
 import './searchMap.scss';
 
+import { exemple } from 'src/containers/SearchMap/exemple';
+
 const location = {
   address: '1600 Amphitheatre Parkway, Mountain View, california.',
   lat: 37.42216,
@@ -63,7 +65,7 @@ const SearchMap = (props) => {
 
       <div className="search-result">
         <div className="search-list">
-          <SearchList itemList={props.skateparkLocationList} />
+          <SearchList itemList={exemple} />
         </div>
         <div className="search-map">
           <GoogleMapReact

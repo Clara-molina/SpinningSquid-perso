@@ -5,7 +5,7 @@ import { callGetSkateparkList } from 'src/actions/skateparkActions';
 import SearchMap from 'src/components/SearchMap';
 
 const mapStateToProps = (state) => ({
-  skateparkLocationList: state.skatepark.skateparkLocationList,
+  skateparkLocationList: state.skatepark.skateparkListAPI,
 });
 
 const mapDispatchToProps = (dispatch, state) => ({

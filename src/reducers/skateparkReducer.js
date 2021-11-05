@@ -222,7 +222,8 @@ const reducer = (state = initialState, action = {}) => {
     case GET_SKATEPARK_LIST_SUCCESS:
       return {
         ...state,
-        skateparkListAPI: action.responseAPI,
+        skateparkListAPI: action.dataAPI,
+        responseAPI: action.responseAPI,
       };
     case SUBMIT_ADD_SPOT_SUCCESS:
       return {

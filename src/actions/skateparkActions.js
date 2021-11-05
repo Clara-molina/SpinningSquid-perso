@@ -6,7 +6,8 @@ export const SUBMIT_ADD_SPOT_SUCCESS = 'SUBMIT_ADD_SPOT_SUCCESS';
 
 export const successGetSkateparkList = (data) => ({
   type: GET_SKATEPARK_LIST_SUCCESS,
-  responseAPI: data,
+  responseAPI: true,
+  dataAPI: data,
 });
 export const callGetSkateparkList = () => ({
   type: GET_SKATEPARK_LIST,

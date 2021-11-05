@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { exemple } from 'src/containers/SearchMap/exemple';
 import {
   GET_SKATEPARK_LIST,
   successGetSkateparkList,
@@ -11,27 +12,23 @@ const skateparkMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_SKATEPARK_LIST:
       const endPointSkatepark = '/skatepark?_embed=true';
-      axios
-        .get(baseURI + endPointSkatepark)
-        .then((response) => {
-          console.log('response from API : ');
-          console.log(response.data);
-          console.log(response.data[0]);
-          console.log(response.data[0].id);
-          console.log(response.data[0].meta);
-          console.log(response.data[0].meta.longitude);
-      store.dispatch(
-        successGetSkateparkList(response.data)
-      );
-      })
-      .catch((error) => {
-        console.warn(error);
-      });
-      // store.dispatch(
-      //   successGetSkateparkList(
-      //     'a remplacer par le call API dans skateparkMiddleware'
-      //   )
+      // axios
+      //   .get(baseURI + endPointSkatepark)
+      //   .then((response) => {
+      //     console.log('response from API : ');
+      //     console.log(response.data);
+      //     console.log(response.data[0]);
+      //     console.log(response.data[0].id);
+      //     console.log(response.data[0].meta);
+      //     console.log(response.data[0].meta.longitude);
+      //     store.dispatch(
+      //     successGetSkateparkList(response.data)
       // );
+      // })
+      // .catch((error) => {
+      //   console.warn(error);
+      // });
+      store.dispatch(successGetSkateparkList(exemple));
 
       break;
     case SUBMIT_ADD_SPOT:
