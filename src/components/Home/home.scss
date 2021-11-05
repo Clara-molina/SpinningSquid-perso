@@ -94,30 +94,30 @@
 
 }
 
-@media (max-width: 770px) {
+@media (max-width: 920px) {
 
   .home-container {
 
     .home-logo {
-      height: 100px;
-      width: 100px;
+      height: 6%;
+      width: 25%;
       position: absolute;
-      top: 16%;
-      left: 35%;
-      font-size: 12em;
+      top: 18.5%;
+      left: 37%;
+      font-size: 7em;
       font-family: 'Sedgwick Ave Display';
-      text-shadow: black 10px 10px 10px;
+      text-shadow: black 1px 1px 1px;
       text-align: center;
     }
 
   .home-title {
     color: vars.$orange;
     position: absolute;
-    top: 27%;
-    left: 13% !important;
-    font-size: 3em !important;
+    top: 14%;
+    left: 20% !important;
+    font-size: 2em !important;
     font-family: 'Sedgwick Ave Display';
-    text-shadow: black 10px 10px 10px;
+    text-shadow: black 1px 1px 1px;
     text-align: center;
   }
 
@@ -131,11 +131,11 @@
     .home-nav-description {
       text-align: center !important;
       --responsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 420px) / (1200 - 420))); 
-      --max-font: 25;
-      --min-font: 12;
+      --max-font: 35;
+      --min-font: 20;
       font-size: var(--responsive) ;
       color: white ;
-      text-shadow: black 20px 20px 20px ;
+      text-shadow: black 1px 1px 1px ;
     }
   
   }
