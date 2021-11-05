@@ -10,7 +10,6 @@
     text-align: center;
     padding: 1em;
     font-size: 2em;
-    margin-bottom: 1em;
   }
   .spotadd-title {
     padding: 1em;
@@ -23,6 +22,17 @@
     margin: auto;
     color: vars.$white;
     padding: 1em;
+
+    .spotadd-container-title {
+      height: 100%;
+      text-align: center;
+      margin-bottom: 2em;
+
+      .spotadd-input-title {
+        width: 30%;
+        margin-bottom: 1.5em;
+      }
+    }
 
     .spotadd-container-category {
       height: 100%;

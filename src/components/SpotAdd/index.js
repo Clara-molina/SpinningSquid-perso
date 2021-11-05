@@ -6,16 +6,15 @@ const SpotAdd = (props) => (
 
     <form className="spotadd-form" onSubmit={props.handleSubmitAddPost}>
       <div className="spotadd-container-title">
-        <label htmlFor="title-skatepark" className="spotadd-label-title">
-          Titre:
-          <input
-            id="titleSkatepark"
-            className="spotadd-check-title"
-            type="text"
-            name="skatepark"
-            onChange={props.handleChangeField}
-          />
-        </label>
+        <h2 className="spotadd-title">Titre</h2>
+        <input
+          id="titleSkatepark"
+          className="spotadd-input-title"
+          type="text"
+          name="skatepark"
+          placeholder="SkatePark de Grenoble Centre"
+          onChange={props.handleChangeField}
+        />
       </div>
       <div className="spotadd-container-category">
         <label htmlFor="category-skatepark" className="spotadd-label-category">
