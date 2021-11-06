@@ -25,6 +25,12 @@
   .marketplace-input {
     font-size: 1.1rem;
   }
+  .marketplace-loading-wheel {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
   .article-list {
     margin: 0 2rem;
     padding: 1rem;

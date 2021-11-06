@@ -2,7 +2,7 @@ import { UPDATE_FIELD } from 'src/actions/userActions';
 import {
   GET_SKATEPARK_LIST_SUCCESS,
   SUBMIT_ADD_SPOT_SUCCESS,
-  ON_LOADING,
+  SKATEPARK_ON_LOADING,
 } from 'src/actions/skateparkActions';
 
 export const initialState = {
@@ -191,7 +191,7 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           addSpot: {
             ...state.addSpot,
-            etatRadioBtn: 'addSpotNew',
+            etatRadioBtn: 'New',
           },
         };
       }
@@ -200,7 +200,7 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           addSpot: {
             ...state.addSpot,
-            etatRadioBtn: 'addSpotGood',
+            etatRadioBtn: 'Good',
           },
         };
       }
@@ -209,7 +209,7 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           addSpot: {
             ...state.addSpot,
-            etatRadioBtn: 'addSpotWay',
+            etatRadioBtn: 'Way',
           },
         };
       }
@@ -218,7 +218,7 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           addSpot: {
             ...state.addSpot,
-            etatRadioBtn: 'addSpotEndoflife',
+            etatRadioBtn: 'Endoflife',
           },
         };
       }
@@ -234,7 +234,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         message: action.message_success,
       };
-    case ON_LOADING:
+    case SKATEPARK_ON_LOADING:
       return {
         ...state,
         isLoading: true,

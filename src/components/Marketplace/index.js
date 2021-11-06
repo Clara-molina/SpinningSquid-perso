@@ -1,17 +1,15 @@
 import { Link } from 'react-router-dom';
 import ArticleList from './ArticleList';
+import Loading from 'src/components/Loading';
+
 import './marketplace.scss';
 
-const Marketplace = ({
-  articlesList = [],
-  handleOnSearchArticleFieldChange,
-  submitArticleSearch,
-}) => {
-  const handleOnChange = (event) => {
-    const inputId = event.target.id;
-    const inputValue = event.target.value;
-    handleOnSearchArticleFieldChange(inputId, inputValue);
-  };
+const Marketplace = (props) => {
+  if (!props.isLoading) {
+    props.callMarketplaceApiGet();
+    props.setOnLoading();
+  }
+
   return (
     <div id="marketplace">
       <div className="search">
@@ -21,7 +19,7 @@ const Marketplace = ({
             <button className="button">Poster une annonce</button>
           </Link>
         </div>
-        <form className="marketplace-form" onSubmit={submitArticleSearch}>
+        <form className="marketplace-form" onSubmit={props.submitArticleSearch}>
           <input
             id="marketplace-search"
             className="marketplace-input"
@@ -29,14 +27,24 @@ const Marketplace = ({
             name="search"
             placeholder="Recherche"
             required
-            onChange={handleOnChange}
+            onChange={props.handleOnChange}
           />
           <button className="button" type="submit">
             Rechercher
           </button>
         </form>
       </div>
-      <ArticleList />
+
+      {!props.isLoaded && (
+        <>
+          <div className="marketplace-loading-wheel">
+            <div className="loading-wheel">
+              <Loading color={'#FF8552'} />
+            </div>
+          </div>
+        </>
+      )}
+      {props.isLoaded && <ArticleList />}
     </div>
   );
 };
