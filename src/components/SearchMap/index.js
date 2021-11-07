@@ -1,19 +1,13 @@
-import GoogleMapReact from 'google-map-react';
+import Loading from 'src/components/Loading';
+import BlockMap from './BlockMap';
 import { Link } from 'react-router-dom';
-import SearchList from './SearchList';
 import './searchMap.scss';
 
-const location = {
-  address: '1600 Amphitheatre Parkway, Mountain View, california.',
-  lat: 37.42216,
-  lng: -122.08427,
-};
-
 const SearchMap = (props) => {
-  props.callApiGet();
-  const Marker = (props) => {
-    return <div className="iconeMarker">&#9733;</div>;
-  };
+  if (!props.isLoading) {
+    props.callApiGet();
+    props.setOnLoading();
+  }
   return (
     <div className="search">
       <h1 className="search-title">Trouve ton SkatePark</h1>
@@ -62,21 +56,14 @@ const SearchMap = (props) => {
       </form>
 
       <div className="search-result">
-        <div className="search-list">
-          <SearchList itemList={props.skateparkLocationList} />
-        </div>
-        <div className="search-map">
-          <GoogleMapReact
-            bootstrapURLKeys={{
-              key: 'AIzaSyAglZjyBm532ApJYhxUDEVnmIo0Zd_JsjY',
-            }}
-            defaultCenter={location}
-            defaultZoom={8}
-          >
-            <Marker lat={37.42216} lng={-122.08427} />
-            <Marker lat={37.38216} lng={-122.08827} />
-          </GoogleMapReact>
-        </div>
+        {!props.isLoaded && (
+          <>
+            <div className="loading-wheel">
+              <Loading color={'#FF8552'} />
+            </div>
+          </>
+        )}
+        {props.isLoaded && <BlockMap responseAPI={props.responseAPI} />}
       </div>
     </div>
   );

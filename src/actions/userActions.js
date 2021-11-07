@@ -1,3 +1,5 @@
+export const CHECK_USER = 'CHECK_USER';
+export const GET_USER_INFO = 'GET_USER_INFO';
 export const FILL_STATE_USERDATA = 'FILL_STATE_USERDATA';
 export const UPDATE_FIELD = 'UPDATE_FIELD';
 export const SUBMIT_LOGIN = 'SUBMIT_LOGIN';
@@ -65,4 +67,10 @@ export const submitRegister = () => ({
 
 export const submitUpdateProfile = () => ({
   type: SUBMIT_UPDATE_PROFILE,
+});
+export const checkUserUpdateProfile = () => ({
+  type: CHECK_USER,
+});
+export const getUserDataProfile = () => ({
+  type: GET_USER_INFO,
 });

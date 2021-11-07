@@ -66,3 +66,9 @@ transition: all 150ms ease-in-out;
 .shadowDiv {
   height: 76px;
 }
+//composant en attente de chargement
+.loading-wheel {
+  height: 5rem;
+  width: 5rem;
+  margin-top: 5rem;
+}
