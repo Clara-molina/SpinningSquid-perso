@@ -4,6 +4,7 @@ $grey: #6e6b6b;
 $lightGrey: #c2c2c2;
 $white: #ffffff;
 $orange: #ff8552;
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sedgwick+Ave+Display&display=swap');
 
 // Generic class
 .block {
@@ -19,11 +20,25 @@ $orange: #ff8552;
 }
 .button {
   height: 30px;
-  width: 100px;
+  width: 130px;
   background-color: $orange;
-  border-radius: 50px;
-  border: solid 1px $darkGrey;
+  border-radius: 12px;
+  border: solid 1px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Righteous';
+  color: black;
+  border-color: $orange;
+box-shadow: 0 0 40px 40px $orange inset, 0 0 0 0 $orange;
+transition: all 150ms ease-in-out;
+
+&:hover {
+  box-shadow: 0 0 10px 0 $orange inset, 0 0 10px 4px $orange;
 }
+}
+
 .list {
   display: flex;
   align-items: center;

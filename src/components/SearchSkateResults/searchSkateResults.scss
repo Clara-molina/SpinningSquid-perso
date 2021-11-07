@@ -1,12 +1,14 @@
-.searchresult {
 
+
+.searchresult {
+  font-family: 'Righteous';
 display:flex;
 flex-direction: column;
 text-align: center;
 margin-top: 2em;
 float:center;
 color: white;
-background: radial-gradient(ellipse at top, #242424 0%, #000000 80%)
+background: radial-gradient(ellipse at top, #242424 0%, #000000 80%);
 }
 
 

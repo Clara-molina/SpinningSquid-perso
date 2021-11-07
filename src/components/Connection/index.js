@@ -1,19 +1,19 @@
-import { Link } from 'react-router-dom';
 import './connection.scss';
 
-const Connection = ({ handleChange, handleSubmitLogin, handleSubmitRegister }) => {
+const Connection = (props) => {
   const handleOnChange = (event) => {
     const inputId = event.target.id;
     const inputValue = event.target.value;
 
-    handleChange(inputId, inputValue);
+    props.handleChange(inputId, inputValue);
   };
+
   return (
     <div className="connection">
       <h1 className="title-connection">Connecte toi et sinon, inscrit toi.</h1>
 
       <div className="container-forms">
-        <form className="form-register" onSubmit={handleSubmitRegister}>
+        <form className="form-register" onSubmit={props.handleSubmitRegister}>
           <h2 className="form-register-title">
             Tu n'a pas de compte ? Crées-en un!
           </h2>
@@ -24,6 +24,7 @@ const Connection = ({ handleChange, handleSubmitLogin, handleSubmitRegister }) =
               className="form-register-input"
               required
               onChange={handleOnChange}
+              value={props.usernameInscription}
             />
           </label>
           <label htmlFor="lastname">Nom
@@ -33,6 +34,7 @@ const Connection = ({ handleChange, handleSubmitLogin, handleSubmitRegister }) =
               className="form-register-input"
               required
               onChange={handleOnChange}
+              value={props.lastname}
             />
           </label>
           <label htmlFor="firstname">Prénom
@@ -42,6 +44,7 @@ const Connection = ({ handleChange, handleSubmitLogin, handleSubmitRegister }) =
               className="form-register-input"
               required
               onChange={handleOnChange}
+              value={props.firstname}
             />
           </label>
           <label htmlFor="street">Rue
@@ -51,6 +54,7 @@ const Connection = ({ handleChange, handleSubmitLogin, handleSubmitRegister }) =
               className="form-register-input"
               required
               onChange={handleOnChange}
+              value={props.street}
             />
           </label>
           <label htmlFor="postal">Code postal
@@ -60,6 +64,7 @@ const Connection = ({ handleChange, handleSubmitLogin, handleSubmitRegister }) =
               className="form-register-input"
               required
               onChange={handleOnChange}
+              value={props.postal}
             />
           </label>
           <label htmlFor="city">Ville
@@ -69,6 +74,7 @@ const Connection = ({ handleChange, handleSubmitLogin, handleSubmitRegister }) =
               className="form-register-input"
               required
               onChange={handleOnChange}
+              value={props.city}
             />
           </label>
           <label htmlFor="email">Email
@@ -78,6 +84,7 @@ const Connection = ({ handleChange, handleSubmitLogin, handleSubmitRegister }) =
               className="form-register-input"
               required
               onChange={handleOnChange}
+              value={props.email}
             />
           </label>
           <label htmlFor="passwordInscription">Password
@@ -87,6 +94,7 @@ const Connection = ({ handleChange, handleSubmitLogin, handleSubmitRegister }) =
               className="form-register-input"
               required
               onChange={handleOnChange}
+              value={props.passwordInscription}
             />
           </label>
           <button className="form-register-button" type="submit">
@@ -94,7 +102,7 @@ const Connection = ({ handleChange, handleSubmitLogin, handleSubmitRegister }) =
           </button>
         </form>
 
-        <form className="form-connection" onSubmit={handleSubmitLogin}>
+        <form className="form-connection" onSubmit={props.handleSubmitLogin}>
           <h2 className="form-connection-title">
             Tu a déjà un compte ? Connecte toi!
           </h2>

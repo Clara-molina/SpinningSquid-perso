@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 // == Import
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import './styles.scss';
 
 // Import Containers
@@ -57,7 +58,9 @@ const App = (props) => {
           <Route path="/communaute/details" component={DetailsPost} />
           <Route path="/communaute/ajoute-ton-evenement" component={AddPost} />
           <Route path="/contact" component={Contact} />
-          <Route exact path="/connexion" component={Connection} />
+          <Route exact path="/connexion">
+            {props.isLogged ? <Redirect to="/connexion/profil" /> : <Connection />}
+          </Route>
           <Route exact path="/connexion/profil" component={Profile} />
           <Route path="/newsletter" component={NewsLetter} />
           <Route path="/loading" component={Loading} />

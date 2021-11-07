@@ -18,6 +18,7 @@ const mapStateToProps = (state) => ({
   passwordInscription: state.user.passwordInscription,
   passwordConnexion: state.user.passwordConnexion,
   email: state.user.email,
+  isLogged: state.user.isLogged,
 });
 
 const mapDispatchToProps = (dispatch) => ({

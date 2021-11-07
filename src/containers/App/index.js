@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 import App from 'src/components/App';
 import { fillState } from 'src/actions/userActions';
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  isLogged: state.user.isLogged,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   getLocalStorageDataToState: () => {
