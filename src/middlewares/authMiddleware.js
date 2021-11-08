@@ -31,6 +31,11 @@ const authMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.warn(error);
+          window.alert(
+            `
+            Ton mot de passe ou ton nom d'utilisateur est incorrect.
+            `
+          );
         });
 
       break;
@@ -52,7 +57,7 @@ const authMiddleware = (store) => (next) => (action) => {
           console.log(response);
           window.alert(
             `
-            Inscription réussie!
+            Inscription réussie! Merci de te connecter.
             `
           );
           const clearInput = successRegister();
