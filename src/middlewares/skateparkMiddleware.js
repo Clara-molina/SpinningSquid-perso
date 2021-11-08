@@ -12,18 +12,18 @@ const skateparkMiddleware = (store) => (next) => (action) => {
     case GET_SKATEPARK_LIST:
       const endPointSkatepark = '/skatepark?_embed=true';
       //console.log('test ce soir');
-      // axios
-      //   .get(baseURI + endPointSkatepark)
-      //   .then((response) => {
-      //     console.log('response from API : ');
-      //     console.log(response);
-      // store.dispatch(
-      //   successGetSkateparkList(response.data)
-      // );
-      // })
-      // .catch((error) => {
-      //   console.warn(error);
-      // });
+      axios
+        .get(baseURI + endPointSkatepark)
+        .then((response) => {
+          console.log('response from API : ');
+          console.log(response);
+          store.dispatch(
+            successGetSkateparkList(response.data),
+          );
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
 
       const exemple = [
         {
@@ -61,10 +61,10 @@ const skateparkMiddleware = (store) => (next) => (action) => {
           zipcode: 'ererererrrr',
         },
       ];
-      setTimeout(() => {
-        //console.log('retour setTimeOut API call');
-        store.dispatch(successGetSkateparkList(exemple));
-      }, 3000);
+      // setTimeout(() => {
+      //   //console.log('retour setTimeOut API call');
+      //   store.dispatch(successGetSkateparkList(exemple));
+      // }, 3000);
       // store.dispatch(
       //   successGetSkateparkList(
       //     'a remplacer par le call API dans skateparkMiddleware'
