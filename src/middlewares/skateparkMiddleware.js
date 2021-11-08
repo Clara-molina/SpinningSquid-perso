@@ -74,9 +74,10 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       break;
     case SUBMIT_ADD_SPOT:
       const endPointAdd_Spot = '/newskatepark-save';
+      console.log(JSON.parse(localStorage.getItem('userData')).token);
       const options = {
         headers: {
-          Authorization: 'Bearer ' + localStorage.getItem('userData').token,
+          Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('userData')).token,
         }
       };
       //console.log('on y passe youpi');
@@ -101,8 +102,8 @@ const skateparkMiddleware = (store) => (next) => (action) => {
           image: store.getState().skatepark.addSpot.uploadedImg,
         },options)
         .then((response) => {
-          //console.log('response from API : ');
-          //console.log(response);
+          console.log('response from API : ');
+          console.log(response);
           store.dispatch(
             successGetSkateparkList(
               'a remplacer par kekchose ou pas dans skateparkMiddleware'

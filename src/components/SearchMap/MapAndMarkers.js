@@ -3,8 +3,13 @@ import GoogleMapReact from 'google-map-react';
 import styled from 'styled-components';
 import logo1 from 'src/assets/img/logo-hover.png';
 
-const _onChildMouseEnter = () => {
-  console.log('on hover child');
+const _onChildMouseEnter = (event) => {
+  console.log('on entering child');
+  document.querySelector('#search-list :nth-child(3)').style.color = "red";
+};
+const _onChildMouseLeave = (event) => {
+  console.log('on leaving child');
+  document.querySelector('#search-list :nth-child(3)').style.color = "black";
 };
 const Wrapper = styled.img`
   //background-color: black;
@@ -22,8 +27,11 @@ const Wrapper = styled.img`
 const hoverIcon = (event)=>{
   console.log(event);
 };
-const Marker = () => {
-  return <Wrapper className="" src={logo1} onHover={hoverIcon}></Wrapper>;
+const Marker = (props) => {
+  //console.log('conselog de marker');
+  //console.log(props);
+  //console.log(props.$hover);
+  return <Wrapper id={'testWrapperId'+props.id} className="" src={logo1} ></Wrapper>;
 };
 const places = [
   {
@@ -49,18 +57,22 @@ const MapAndMarkers = (props) => {
       defaultZoom={8}
       yesIWantToUseGoogleMapApiInternals
       onChildMouseEnter={_onChildMouseEnter}
+      onChildMouseLeave={_onChildMouseLeave}
     >
-      {props.responseAPI.map((place) => (
+      {props.responseAPI.map((place) => {
+        //console.log(place.id);
+        return (
+        
         <Marker
           key={place.id}
+          id={place.id}
           //text={place.name}
           lat={place.meta.lat}
           lng={place.meta.lng}
-          
         />
-      ))}
-      <Marker lat={37.42216} lng={-122.08427} />
-      <Marker lat={37.38216} lng={-122.08827} />
+      )})}
+      <Marker id='test1' lat={37.42216} lng={-122.08427} />
+      <Marker id='test2' lat={37.38216} lng={-122.08827} />
     </GoogleMapReact>
   );
 };
