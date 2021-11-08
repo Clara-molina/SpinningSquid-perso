@@ -11,14 +11,19 @@ const Wrapper = styled.img`
   border-radius: 25px;
   width: 30px;
   height: 30px;
+  transform: translate(-15px,-15px);
   &:hover {
     width: 50px;
     height: 50px;
+    transform: translate(-25px,-35px);
   }
 `;
 //&#9733;
+const hoverIcon = (event)=>{
+  console.log(event);
+};
 const Marker = () => {
-  return <Wrapper className="" src={logo1} ></Wrapper>;
+  return <Wrapper className="" src={logo1} onHover={hoverIcon}></Wrapper>;
 };
 const places = [
   {
@@ -28,7 +33,7 @@ const places = [
     lng: -122.07427,
   },
 ];
-const MapAndMarkers = () => {
+const MapAndMarkers = (props) => {
   const location = {
     address: '1600 Amphitheatre Parkway, Mountain View, california.',
     lat: 37.42216,
@@ -43,14 +48,14 @@ const MapAndMarkers = () => {
       defaultCenter={location}
       defaultZoom={8}
       yesIWantToUseGoogleMapApiInternals
-      //onChildMouseEnter={_onChildMouseEnter}
+      onChildMouseEnter={_onChildMouseEnter}
     >
-      {places.map((place) => (
+      {props.responseAPI.map((place) => (
         <Marker
           key={place.id}
-          text={place.name}
-          lat={place.lat}
-          lng={place.lng}
+          //text={place.name}
+          lat={place.meta.lat}
+          lng={place.meta.lng}
           
         />
       ))}

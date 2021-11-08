@@ -74,6 +74,11 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       break;
     case SUBMIT_ADD_SPOT:
       const endPointAdd_Spot = '/newskatepark-save';
+      const options = {
+        headers: {
+          Authorization: 'Bearer ' + localStorage.getItem('userData').token,
+        }
+      };
       //console.log('on y passe youpi');
       axios
         .post(baseSpinningSquid + endPointAdd_Spot, {
@@ -94,7 +99,7 @@ const skateparkMiddleware = (store) => (next) => (action) => {
           benche: store.getState().skatepark.addSpot.benche,
           state: store.getState().skatepark.addSpot.etatRadioBtn,
           image: store.getState().skatepark.addSpot.uploadedImg,
-        })
+        },options)
         .then((response) => {
           //console.log('response from API : ');
           //console.log(response);

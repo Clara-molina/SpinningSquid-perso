@@ -8,7 +8,7 @@ const BlockMap = (props) => {
         <SearchList itemList={props.responseAPI} />
       </div>
       <div className="search-map">
-        <MapAndMarkers />
+        <MapAndMarkers responseAPI={props.responseAPI} />
       </div>
     </>
   );
