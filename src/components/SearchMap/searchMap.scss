@@ -115,3 +115,53 @@
     }
   }
 }
+
+
+@media (max-width: 800px) {
+
+  .search .search-result .search-list .search-list-item {
+
+    display:flex;
+    align-items: flex-start;
+  }
+
+  .search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    height: 80px;
+    max-width: 800px;
+    color: vars.$white;
+  }
+
+  .search-result {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: flex-start;
+      align-items: flex-start;
+  }
+
+  .search .search-result .search-map{
+    width : 100%;
+
+  }
+
+  .search .search-result .search-list {
+    align-self: flex-start;
+    width: 100%;
+
+  }
+
+  .search .search-result .search-list .search-list-item {
+    align-self: flex-start;
+    width: 100%;
+    left: -5em;
+
+  }
+}
+
+
+@media (max-width: 400px) {
+}
