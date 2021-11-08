@@ -1,8 +1,10 @@
 import { UPDATE_FIELD } from 'src/actions/userActions';
 import {
+  SKATEPARK_ON_LOADING,
   GET_SKATEPARK_LIST_SUCCESS,
   SUBMIT_ADD_SPOT_SUCCESS,
-  SKATEPARK_ON_LOADING,
+  SUBMIT_UPDATE_SPOT_SUCCESS,
+  SUBMIT_DELETE_SPOT_SUCCESS,
 } from 'src/actions/skateparkActions';
 
 export const initialState = {
@@ -223,6 +225,11 @@ const reducer = (state = initialState, action = {}) => {
         };
       }
 
+    case SKATEPARK_ON_LOADING:
+      return {
+        ...state,
+        isLoading: true,
+      };
     case GET_SKATEPARK_LIST_SUCCESS:
       return {
         ...state,
@@ -234,11 +241,17 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         message: action.message_success,
       };
-    case SKATEPARK_ON_LOADING:
+    //--------------------------------------------------------------
+    // à compléter
+    case SUBMIT_UPDATE_SPOT_SUCCESS:
       return {
         ...state,
-        isLoading: true,
       };
+    case SUBMIT_DELETE_SPOT_SUCCESS:
+      return {
+        ...state,
+      };
+    //-------------------------------------------------------------
     default:
       return state;
   }
