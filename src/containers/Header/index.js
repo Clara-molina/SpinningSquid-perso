@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { submitLogout } from 'src/actions/userActions';
+import { submitLogout, checkUserUpdateProfile, getUserDataProfile } from 'src/actions/userActions';
 
 import Header from 'src/components/Header';
 
@@ -10,6 +10,10 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   handleLogout: () => {
     dispatch(submitLogout());
+  },
+  handleCheckUserUpdateProfile: () => {
+    dispatch(checkUserUpdateProfile());
+    dispatch(getUserDataProfile());
   },
 });
 

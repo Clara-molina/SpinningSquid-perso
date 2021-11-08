@@ -6,7 +6,7 @@ import avatar from 'src/assets/img/logo2.png';
 import './header.scss';
 import { resetStorage } from '../../generic_functions';
 
-const Header = ({ isLogged, handleLogout }) => (
+const Header = ({ handleCheckUserUpdateProfile ,isLogged, handleLogout }) => (
 
   <nav className="nav">
     <div className="left-half-header">
@@ -83,6 +83,7 @@ const Header = ({ isLogged, handleLogout }) => (
           to="/connexion/profil"
           className="right-header"
           activeClassName="nav-link-avatar--active"
+          onClick={handleCheckUserUpdateProfile}
         >
           <img className="nav-link-avatar" src={avatar} alt="" />
         </NavLink>

@@ -11,18 +11,60 @@ const skateparkMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_SKATEPARK_LIST:
       const endPointSkatepark = '/skatepark?_embed=true';
-      axios
-        .get(baseURI + endPointSkatepark)
-        .then((response) => {
-          console.log('response from API : ');
-          console.log(response);
-      store.dispatch(
-        successGetSkateparkList(response.data)
-      );
-      })
-      .catch((error) => {
-        console.warn(error);
-      });
+      //console.log('test ce soir');
+      // axios
+      //   .get(baseURI + endPointSkatepark)
+      //   .then((response) => {
+      //     console.log('response from API : ');
+      //     console.log(response);
+      // store.dispatch(
+      //   successGetSkateparkList(response.data)
+      // );
+      // })
+      // .catch((error) => {
+      //   console.warn(error);
+      // });
+
+      const exemple = [
+        {
+          benche: false,
+          city: 'rrrrrrrrrrrrr',
+          latitude: 37.42216,
+          lighting: false,
+          longitude: -122.08427,
+          parking: false,
+          pumptrack: false,
+          skatepark: false,
+          state: 'addSpotWay',
+          street: 'rueeeeee',
+          streetspot: true,
+          table: false,
+          trashcan: false,
+          water: true,
+          zipcode: 'ererererrrr',
+        },
+        {
+          benche: false,
+          city: 'rrrrrrrrrrrrr',
+          latitude: -56,
+          lighting: false,
+          longitude: -456,
+          parking: false,
+          pumptrack: false,
+          skatepark: false,
+          state: 'addSpotWay',
+          street: 'rueeeeee',
+          streetspot: true,
+          table: false,
+          trashcan: false,
+          water: true,
+          zipcode: 'ererererrrr',
+        },
+      ];
+      setTimeout(() => {
+        //console.log('retour setTimeOut API call');
+        store.dispatch(successGetSkateparkList(exemple));
+      }, 3000);
       // store.dispatch(
       //   successGetSkateparkList(
       //     'a remplacer par le call API dans skateparkMiddleware'
@@ -32,8 +74,7 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       break;
     case SUBMIT_ADD_SPOT:
       const endPointAdd_Spot = '/newskatepark-save';
-      console.log('on y passe youpi');
-      //console.log(store.getState().skatepark.addSpot.tryPromiseField);
+      //console.log('on y passe youpi');
       axios
         .post(baseSpinningSquid + endPointAdd_Spot, {
           title: store.getState().skatepark.addSpot.title,
@@ -55,8 +96,8 @@ const skateparkMiddleware = (store) => (next) => (action) => {
           image: store.getState().skatepark.addSpot.uploadedImg,
         })
         .then((response) => {
-          console.log('response from API : ');
-          console.log(response);
+          //console.log('response from API : ');
+          //console.log(response);
           store.dispatch(
             successGetSkateparkList(
               'a remplacer par kekchose ou pas dans skateparkMiddleware'

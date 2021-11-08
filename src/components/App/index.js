@@ -24,6 +24,8 @@ import Home from 'src/components/Home';
 import PostArticle from 'src/components/Marketplace/PostArticle';
 import SearchSkateResults from 'src/components/SearchSkateResults';
 
+import Loading from 'src/components/Loading';
+
 // Import page d'erreur
 import NotFound from 'src/components/NotFound';
 
@@ -61,6 +63,7 @@ const App = (props) => {
           </Route>
           <Route exact path="/connexion/profil" component={Profile} />
           <Route path="/newsletter" component={NewsLetter} />
+          <Route path="/loading" component={Loading} />
           <Route component={NotFound} />
         </Switch>
         <Footer />

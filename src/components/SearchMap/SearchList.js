@@ -1,4 +1,6 @@
 const SearchList = (list) => {
+  console.log(list);
+  console.log(list.itemList);
   const mappingArticles = list.itemList.map((item) => (
     <article key={item} className="search-list-item">
       <img className="search-list-image" src=" " alt="" />
@@ -8,7 +10,6 @@ const SearchList = (list) => {
       </button>
     </article>
   ));
-
   return mappingArticles;
 };
 export default SearchList;
