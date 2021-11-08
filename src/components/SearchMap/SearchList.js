@@ -1,5 +1,5 @@
 const SearchList = (list) => {
-  console.log(list);
+  //console.log(list);
   console.log(list.itemList);
   const mappingArticles = list.itemList.map((item) => (
     <article key={item} className="search-list-item">

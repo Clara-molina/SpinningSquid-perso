@@ -18,7 +18,7 @@ const Wrapper = styled.img`
 `;
 //&#9733;
 const Marker = () => {
-  return <Wrapper className="" src={logo1}></Wrapper>;
+  return <Wrapper className="" src={logo1} ></Wrapper>;
 };
 const places = [
   {
@@ -51,6 +51,7 @@ const MapAndMarkers = () => {
           text={place.name}
           lat={place.lat}
           lng={place.lng}
+          
         />
       ))}
       <Marker lat={37.42216} lng={-122.08427} />
