@@ -4,12 +4,21 @@ import styled from 'styled-components';
 import logo1 from 'src/assets/img/logo-hover.png';
 
 const _onChildMouseEnter = (event) => {
-  console.log('on entering child');
-  document.querySelector('#search-list :nth-child(3)').style.color = "red";
+  //console.log('on entering child');
+  var sheet = document.createElement('style')
+  sheet.id = "stylesheethover";
+  const element = "#search-list :nth-child("+"3";//+event;
+  sheet.innerHTML = element +`){
+    background-color: red;
+  }`;
+  document.body.appendChild(sheet);
 };
+
 const _onChildMouseLeave = (event) => {
-  console.log('on leaving child');
-  document.querySelector('#search-list :nth-child(3)').style.color = "black";
+  //console.log('on leaving child');
+  var sheetToBeRemoved = document.getElementById('stylesheethover');
+  var sheetParent = sheetToBeRemoved.parentNode;
+  sheetParent.removeChild(sheetToBeRemoved);
 };
 const Wrapper = styled.img`
   //background-color: black;
