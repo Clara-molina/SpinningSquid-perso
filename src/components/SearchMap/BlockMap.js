@@ -4,11 +4,11 @@ import MapAndMarkers from './MapAndMarkers';
 const BlockMap = (props) => {
   return (
     <>
-      <div className="search-list">
+      <div id="search-list" className="search-list">
         <SearchList itemList={props.responseAPI} />
       </div>
       <div className="search-map">
-        <MapAndMarkers />
+        <MapAndMarkers responseAPI={props.responseAPI} />
       </div>
     </>
   );

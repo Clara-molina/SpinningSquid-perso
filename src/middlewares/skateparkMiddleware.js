@@ -62,7 +62,8 @@ const skateparkMiddleware = (store) => (next) => (action) => {
         },
       ];
       // setTimeout(() => {
-      //   //console.log('retour setTimeOut API call');
+      //console.log('retour setTimeOut API call');
+
       //   store.dispatch(successGetSkateparkList(exemple));
       // }, 3000);
       // store.dispatch(
@@ -74,6 +75,12 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       break;
     case SUBMIT_ADD_SPOT:
       const endPointAdd_Spot = '/newskatepark-save';
+      console.log(JSON.parse(localStorage.getItem('userData')).token);
+      const options = {
+        headers: {
+          Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('userData')).token,
+        }
+      };
       //console.log('on y passe youpi');
       axios
         .post(baseSpinningSquid + endPointAdd_Spot, {
@@ -94,10 +101,10 @@ const skateparkMiddleware = (store) => (next) => (action) => {
           benche: store.getState().skatepark.addSpot.benche,
           state: store.getState().skatepark.addSpot.etatRadioBtn,
           image: store.getState().skatepark.addSpot.uploadedImg,
-        })
+        },options)
         .then((response) => {
-          //console.log('response from API : ');
-          //console.log(response);
+          console.log('response from API : ');
+          console.log(response);
           store.dispatch(
             successGetSkateparkList(
               'a remplacer par kekchose ou pas dans skateparkMiddleware'

@@ -4,8 +4,9 @@
 import logo2 from 'src/assets/img/logo2.png';
 
 const SearchList = (list) => {
-  console.log(list);
+  //console.log(list);
   console.log(list.itemList);
+
   console.log(list.itemList[0]._embedded['wp:featuredmedia'][0].source_url);
 
   const mappingArticles = list.itemList.map((item) => {
