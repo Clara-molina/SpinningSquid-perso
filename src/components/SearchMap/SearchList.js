@@ -30,7 +30,7 @@ const SearchList = (list) => {
     return (
       <article key={item.id} id={item.id} className="search-list-item">
         <img className="search-list-image" src="" alt="" />
-        <h2 className="search-list-description">{item.title.rendered}</h2>
+        <h2 className="search-list-title">{item.title.rendered}</h2>
         <h3 className="search-list-description">
           {item.meta.streetspot ? 'Street' : item.meta.pumptrack ? 'PumpTrack' : 'SkatePark'}
         </h3>
