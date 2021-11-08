@@ -96,8 +96,8 @@ const skateparkMiddleware = (store) => (next) => (action) => {
           image: store.getState().skatepark.addSpot.uploadedImg,
         })
         .then((response) => {
-          //console.log('response from API : ');
-          //console.log(response);
+          console.log('response from API : ');
+          console.log(response);
           store.dispatch(
             successGetSkateparkList(
               'a remplacer par kekchose ou pas dans skateparkMiddleware'
