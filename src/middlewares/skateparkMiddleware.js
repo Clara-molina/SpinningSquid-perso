@@ -11,19 +11,19 @@ const skateparkMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_SKATEPARK_LIST:
       const endPointSkatepark = '/skatepark?_embed=true';
-      console.log('envoi requete API');
+      //console.log('test ce soir');
       axios
         .get(baseURI + endPointSkatepark)
         .then((response) => {
           console.log('response from API : ');
           console.log(response);
-      store.dispatch(
-        successGetSkateparkList(response.data)
-      );
-      })
-      .catch((error) => {
-        console.warn(error);
-      });
+          store.dispatch(
+            successGetSkateparkList(response.data),
+          );
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
 
       const exemple = [
         {
@@ -62,7 +62,8 @@ const skateparkMiddleware = (store) => (next) => (action) => {
         },
       ];
       // setTimeout(() => {
-        //console.log('retour setTimeOut API call');
+      //console.log('retour setTimeOut API call');
+
       //   store.dispatch(successGetSkateparkList(exemple));
       // }, 3000);
       // store.dispatch(
