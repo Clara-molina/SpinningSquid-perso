@@ -1,3 +1,5 @@
+import './searchMap.scss';
+
 const SearchList = (list) => {
   const mappingArticles = list.itemList.map((item) => (
     <article key={item} className="search-list-item">
