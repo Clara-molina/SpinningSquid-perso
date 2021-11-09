@@ -3,6 +3,8 @@ import axios from 'axios';
 import {
   GET_SKATEPARK_LIST,
   successGetSkateparkList,
+  GET_SKATEPARK_DETAILS,
+  successGetSkateparkDetails,
   SUBMIT_ADD_SPOT,
   successSubmitAddSpot,
   SUBMIT_UPDATE_SPOT,
@@ -137,7 +139,7 @@ const skateparkMiddleware = (store) => (next) => (action) => {
           console.log('response from API : ');
           console.log(response);
           store.dispatch(
-            successGetSkateparkList(
+            successSubmitAddSpot(
               'a remplacer par kekchose ou pas dans skateparkMiddleware'
             )
           );
@@ -156,6 +158,35 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       //     'a remplacer par kekchose ou pas dans skateparkMiddleware'
       //   )
       // );
+
+      break;
+    case GET_SKATEPARK_DETAILS:
+      const skatepark_Id = action.skateparkId;
+      const endPointDetails_Spot =
+        baseURI + '/skatepark/' + skatepark_Id + '?_embed=true';
+      //console.log('on y passe youpi');
+      // axios
+      //   .post(baseSpinningSquid + endPointDetails_Spot)
+      //   .then((response) => {
+      //     console.log('response from API : ');
+      //     console.log(response);
+      //     store.dispatch(
+      //       successGetSkateparkList(
+      //         'a remplacer par kekchose ou pas dans skateparkMiddleware'
+      //       )
+      //     );
+      //   })
+      //   .catch((error) => {
+      //     console.warn(error);
+      //   });
+      setTimeout(() => {
+        store.dispatch(
+          successGetSkateparkDetails(
+            'a remplacer par kekchose ou pas dans skateparkMiddleware, route: ' +
+              endPointDetails_Spot
+          )
+        );
+      }, 3000);
 
       break;
 
