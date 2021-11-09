@@ -2,11 +2,14 @@
 
 
 .navFooter {
+  float: bottom;
+  bottom: 0;
   background-color: vars.$black;
   display:flex;
   justify-content: space-around;
   padding: 30px;
   width: 100%;
+  margin-top: 12em;
 
   .navFooter-link {
     color: vars.$grey;

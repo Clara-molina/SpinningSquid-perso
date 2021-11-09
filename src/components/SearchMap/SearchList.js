@@ -1,3 +1,4 @@
+import './searchMap.scss';
 /* eslint-disable prefer-template */
 /* eslint-disable no-else-return */
 /* eslint-disable no-underscore-dangle */
