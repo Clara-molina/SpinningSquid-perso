@@ -13,10 +13,10 @@ import NewsLetter from 'src/containers/NewsLetter';
 import Profile from 'src/containers/Profile';
 import SearchMap from 'src/containers/SearchMap';
 import SpotAdd from 'src/containers/SpotAdd';
+import Community from 'src/containers/Community';
 
 // Import Components
 import AddPost from 'src/components/Community/AddPost';
-import Community from 'src/components/Community';
 import DetailsArticle from 'src/components/Marketplace/DetailsArticle';
 import DetailsPost from 'src/components/Community/DetailsPost';
 import Footer from 'src/components/Footer';
