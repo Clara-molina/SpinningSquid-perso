@@ -10,31 +10,18 @@ import {
   successSubmitDeleteArticle,
 } from 'src/actions/communityActions';
 import { baseURI, baseSpinningSquid } from 'src/routesBack';
-const endPointArticle = baseURI + '/article?_embed=true';
 
 const communityMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
-    //-------------------------------------------------------------------
-    // à compléter
     case GET_ARTICLE_LIST:
-      // console.log(JSON.parse(localStorage.getItem('userData')).token);
-      // const options = {
-      //   headers: {
-      //     Authorization:
-      //       'Bearer ' + JSON.parse(localStorage.getItem('userData')).token,
-      //   },
-      // };
-      // // console.log('on y passe youpi');
+      // const endPointArticle = baseURI + '/article?_embed=true';
+      // console.log('on y passe youpi');
       // axios
-      //   .get(baseSpinningSquid + endPointAdd_Spot, {}, options)
+      //   .get(baseURI + endPointArticle)
       //   .then((response) => {
       //     console.log('response from API : ');
       //     console.log(response);
-      //     store.dispatch(
-      //       callGetArticleList(
-      //         'a remplacer par kekchose ou pas dans communityMiddleware',
-      //       ),
-      //     );
+      //     store.dispatch(successGetArticleList(response.data));
       //   })
       //   .catch((error) => {
       //     console.warn(error);
@@ -51,15 +38,22 @@ const communityMiddleware = (store) => (next) => (action) => {
       break;
 
     case SUBMIT_ADD_ARTICLE:
+      // const endPointAddArticle = baseSpinningSquid + '/add-article';
       // console.log(JSON.parse(localStorage.getItem('userData')).token);
-      // //console.log('on y passe youpi');
+      // const options_ADD = {
+      //   headers: {
+      //     Authorization:
+      //       'Bearer ' + JSON.parse(localStorage.getItem('userData')).token,
+      //   },
+      // };
+      // console.log('on y passe youpi');
       // axios
-      //   .post(baseSpinningSquid + endPointAdd_Spot, {}, options)
+      //   .post(endPointAddArticle, {champs a ajouter}, option_ADD)
       //   .then((response) => {
       //     console.log('response from API : ');
       //     console.log(response);
       //     store.dispatch(
-      //       submitAddArticle(
+      //       successSubmitAddArticle(
       //         'a remplacer par kekchose ou pas dans communityMiddleware',
       //       ),
       //     );
@@ -82,10 +76,17 @@ const communityMiddleware = (store) => (next) => (action) => {
       break;
 
     case SUBMIT_UPDATE_ARTICLE:
+      // const endPointUpdateArticle = baseSpinningSquid + '/update-article';
       // console.log(JSON.parse(localStorage.getItem('userData')).token);
-      // //console.log('on y passe youpi');
+      // const options_UPDATE = {
+      //   headers: {
+      //     Authorization:
+      //       'Bearer ' + JSON.parse(localStorage.getItem('userData')).token,
+      //   },
+      // };
+      // console.log('on y passe youpi');
       // axios
-      //   .post(baseSpinningSquid + endPointAdd_Spot, {}, options)
+      //   .post(endPointUpdateArticle, {}, options_UPDATE)
       //   .then((response) => {
       //     console.log('response from API : ');
       //     console.log(response);
@@ -113,10 +114,17 @@ const communityMiddleware = (store) => (next) => (action) => {
       break;
 
     case SUBMIT_DELETE_ARTICLE:
+      // const endPointDeleteArticle = baseSpinningSquid + '/delete-article';
       // console.log(JSON.parse(localStorage.getItem('userData')).token);
-      // // console.log('on y passe youpi');
+      // const options_DELETE = {
+      //   headers: {
+      //     Authorization:
+      //       'Bearer ' + JSON.parse(localStorage.getItem('userData')).token,
+      //   },
+      // };
+      // console.log('on y passe youpi');
       // axios
-      //   .post(baseSpinningSquid + endPointAdd_Spot, {}, options)
+      //   .post(endPointDeleteArticle, {}, options_DELETE)
       //   .then((response) => {
       //     console.log('response from API : ');
       //     console.log(response);
