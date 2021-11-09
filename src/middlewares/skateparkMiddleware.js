@@ -4,6 +4,10 @@ import {
   successGetSkateparkList,
   SUBMIT_ADD_SPOT,
   successSubmitAddSpot,
+  SUBMIT_UPDATE_SPOT,
+  successSubmitUpdateSpot,
+  SUBMIT_DELETE_SPOT,
+  successSubmitDeleteSpot,
 } from 'src/actions/skateparkActions';
 import { baseURI, baseSpinningSquid } from 'src/routesBack';
 
@@ -12,18 +16,16 @@ const skateparkMiddleware = (store) => (next) => (action) => {
     case GET_SKATEPARK_LIST:
       const endPointSkatepark = '/skatepark?_embed=true';
       //console.log('test ce soir');
-      // axios
-      //   .get(baseURI + endPointSkatepark)
-      //   .then((response) => {
-      //     console.log('response from API : ');
-      //     console.log(response);
-      // store.dispatch(
-      //   successGetSkateparkList(response.data)
-      // );
-      // })
-      // .catch((error) => {
-      //   console.warn(error);
-      // });
+      axios
+        .get(baseURI + endPointSkatepark)
+        .then((response) => {
+          console.log('response from API : ');
+          console.log(response);
+          store.dispatch(successGetSkateparkList(response.data));
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
 
       const exemple = [
         {
@@ -61,10 +63,11 @@ const skateparkMiddleware = (store) => (next) => (action) => {
           zipcode: 'ererererrrr',
         },
       ];
-      setTimeout(() => {
-        //console.log('retour setTimeOut API call');
-        store.dispatch(successGetSkateparkList(exemple));
-      }, 3000);
+      // setTimeout(() => {
+      //console.log('retour setTimeOut API call');
+
+      //   store.dispatch(successGetSkateparkList(exemple));
+      // }, 3000);
       // store.dispatch(
       //   successGetSkateparkList(
       //     'a remplacer par le call API dans skateparkMiddleware'
@@ -74,27 +77,38 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       break;
     case SUBMIT_ADD_SPOT:
       const endPointAdd_Spot = '/newskatepark-save';
+      console.log(JSON.parse(localStorage.getItem('userData')).token);
+      const options_ADD = {
+        headers: {
+          Authorization:
+            'Bearer ' + JSON.parse(localStorage.getItem('userData')).token,
+        },
+      };
       //console.log('on y passe youpi');
       axios
-        .post(baseSpinningSquid + endPointAdd_Spot, {
-          title: store.getState().skatepark.addSpot.title,
-          skatepark: store.getState().skatepark.addSpot.categorySkatepark,
-          pumptrack: store.getState().skatepark.addSpot.categoryPumptrack,
-          streetspot: store.getState().skatepark.addSpot.categoryStreet,
-          street: store.getState().skatepark.addSpot.street,
-          zipcode: store.getState().skatepark.addSpot.postal,
-          city: store.getState().skatepark.addSpot.town,
-          latitude: store.getState().skatepark.addSpot.latitude,
-          longitude: store.getState().skatepark.addSpot.longitude,
-          parking: store.getState().skatepark.addSpot.parking,
-          water: store.getState().skatepark.addSpot.water,
-          trashcan: store.getState().skatepark.addSpot.trashcan,
-          lighting: store.getState().skatepark.addSpot.lighting,
-          table: store.getState().skatepark.addSpot.table,
-          benche: store.getState().skatepark.addSpot.benche,
-          state: store.getState().skatepark.addSpot.etatRadioBtn,
-          image: store.getState().skatepark.addSpot.uploadedImg,
-        })
+        .post(
+          baseSpinningSquid + endPointAdd_Spot,
+          {
+            title: store.getState().skatepark.addSpot.title,
+            skatepark: store.getState().skatepark.addSpot.categorySkatepark,
+            pumptrack: store.getState().skatepark.addSpot.categoryPumptrack,
+            streetspot: store.getState().skatepark.addSpot.categoryStreet,
+            street: store.getState().skatepark.addSpot.street,
+            zipcode: store.getState().skatepark.addSpot.postal,
+            city: store.getState().skatepark.addSpot.town,
+            latitude: store.getState().skatepark.addSpot.latitude,
+            longitude: store.getState().skatepark.addSpot.longitude,
+            parking: store.getState().skatepark.addSpot.parking,
+            water: store.getState().skatepark.addSpot.water,
+            trashcan: store.getState().skatepark.addSpot.trashcan,
+            lighting: store.getState().skatepark.addSpot.lighting,
+            table: store.getState().skatepark.addSpot.table,
+            benche: store.getState().skatepark.addSpot.benche,
+            state: store.getState().skatepark.addSpot.etatRadioBtn,
+            image: store.getState().skatepark.addSpot.uploadedImg,
+          },
+          options_ADD
+        )
         .then((response) => {
           console.log('response from API : ');
           console.log(response);
@@ -120,6 +134,85 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       // );
 
       break;
+
+    //----------------------------------------------------------------------------------
+    // à compléter
+    case SUBMIT_UPDATE_SPOT:
+      const endPointUpdate_Spot = '';
+      console.log(JSON.parse(localStorage.getItem('userData')).token);
+      const options_UPDATE = {
+        headers: {
+          Authorization:
+            'Bearer ' + JSON.parse(localStorage.getItem('userData')).token,
+        },
+      };
+      //console.log('on y passe youpi');
+      axios
+        .post(baseSpinningSquid + endPointAdd_Spot, {}, options)
+        .then((response) => {
+          console.log('response from API : ');
+          console.log(response);
+          store.dispatch(
+            successSubmitUpdateSpot(
+              'a remplacer par kekchose ou pas dans skateparkMiddleware'
+            )
+          );
+          window.alert(
+            `
+            L'ajout de skatepark a bien été enregistré.
+            Bisous.
+            `
+          );
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+      // store.dispatch(
+      //   successSubmitAddSpot(
+      //     'a remplacer par kekchose ou pas dans skateparkMiddleware'
+      //   )
+      // );
+
+      break;
+
+    case SUBMIT_DELETE_SPOT:
+      const endPointDelete_Spot = '';
+      console.log(JSON.parse(localStorage.getItem('userData')).token);
+      const options_DELETE = {
+        headers: {
+          Authorization:
+            'Bearer ' + JSON.parse(localStorage.getItem('userData')).token,
+        },
+      };
+      //console.log('on y passe youpi');
+      axios
+        .post(baseSpinningSquid + endPointAdd_Spot, {}, options)
+        .then((response) => {
+          console.log('response from API : ');
+          console.log(response);
+          store.dispatch(
+            successSubmitDeleteSpot(
+              'a remplacer par kekchose ou pas dans skateparkMiddleware'
+            )
+          );
+          window.alert(
+            `
+            L'ajout de skatepark a bien été enregistré.
+            Bisous.
+            `
+          );
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+      // store.dispatch(
+      //   successSubmitAddSpot(
+      //     'a remplacer par kekchose ou pas dans skateparkMiddleware'
+      //   )
+      // );
+
+      break;
+    //----------------------------------------------------------------------------------
     default:
   }
   next(action);

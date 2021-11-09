@@ -4,6 +4,13 @@
   display: flex;
   flex-direction: column;
   font-family: 'Righteous';
+  
+  .community-loading-wheel {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
 
   .community-header {
   }
@@ -133,48 +140,54 @@
 //-------------------------------------------------
 #addpost {
   margin: 2rem;
-  background-color: rgba(255, 255, 255, 0.5);
+  font-family: 'Righteous';
+  color: vars.$white;
+
+  .addpost-title {
+    text-align: center;
+    padding: 1em;
+    font-size: 2em;
+    height: 100px;
+    margin-bottom: 1em;
+  }
+
   .addpost-block {
     display: flex;
-    flex-direction: row;
-    //background-color: vars.$lightGrey;
-  }
-  .addpost-image {
-    width: 60vw;
-    height: 45vh;
-    background-color: aqua;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .addpost-charateristics {
-    padding: 2rem 0 0 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    .characteristics-details div {
-      margin-bottom: 0.5rem;
+    margin: auto;
+    width: 50%;
+
+    .addpost-charateristics {
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      width: 50%;
+
+      .addpost-input {
+        margin: 0.5em;
+        width: 100%;
+      }
     }
+  }
+
+  .addpost-description {
+    width: 100%;
+    padding: 2rem 0;
+    height: fit-content;
+    text-align: center;
+
+    #addpost-description {
+      width: 60vw;
+      height: 30vh;
+    }
+  }
+
     .addpost-button {
       margin-bottom: 3rem;
-      display: flex;
-      justify-content: center;
+
       .button {
         font-size: 1.2rem;
         width: 140px;
         height: 60px;
       }
     }
-  }
-  .addpost-description {
-    width: 100%;
-    padding: 2rem 0;
-    height: fit-content;
-    //background-color: blueviolet;
-    text-align: center;
-    #addpost-description {
-      width: 60vw;
-      height: 30vh;
-    }
-  }
 }
