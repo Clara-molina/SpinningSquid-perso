@@ -120,7 +120,7 @@
     align-items: flex-start;
     justify-content: center;
     margin: 1em auto 0;
-    max-width: 1500px;
+    max-width: 1200px;
 
 
     .search-map {
@@ -131,8 +131,7 @@
       box-shadow: 0 0 40px 40px vars.$orange inset, 0 0 0 0 vars.$orange;
       transition: all 150ms ease-in-out;
       margin-bottom: 12em;
-      height: 900px;
-      padding: 2em 2em 0 0;
+      height: 700px;
       
       &:hover {
         box-shadow: 0 0 10px 0 vars.$orange inset, 0 0 10px 4px vars.$orange;
