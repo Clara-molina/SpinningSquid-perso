@@ -8,12 +8,14 @@ import {
 } from 'src/actions/skateparkActions';
 import SearchMap from 'src/components/SearchMap';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => {
+  console.log(ownProps);
+  return({
   skateparkLocationList: state.skatepark.skateparkLocationList,
   responseAPI: state.skatepark.responseAPI,
   isLoading: state.skatepark.isLoading,
   isLoaded: state.skatepark.isLoaded,
-});
+})};
 
 const mapDispatchToProps = (dispatch) => ({
   callApiGet: () => {

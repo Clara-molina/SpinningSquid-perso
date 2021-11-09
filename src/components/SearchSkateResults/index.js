@@ -2,7 +2,10 @@ import React from 'react';
 import Img from '../../assets/img/Skateparktest.jpg';
 import './searchSkateResults.scss';
 
-const SearchSkateResults = () => (
+const SearchSkateResults = (props) => {
+  console.log(props.skateparkName);
+  props.getSkateparkDetails(props.skateparkName);
+  return(
   <div className="searchresult">
     <h3 className="searchresulttitle">Résultat</h3>
     <h4 className="searchresultname">Skatepark Achères</h4>
@@ -23,6 +26,10 @@ const SearchSkateResults = () => (
     <div className="searchresultmap">Map de l'adresse</div>
   </div>
 
-);
+)};
 
 export default SearchSkateResults;
+
+//http://romain-talbot.vpnuser.lan/SpinningSquad_Apotheose/projet-skatepark/public/wp-json/wp/v2/skatepark/?meta_key=city&meta_value=[nomDeLaVille]
+//baseSpinningSquid + /add-article ou /update-article ou /delete-article ou /add-sale ou /update-sale ou /delete-sale
+//baseURI + "/skatepark/" + Id + "?_embed=true"
