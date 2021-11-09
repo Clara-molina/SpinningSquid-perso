@@ -6,6 +6,7 @@ import marketplaceMiddleware from 'src/middlewares/marketplaceMiddleware';
 import contactMiddleware from 'src/middlewares/contactMiddleware';
 import newsLetterMiddleware from 'src/middlewares/newsLetterMiddleware';
 import reducer from 'src/reducers';
+import communityMiddleware from '../middlewares/communityMiddleware';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -14,6 +15,7 @@ const enhancers = composeEnhancers(
     authMiddleware,
     skateparkMiddleware,
     marketplaceMiddleware,
+    communityMiddleware,
     contactMiddleware,
     newsLetterMiddleware,
   ),
