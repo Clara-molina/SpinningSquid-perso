@@ -1,19 +1,27 @@
 import { connect } from 'react-redux';
 import { updateField } from 'src/actions/userActions';
 import {
-  callGetSkateparkList,
+  callGetSkateparkDetails,
+  setOnSkateparkDetailsLoading,
 } from 'src/actions/skateparkActions';
 import SearchSkateResults from 'src/components/SearchSkateResults';
 
 const mapStateToProps = (state, ownProps) => {
   //console.log(ownProps);
-  return({
-  skateparkName: ownProps.match.params.resultat,
-})};
+  return {
+    skateparkName: ownProps.match.params.resultat,
+    isLoaded: state.skatepark.isLoaded,
+    isLoading: state.skatepark.isLoading,
+  };
+};
 
 const mapDispatchToProps = (dispatch) => ({
   getSkateparkDetails: (skateparkName) => {
-    console.log("pouet");
+    dispatch(callGetSkateparkDetails(skateparkName));
+    console.log('pouet');
+  },
+  setOnLoading: () => {
+    dispatch(setOnSkateparkDetailsLoading());
   },
 });
 

@@ -1,7 +1,9 @@
 import { UPDATE_FIELD } from 'src/actions/userActions';
 import {
   SKATEPARK_ON_LOADING,
+  SKATEPARK_DETAILS_ON_LOADING,
   GET_SKATEPARK_LIST_SUCCESS,
+  GET_SKATEPARK_DETAILS_SUCCESS,
   SUBMIT_ADD_SPOT_SUCCESS,
   SUBMIT_UPDATE_SPOT_SUCCESS,
   SUBMIT_DELETE_SPOT_SUCCESS,
@@ -230,11 +232,22 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         isLoading: true,
       };
+    case SKATEPARK_DETAILS_ON_LOADING:
+      return {
+        ...state,
+        isLoading: true,
+      };
     case GET_SKATEPARK_LIST_SUCCESS:
       return {
         ...state,
         responseAPI: action.responseAPI,
         isLoaded: action.loaded,
+      };
+    case GET_SKATEPARK_DETAILS_SUCCESS:
+      return {
+        ...state,
+        responseAPI: action.responseAPI,
+        isLoaded: true,
       };
     case SUBMIT_ADD_SPOT_SUCCESS:
       return {
