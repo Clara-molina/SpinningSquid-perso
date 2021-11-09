@@ -6,8 +6,7 @@ const SpotAdd = (props) => {
   
 
   const transfer = (event)=>{
-    console.log('iciiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii');
-    console.log(event);
+    //console.log(event);
     const fileChosen = document.getElementById('file-chosen');
     fileChosen.textContent = event.target.files[0].name
   };
