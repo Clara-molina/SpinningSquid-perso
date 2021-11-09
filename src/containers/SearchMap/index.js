@@ -5,6 +5,7 @@ import {
   successGetSkateparkList,
   successSubmitAddSpot,
   setOnLoadingStatus,
+  getSkateparkByCity,
 } from 'src/actions/skateparkActions';
 import SearchMap from 'src/components/SearchMap';
 
@@ -32,6 +33,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
   submitSkateparkSearch: (event) => {
     event.preventDefault();
+    dispatch(getSkateparkByCity());
   },
 });
 

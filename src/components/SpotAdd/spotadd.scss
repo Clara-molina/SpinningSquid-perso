@@ -116,16 +116,20 @@
       }
     }
 
-    .spotadd-button {
-      width: 150px;
-      height: 30px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      background-color: vars.$orange;
-      border-radius: 50px;
-      border: solid 1px;
-      font-size: 1.2em;
+    
     }
   }
+
+.spotadd-button {
+  align-self: center;
+  width: 150px;
+  height: 30px;
+  margin: auto;
+  display: block;
+  align-items: center;
+  background-color: vars.$orange;
+  border-radius: 50px;
+  border: solid 1px;
+  font-size: 1.2em;
+  margin-bottom: 121px;
 }

@@ -11,6 +11,8 @@ export const SUBMIT_UPDATE_SPOT = 'SUBMIT_UPDATE_SPOT';
 export const SUBMIT_UPDATE_SPOT_SUCCESS = 'SUBMIT_UPDATE_SPOT_SUCCESS';
 export const SUBMIT_DELETE_SPOT = 'SUBMIT_DELETE_SPOT';
 export const SUBMIT_DELETE_SPOT_SUCCESS = 'SUBMIT_DELETE_SPOT_SUCCESS';
+export const GET_SKATEPARK_BY_CITY = 'GET_SKATEPARK_BY_CITY';
+export const GET_SKATEPARK_BY_CITY_SUCCESS = 'GET_SKATEPARK_BY_CITY_SUCCESS';
 
 export const setOnLoadingStatus = () => ({
   type: SKATEPARK_ON_LOADING,
@@ -26,6 +28,7 @@ export const successGetSkateparkList = (data) => ({
   responseAPI: data,
   loaded: true,
 });
+
 export const callGetSkateparkDetails = (skateparkId) => ({
   type: GET_SKATEPARK_DETAILS,
   skateparkId: skateparkId,
@@ -33,6 +36,15 @@ export const callGetSkateparkDetails = (skateparkId) => ({
 export const successGetSkateparkDetails = (data) => ({
   type: GET_SKATEPARK_DETAILS_SUCCESS,
   responseAPI: data,
+
+export const getSkateparkByCity = () => ({
+  type: GET_SKATEPARK_BY_CITY,
+});
+export const successGetSkateparkByCity = (data) => ({
+  type: GET_SKATEPARK_BY_CITY_SUCCESS,
+  responseAPI: data,
+  loaded: true,
+
 });
 export const submitAddSpot = () => ({
   type: SUBMIT_ADD_SPOT,

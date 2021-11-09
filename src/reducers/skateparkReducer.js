@@ -7,6 +7,7 @@ import {
   SUBMIT_ADD_SPOT_SUCCESS,
   SUBMIT_UPDATE_SPOT_SUCCESS,
   SUBMIT_DELETE_SPOT_SUCCESS,
+  GET_SKATEPARK_BY_CITY_SUCCESS,
 } from 'src/actions/skateparkActions';
 
 export const initialState = {
@@ -248,6 +249,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         responseAPI: action.responseAPI,
         isLoaded: true,
+    case GET_SKATEPARK_BY_CITY_SUCCESS:
+      return {
+        ...state,
+        responseAPI: action.responseAPI,
+        isLoaded: action.loaded,
       };
     case SUBMIT_ADD_SPOT_SUCCESS:
       return {
