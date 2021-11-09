@@ -1,6 +1,16 @@
 import './spotadd.scss';
 
-const SpotAdd = (props) => (
+
+
+const SpotAdd = (props) => {
+  const actualBtn = document.getElementById('uploadImage');
+
+  const fileChosen = document.getElementById('file-chosen');
+
+  // actualBtn.addEventListener('change', function(){
+  // fileChosen.textContent = this.files[0].name
+  // });
+  return(
   <div className="spotadd-container">
     <h2 className="title">Ajoute ton Spot</h2>
 
@@ -170,8 +180,9 @@ const SpotAdd = (props) => (
 
       <div className="spotadd-container-image">
         <h2 className="spotadd-title">Image</h2>
-        <label htmlFor="image" className="spotadd-label-image">
+        <label id="image-label" for="uploadImage" className="spotadd-label-image">
           Parcourir
+          </label>
           <input
             id="uploadImage"
             className="spotadd-input-image"
@@ -181,8 +192,9 @@ const SpotAdd = (props) => (
             multiple
             required
             onChange={props.handleUploadLocalImage}
+            hidden
           />
-        </label>
+        <span id="file-chosen">No file chosen</span>
       </div>
 
       <div className="spotadd-container-state">
@@ -233,6 +245,6 @@ const SpotAdd = (props) => (
       </button>
     </form>
   </div>
-);
+)};
 
 export default SpotAdd;
