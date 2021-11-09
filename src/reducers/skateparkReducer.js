@@ -1,13 +1,18 @@
 import { UPDATE_FIELD } from 'src/actions/userActions';
 import {
+  SKATEPARK_ON_LOADING,
   GET_SKATEPARK_LIST_SUCCESS,
   SUBMIT_ADD_SPOT_SUCCESS,
+  SUBMIT_UPDATE_SPOT_SUCCESS,
+  SUBMIT_DELETE_SPOT_SUCCESS,
 } from 'src/actions/skateparkActions';
 
 export const initialState = {
   skateparkLocationList: ['un', 'deux', 'trois'],
   searchFieldTown: 'searchFieldTown test state',
   responseAPI: {},
+  isLoaded: false,
+  isLoading: false,
   skateparkToDisplay_Id: 'initial state showDetails',
   addSpot: {
     title: '',
@@ -188,7 +193,7 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           addSpot: {
             ...state.addSpot,
-            etatRadioBtn: 'addSpotNew',
+            etatRadioBtn: 'New',
           },
         };
       }
@@ -197,7 +202,7 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           addSpot: {
             ...state.addSpot,
-            etatRadioBtn: 'addSpotGood',
+            etatRadioBtn: 'Good',
           },
         };
       }
@@ -206,7 +211,7 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           addSpot: {
             ...state.addSpot,
-            etatRadioBtn: 'addSpotWay',
+            etatRadioBtn: 'Way',
           },
         };
       }
@@ -215,21 +220,38 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           addSpot: {
             ...state.addSpot,
-            etatRadioBtn: 'addSpotEndoflife',
+            etatRadioBtn: 'Endoflife',
           },
         };
       }
 
+    case SKATEPARK_ON_LOADING:
+      return {
+        ...state,
+        isLoading: true,
+      };
     case GET_SKATEPARK_LIST_SUCCESS:
       return {
         ...state,
         responseAPI: action.responseAPI,
+        isLoaded: action.loaded,
       };
     case SUBMIT_ADD_SPOT_SUCCESS:
       return {
         ...state,
         message: action.message_success,
       };
+    //--------------------------------------------------------------
+    // à compléter
+    case SUBMIT_UPDATE_SPOT_SUCCESS:
+      return {
+        ...state,
+      };
+    case SUBMIT_DELETE_SPOT_SUCCESS:
+      return {
+        ...state,
+      };
+    //-------------------------------------------------------------
     default:
       return state;
   }

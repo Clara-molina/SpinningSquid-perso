@@ -13,7 +13,7 @@ const DetailsPost = (props) => {
             </div>
           </div>
           <div className="detailpost-participate-button">
-            <button id="participate-button" className="button">
+            <button type="button" id="participate-button" className="button">
               J'y serai !
             </button>
           </div>

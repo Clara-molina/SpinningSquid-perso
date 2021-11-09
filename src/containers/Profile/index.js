@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import returnBase64Img from 'src/generic_functions';
 
 import Profile from 'src/components/Profile';
-import { updateField, submitUpdateProfile } from 'src/actions/userActions';
+import { updateField, submitUpdateProfile, checkUserUpdateProfile } from 'src/actions/userActions';
 
 const mapStateToProps = (state) => ({
   usernameConnection: state.user.usernameConnexion,
@@ -36,6 +36,11 @@ const mapDispatchToProps = (dispatch) => ({
     //dispatch(updateField(imgName, imgValue));
     dispatch(updateField('avatarImageEdit', imgBase64));
     console.log('commande envoyée');
+  },
+  handleCheckUserUpdateProfile: (event) => {
+    console.log('essai');
+    event.preventDefault();
+    dispatch(checkUserUpdateProfile());
   },
   handleSubmitUpdateProfile: (event) => {
     event.preventDefault();

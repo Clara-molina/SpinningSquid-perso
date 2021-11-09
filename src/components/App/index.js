@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 // == Import
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import './styles.scss';
 
 // Import Containers
@@ -12,16 +13,18 @@ import NewsLetter from 'src/containers/NewsLetter';
 import Profile from 'src/containers/Profile';
 import SearchMap from 'src/containers/SearchMap';
 import SpotAdd from 'src/containers/SpotAdd';
+import Community from 'src/containers/Community';
 
 // Import Components
 import AddPost from 'src/components/Community/AddPost';
-import Community from 'src/components/Community';
 import DetailsArticle from 'src/components/Marketplace/DetailsArticle';
 import DetailsPost from 'src/components/Community/DetailsPost';
 import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
 import PostArticle from 'src/components/Marketplace/PostArticle';
 import SearchSkateResults from 'src/components/SearchSkateResults';
+
+import Loading from 'src/components/Loading';
 
 // Import page d'erreur
 import NotFound from 'src/components/NotFound';
@@ -55,9 +58,12 @@ const App = (props) => {
           <Route path="/communaute/details" component={DetailsPost} />
           <Route path="/communaute/ajoute-ton-evenement" component={AddPost} />
           <Route path="/contact" component={Contact} />
-          <Route exact path="/connexion" component={Connection} />
+          <Route exact path="/connexion">
+            {props.isLogged ? <Redirect to="/connexion/profil" /> : <Connection />}
+          </Route>
           <Route exact path="/connexion/profil" component={Profile} />
           <Route path="/newsletter" component={NewsLetter} />
+          <Route path="/loading" component={Loading} />
           <Route component={NotFound} />
         </Switch>
         <Footer />
