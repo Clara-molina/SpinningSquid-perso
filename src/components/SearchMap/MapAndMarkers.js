@@ -5,10 +5,11 @@ import logo1 from 'src/assets/img/logo-hover.png';
 
 const _onChildMouseEnter = (event) => {
   //console.log('on entering child');
+  console.log(event);
   var sheet = document.createElement('style')
-  sheet.id = "stylesheethover";
-  const element = "#search-list :nth-child("+"3";//+event;
-  sheet.innerHTML = element +`){
+  sheet.id = "stylesheethovericon";
+  const element = "#article"+event;
+  sheet.innerHTML = element +`{
     background-color: red;
   }`;
   document.body.appendChild(sheet);
@@ -16,7 +17,7 @@ const _onChildMouseEnter = (event) => {
 
 const _onChildMouseLeave = (event) => {
   //console.log('on leaving child');
-  var sheetToBeRemoved = document.getElementById('stylesheethover');
+  var sheetToBeRemoved = document.getElementById('stylesheethovericon');
   var sheetParent = sheetToBeRemoved.parentNode;
   sheetParent.removeChild(sheetToBeRemoved);
 };
@@ -40,7 +41,7 @@ const Marker = (props) => {
   //console.log('conselog de marker');
   //console.log(props);
   //console.log(props.$hover);
-  return <Wrapper id={'testWrapperId'+props.id} className="" src={logo1} ></Wrapper>;
+  return <Wrapper id={'WrapperId'+props.id} className="" src={logo1} ></Wrapper>;
 };
 const places = [
   {
@@ -59,6 +60,7 @@ const MapAndMarkers = (props) => {
 
   return (
     <GoogleMapReact
+      id="googlemapreact"
       bootstrapURLKeys={{
         key: 'AIzaSyAglZjyBm532ApJYhxUDEVnmIo0Zd_JsjY',
       }}
@@ -69,15 +71,16 @@ const MapAndMarkers = (props) => {
       onChildMouseLeave={_onChildMouseLeave}
     >
       {props.responseAPI.map((place) => {
-        //console.log(place.id);
+        console.log(place.id);
+        console.log(place);
         return (
         
         <Marker
           key={place.id}
           id={place.id}
           //text={place.name}
-          lat={place.meta.lat}
-          lng={place.meta.lng}
+          lat={place.meta.latitude}
+          lng={place.meta.longitude}
         />
       )})}
       <Marker id='test1' lat={37.42216} lng={-122.08427} />
