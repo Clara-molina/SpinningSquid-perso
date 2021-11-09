@@ -5,23 +5,23 @@ const AddPost = () => (
     <h2 className="addpost-title">Ajoute un évènement</h2>
     <div className="addpost-block">
       <div className="addpost-charateristics">
-        <label htmlFor="date">Date
-          <input className="addpost-input" type="date" id="date" name="date" />
+        <label htmlFor="date">Titre
+          <input className="addpost-input" type="text" id="title" name="title" />
         </label>
 
-        <label htmlFor="time">Heure
-          <input className="addpost-input" type="time" id="time" name="time" />
+        <label htmlFor="date">Date
+          <input className="addpost-input" type="date" id="date" name="date" />
         </label>
 
         <label htmlFor="place">Lieu
           <input className="addpost-input" type="text" id="place" name="place" />
         </label>
-        <label htmlFor="picture">Image
+        <label htmlFor="image">Image
           <input
             className="addpost-input"
             type="file"
             id="addpost-image"
-            name="addpost-image"
+            name="image"
             accept="image/png, image/jpeg"
           />
         </label>
