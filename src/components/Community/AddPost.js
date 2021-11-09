@@ -6,11 +6,11 @@ const AddPost = () => (
     <div className="addpost-block">
       <div className="addpost-charateristics">
         <label htmlFor="date">Date
-          <input className="addpost-input" type="text" id="date" name="date" />
+          <input className="addpost-input" type="date" id="date" name="date" />
         </label>
 
         <label htmlFor="time">Heure
-          <input className="addpost-input" type="text" id="time" name="time" />
+          <input className="addpost-input" type="time" id="time" name="time" />
         </label>
 
         <label htmlFor="place">Lieu
