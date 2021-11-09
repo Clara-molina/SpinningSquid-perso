@@ -50,8 +50,7 @@ const SearchMap = (props) => {
           </select>
         </label>
         <button className="search-button" type="submit">
-          {' '}
-          Rechercher{' '}
+          Rechercher
         </button>
       </form>
 

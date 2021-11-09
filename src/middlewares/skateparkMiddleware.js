@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 import axios from 'axios';
 import {
   GET_SKATEPARK_LIST,
@@ -8,6 +9,8 @@ import {
   successSubmitUpdateSpot,
   SUBMIT_DELETE_SPOT,
   successSubmitDeleteSpot,
+  GET_SKATEPARK_BY_CITY,
+  successGetSkateparkByCity,
 } from 'src/actions/skateparkActions';
 import { baseURI, baseSpinningSquid } from 'src/routesBack';
 
@@ -75,6 +78,27 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       // );
 
       break;
+
+    case GET_SKATEPARK_BY_CITY:
+      const endPointSkateparkByCity = 'http://romain-talbot.vpnuser.lan/SpinningSquad_Apotheose/projet-skatepark/public/wp-json/wp/v2/skatepark/?meta_key=city&meta_value=' + store.getState().skatepark.searchFieldTown;
+      // console.log('test ce soir');
+      // axios
+      // .get(baseURI + endPointSkateparkByCity)
+      // .then((response) => {
+      //   console.log('response from API : ');
+      //   console.log(response);
+      //   store.dispatch(successGetSkateparkByCity(response.data));
+      // })
+      // .catch((error) => {
+      //   console.warn(error);
+      // });
+      store.dispatch(
+        successGetSkateparkByCity(
+          'a remplacer par le call API successGetSkateparkByCity',
+        ),
+      );
+      break;
+
     case SUBMIT_ADD_SPOT:
       const endPointAdd_Spot = '/newskatepark-save';
       console.log(JSON.parse(localStorage.getItem('userData')).token);
