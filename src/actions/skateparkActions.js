@@ -56,9 +56,6 @@ export const successSubmitAddSpot = (message) => ({
   type: SUBMIT_ADD_SPOT_SUCCESS,
   message_success: message,
 });
-
-//------------------------------------------------------------
-// à compléter
 export const submitUpdateSpot = () => ({
   type: SUBMIT_UPDATE_SPOT,
 });
@@ -66,6 +63,9 @@ export const successSubmitUpdateSpot = (message) => ({
   type: SUBMIT_UPDATE_SPOT_SUCCESS,
   message_success: message,
 });
+
+//------------------------------------------------------------
+// à compléter
 export const submitDeleteSpot = () => ({
   type: SUBMIT_DELETE_SPOT,
 });

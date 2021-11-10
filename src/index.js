@@ -1,18 +1,20 @@
 // == Import : npm
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-
+import { ConnectedRouter } from 'connected-react-router';
+import configureStore, { history } from 'src/store';
 // == Import : local
 // Composants
 import App from 'src/containers/App';
-import store from 'src/store';
+//import store from 'src/store';
 
-// == Render
-// 1. Élément React racine (celui qui contient l'ensemble de l'app)
-//    => crée une structure d'objets imbriqués (DOM virtuel)
+const store = configureStore();
+
 const rootReactElement = (
   <Provider store={store}>
-    <App />
+    <ConnectedRouter history={history}>
+      <App />
+    </ConnectedRouter>
   </Provider>
 );
 // 2. La cible du DOM (là où la structure doit prendre vie dans le DOM)

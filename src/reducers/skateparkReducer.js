@@ -271,12 +271,13 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         message: action.message_success,
       };
-    //--------------------------------------------------------------
-    // à compléter
     case SUBMIT_UPDATE_SPOT_SUCCESS:
       return {
         ...state,
+        message: action.message_success,
       };
+    //--------------------------------------------------------------
+    // à compléter
     case SUBMIT_DELETE_SPOT_SUCCESS:
       return {
         ...state,
