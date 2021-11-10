@@ -27,6 +27,14 @@ const _onMouseLeave = (event) => {
   sheetParent.removeChild(sheetToBeRemoved);
 };
 
+const recenterMap = (lat, lng) => {
+  const elementMap = document.getElementById('googlemapreact');
+  elementMap.defaultCenter = {
+    lat: lat,
+    lng: lng,
+  };
+};
+
 const SearchList = (list) => {
   //console.log(list);
   console.log(list.itemList);
@@ -69,7 +77,11 @@ const SearchList = (list) => {
             ? 'PumpTrack'
             : 'SkatePark'}
         </h3>
-        <button className="search-list-button" type="submit">
+        <button
+          className="search-list-button"
+          type="submit"
+          onClick={recenterMap(item.meta.latitude, item.meta.longitude)}
+        >
           Voir
         </button>
         <Link to={urlDetailSkatepark}>details</Link>
