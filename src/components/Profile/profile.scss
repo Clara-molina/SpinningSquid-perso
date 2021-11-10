@@ -1,0 +1,111 @@
+@use 'src/styles/vars';
+
+.profile {
+  color: vars.$white;
+  font-family: 'Righteous';
+
+  .profile-title {
+    text-align: center;
+    padding: 1em;
+    font-size: 2em;
+    height: 100px;
+    margin-bottom: 1em;
+  }
+
+  .profile-container {
+    width: 500px;
+    height: 100px;
+    border: solid 1px vars.$white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+
+    .profile-avatar {
+      width: 70px;
+      height: auto;
+      background-color: vars.$white;
+      border-radius: 50%;
+      padding: 0.2em;
+    }
+
+    .profile-name {
+
+    }
+
+    .profile-button-edit {
+      background-color: vars.$orange;
+      border-radius: 12px;
+      border: solid 1px;
+      width: 120px;
+      height: 30px;
+    }
+  }
+
+  .profile-articles {
+    width: 800px;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+
+    .profile-articles-img {
+      width: 300px;
+      height: 150px;
+      background-color: vars.$white;
+      margin-top: 2em;
+    }
+
+    .profile-articles-title {
+      text-align: center;
+    }
+  }
+}
+
+.modal {
+  background-color: #ffffff;
+  width: 800px;
+  height: 450px;
+
+  .header {
+    width: 100%;
+    border-bottom: 1px solid gray;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 5px;
+  }
+
+  .form {
+    padding: 2em;
+
+    .content {
+      width: 600px;
+      height: 300px;
+      margin: auto;
+
+
+      .form-edit-label {
+        float: left;
+        padding: 0.3em;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .form-edit-input {
+        margin-left: 1em;
+        float: right;
+        width: 400px;
+
+      }
+    }
+      .actions {
+        padding: 10px 5px;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 1em;
+      }
+    
+  }
+
+}
+

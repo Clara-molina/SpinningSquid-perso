@@ -1,0 +1,87 @@
+@use 'src/styles/vars';
+
+.connection {
+  font-family: 'Righteous';
+  .title-connection {
+    color: vars.$white;
+    text-align: center;
+    padding: 1em;
+    font-size: 2em;
+    height: 100px;
+    margin-bottom: 1em;
+  }
+
+  .container-forms {
+    display: flex;
+    margin: auto;
+    max-width: 1000px;
+    height: 600px;
+    color: vars.$white;
+  
+    .form-register {
+      width: 50%;
+      padding: 1em;
+      margin-right: 2em;
+
+      .form-register-title {
+        color: vars.$white;
+        text-align: center;
+        font-size: 1.3em;
+        margin-bottom: 0.6em;
+        padding-bottom: 0.3em;
+        border-bottom: solid 1px vars.$orange;
+      }
+
+      .form-register-input {
+        display: flex;
+        width: 100%;
+        margin: 0.5em 0;
+      }
+
+      .form-register-button {
+        display: flex;
+        justify-content: center;
+        margin: 1em auto;
+        background-color: vars.$orange;
+        border-radius: 12px;
+        border: solid 1px;
+        width: 100px;
+        height: 30px;
+        font-size: 1.1em;
+      }
+    }
+
+    .form-connection {
+      width: 50%;
+      padding: 1em;
+      margin-left: 2em;
+
+      .form-connection-title {
+        color: vars.$white;
+        text-align: center;
+        font-size: 1.3em;
+        margin-bottom: 0.6em;
+        padding-bottom: 0.3em;
+        border-bottom: solid 1px vars.$orange;
+      }
+      
+      .form-connection-input {
+        display: flex;
+        width: 100%;
+        margin: 0.5em 0;
+      }
+
+      .form-connection-button {
+        display: flex;
+        justify-content: center;
+        margin: 1em auto;
+        background-color: vars.$orange;
+        border-radius: 12px;
+        border: solid 1px;
+        width: 100px;
+        height: 30px;
+        font-size: 1.1em;
+      }
+    }
+  }
+}
