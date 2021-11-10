@@ -8,11 +8,13 @@ import logo2 from 'src/assets/img/logo2.png';
 const _onMouseEnter = (event) => {
   //console.log('on entering child');
   console.log(event);
-  var sheet = document.createElement('style')
-  sheet.id = "stylesheethoverlist";
-  const element = "#WrapperId"+event.target.id.substring(7);
+  var sheet = document.createElement('style');
+  sheet.id = 'stylesheethoverlist';
+  const element = '#WrapperId' + event.target.id.substring(7);
   console.log(element);
-  sheet.innerHTML = element +`{
+  sheet.innerHTML =
+    element +
+    `{
     background-color: red;
   }`;
   document.body.appendChild(sheet);
@@ -49,21 +51,28 @@ const SearchList = (list) => {
     //     return { logo2 };
     //   }
     // };
-
+    const urlDetailSkatepark = '/trouve-ton-skatepark/' + item.id;
     return (
-      <article 
-      key={item.id} 
-      id={"article"+item.id}
-      onMouseEnter={_onMouseEnter}
-      onMouseLeave={_onMouseLeave} className="search-list-item">
+      <article
+        key={item.id}
+        id={'article' + item.id}
+        onMouseEnter={_onMouseEnter}
+        onMouseLeave={_onMouseLeave}
+        className="search-list-item"
+      >
         <img className="search-list-image" src="" alt="" />
         <h2 className="search-list-title">{item.title.rendered}</h2>
         <h3 className="search-list-description">
-          {item.meta.streetspot ? 'Street' : item.meta.pumptrack ? 'PumpTrack' : 'SkatePark'}
+          {item.meta.streetspot
+            ? 'Street'
+            : item.meta.pumptrack
+            ? 'PumpTrack'
+            : 'SkatePark'}
         </h3>
         <button className="search-list-button" type="submit">
           Voir
         </button>
+        <Link to={urlDetailSkatepark}>details</Link>
       </article>
     );
   });

@@ -5,6 +5,7 @@ import { Redirect } from 'react-router-dom';
 import './styles.scss';
 
 // Import Containers
+import Community from 'src/containers/Community';
 import Connection from 'src/containers/Connection';
 import Contact from 'src/containers/Contact';
 import Header from 'src/containers/Header/';
@@ -13,7 +14,7 @@ import NewsLetter from 'src/containers/NewsLetter';
 import Profile from 'src/containers/Profile';
 import SearchMap from 'src/containers/SearchMap';
 import SpotAdd from 'src/containers/SpotAdd';
-import Community from 'src/containers/Community';
+import SearchSkateResults from 'src/containers/SearchSkateResults';
 
 // Import Components
 import AddPost from 'src/components/Community/AddPost';
@@ -22,7 +23,6 @@ import DetailsPost from 'src/components/Community/DetailsPost';
 import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
 import PostArticle from 'src/components/Marketplace/PostArticle';
-import SearchSkateResults from 'src/components/SearchSkateResults';
 
 import Loading from 'src/components/Loading';
 
@@ -44,7 +44,7 @@ const App = (props) => {
             component={SpotAdd}
           />
           <Route
-            path="/trouve-ton-skatepark/resultat"
+            path="/trouve-ton-skatepark/:resultat"
             component={SearchSkateResults}
           />
           <Route exact path="/trouve-ton-matos" component={Marketplace} />
