@@ -9,11 +9,11 @@ import {Link} from 'react-router-dom';
 
 const _onMouseEnter = (event) => {
   //console.log('on entering child');
-  console.log(event);
+  //console.log(event);
   var sheet = document.createElement('style');
   sheet.id = 'stylesheethoverlist';
   const element = '#WrapperId' + event.target.id.substring(7);
-  console.log(element);
+  //console.log(element);
   sheet.innerHTML =
     element +
     `{
@@ -31,9 +31,9 @@ const _onMouseLeave = (event) => {
 
 const SearchList = (list) => {
   //console.log(list);
-  console.log(list.itemList);
+  //console.log(list.itemList);
 
-  console.log(list.itemList[0]._embedded['wp:featuredmedia'][0].source_url);
+  //console.log(list.itemList[0]._embedded['wp:featuredmedia'][0].source_url);
 
   const mappingArticles = list.itemList.map((item) => {
     // const getImageURL = () => {
