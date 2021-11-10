@@ -4,6 +4,7 @@ import './searchMap.scss';
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-nested-ternary */
 import logo2 from 'src/assets/img/logo2.png';
+import {Link} from 'react-router-dom';
 
 const _onMouseEnter = (event) => {
   //console.log('on entering child');
