@@ -5,10 +5,10 @@ const BlockMap = (props) => {
   return (
     <>
       <div id="search-list" className="search-list">
-        <SearchList itemList={props.responseAPI} />
+        <SearchList itemList={props.responseAPI} moveLocationOnMap={props.moveLocationOnMap}/>
       </div>
       <div className="search-map">
-        <MapAndMarkers responseAPI={props.responseAPI} />
+        <MapAndMarkers responseAPI={props.responseAPI} locationOnMap={props.locationOnMap}/>
       </div>
     </>
   );

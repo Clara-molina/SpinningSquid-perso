@@ -1,5 +1,6 @@
 export const SKATEPARK_ON_LOADING = 'SKATEPARK_ON_LOADING';
 export const SKATEPARK_DETAILS_ON_LOADING = 'SKATEPARK_DETAILS_ON_LOADING';
+export const UPDATE_LOCATION_ON_MAP = 'UPDATE_LOCATION_ON_MAP';
 export const GET_SKATEPARK_LIST = 'GET_SKATEPARK_LIST';
 export const GET_SKATEPARK_LIST_SUCCESS = 'GET_SKATEPARK_LIST_SUCCESS';
 export const GET_SKATEPARK_DETAILS = 'GET_SKATEPARK_DETAILS';
@@ -20,6 +21,10 @@ export const setOnLoadingStatus = () => ({
 export const setOnSkateparkDetailsLoading = () => ({
   type: SKATEPARK_DETAILS_ON_LOADING,
 });
+export const updateLocationOnMap = (data) => ({
+  type: UPDATE_LOCATION_ON_MAP,
+  locationOnMap: data,
+});
 export const callGetSkateparkList = () => ({
   type: GET_SKATEPARK_LIST,
 });
@@ -28,7 +33,6 @@ export const successGetSkateparkList = (data) => ({
   responseAPI: data,
   loaded: true,
 });
-
 export const callGetSkateparkDetails = (skateparkId) => ({
   type: GET_SKATEPARK_DETAILS,
   skateparkId: skateparkId,
@@ -44,7 +48,6 @@ export const successGetSkateparkByCity = (data) => ({
   type: GET_SKATEPARK_BY_CITY_SUCCESS,
   responseAPI: data,
   loaded: true,
-
 });
 export const submitAddSpot = () => ({
   type: SUBMIT_ADD_SPOT,

@@ -62,7 +62,10 @@ const SearchMap = (props) => {
             </div>
           </>
         )}
-        {props.isLoaded && <BlockMap responseAPI={props.responseAPI} />}
+        {props.isLoaded && <BlockMap 
+        responseAPI={props.responseAPI} 
+        locationOnMap={props.locationOnMap}
+        moveLocationOnMap={props.moveLocationOnMap}/>}
       </div>
     </div>
   );

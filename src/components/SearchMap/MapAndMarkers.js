@@ -52,11 +52,6 @@ const places = [
   },
 ];
 const MapAndMarkers = (props) => {
-  const location = {
-    address: '1600 Amphitheatre Parkway, Mountain View, california.',
-    lat: 37.42216,
-    lng: -122.08427,
-  };
 
   return (
     <GoogleMapReact
@@ -64,7 +59,7 @@ const MapAndMarkers = (props) => {
       bootstrapURLKeys={{
         key: 'AIzaSyAglZjyBm532ApJYhxUDEVnmIo0Zd_JsjY',
       }}
-      defaultCenter={location}
+      center={props.locationOnMap}
       defaultZoom={8}
       yesIWantToUseGoogleMapApiInternals
       onChildMouseEnter={_onChildMouseEnter}
