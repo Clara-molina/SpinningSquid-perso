@@ -4,7 +4,7 @@ import './searchMap.scss';
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-nested-ternary */
 import logo2 from 'src/assets/img/logo2.png';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const _onMouseEnter = (event) => {
   //console.log('on entering child');
@@ -30,9 +30,9 @@ const _onMouseLeave = (event) => {
 
 const SearchList = (list) => {
   //console.log(list);
-  console.log(list.itemList);
-
-  console.log(list.itemList[0]._embedded['wp:featuredmedia'][0].source_url);
+  console.log('test' + list.itemList);
+  console.log('test');
+  // console.log(list.itemList[0]._embedded['wp:featuredmedia'][0].source_url);
 
   const mappingArticles = list.itemList.map((item) => {
     // const getImageURL = () => {
@@ -67,8 +67,8 @@ const SearchList = (list) => {
           {item.meta.streetspot
             ? 'Street'
             : item.meta.pumptrack
-            ? 'PumpTrack'
-            : 'SkatePark'}
+              ? 'PumpTrack'
+              : 'SkatePark'}
         </h3>
         <button className="search-list-button" type="submit">
           Voir
