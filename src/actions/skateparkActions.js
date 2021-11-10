@@ -1,3 +1,4 @@
+export const FILL_STATE = 'FILL_STATE';
 export const SKATEPARK_ON_LOADING = 'SKATEPARK_ON_LOADING';
 export const SKATEPARK_DETAILS_ON_LOADING = 'SKATEPARK_DETAILS_ON_LOADING';
 export const UPDATE_LOCATION_ON_MAP = 'UPDATE_LOCATION_ON_MAP';
@@ -62,6 +63,10 @@ export const submitUpdateSpot = () => ({
 export const successSubmitUpdateSpot = (message) => ({
   type: SUBMIT_UPDATE_SPOT_SUCCESS,
   message_success: message,
+});
+export const fillState = (skateparkId) => ({
+  type: FILL_STATE,
+  skateparkId: skateparkId,
 });
 
 //------------------------------------------------------------

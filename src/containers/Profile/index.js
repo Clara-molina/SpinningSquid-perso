@@ -2,7 +2,11 @@ import { connect } from 'react-redux';
 import returnBase64Img from 'src/generic_functions';
 
 import Profile from 'src/components/Profile';
-import { updateField, submitUpdateProfile, checkUserUpdateProfile } from 'src/actions/userActions';
+import {
+  updateField,
+  submitUpdateProfile,
+  checkUserUpdateProfile,
+} from 'src/actions/userActions';
 
 const mapStateToProps = (state) => ({
   usernameConnection: state.user.usernameConnexion,

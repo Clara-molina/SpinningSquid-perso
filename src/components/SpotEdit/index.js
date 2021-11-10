@@ -3,6 +3,9 @@ import axios from 'axios';
 import { baseSpinningSquid } from 'src/routesBack';
 
 const SpotEdit = (props) => {
+  props.getSkateparkDetails(props.skateparkId);
+  props.fillState();
+
   const transfer = (event) => {
     //console.log(event);
     const fileChosen = document.getElementById('file-chosen');

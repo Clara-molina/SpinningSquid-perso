@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import GoogleMapReact from 'google-map-react';
 import styled from 'styled-components';
 import logo1 from 'src/assets/img/logo-hover.png';
@@ -12,15 +12,17 @@ const Wrapper = styled.img`
   border-radius: 25px;
   width: 30px;
   height: 30px;
-  transform: translate(-15px,-15px);
+  transform: translate(-15px, -15px);
   &:hover {
     width: 50px;
     height: 50px;
-    transform: translate(-25px,-35px);
+    transform: translate(-25px, -35px);
   }
 `;
 const Marker = (props) => {
-  return <Wrapper id={'WrapperId'+props.id} className="" src={logo1} ></Wrapper>;
+  return (
+    <Wrapper id={'WrapperId' + props.id} className="" src={logo1}></Wrapper>
+  );
 };
 
 const SearchSkateResults = (props) => {
@@ -74,28 +76,32 @@ const SearchSkateResults = (props) => {
           <span className="detailssearchresult">Poubelles</span>
 
           <div className="searchresultmap">Map de l'adresse</div>
-          <div className='search-map'>
-          <GoogleMapReact
-            id="googlemapreact"
-            bootstrapURLKeys={{
-              key: 'AIzaSyAglZjyBm532ApJYhxUDEVnmIo0Zd_JsjY',
-            }}
-            center={props.locationOnMap}
-            defaultZoom={8}
-            yesIWantToUseGoogleMapApiInternals
-          >
-            <Marker
-              key={props.id}
-              id={props.id}
-              //text={place.name}
-              lat={props.locationOnMap.lat}
-              lng={props.locationOnMap.lng}
-            />
-          </GoogleMapReact>
+          <div className="search-map">
+            <GoogleMapReact
+              id="googlemapreact"
+              bootstrapURLKeys={{
+                key: 'AIzaSyAglZjyBm532ApJYhxUDEVnmIo0Zd_JsjY',
+              }}
+              center={props.locationOnMap}
+              defaultZoom={8}
+              yesIWantToUseGoogleMapApiInternals
+            >
+              <Marker
+                key={props.id}
+                id={props.id}
+                //text={place.name}
+                lat={props.locationOnMap.lat}
+                lng={props.locationOnMap.lng}
+              />
+            </GoogleMapReact>
           </div>
         </>
       )}
-      <Link to='/trouve-ton-skatepark/modifie-ton-spot'>modifie ton spot</Link>
+      <Link
+        to={'/trouve-ton-skatepark/modifie-ton-spot/' + props.skateparkName}
+      >
+        modifie ton spot
+      </Link>
     </div>
   );
 };

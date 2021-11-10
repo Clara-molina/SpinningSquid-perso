@@ -45,7 +45,7 @@ const App = (props) => {
             component={SpotAdd}
           />
           <Route
-            path="/trouve-ton-skatepark/modifie-ton-spot"
+            path="/trouve-ton-skatepark/modifie-ton-spot/:skateparkId"
             component={SpotEdit}
           />
           <Route
