@@ -1,6 +1,7 @@
 import { UPDATE_FIELD } from 'src/actions/userActions';
 import {
   SKATEPARK_ON_LOADING,
+  UPDATE_LOCATION_ON_MAP,
   SKATEPARK_DETAILS_ON_LOADING,
   GET_SKATEPARK_LIST_SUCCESS,
   GET_SKATEPARK_DETAILS_SUCCESS,
@@ -16,6 +17,10 @@ export const initialState = {
   responseAPI: {},
   isLoaded: false,
   isLoading: false,
+  locationOnMap: {
+    lat: 37.42216,
+    lng: -122.08427,
+  },
   skateparkToDisplay_Id: 'initial state showDetails',
   addSpot: {
     title: '',
@@ -232,6 +237,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isLoading: true,
+      };
+    case UPDATE_LOCATION_ON_MAP:
+      return {
+        ...state,
+        locationOnMap: action.locationOnMap,
       };
     case SKATEPARK_DETAILS_ON_LOADING:
       return {
