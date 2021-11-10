@@ -12,13 +12,15 @@ const mapStateToProps = (state, ownProps) => {
     skateparkName: ownProps.match.params.resultat,
     isLoaded: state.skatepark.isLoaded,
     isLoading: state.skatepark.isLoading,
+    locationOnMap: state.skatepark.locationOnMap,
+    responseAPI: state.skatepark.responseAPI,
+    skateparkTitle: state.skatepark.responseAPI.title,
   };
 };
 
 const mapDispatchToProps = (dispatch) => ({
   getSkateparkDetails: (skateparkName) => {
     dispatch(callGetSkateparkDetails(skateparkName));
-    console.log('pouet');
   },
   setOnLoading: () => {
     dispatch(setOnSkateparkDetailsLoading());

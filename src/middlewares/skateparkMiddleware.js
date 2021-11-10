@@ -165,28 +165,17 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       const endPointDetails_Spot =
         baseURI + '/skatepark/' + skatepark_Id + '?_embed=true';
       //console.log('on y passe youpi');
-      // axios
-      //   .post(baseSpinningSquid + endPointDetails_Spot)
-      //   .then((response) => {
-      //     console.log('response from API : ');
-      //     console.log(response);
-      //     store.dispatch(
-      //       successGetSkateparkList(
-      //         'a remplacer par kekchose ou pas dans skateparkMiddleware'
-      //       )
-      //     );
-      //   })
-      //   .catch((error) => {
-      //     console.warn(error);
-      //   });
-      setTimeout(() => {
-        store.dispatch(
-          successGetSkateparkDetails(
-            'a remplacer par kekchose ou pas dans skateparkMiddleware, route: ' +
-              endPointDetails_Spot
-          )
-        );
-      }, 3000);
+      axios
+        .get(endPointDetails_Spot)
+        .then((response) => {
+          console.log('response from API : ');
+          console.log(response);
+          console.log(response.data);
+          store.dispatch(successGetSkateparkDetails(response.data));
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
 
       break;
 
@@ -203,12 +192,34 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       };
       //console.log('on y passe youpi');
       axios
-        .post(baseSpinningSquid + endPointAdd_Spot, {}, options)
+        .post(
+          baseSpinningSquid + endPointAdd_Spot,
+          {
+            title: store.getState().skatepark.addSpot.title,
+            skatepark: store.getState().skatepark.addSpot.categorySkatepark,
+            pumptrack: store.getState().skatepark.addSpot.categoryPumptrack,
+            streetspot: store.getState().skatepark.addSpot.categoryStreet,
+            street: store.getState().skatepark.addSpot.street,
+            zipcode: store.getState().skatepark.addSpot.postal,
+            city: store.getState().skatepark.addSpot.town,
+            latitude: store.getState().skatepark.addSpot.latitude,
+            longitude: store.getState().skatepark.addSpot.longitude,
+            parking: store.getState().skatepark.addSpot.parking,
+            water: store.getState().skatepark.addSpot.water,
+            trashcan: store.getState().skatepark.addSpot.trashcan,
+            lighting: store.getState().skatepark.addSpot.lighting,
+            table: store.getState().skatepark.addSpot.table,
+            benche: store.getState().skatepark.addSpot.benche,
+            state: store.getState().skatepark.addSpot.etatRadioBtn,
+            image: store.getState().skatepark.addSpot.uploadedImg,
+          },
+          options_ADD
+        )
         .then((response) => {
           console.log('response from API : ');
           console.log(response);
           store.dispatch(
-            successSubmitUpdateSpot(
+            successSubmitAddSpot(
               'a remplacer par kekchose ou pas dans skateparkMiddleware'
             )
           );

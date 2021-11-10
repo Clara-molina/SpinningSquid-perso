@@ -1,7 +1,27 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+import GoogleMapReact from 'google-map-react';
+import styled from 'styled-components';
+import logo1 from 'src/assets/img/logo-hover.png';
 import Img from '../../assets/img/Skateparktest.jpg';
 import './searchSkateResults.scss';
 import Loading from 'src/components/Loading';
+
+const Wrapper = styled.img`
+  //background-color: black;
+  border-radius: 25px;
+  width: 30px;
+  height: 30px;
+  transform: translate(-15px,-15px);
+  &:hover {
+    width: 50px;
+    height: 50px;
+    transform: translate(-25px,-35px);
+  }
+`;
+const Marker = (props) => {
+  return <Wrapper id={'WrapperId'+props.id} className="" src={logo1} ></Wrapper>;
+};
 
 const SearchSkateResults = (props) => {
   if (!props.isLoading) {
@@ -22,7 +42,7 @@ const SearchSkateResults = (props) => {
       {props.isLoaded && (
         <>
           <h3 className="searchresulttitle">Résultat</h3>
-          <h4 className="searchresultname">Skatepark Achères</h4>
+          <h4 className="searchresultname">{props.title}</h4>
           <img
             className="searchresultimage"
             src={Img}
@@ -54,8 +74,28 @@ const SearchSkateResults = (props) => {
           <span className="detailssearchresult">Poubelles</span>
 
           <div className="searchresultmap">Map de l'adresse</div>
+          <div className='search-map'>
+          <GoogleMapReact
+            id="googlemapreact"
+            bootstrapURLKeys={{
+              key: 'AIzaSyAglZjyBm532ApJYhxUDEVnmIo0Zd_JsjY',
+            }}
+            center={props.locationOnMap}
+            defaultZoom={8}
+            yesIWantToUseGoogleMapApiInternals
+          >
+            <Marker
+              key={props.id}
+              id={props.id}
+              //text={place.name}
+              lat={props.locationOnMap.lat}
+              lng={props.locationOnMap.lng}
+            />
+          </GoogleMapReact>
+          </div>
         </>
       )}
+      <Link to='/trouve-ton-skatepark/modifie-ton-spot'>modifie ton spot</Link>
     </div>
   );
 };

@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 .searchresult {
   font-family: 'Righteous';
   display: flex;
@@ -30,7 +32,20 @@
 .searchresultmap {
   padding-bottom: 200px;
 }
-
+.search-map {
+  display:block !important;
+  width: 40%;
+  border: solid 1px;
+  border-color: vars.$orange;
+  box-shadow: 0 0 40px 40px vars.$orange inset, 0 0 0 0 vars.$orange;
+  transition: all 150ms ease-in-out;
+  margin-bottom: 12em;
+  height: 700px;
+  
+  &:hover {
+    box-shadow: 0 0 10px 0 vars.$orange inset, 0 0 10px 4px vars.$orange;
+  }
+}
 .rating {
   width: 226px;
   margin: 0 auto 1em;

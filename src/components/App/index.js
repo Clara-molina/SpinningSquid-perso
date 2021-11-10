@@ -23,6 +23,7 @@ import DetailsPost from 'src/components/Community/DetailsPost';
 import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
 import PostArticle from 'src/components/Marketplace/PostArticle';
+import SpotEdit from 'src/components/SpotEdit';
 
 import Loading from 'src/components/Loading';
 
@@ -44,6 +45,10 @@ const App = (props) => {
             component={SpotAdd}
           />
           <Route
+            path="/trouve-ton-skatepark/modifie-ton-spot"
+            component={SpotEdit}
+          />
+          <Route
             path="/trouve-ton-skatepark/:resultat"
             component={SearchSkateResults}
           />
@@ -53,10 +58,16 @@ const App = (props) => {
             path="/trouve-ton-matos/ajoute-ton-matos"
             component={PostArticle}
           />
+          <Route
+            exact
+            path="/trouve-ton-matos/modifie-ton-matos"
+            component={PostArticle}
+          />
           <Route path="/trouve-ton-matos/details" component={DetailsArticle} />
           <Route exact path="/communaute" component={Community} />
           <Route path="/communaute/details" component={DetailsPost} />
           <Route path="/communaute/ajoute-ton-evenement" component={AddPost} />
+          <Route path="/communaute/modifie-ton-evenement" component={AddPost} />
           <Route path="/contact" component={Contact} />
           <Route exact path="/connexion">
             {props.isLogged ? <Redirect to="/connexion/profil" /> : <Connection />}
