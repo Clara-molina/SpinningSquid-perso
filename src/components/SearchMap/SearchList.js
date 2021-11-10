@@ -1,3 +1,4 @@
+import React from 'react';
 import './searchMap.scss';
 /* eslint-disable prefer-template */
 /* eslint-disable no-else-return */
@@ -53,6 +54,13 @@ const SearchList = (list) => {
     //   }
     // };
     const urlDetailSkatepark = '/trouve-ton-skatepark/' + item.id;
+    const location = {
+      lat: item.meta.latitude,
+      lng: item.meta.longitude,
+    };
+    const updateMap = ()=>{
+      list.moveLocationOnMap(location);
+    }
     return (
       <article
         key={item.id}
@@ -70,7 +78,10 @@ const SearchList = (list) => {
             ? 'PumpTrack'
             : 'SkatePark'}
         </h3>
-        <button className="search-list-button" type="submit">
+        <button
+        className="search-list-button"
+        onClick={updateMap}
+        >
           Voir
         </button>
         <Link to={urlDetailSkatepark}>details</Link>
