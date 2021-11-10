@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Community from 'src/components/Community';
+import AddPost from 'src/components/Community/AddPost';
 import { updateField } from 'src/actions/userActions';
 import returnBase64Img from 'src/generic_functions';
 
@@ -52,4 +52,4 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Community);
+export default connect(mapStateToProps, mapDispatchToProps)(AddPost);
