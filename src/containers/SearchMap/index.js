@@ -6,6 +6,7 @@ import {
   successSubmitAddSpot,
   setOnLoadingStatus,
   getSkateparkByCity,
+  updateLocationOnMap,
 } from 'src/actions/skateparkActions';
 import SearchMap from 'src/components/SearchMap';
 
@@ -16,6 +17,7 @@ const mapStateToProps = (state, ownProps) => {
     responseAPI: state.skatepark.responseAPI,
     isLoading: state.skatepark.isLoading,
     isLoaded: state.skatepark.isLoaded,
+    locationOnMap: state.skatepark.locationOnMap,
   };
 };
 
@@ -34,6 +36,9 @@ const mapDispatchToProps = (dispatch) => ({
   submitSkateparkSearch: (event) => {
     event.preventDefault();
     dispatch(getSkateparkByCity());
+  },
+  moveLocationOnMap: (data) => {
+    dispatch(updateLocationOnMap(data));
   },
 });
 
