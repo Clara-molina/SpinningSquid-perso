@@ -31,9 +31,9 @@ const _onMouseLeave = (event) => {
 
 const SearchList = (list) => {
   //console.log(list);
-  //console.log(list.itemList);
-
-  //console.log(list.itemList[0]._embedded['wp:featuredmedia'][0].source_url);
+  console.log('test' + list.itemList);
+  console.log('test');
+  // console.log(list.itemList[0]._embedded['wp:featuredmedia'][0].source_url);
 
   const mappingArticles = list.itemList.map((item) => {
     // const getImageURL = () => {
