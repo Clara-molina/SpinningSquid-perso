@@ -249,6 +249,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         responseAPI: action.responseAPI,
         isLoaded: true,
+      };
     case GET_SKATEPARK_BY_CITY_SUCCESS:
       return {
         ...state,

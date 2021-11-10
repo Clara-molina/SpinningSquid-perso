@@ -36,7 +36,7 @@ export const callGetSkateparkDetails = (skateparkId) => ({
 export const successGetSkateparkDetails = (data) => ({
   type: GET_SKATEPARK_DETAILS_SUCCESS,
   responseAPI: data,
-
+});
 export const getSkateparkByCity = () => ({
   type: GET_SKATEPARK_BY_CITY,
 });
