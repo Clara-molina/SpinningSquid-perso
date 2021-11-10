@@ -78,8 +78,6 @@ const MapAndMarkers = (props) => {
           lng={place.meta.longitude}
         />
       )})}
-      <Marker id='test1' lat={37.42216} lng={-122.08427} />
-      <Marker id='test2' lat={37.38216} lng={-122.08827} />
     </GoogleMapReact>
   );
 };
