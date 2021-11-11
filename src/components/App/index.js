@@ -6,6 +6,7 @@ import { history } from 'src/store';
 import './styles.scss';
 
 // Import Containers
+import AddPost from 'src/containers/AddPost';
 import Community from 'src/containers/Community';
 import Connection from 'src/containers/Connection';
 import Contact from 'src/containers/Contact';
@@ -19,7 +20,6 @@ import SpotAdd from 'src/containers/SpotAdd';
 import SpotEdit from 'src/containers/SpotEdit';
 
 // Import Components
-import AddPost from 'src/components/Community/AddPost';
 import DetailsArticle from 'src/components/Marketplace/DetailsArticle';
 import DetailsPost from 'src/components/Community/DetailsPost';
 import Footer from 'src/components/Footer';
