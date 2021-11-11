@@ -15,7 +15,7 @@ const AddPost = (props) => (
             <input
               className="addpost-input"
               type="text"
-              id="title"
+              id="addPostTitle"
               name="title"
               onChange={props.handleOnChange}
             />
@@ -25,7 +25,7 @@ const AddPost = (props) => (
             <input
               className="addpost-input"
               type="date"
-              id="date"
+              id="addPostDate"
               name="date"
               onChange={props.handleOnChange}
             />
@@ -35,7 +35,7 @@ const AddPost = (props) => (
             <input
               className="addpost-input"
               type="text"
-              id="place"
+              id="addPostPlace"
               name="place"
               onChange={props.handleOnChange}
             />
@@ -44,7 +44,7 @@ const AddPost = (props) => (
             <input
               className="addpost-input"
               type="file"
-              id="addpost-image"
+              id="addPostImage"
               name="image"
               accept="image/png, image/jpeg"
               multiple
@@ -57,7 +57,7 @@ const AddPost = (props) => (
       </div>
       <div className="addpost-description">
         <textarea
-          id="addpost-description"
+          id="addPostDescription"
           name="story"
           onChange={props.handleOnChange}
           rows="5"

@@ -15,7 +15,7 @@ const AddSale = (props) => (
             <input
               className="postarticle-input"
               type="text"
-              id="title"
+              id="addSaleTitle"
               name="title"
               onChange={props.handleOnChange}
             />
@@ -25,7 +25,7 @@ const AddSale = (props) => (
             <input
               className="postarticle-input"
               type="text"
-              id="place"
+              id="addSalePlace"
               name="place"
               onChange={props.handleOnChange}
             />
@@ -35,7 +35,7 @@ const AddSale = (props) => (
             <input
               className="postarticle-input"
               type="number"
-              id="price"
+              id="addSalePrice"
               name="price"
               onChange={props.handleOnChange}
             />
@@ -45,7 +45,7 @@ const AddSale = (props) => (
             <input
               className="postarticle-input"
               type="file"
-              id="postarticle-image"
+              id="addSaleImage"
               name="image"
               accept="image/png, image/jpeg"
               multiple
@@ -57,7 +57,7 @@ const AddSale = (props) => (
       </div>
       <div className="postarticle-description">
         <textarea
-          id="postarticle-description"
+          id="addSaleDescription"
           name="story"
           rows="5"
           cols="33"

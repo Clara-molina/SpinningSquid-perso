@@ -232,7 +232,6 @@ const reducer = (state = initialState, action = {}) => {
           },
         };
       }
-      break;
 
     case SKATEPARK_ON_LOADING:
       return {

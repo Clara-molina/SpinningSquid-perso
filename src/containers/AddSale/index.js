@@ -5,7 +5,7 @@ import { updateField } from 'src/actions/userActions';
 import returnBase64Img from 'src/generic_functions';
 
 import {
-  callGetArticleList,
+  callGetMarketplaceList,
   setOnLoadingStatus,
   submitMarketplaceAddArticle,
 } from 'src/actions/marketplaceActions';
@@ -23,7 +23,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   callArticleApiGet: () => {
-    dispatch(callGetArticleList());
+    dispatch(callGetMarketplaceList());
   },
   handleOnChange: (event) => {
     dispatch(updateField(event.target.id, event.target.value));

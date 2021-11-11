@@ -32,7 +32,7 @@ const reducer = (state = initialState, action = {}) => {
           searchField: action.fieldValue,
         };
       }
-      if (action.fieldName === 'title') {
+      if (action.fieldName === 'addSaleTitle') {
         return {
           ...state,
           addSale: {
@@ -41,7 +41,7 @@ const reducer = (state = initialState, action = {}) => {
           },
         };
       }
-      if (action.fieldName === 'place') {
+      if (action.fieldName === 'addSalePlace') {
         return {
           ...state,
           addSale: {
@@ -50,7 +50,7 @@ const reducer = (state = initialState, action = {}) => {
           },
         };
       }
-      if (action.fieldName === 'price') {
+      if (action.fieldName === 'addSalePrice') {
         return {
           ...state,
           addSale: {
@@ -59,7 +59,7 @@ const reducer = (state = initialState, action = {}) => {
           },
         };
       }
-      if (action.fieldName === 'image') {
+      if (action.fieldName === 'addSaleImage') {
         return {
           ...state,
           addSale: {
@@ -68,7 +68,7 @@ const reducer = (state = initialState, action = {}) => {
           },
         };
       }
-      if (action.fieldName === 'story') {
+      if (action.fieldName === 'addSaleDescription') {
         return {
           ...state,
           addSale: {
