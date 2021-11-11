@@ -2,6 +2,7 @@ import './community.scss';
 
 const AddPost = (props) => {
   const transfer = (event) => {
+    props.handleUploadLocalImage(event);
     // console.log(event);
     const fileChosen = document.getElementById('file-chosen-addPost');
     fileChosen.textContent = event.target.files[0].name;
@@ -49,9 +50,9 @@ const AddPost = (props) => {
                 type="file"
                 id="addPostImage"
                 name="image"
-                accept="image/png, image/jpeg"
+                accept="image/png, image/jpeg, image/jpg"
                 multiple
-                onChange={props.handleUploadLocalImage, transfer}
+                onChange={transfer}
                 hidden
               />
               <span id="file-chosen-addPost">No file chosen</span>

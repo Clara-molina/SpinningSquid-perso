@@ -42,7 +42,7 @@ const mapDispatchToProps = (dispatch) => ({
     console.log(imgValueURL);
     console.log(imgBase64);
     dispatch(updateField(imgName, imgValue));
-    dispatch(updateField('uploadImage', imgBase64));
+    dispatch(updateField('addPostImage', imgBase64));
     console.log('commande envoyée');
   },
   handleAddArticle: (event) => {

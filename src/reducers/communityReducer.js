@@ -18,7 +18,7 @@ export const initialState = {
     title: '',
     date: '',
     place: '',
-    uploadedImg: 'initial state',
+    image: 'initial state',
     story: '',
   },
 };
@@ -58,7 +58,7 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           addArticle: {
             ...state.addArticle,
-            uploadedImg: action.fieldValue,
+            image: action.fieldValue,
           },
         };
       }
