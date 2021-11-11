@@ -26,15 +26,16 @@ export const initialState = {
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case UPDATE_FIELD:
-      if (action.fieldName === 'title') {
+      if (action.fieldName === 'addPostTitle') {
         return {
           ...state,
           addArticle: {
+            ...state.addArticle,
             title: action.fieldValue,
           },
         };
       }
-      if (action.fieldName === 'date') {
+      if (action.fieldName === 'addPostDate') {
         return {
           ...state,
           addArticle: {
@@ -43,7 +44,7 @@ const reducer = (state = initialState, action = {}) => {
           },
         };
       }
-      if (action.fieldName === 'place') {
+      if (action.fieldName === 'addPostPlace') {
         return {
           ...state,
           addArticle: {
@@ -52,7 +53,7 @@ const reducer = (state = initialState, action = {}) => {
           },
         };
       }
-      if (action.fieldName === 'image') {
+      if (action.fieldName === 'addPostImage') {
         return {
           ...state,
           addArticle: {
@@ -61,7 +62,7 @@ const reducer = (state = initialState, action = {}) => {
           },
         };
       }
-      if (action.fieldName === 'story') {
+      if (action.fieldName === 'addPostDescription') {
         return {
           ...state,
           addArticle: {

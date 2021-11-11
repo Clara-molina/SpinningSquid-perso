@@ -6,6 +6,7 @@ import { history } from 'src/store';
 import './styles.scss';
 
 // Import Containers
+import AddSale from 'src/containers/AddSale';
 import AddPost from 'src/containers/AddPost';
 import Community from 'src/containers/Community';
 import Connection from 'src/containers/Connection';
@@ -56,7 +57,7 @@ const App = (props) => {
           <Route
             exact
             path="/trouve-ton-matos/ajoute-ton-matos"
-            component={PostArticle}
+            component={AddSale}
           />
           <Route
             exact
