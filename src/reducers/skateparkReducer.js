@@ -1,5 +1,6 @@
 import { UPDATE_FIELD } from 'src/actions/userActions';
 import {
+  FILL_STATE,
   SKATEPARK_ON_LOADING,
   UPDATE_LOCATION_ON_MAP,
   SKATEPARK_DETAILS_ON_LOADING,
@@ -23,6 +24,7 @@ export const initialState = {
   },
   skateparkToDisplay_Id: 'initial state showDetails',
   addSpot: {
+    id: '',
     title: '',
     categorySkatepark: false,
     categoryPumptrack: false,
@@ -271,12 +273,38 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         message: action.message_success,
       };
-    //--------------------------------------------------------------
-    // à compléter
     case SUBMIT_UPDATE_SPOT_SUCCESS:
       return {
         ...state,
+        message: action.message_success,
       };
+    case FILL_STATE:
+      return {
+        ...state,
+        addSpot: {
+          ...state.addSpot,
+          id: action.skateparkId,
+          title: '',
+          categorySkatepark: false,
+          categoryPumptrack: false,
+          categoryStreet: false,
+          street: '',
+          postal: '',
+          town: '',
+          latitude: '',
+          longitude: '',
+          parking: false,
+          water: false,
+          trashcan: false,
+          lighting: false,
+          table: false,
+          benche: false,
+          etatRadioBtn: 'initial etatRadioBtn value into state',
+          uploadedImg: 'initial state',
+        },
+      };
+    //--------------------------------------------------------------
+    // à compléter
     case SUBMIT_DELETE_SPOT_SUCCESS:
       return {
         ...state,
