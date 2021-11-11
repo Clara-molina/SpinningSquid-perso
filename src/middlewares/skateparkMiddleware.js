@@ -241,7 +241,7 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       );
       console.log('requete update ok');
       store.dispatch(push('/newsletter'));
-      store.dispatch(goForward());
+      //store.dispatch(goForward());
       console.log('redirection');
 
 

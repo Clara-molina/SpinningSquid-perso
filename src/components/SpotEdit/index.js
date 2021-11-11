@@ -3,10 +3,12 @@ import axios from 'axios';
 import { baseSpinningSquid } from 'src/routesBack';
 
 const SpotEdit = (props) => {
+  console.log(props.skateparkId);
   props.getSkateparkDetails(props.skateparkId);
   props.fillState();
 
   const transfer = (event) => {
+    props.handleUploadLocalImage(event);
     //console.log(event);
     const fileChosen = document.getElementById('file-chosen');
     fileChosen.textContent = event.target.files[0].name;
@@ -56,7 +58,7 @@ const SpotEdit = (props) => {
   };
   return (
     <div className="spotadd-container">
-      <h2 className="title">Ajoute ton Spot</h2>
+      <h2 className="title">Modifie ton Spot</h2>
 
       <form className="spotadd-form" onSubmit={props.handleSubmitAddPost}>
         <div className="spotadd-container-title">
@@ -143,6 +145,7 @@ const SpotEdit = (props) => {
             id="addSpotlongitude"
             className="spotadd-input"
             type="number"
+            step="0.00001"
             name="longitude"
             placeholder="longitude"
             required
@@ -152,6 +155,7 @@ const SpotEdit = (props) => {
             id="addSpotlatitude"
             className="spotadd-input"
             type="number"
+            step="0.00001"
             name="latitude"
             placeholder="latitude"
             required
@@ -245,7 +249,7 @@ const SpotEdit = (props) => {
             accept="image/png, image/jpeg"
             multiple
             required
-            onChange={(props.handleUploadLocalImage, transfer)}
+            onChange={transfer}
             hidden
           />
           <span id="file-chosen">No file chosen</span>

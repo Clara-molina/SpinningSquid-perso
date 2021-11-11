@@ -89,6 +89,7 @@ const SpotAdd = (props) => {
             id="addSpotlongitude"
             className="spotadd-input"
             type="number"
+            step="0.00001"
             name="longitude"
             placeholder="longitude"
             required
@@ -98,6 +99,7 @@ const SpotAdd = (props) => {
             id="addSpotlatitude"
             className="spotadd-input"
             type="number"
+            step="0.00001"
             name="latitude"
             placeholder="latitude"
             required
