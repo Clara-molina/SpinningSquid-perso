@@ -3,6 +3,7 @@ import {
   ARTICLE_ON_LOADING,
   GET_ARTICLE_LIST_SUCCESS,
   GET_ARTICLE_DETAILS_SUCCESS,
+  POST_ADD_ARTICLE_SUCCESS,
   UPDATE_ARTICLE_DETAILS_SUCCESS,
   DELETE_ARTICLE_DETAILS_SUCCESS,
 } from 'src/actions/communityActions';
@@ -13,12 +14,65 @@ export const initialState = {
   responseApi: {},
   isLoading: false,
   isLoaded: false,
+  addArticle: {
+    title: '',
+    date: '',
+    place: '',
+    image: 'initial state',
+    story: '',
+  },
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    //-----------------------------------------------------------------
-    // à  compléter
+    case UPDATE_FIELD:
+      if (action.fieldName === 'addPostTitle') {
+        return {
+          ...state,
+          addArticle: {
+            ...state.addArticle,
+            title: action.fieldValue,
+          },
+        };
+      }
+      if (action.fieldName === 'addPostDate') {
+        return {
+          ...state,
+          addArticle: {
+            ...state.addArticle,
+            date: action.fieldValue,
+          },
+        };
+      }
+      if (action.fieldName === 'addPostPlace') {
+        return {
+          ...state,
+          addArticle: {
+            ...state.addArticle,
+            place: action.fieldValue,
+          },
+        };
+      }
+      if (action.fieldName === 'addPostImage') {
+        return {
+          ...state,
+          addArticle: {
+            ...state.addArticle,
+            image: action.fieldValue,
+          },
+        };
+      }
+      if (action.fieldName === 'addPostDescription') {
+        return {
+          ...state,
+          addArticle: {
+            ...state.addArticle,
+            story: action.fieldValue,
+          },
+        };
+      }
+      return state;
+
     case ARTICLE_ON_LOADING:
       return {
         ...state,
@@ -35,6 +89,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         searchField: action.fieldValue,
       };
+    case POST_ADD_ARTICLE_SUCCESS:
+      return {
+        ...state,
+        message: action.message_success,
+      };
     case UPDATE_ARTICLE_DETAILS_SUCCESS:
       return {
         ...state,
@@ -45,7 +104,6 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         searchField: action.fieldValue,
       };
-    //--------------------------------------------------------------------
     default:
       return state;
   }

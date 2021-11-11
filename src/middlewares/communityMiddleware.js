@@ -38,40 +38,48 @@ const communityMiddleware = (store) => (next) => (action) => {
       break;
 
     case SUBMIT_ADD_ARTICLE:
-      // const endPointAddArticle = baseSpinningSquid + '/add-article';
-      // console.log(JSON.parse(localStorage.getItem('userData')).token);
-      // const options_ADD = {
-      //   headers: {
-      //     Authorization:
-      //       'Bearer ' + JSON.parse(localStorage.getItem('userData')).token,
-      //   },
-      // };
-      // console.log('on y passe youpi');
-      // axios
-      //   .post(endPointAddArticle, {champs a ajouter}, option_ADD)
-      //   .then((response) => {
-      //     console.log('response from API : ');
-      //     console.log(response);
-      //     store.dispatch(
-      //       successSubmitAddArticle(
-      //         'a remplacer par kekchose ou pas dans communityMiddleware',
-      //       ),
-      //     );
-      //     window.alert(
-      //       `
-      //       L'ajout de votre article dans Whassup?! a bien été enregistré.
-      //       Bisous.
-      //       `
-      //     );
-      //   })
-      //   .catch((error) => {
-      //     console.warn(error);
-      //   });
-      store.dispatch(
-        successSubmitAddArticle(
-          'a remplacer par le call API dans communityMiddleware',
-        ),
-      );
+      const endPointAddArticle = baseSpinningSquid + '/add-article';
+      console.log(JSON.parse(localStorage.getItem('userData')).token);
+      const options_ADD = {
+        headers: {
+          Authorization:
+            'Bearer ' + JSON.parse(localStorage.getItem('userData')).token,
+        },
+      };
+      console.log('on y passe youpi');
+      axios
+        .post(
+          endPointAddArticle,
+          {
+            title: store.getState().community.addArticle.title,
+            date: store.getState().community.addArticle.date,
+            place: store.getState().community.addArticle.place,
+            image: store.getState().community.addArticle.image,
+            story: store.getState().community.addArticle.story,
+          },
+          options_ADD,
+        )
+        .then((response) => {
+          console.log('response from API : ');
+          console.log(response);
+          store.dispatch(
+            successSubmitAddArticle(),
+          );
+          window.alert(
+            `
+            L'ajout de votre article dans Whassup?! a bien été enregistré.
+            Bisous.
+            `
+          );
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+      // store.dispatch(
+      //   successSubmitAddArticle(
+      //     'a remplacer par le call API dans communityMiddleware',
+      //   ),
+      // );
 
       break;
 

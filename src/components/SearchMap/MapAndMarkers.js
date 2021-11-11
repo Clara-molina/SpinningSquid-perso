@@ -5,7 +5,7 @@ import logo1 from 'src/assets/img/logo-hover.png';
 
 const _onChildMouseEnter = (event) => {
   //console.log('on entering child');
-  console.log(event);
+  //console.log(event);
   var sheet = document.createElement('style')
   sheet.id = "stylesheethovericon";
   const element = "#article"+event;
@@ -66,8 +66,8 @@ const MapAndMarkers = (props) => {
       onChildMouseLeave={_onChildMouseLeave}
     >
       {props.responseAPI.map((place) => {
-        console.log(place.id);
-        console.log(place);
+        //console.log(place.id);
+        //console.log(place);
         return (
         
         <Marker
@@ -78,8 +78,6 @@ const MapAndMarkers = (props) => {
           lng={place.meta.longitude}
         />
       )})}
-      <Marker id='test1' lat={37.42216} lng={-122.08427} />
-      <Marker id='test2' lat={37.38216} lng={-122.08827} />
     </GoogleMapReact>
   );
 };
