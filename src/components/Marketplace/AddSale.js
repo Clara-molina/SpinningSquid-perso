@@ -1,19 +1,19 @@
-import './community.scss';
-
 // const transfer = (event) => {
 //   // console.log(event);
 //   const fileChosen = document.getElementById('file-chosen');
 //   fileChosen.textContent = event.target.files[0].name;
 // };
-const AddPost = (props) => (
-  <div id="addpost">
-    <h2 className="addpost-title">Ajoute un évènement</h2>
-    <form onSubmit={props.handleAddArticle}>
-      <div className="addpost-block">
-        <div className="addpost-charateristics">
-          <label htmlFor="date">Titre
+
+const AddSale = (props) => (
+  <div id="postarticle">
+    <h2 className="title">Ajoute du matos</h2>
+    <form onSubmit={props.handleOnChange}>
+
+      <div className="postarticle-block">
+        <div className="postarticle-characteristics">
+          <label htmlFor="title">Titre
             <input
-              className="addpost-input"
+              className="postarticle-input"
               type="text"
               id="title"
               name="title"
@@ -21,30 +21,31 @@ const AddPost = (props) => (
             />
           </label>
 
-          <label htmlFor="date">Date
-            <input
-              className="addpost-input"
-              type="date"
-              id="date"
-              name="date"
-              onChange={props.handleOnChange}
-            />
-          </label>
-
           <label htmlFor="place">Lieu
             <input
-              className="addpost-input"
+              className="postarticle-input"
               type="text"
               id="place"
               name="place"
               onChange={props.handleOnChange}
             />
           </label>
+
+          <label htmlFor="price">Tarif
+            <input
+              className="postarticle-input"
+              type="number"
+              id="price"
+              name="price"
+              onChange={props.handleOnChange}
+            />
+          </label>
+
           <label htmlFor="image">Image
             <input
-              className="addpost-input"
+              className="postarticle-input"
               type="file"
-              id="addpost-image"
+              id="postarticle-image"
               name="image"
               accept="image/png, image/jpeg"
               multiple
@@ -52,27 +53,26 @@ const AddPost = (props) => (
               hidden
             />
           </label>
-
         </div>
       </div>
-      <div className="addpost-description">
+      <div className="postarticle-description">
         <textarea
-          id="addpost-description"
+          id="postarticle-description"
           name="story"
-          onChange={props.handleOnChange}
           rows="5"
           cols="33"
+          onChange={props.handleOnChange}
         >
           Entre ta description ici
         </textarea>
       </div>
-      <div className="addpost-button">
-        <button type="submit" id="addpost-button" className="button">
-          Poster l'évènement
+      <div className="postarticle-button">
+        <button type="submit" id="postarticle-button" className="button">
+          Poster mon matos
         </button>
       </div>
     </form>
   </div>
 );
 
-export default AddPost;
+export default AddSale;

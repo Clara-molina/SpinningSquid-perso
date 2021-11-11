@@ -5,6 +5,7 @@ import { Redirect } from 'react-router-dom';
 import './styles.scss';
 
 // Import Containers
+import AddSale from 'src/containers/AddSale';
 import AddPost from 'src/containers/AddPost';
 import Community from 'src/containers/Community';
 import Connection from 'src/containers/Connection';
@@ -22,7 +23,6 @@ import DetailsArticle from 'src/components/Marketplace/DetailsArticle';
 import DetailsPost from 'src/components/Community/DetailsPost';
 import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
-import PostArticle from 'src/components/Marketplace/PostArticle';
 
 import Loading from 'src/components/Loading';
 
@@ -51,7 +51,7 @@ const App = (props) => {
           <Route
             exact
             path="/trouve-ton-matos/ajoute-ton-matos"
-            component={PostArticle}
+            component={AddSale}
           />
           <Route path="/trouve-ton-matos/details" component={DetailsArticle} />
           <Route exact path="/communaute" component={Community} />

@@ -30,6 +30,7 @@ const reducer = (state = initialState, action = {}) => {
         return {
           ...state,
           addArticle: {
+            ...state.addArticle,
             title: action.fieldValue,
           },
         };
