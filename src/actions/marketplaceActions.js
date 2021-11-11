@@ -1,23 +1,15 @@
 export const MARKETPLACE_ON_LOADING = 'MARKETPLACE_ON_LOADING';
 export const GET_MARKETPLACE_INITIAL_LIST = 'GET_MARKETPLACE_INITIAL_LIST';
-export const GET_MARKETPLACE_INITIAL_LIST_SUCCESS =
-  'GET_MARKETPLACE_INITIAL_LIST_SUCCESS';
+export const GET_MARKETPLACE_INITIAL_LIST_SUCCESS = 'GET_MARKETPLACE_INITIAL_LIST_SUCCESS';
 export const GET_MARKETPLACE_ARTICLE_LIST = 'GET_MARKETPLACE_ARTICLE_LIST';
-export const GET_MARKETPLACE_ARTICLE_DETAILS =
-  'GET_MARKETPLACE_ARTICLE_DETAILS';
-export const GET_MARKETPLACE_ARTICLE_LIST_SUCCESS =
-  'GET_MARKETPLACE_ARTICLE_LIST_SUCCESS';
+export const GET_MARKETPLACE_ARTICLE_DETAILS = 'GET_MARKETPLACE_ARTICLE_DETAILS';
+export const GET_MARKETPLACE_ARTICLE_LIST_SUCCESS = 'GET_MARKETPLACE_ARTICLE_LIST_SUCCESS';
 export const POST_MARKETPLACE_ADD_ARTICLE = 'POST_MARKETPLACE_ADD_ARTICLE';
-export const POST_MARKETPLACE_ADD_ARTICLE_SUCCESS =
-  'POST_MARKETPLACE_ADD_ARTICLE_SUCCESS';
-export const POST_MARKETPLACE_UPDATE_ARTICLE =
-  'POST_MARKETPLACE_UPDATE_ARTICLE';
-export const POST_MARKETPLACE_UPDATE_ARTICLE_SUCCESS =
-  'POST_MARKETPLACE_UPDATE_ARTICLE_SUCCESS';
-export const POST_MARKETPLACE_DELETE_ARTICLE =
-  'POST_MARKETPLACE_DELETE_ARTICLE';
-export const POST_MARKETPLACE_DELETE_ARTICLE_SUCCESS =
-  'POST_MARKETPLACE_DELETE_ARTICLE_SUCCESS';
+export const POST_MARKETPLACE_ADD_ARTICLE_SUCCESS = 'POST_MARKETPLACE_ADD_ARTICLE_SUCCESS';
+export const POST_MARKETPLACE_UPDATE_ARTICLE = 'POST_MARKETPLACE_UPDATE_ARTICLE';
+export const POST_MARKETPLACE_UPDATE_ARTICLE_SUCCESS = 'POST_MARKETPLACE_UPDATE_ARTICLE_SUCCESS';
+export const POST_MARKETPLACE_DELETE_ARTICLE = 'POST_MARKETPLACE_DELETE_ARTICLE';
+export const POST_MARKETPLACE_DELETE_ARTICLE_SUCCESS = 'POST_MARKETPLACE_DELETE_ARTICLE_SUCCESS';
 
 export const callGetMarketplaceList = () => ({
   type: GET_MARKETPLACE_INITIAL_LIST,
@@ -42,24 +34,27 @@ export const successMarketplaceSearch = (data) => ({
   responseApi: data,
   loaded: true,
 });
+
 //----------------------------------------------------
-//a compléter avec les infos necessaires à chaque post
-export const submitMarketplaceAddArticle = (options) => ({
-  type: POST_MARKETPLACE_ADD_ARTICL,
+
+export const submitMarketplaceAddArticle = () => ({
+  type: POST_MARKETPLACE_ADD_ARTICLE,
 });
-export const successMarketplaceAddArticle = (data) => ({
+export const successMarketplaceAddArticle = (message) => ({
   type: POST_MARKETPLACE_ADD_ARTICLE_SUCCESS,
+  message_success: message,
 });
-export const submitMarketplaceUpdateArticle = (options) => ({
+export const submitMarketplaceUpdateArticle = () => ({
   type: POST_MARKETPLACE_UPDATE_ARTICLE,
 });
-export const successMarketplaceUpdateArticle = (data) => ({
+export const successMarketplaceUpdateArticle = (message) => ({
   type: POST_MARKETPLACE_UPDATE_ARTICLE_SUCCESS,
+  message_success: message,
 });
-export const submitMarketplaceDeleteArticle = (options) => ({
+export const submitMarketplaceDeleteArticle = () => ({
   type: POST_MARKETPLACE_DELETE_ARTICLE,
 });
-export const successMarketplaceDeleteArticle = (data) => ({
+export const successMarketplaceDeleteArticle = (message) => ({
   type: POST_MARKETPLACE_DELETE_ARTICLE_SUCCESS,
+  message_success: message,
 });
-//----------------------------------------------------

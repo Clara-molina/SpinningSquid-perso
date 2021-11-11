@@ -2,6 +2,7 @@ import './spotadd.scss';
 
 const SpotAdd = (props) => {
   const transfer = (event) => {
+    props.handleUploadLocalImage(event);
     // console.log(event);
     const fileChosen = document.getElementById('file-chosen');
     fileChosen.textContent = event.target.files[0].name;
@@ -189,7 +190,7 @@ const SpotAdd = (props) => {
             accept="image/png, image/jpeg"
             multiple
             required
-            onChange={props.handleUploadLocalImage, transfer}
+            onChange={transfer}
             hidden
           />
           <span id="file-chosen">No file chosen</span>

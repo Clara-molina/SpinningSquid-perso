@@ -1,29 +1,29 @@
 import { connect } from 'react-redux';
 
-import AddPost from 'src/components/Community/AddPost';
+import AddSale from 'src/components/Marketplace/AddSale';
 import { updateField } from 'src/actions/userActions';
 import returnBase64Img from 'src/generic_functions';
 
 import {
-  callGetArticleList,
+  callGetMarketplaceList,
   setOnLoadingStatus,
-  submitAddArticle,
-} from 'src/actions/communityActions';
+  submitMarketplaceAddArticle,
+} from 'src/actions/marketplaceActions';
 
 const mapStateToProps = (state) => ({
-  articlesList: state.community.articlesList,
-  isLoaded: state.community.isLoaded,
-  isLoading: state.community.isLoading,
-  title: state.community.title,
-  date: state.community.date,
-  place: state.community.place,
-  image: state.community.uploadedImg,
-  story: state.community.story,
+  articlesList: state.marketplace.articlesList,
+  isLoaded: state.marketplace.isLoaded,
+  isLoading: state.marketplace.isLoading,
+  title: state.marketplace.title,
+  place: state.marketplace.place,
+  price: state.marketplace.price,
+  image: state.marketplace.image,
+  story: state.marketplace.story,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   callArticleApiGet: () => {
-    dispatch(callGetArticleList());
+    dispatch(callGetMarketplaceList());
   },
   handleOnChange: (event) => {
     dispatch(updateField(event.target.id, event.target.value));
@@ -42,14 +42,14 @@ const mapDispatchToProps = (dispatch) => ({
     console.log(imgValueURL);
     console.log(imgBase64);
     dispatch(updateField(imgName, imgValue));
-    dispatch(updateField('addPostImage', imgBase64));
+    dispatch(updateField('addSaleImage', imgBase64));
     console.log('commande envoyée');
   },
   handleAddArticle: (event) => {
     event.preventDefault();
     console.log('on passe dans handleAddArticle');
-    dispatch(submitAddArticle());
+    dispatch(submitMarketplaceAddArticle());
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddPost);
+export default connect(mapStateToProps, mapDispatchToProps)(AddSale);
