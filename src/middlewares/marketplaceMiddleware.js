@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { baseURI } from 'src/routesBack';
+import { baseURI, baseSpinningSquid } from 'src/routesBack';
 import {
   GET_MARKETPLACE_INITIAL_LIST,
   GET_MARKETPLACE_ARTICLE_LIST,
@@ -100,7 +100,7 @@ const marketplaceMiddleware = (store) => (next) => (action) => {
             title: store.getState().marketplace.addSale.title,
             place: store.getState().marketplace.addSale.place,
             price: store.getState().marketplace.addSale.price,
-            image: store.getState().marketplace.addSale.uploadedImg,
+            image: store.getState().marketplace.addSale.image,
             story: store.getState().marketplace.addSale.story,
           },
           options_ADD,

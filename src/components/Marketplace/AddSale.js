@@ -1,5 +1,6 @@
 const AddSale = (props) => {
   const transfer = (event) => {
+    props.handleUploadLocalImage(event);
     // console.log(event);
     const fileChosen = document.getElementById('file-chosen-addSale');
     fileChosen.textContent = event.target.files[0].name;
@@ -7,7 +8,7 @@ const AddSale = (props) => {
   return (
     <div id="postarticle">
       <h2 className="title">Ajoute du matos</h2>
-      <form onSubmit={props.handleOnChange}>
+      <form onSubmit={props.handleAddArticle}>
 
         <div className="postarticle-block">
           <div className="postarticle-characteristics">
@@ -49,9 +50,9 @@ const AddSale = (props) => {
                 type="file"
                 id="addSaleImage"
                 name="image"
-                accept="image/png, image/jpeg"
+                accept="image/png, image/jpeg, image/jpg"
                 multiple
-                onChange={props.handleUploadLocalImage}
+                onChange={transfer}
                 hidden
               />
               <span id="file-chosen-addSale">No file chosen</span>

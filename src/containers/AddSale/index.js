@@ -17,7 +17,7 @@ const mapStateToProps = (state) => ({
   title: state.marketplace.title,
   place: state.marketplace.place,
   price: state.marketplace.price,
-  image: state.marketplace.uploadedImg,
+  image: state.marketplace.image,
   story: state.marketplace.story,
 });
 
@@ -42,7 +42,7 @@ const mapDispatchToProps = (dispatch) => ({
     console.log(imgValueURL);
     console.log(imgBase64);
     dispatch(updateField(imgName, imgValue));
-    dispatch(updateField('uploadImage', imgBase64));
+    dispatch(updateField('addSaleImage', imgBase64));
     console.log('commande envoyée');
   },
   handleAddArticle: (event) => {

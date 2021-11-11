@@ -54,7 +54,7 @@ const communityMiddleware = (store) => (next) => (action) => {
             title: store.getState().community.addArticle.title,
             date: store.getState().community.addArticle.date,
             place: store.getState().community.addArticle.place,
-            image: store.getState().community.addArticle.uploadedImg,
+            image: store.getState().community.addArticle.image,
             story: store.getState().community.addArticle.story,
           },
           options_ADD,
