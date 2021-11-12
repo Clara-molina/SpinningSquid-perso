@@ -11,7 +11,7 @@ const Marketplace = (props) => {
   }
 
   return (
-    <div id="marketplace">
+    <div id="marketplace" className="main-container">
       <div className="search">
         <h2 className="title search-title">Trouve ton Matos</h2>
         <div className="marketplace-post">
