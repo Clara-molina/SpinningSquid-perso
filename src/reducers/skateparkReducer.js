@@ -19,8 +19,8 @@ export const initialState = {
   isLoaded: false,
   isLoading: false,
   locationOnMap: {
-    lat: 37.42216,
-    lng: -122.08427,
+    lat: 46.23219,
+    lng: 2.20966,
   },
   skateparkToDisplay_Id: 'initial state showDetails',
   addSpot: {
@@ -43,6 +43,7 @@ export const initialState = {
     benche: false,
     etatRadioBtn: 'initial etatRadioBtn value into state',
     uploadedImg: 'initial state',
+    imgNameToDisplay: 'No file chosen',
   },
 };
 
@@ -235,6 +236,15 @@ const reducer = (state = initialState, action = {}) => {
           },
         };
       }
+      if (action.fieldName === 'imgNameToDisplay') {
+        return {
+          ...state,
+          addSpot: {
+            ...state.addSpot,
+            imgNameToDisplay: action.fieldValue,
+          },
+        };
+      }
 
     case SKATEPARK_ON_LOADING:
       return {
@@ -258,11 +268,13 @@ const reducer = (state = initialState, action = {}) => {
         isLoaded: action.loaded,
       };
     case GET_SKATEPARK_DETAILS_SUCCESS:
+      console.log(action.responseAPI);
       return {
         ...state,
         responseAPI: action.responseAPI,
         isLoaded: true,
         addSpot: {
+          ...state.addSpot,
           spotAddIsLoading: true,
           id: action.responseAPI.id,
           title: action.responseAPI.title.rendered,

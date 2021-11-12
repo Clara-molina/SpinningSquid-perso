@@ -60,7 +60,7 @@ const MapAndMarkers = (props) => {
         key: 'AIzaSyAglZjyBm532ApJYhxUDEVnmIo0Zd_JsjY',
       }}
       center={props.locationOnMap}
-      defaultZoom={8}
+      defaultZoom={6}
       yesIWantToUseGoogleMapApiInternals
       onChildMouseEnter={_onChildMouseEnter}
       onChildMouseLeave={_onChildMouseLeave}
