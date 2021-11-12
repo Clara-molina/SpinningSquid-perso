@@ -1,5 +1,6 @@
 export const CHECK_USER = 'CHECK_USER';
 export const GET_USER_INFO = 'GET_USER_INFO';
+export const GET_USER_INFO_SUCCESS = 'GET_USER_INFO_SUCCESS';
 export const FILL_STATE_USERDATA = 'FILL_STATE_USERDATA';
 export const UPDATE_FIELD = 'UPDATE_FIELD';
 export const SUBMIT_LOGIN = 'SUBMIT_LOGIN';
@@ -73,4 +74,8 @@ export const checkUserUpdateProfile = () => ({
 });
 export const getUserDataProfile = () => ({
   type: GET_USER_INFO,
+});
+export const getUserDataProfileSuccess = (responseAPI) => ({
+  type: GET_USER_INFO_SUCCESS,
+  responseAPI: responseAPI,
 });

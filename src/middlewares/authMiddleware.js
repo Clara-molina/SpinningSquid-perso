@@ -2,6 +2,7 @@ import axios from 'axios';
 import {
   CHECK_USER,
   GET_USER_INFO,
+  getUserDataProfileSuccess,
   SUBMIT_LOGIN,
   successLogin,
   successRegister,
@@ -19,8 +20,8 @@ const authMiddleware = (store) => (next) => (action) => {
           password: store.getState().user.passwordConnexion,
         })
         .then((response) => {
-          console.log('response from API : ');
-          console.log(response);
+          //console.log('response from API : ');
+          //console.log(response);
           const doneLogin = successLogin(response.data.token);
           if (response.data.token) {
             const JSONInformationsObject = JSON.stringify(response.data);
@@ -64,7 +65,7 @@ const authMiddleware = (store) => (next) => (action) => {
 
       break;
       case CHECK_USER:
-        console.log(JSON.parse(localStorage.getItem('userData')).token);
+        //console.log(JSON.parse(localStorage.getItem('userData')).token);
         const options = {
           headers: {
             Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('userData')).token
@@ -75,8 +76,8 @@ const authMiddleware = (store) => (next) => (action) => {
           null,
           options)
           .then((response) => {
-            console.log('response from API : ');
-            console.log(response.data);
+            //console.log('response from API : ');
+            //console.log(response.data);
           })
           .catch((error) => {
             console.warn(error);
@@ -85,13 +86,14 @@ const authMiddleware = (store) => (next) => (action) => {
         break;
       case GET_USER_INFO:
         
-        const userVar = 'pierre1'; //username localstorage
-        console.log(userVar);
+        const userVar = JSON.parse(localStorage.getItem('userData')).user_display_name; //username localstorage
+        //console.log(userVar);
         axios
           .get(baseURI + '/users?slug=' + userVar,)
           .then((response) => {
-            console.log('response from API : ');
-            console.log(response.data);
+            //console.log('response from API : ');
+            //console.log(response.data);
+            store.dispatch(getUserDataProfileSuccess(response.data));
           })
           .catch((error) => {
             console.warn(error);

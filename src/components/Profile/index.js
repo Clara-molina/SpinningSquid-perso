@@ -4,6 +4,7 @@ import Popup from 'reactjs-popup';
 import { Link } from 'react-router-dom';
 
 const Profile = (props) => {
+  if(!props.profileIsLoading){props.handleCheckUserUpdateProfile();}
   return (
     <div className="profile">
       <h1 className="profile-title">Bienvenue {props.usernameConnection}</h1>
