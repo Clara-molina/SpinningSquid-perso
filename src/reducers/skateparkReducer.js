@@ -24,7 +24,7 @@ export const initialState = {
   },
   skateparkToDisplay_Id: 'initial state showDetails',
   addSpot: {
-    id: '',
+    id: 'initial state',
     title: '',
     categorySkatepark: false,
     categoryPumptrack: false,
@@ -261,6 +261,24 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         responseAPI: action.responseAPI,
         isLoaded: true,
+        id: action.skateparkId,
+        title: action.responseAPI,
+        categorySkatepark: action.responseAPI,
+        categoryPumptrack: action.responseAPI,
+        categoryStreet: action.responseAPI,
+        street: action.responseAPI,
+        postal: action.responseAPI,
+        town: action.responseAPI,
+        latitude: action.responseAPI,
+        longitude: action.responseAPI,
+        parking: action.responseAPI,
+        water: action.responseAPI,
+        trashcan: action.responseAPI,
+        lighting: action.responseAPI,
+        table: action.responseAPI,
+        benche: action.responseAPI,
+        etatRadioBtn: action.responseAPI,
+        uploadedImg: action.responseAPI,
       };
     case GET_SKATEPARK_BY_CITY_SUCCESS:
       return {
@@ -281,27 +299,6 @@ const reducer = (state = initialState, action = {}) => {
     case FILL_STATE:
       return {
         ...state,
-        addSpot: {
-          ...state.addSpot,
-          id: action.skateparkId,
-          title: '',
-          categorySkatepark: false,
-          categoryPumptrack: false,
-          categoryStreet: false,
-          street: '',
-          postal: '',
-          town: '',
-          latitude: '',
-          longitude: '',
-          parking: false,
-          water: false,
-          trashcan: false,
-          lighting: false,
-          table: false,
-          benche: false,
-          etatRadioBtn: 'initial etatRadioBtn value into state',
-          uploadedImg: 'initial state',
-        },
       };
     //--------------------------------------------------------------
     // à compléter
