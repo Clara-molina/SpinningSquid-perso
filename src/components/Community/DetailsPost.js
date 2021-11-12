@@ -1,32 +1,32 @@
 import './detailpost.scss';
 
 const DetailsPost = (props) => {
-  // if (!props.isLoading) {
-  //   props.submitGetArticleDetails(props.postId);
-  //   props.setOnLoading();
-  // }
-  const styleBackground = 'background: url(' + props.photo + ') center/cover';
+  if (!props.postAddIsLoading) {
+    props.getArticleDetails(props.articleId);
+    props.setOnLoading();
+  }
+
   return (
     <div id="detailpost">
-      <div className="detailpost-block" style={{ styleBackground }}>
-        {/* <img id="detailpost-image" src="" /> */}
+      <div className="detailpost-block">
+        <img className="detailpost-image" alt="" src={props.image} />
         <div className="detailpost-resume">
           <div>
-            <h2 id="detailpost-title" type="text">
-              Venez rider avec nous !
+            <h2 className="detailpost-title" type="text">
+              {props.title}
             </h2>
           </div>
           <div>
-            <h2 id="detailpost-adress">Babeloued</h2>
+            <h2 className="detailpost-adress">{props.place}</h2>
           </div>
           <div>
-            <h2 id="detailpost-message">details à rajouter</h2>
+            <h2 className="detailpost-date">{props.date}</h2>
           </div>
         </div>
       </div>
       <div className="detailpost-description">
         <h2>Description</h2>
-        <p>dfghierhgezhghzeotughzotrughorztghrotghortg</p>
+        <div dangerouslySetInnerHTML={{ __html: props.story }} />
       </div>
     </div>
   );
