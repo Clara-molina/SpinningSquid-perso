@@ -64,10 +64,10 @@ const App = (props) => {
             path="/trouve-ton-matos/modifie-ton-matos"
             component={PostArticle}
           /> */}
-          <Route path="/trouve-ton-matos/details" component={DetailsArticle} />
+          <Route path="/trouve-ton-matos/:id" component={DetailsArticle} />
           <Route exact path="/communaute" component={Community} />
-          <Route path="/communaute/details" component={DetailsPost} />
           <Route path="/communaute/ajoute-ton-evenement" component={AddPost} />
+          <Route path="/communaute/:id" component={DetailsPost} />
           <Route path="/communaute/modifie-ton-evenement" component={AddPost} />
           <Route path="/contact" component={Contact} />
           <Route exact path="/connexion">

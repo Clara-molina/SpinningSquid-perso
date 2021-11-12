@@ -9,6 +9,7 @@ import {
 
 const mapStateToProps = (state) => ({
   articlesList: state.community.articlesList,
+  responseApi: state.community.responseApi,
   isLoaded: state.community.isLoaded,
   isLoading: state.community.isLoading,
 });
