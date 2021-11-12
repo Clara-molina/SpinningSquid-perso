@@ -34,8 +34,8 @@ const PostList = (list) => {
           </div>
           <div className="item-description">
             <h2 className="item-title">{item.title.rendered}</h2>
-            <p>Ou ? {item.meta.place}</p>
-            <p>Quand ? Le {item.meta.date}</p>
+            <p>{item.meta.place}</p>
+            <p>{item.meta.date}</p>
             <div className="description-resume">
               <div dangerouslySetInnerHTML={{ __html: item.content.rendered }} />
             </div>
