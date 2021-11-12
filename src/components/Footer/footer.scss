@@ -2,7 +2,7 @@
 
 
 .navFooter {
-  float: bottom;
+  float: bottom !important;
   bottom: 0;
   background-color: vars.$black;
   display: flex;

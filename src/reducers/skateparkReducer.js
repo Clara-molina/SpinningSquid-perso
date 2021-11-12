@@ -24,7 +24,8 @@ export const initialState = {
   },
   skateparkToDisplay_Id: 'initial state showDetails',
   addSpot: {
-    id: '',
+    spotAddIsLoading: false,
+    id: 'initial state',
     title: '',
     categorySkatepark: false,
     categoryPumptrack: false,
@@ -261,6 +262,28 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         responseAPI: action.responseAPI,
         isLoaded: true,
+        addSpot: {
+          spotAddIsLoading: true,
+          id: action.responseAPI.id,
+          title: action.responseAPI.title.rendered,
+          categorySkatepark: action.responseAPI.meta.skatepark,
+          categoryPumptrack: action.responseAPI.meta.pumptrack,
+          categoryStreet: action.responseAPI.meta.streetspot,
+          street: action.responseAPI.meta.street,
+          postal: action.responseAPI.meta.zipcode,
+          town: action.responseAPI.meta.city,
+          latitude: action.responseAPI.meta.latitude,
+          longitude: action.responseAPI.meta.longitude,
+          parking: action.responseAPI.meta.parking,
+          water: action.responseAPI.meta.water,
+          trashcan: action.responseAPI.meta.trashcan,
+          lighting: action.responseAPI.meta.lighting,
+          table: action.responseAPI.meta.table,
+          benche: action.responseAPI.meta.benche,
+          etatRadioBtn: action.responseAPI.meta.state,
+          uploadedImg: action.responseAPI._embedded['wp:featuredmedia'][0].source_url,
+        },
+        
       };
     case GET_SKATEPARK_BY_CITY_SUCCESS:
       return {
@@ -281,27 +304,6 @@ const reducer = (state = initialState, action = {}) => {
     case FILL_STATE:
       return {
         ...state,
-        addSpot: {
-          ...state.addSpot,
-          id: action.skateparkId,
-          title: '',
-          categorySkatepark: false,
-          categoryPumptrack: false,
-          categoryStreet: false,
-          street: '',
-          postal: '',
-          town: '',
-          latitude: '',
-          longitude: '',
-          parking: false,
-          water: false,
-          trashcan: false,
-          lighting: false,
-          table: false,
-          benche: false,
-          etatRadioBtn: 'initial etatRadioBtn value into state',
-          uploadedImg: 'initial state',
-        },
       };
     //--------------------------------------------------------------
     // à compléter

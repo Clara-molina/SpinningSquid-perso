@@ -13,6 +13,7 @@ const mapStateToProps = (state, ownProps) => {
   console.log(ownProps);
   console.log(ownProps.match.params.skateparkId);
   return {
+    spotAddIsLoading: state.skatepark.addSpot.spotAddIsLoading,
     skateparkId: ownProps.match.params.skateparkId,
     title: state.skatepark.addSpot.title,
     categorySkatepark: state.skatepark.addSpot.categorySkatepark,

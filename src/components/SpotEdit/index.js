@@ -4,8 +4,7 @@ import { baseSpinningSquid } from 'src/routesBack';
 
 const SpotEdit = (props) => {
   console.log(props.skateparkId);
-  props.getSkateparkDetails(props.skateparkId);
-  props.fillState();
+  if(!props.spotAddIsLoading){props.getSkateparkDetails(props.skateparkId)};
 
   const transfer = (event) => {
     props.handleUploadLocalImage(event);
@@ -70,6 +69,7 @@ const SpotEdit = (props) => {
             name="skatepark"
             placeholder="SkatePark de Grenoble Centre"
             onChange={props.handleChangeField}
+            value={props.title}
           />
         </div>
         <div className="spotadd-container-category">
@@ -84,6 +84,7 @@ const SpotEdit = (props) => {
               type="checkbox"
               name="skatepark"
               onChange={props.handleChangeCheckbox}
+              value={props.categorySkatepark}
             />
           </label>
 
@@ -98,6 +99,7 @@ const SpotEdit = (props) => {
               type="checkbox"
               name="pumptrack"
               onChange={props.handleChangeCheckbox}
+              value={props.categoryPumptrack}
             />
           </label>
 
@@ -109,6 +111,7 @@ const SpotEdit = (props) => {
               type="checkbox"
               name="streetspot"
               onChange={props.handleChangeCheckbox}
+              value={props.categoryStreet}
             />
           </label>
         </div>
@@ -122,6 +125,7 @@ const SpotEdit = (props) => {
             placeholder="Rue"
             required
             onChange={props.handleChangeField}
+            value={props.street}
           />
           <input
             id="addSpotPostal"
@@ -131,6 +135,7 @@ const SpotEdit = (props) => {
             placeholder="Code Postal"
             required
             onChange={props.handleChangeField}
+            value={props.postal}
           />
           <input
             id="addSpotTown"
@@ -140,6 +145,7 @@ const SpotEdit = (props) => {
             placeholder="Ville"
             required
             onChange={props.handleChangeField}
+            value={props.town}
           />
           <input
             id="addSpotlongitude"
@@ -150,6 +156,7 @@ const SpotEdit = (props) => {
             placeholder="longitude"
             required
             onChange={props.handleChangeField}
+            value={props.longitude}
           />
           <input
             id="addSpotlatitude"
@@ -160,6 +167,7 @@ const SpotEdit = (props) => {
             placeholder="latitude"
             required
             onChange={props.handleChangeField}
+            value={props.latitude}
           />
         </div>
 
@@ -173,6 +181,7 @@ const SpotEdit = (props) => {
               type="checkbox"
               name="parking"
               onChange={props.handleChangeCheckbox}
+              value={props.parking}
             />
           </label>
 
@@ -184,6 +193,7 @@ const SpotEdit = (props) => {
               type="checkbox"
               name="water"
               onChange={props.handleChangeCheckbox}
+              value={props.water}
             />
           </label>
 
@@ -195,6 +205,7 @@ const SpotEdit = (props) => {
               type="checkbox"
               name="trashcan"
               onChange={props.handleChangeCheckbox}
+              value={props.trashcan}
             />
           </label>
 
@@ -206,6 +217,7 @@ const SpotEdit = (props) => {
               type="checkbox"
               name="lighting"
               onChange={props.handleChangeCheckbox}
+              value={props.lighting}
             />
           </label>
 
@@ -217,6 +229,7 @@ const SpotEdit = (props) => {
               type="checkbox"
               name="table"
               onChange={props.handleChangeCheckbox}
+              value={props.table}
             />
           </label>
 
@@ -228,6 +241,7 @@ const SpotEdit = (props) => {
               type="checkbox"
               name="benche"
               onChange={props.handleChangeCheckbox}
+              value={props.benche}
             />
           </label>
         </div>
@@ -252,7 +266,7 @@ const SpotEdit = (props) => {
             onChange={transfer}
             hidden
           />
-          <span id="file-chosen">No file chosen</span>
+          <span id="file-chosen">{props.uploadedImg}</span>
         </div>
 
         <div className="spotadd-container-state">

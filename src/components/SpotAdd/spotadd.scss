@@ -1,6 +1,7 @@
 @use 'src/styles/vars';
 
 .spotadd-container {
+  width: 100%;
   height: 600px;
   max-width: 1000px;
   margin: auto;
@@ -20,6 +21,9 @@
   }
 
   .spotadd-form {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
     margin: auto;
     color: vars.$white;
     padding: 1em;
@@ -132,4 +136,23 @@
   border: solid 1px;
   font-size: 1.2em;
   margin-bottom: 121px;
+}
+
+@media (max-width: 400px) {
+
+  .spotadd-container {
+    width: 100%;
+    height: 100%;
+
+
+    .spotadd-form {
+      display: flex;
+      flex-direction: column;
+  }
+  }
+
+  .navFooter {
+    margin-top: 0 !important;
+
+  }
 }

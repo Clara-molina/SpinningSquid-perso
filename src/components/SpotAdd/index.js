@@ -187,7 +187,7 @@ const SpotAdd = (props) => {
             className="spotadd-input-image"
             type="file"
             name="image"
-            accept="image/png, image/jpeg"
+            accept="image/png, image/jpeg, image/jpg"
             multiple
             required
             onChange={transfer}
@@ -246,5 +246,6 @@ const SpotAdd = (props) => {
     </div>
   );
 };
+
 
 export default SpotAdd;

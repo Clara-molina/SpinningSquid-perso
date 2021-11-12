@@ -26,7 +26,7 @@ import DetailsPost from 'src/components/Community/DetailsPost';
 import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
 import Loading from 'src/components/Loading';
-import PostArticle from 'src/components/Marketplace/PostArticle';
+// import PostArticle from 'src/components/Marketplace/PostArticle';
 
 // Import page d'erreur
 import NotFound from 'src/components/NotFound';
@@ -59,15 +59,15 @@ const App = (props) => {
             path="/trouve-ton-matos/ajoute-ton-matos"
             component={AddSale}
           />
-          <Route
+          {/* <Route
             exact
             path="/trouve-ton-matos/modifie-ton-matos"
             component={PostArticle}
-          />
-          <Route path="/trouve-ton-matos/details" component={DetailsArticle} />
+          /> */}
+          <Route path="/trouve-ton-matos/:id" component={DetailsArticle} />
           <Route exact path="/communaute" component={Community} />
-          <Route path="/communaute/details" component={DetailsPost} />
           <Route path="/communaute/ajoute-ton-evenement" component={AddPost} />
+          <Route path="/communaute/:id" component={DetailsPost} />
           <Route path="/communaute/modifie-ton-evenement" component={AddPost} />
           <Route path="/contact" component={Contact} />
           <Route exact path="/connexion">
