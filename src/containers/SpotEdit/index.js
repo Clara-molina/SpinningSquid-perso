@@ -9,26 +9,30 @@ import returnBase64Img from 'src/generic_functions';
 
 import SpotEdit from 'src/components/SpotEdit';
 
-const mapStateToProps = (state, ownProps) => ({
-  skateparId: ownProps.match.params.resultat,
-  title: state.skatepark.addSpot.title,
-  categorySkatepark: state.skatepark.addSpot.categorySkatepark,
-  categoryPumptrack: state.skatepark.addSpot.categoryPumptrack,
-  categoryStreet: state.skatepark.addSpot.categoryStreet,
-  street: state.skatepark.addSpot.street,
-  postal: state.skatepark.addSpot.postal,
-  town: state.skatepark.addSpot.town,
-  latitude: state.skatepark.addSpot.latitude,
-  longitude: state.skatepark.addSpot.longitude,
-  parking: state.skatepark.addSpot.parking,
-  water: state.skatepark.addSpot.water,
-  trashcan: state.skatepark.addSpot.trashcan,
-  lighting: state.skatepark.addSpot.lighting,
-  table: state.skatepark.addSpot.table,
-  benche: state.skatepark.addSpot.benche,
-  etatRadioBtn: state.skatepark.addSpot.etatRadioBtn,
-  uploadedImg: state.skatepark.addSpot.uploadedImg,
-});
+const mapStateToProps = (state, ownProps) => {
+  console.log(ownProps);
+  console.log(ownProps.match.params.skateparkId);
+  return {
+    spotAddIsLoading: state.skatepark.addSpot.spotAddIsLoading,
+    skateparkId: ownProps.match.params.skateparkId,
+    title: state.skatepark.addSpot.title,
+    categorySkatepark: state.skatepark.addSpot.categorySkatepark,
+    categoryPumptrack: state.skatepark.addSpot.categoryPumptrack,
+    categoryStreet: state.skatepark.addSpot.categoryStreet,
+    street: state.skatepark.addSpot.street,
+    postal: state.skatepark.addSpot.postal,
+    town: state.skatepark.addSpot.town,
+    latitude: state.skatepark.addSpot.latitude,
+    longitude: state.skatepark.addSpot.longitude,
+    parking: state.skatepark.addSpot.parking,
+    water: state.skatepark.addSpot.water,
+    trashcan: state.skatepark.addSpot.trashcan,
+    lighting: state.skatepark.addSpot.lighting,
+    table: state.skatepark.addSpot.table,
+    benche: state.skatepark.addSpot.benche,
+    etatRadioBtn: state.skatepark.addSpot.etatRadioBtn,
+    uploadedImg: state.skatepark.addSpot.uploadedImg,
+}};
 
 const mapDispatchToProps = (dispatch, state) => ({
   fillState: (skateparkId) => {
