@@ -17,7 +17,7 @@ const Community = (props) => {
       </div>
       <div className="community-post">
         <Link to="/communaute/ajoute-ton-evenement">
-          <button type="button" className="button">Proposer évenment</button>
+          <button type="button" className="button">Proposer un évènement</button>
         </Link>
       </div>
 

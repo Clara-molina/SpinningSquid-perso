@@ -27,31 +27,8 @@ const SearchMap = (props) => {
             onChange={props.searchFieldTown}
           />
         </label>
-        <label className="search-label">
-          Catégorie :
-          <select className="search-selected">
-            <option selected value="all">
-              Tout
-            </option>
-            <option value="skatepark">SkatePark</option>
-            <option value="pumptrack">PumpTrack</option>
-            <option value="street">Street</option>
-          </select>
-        </label>
-        <label className="search-label">
-          Rayon :
-          <select className="search-selected">
-            <option selected value="all">
-              10 km
-            </option>
-            <option value="skatepark">30 km</option>
-            <option value="pumptrack">50 km</option>
-            <option value="street">+ de 50km</option>
-          </select>
-        </label>
         <button className="search-button" type="submit">
-          {' '}
-          Rechercher{' '}
+          Rechercher
         </button>
       </form>
 
@@ -63,7 +40,10 @@ const SearchMap = (props) => {
             </div>
           </>
         )}
-        {props.isLoaded && <BlockMap responseAPI={props.responseAPI} />}
+        {props.isLoaded && <BlockMap 
+        responseAPI={props.responseAPI} 
+        locationOnMap={props.locationOnMap}
+        moveLocationOnMap={props.moveLocationOnMap}/>}
       </div>
     </div>
   );

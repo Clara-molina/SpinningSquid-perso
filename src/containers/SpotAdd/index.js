@@ -9,7 +9,7 @@ const mapStateToProps = (state) => ({
   etatRadioBtn: state.skatepark.addSpot.etatRadioBtn,
 });
 
-const mapDispatchToProps = (dispatch, state) => ({
+const mapDispatchToProps = (dispatch) => ({
   handleChangeField: (event) => {
     dispatch(updateField(event.target.id, event.target.value));
   },

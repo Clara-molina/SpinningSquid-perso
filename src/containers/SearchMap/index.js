@@ -5,15 +5,21 @@ import {
   successGetSkateparkList,
   successSubmitAddSpot,
   setOnLoadingStatus,
+  getSkateparkByCity,
+  updateLocationOnMap,
 } from 'src/actions/skateparkActions';
 import SearchMap from 'src/components/SearchMap';
 
-const mapStateToProps = (state) => ({
-  skateparkLocationList: state.skatepark.skateparkLocationList,
-  responseAPI: state.skatepark.responseAPI,
-  isLoading: state.skatepark.isLoading,
-  isLoaded: state.skatepark.isLoaded,
-});
+const mapStateToProps = (state, ownProps) => {
+  //console.log(ownProps);
+  return {
+    skateparkLocationList: state.skatepark.skateparkLocationList,
+    responseAPI: state.skatepark.responseAPI,
+    isLoading: state.skatepark.isLoading,
+    isLoaded: state.skatepark.isLoaded,
+    locationOnMap: state.skatepark.locationOnMap,
+  };
+};
 
 const mapDispatchToProps = (dispatch) => ({
   callApiGet: () => {
@@ -29,6 +35,10 @@ const mapDispatchToProps = (dispatch) => ({
   },
   submitSkateparkSearch: (event) => {
     event.preventDefault();
+    dispatch(getSkateparkByCity());
+  },
+  moveLocationOnMap: (data) => {
+    dispatch(updateLocationOnMap(data));
   },
 });
 
