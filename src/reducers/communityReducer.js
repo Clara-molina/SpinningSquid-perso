@@ -11,7 +11,7 @@ import {
 export const initialState = {
   articleList: ['un', 'deux', 'trois'],
   searchField: 'communityField initial state',
-  responseApi: {},
+  responseApi: { },
   isLoading: false,
   isLoaded: false,
   addArticle: {

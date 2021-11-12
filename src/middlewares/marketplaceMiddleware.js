@@ -17,31 +17,31 @@ import {
 const marketplaceMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_MARKETPLACE_INITIAL_LIST:
-      // const endPointSale = baseURI + '/sale?_embed=true';
-      // axios
-      //   .get(endPointSale)
-      //   .then((response) => {
-      //     console.log('response from API : ');
-      //     console.log(response);
-      // store.dispatch(
-      //   successMarketplaceInitialSearch(response.data)
-      // );
-      // })
-      // .catch((error) => {
-      //   console.warn(error);
-      // });
-      setTimeout(() => {
-        store.dispatch(
-          successMarketplaceInitialSearch(
-            'a remplacer par le call API dans marketplaceMiddleware'
-          )
-        );
-        console.log('call API ok');
-      }, 3000);
+      const endPointSale = baseURI + '/sale?_embed=true';
+      axios
+        .get(endPointSale)
+        .then((response) => {
+          console.log('response from API : ');
+          console.log(response);
+          store.dispatch(
+            successMarketplaceInitialSearch(response.data)
+          );
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+      // setTimeout(() => {
+      //   store.dispatch(
+      //     successMarketplaceInitialSearch(
+      //       'a remplacer par le call API dans marketplaceMiddleware'
+      //     )
+      //   );
+      //   console.log('call API ok');
+      // }, 3000);
 
       break;
     case GET_MARKETPLACE_ARTICLE_LIST:
-      const endPointSale = '/sale?_embed=true';
+      // const endPointSale = '/sale?_embed=true';
       // axios
       //   .get(baseURI + endPointSale)
       //   .then((response) => {
