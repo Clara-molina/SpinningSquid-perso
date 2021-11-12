@@ -5,6 +5,9 @@ import {
   FILL_STATE_USERDATA,
   SUCCESS_REGISTER,
   GET_USER_INFO_SUCCESS,
+  GET_USER_SKATEPARK_SUCCESS,
+  GET_USER_ARTICLE_SUCCESS,
+  GET_USER_SALE_SUCCESS,
 } from 'src/actions/userActions';
 
 export const initialState = {
@@ -21,6 +24,7 @@ export const initialState = {
   passwordConnexion: '',
   profile: {
     profileIsLoading: false,
+    userId: '',
     usernameEdit: 'initial state name',
     passwordEdit: 'initial state',
     emailEdit: 'initial state',
@@ -222,7 +226,9 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         profile: {
+          ...state.profile,
           profileIsLoading: true,
+          userId: action.responseAPI[0].id,
           usernameEdit: action.responseAPI[0].meta.username,
           passwordEdit: action.responseAPI[0].slug,
           emailEdit: action.responseAPI[0].meta.email,
@@ -232,6 +238,30 @@ const reducer = (state = initialState, action = {}) => {
           postalEdit: action.responseAPI[0].meta.zipcode,
           cityEdit: action.responseAPI[0].meta.city,
           avatarImage: action.responseAPI[0].meta.avatar,
+        },
+      };
+    case GET_USER_SKATEPARK_SUCCESS:
+      return {
+        ...state,
+        profile: {
+          ...state.profile,
+          responseAPIDataSkatepark: action.responseAPI,
+        },
+      };
+    case GET_USER_ARTICLE_SUCCESS:
+      return {
+        ...state,
+        profile: {
+          ...state.profile,
+          responseAPIDataArticle: action.responseAPI,
+        },
+      };
+    case GET_USER_SALE_SUCCESS:
+      return {
+        ...state,
+        profile: {
+          ...state.profile,
+          responseAPIDataSale: action.responseAPI,
         },
       };
 
