@@ -247,4 +247,5 @@ const SpotAdd = (props) => {
   );
 };
 
+
 export default SpotAdd;
