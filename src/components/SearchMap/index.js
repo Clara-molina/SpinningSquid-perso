@@ -9,7 +9,7 @@ const SearchMap = (props) => {
     props.setOnLoading();
   }
   return (
-    <div className="search">
+    <div className="main-container search">
       <h1 className="search-title">Trouve ton SkatePark</h1>
       <button className="button-addspot" type="button">
         <Link to="/trouve-ton-skatepark/ajoute-ton-spot">Ajoute ton spot!</Link>
