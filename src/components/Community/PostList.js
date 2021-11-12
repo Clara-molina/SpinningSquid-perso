@@ -29,8 +29,8 @@ const PostList = (list) => {
         className="community-eventList"
       >
         <div className="eventList-item">
-          <div className="item-image">
-            <img alt="" src={getImageURL()} />
+          <div>
+            <img className="item-image" alt="" src={getImageURL()} />
           </div>
           <div className="item-description">
             <h2 className="item-title">{item.title.rendered}</h2>
