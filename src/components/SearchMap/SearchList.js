@@ -36,6 +36,7 @@ const SearchList = (list) => {
   // console.log(list.itemList[0]._embedded['wp:featuredmedia'][0].source_url);
 
   const mappingArticles = list.itemList.map((item) => {
+
     // const getImageURL = () => {
     //   // Vérification : la recette a-t-elle une image
     //   if (item._embedded['wp:featuredmedia']) {
@@ -86,6 +87,7 @@ const SearchList = (list) => {
         </button>
         <Link to={urlDetailSkatepark}>details</Link>
       </article>
+
     );
   });
   return mappingArticles;
