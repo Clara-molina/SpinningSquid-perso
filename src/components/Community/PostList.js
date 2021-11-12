@@ -30,7 +30,7 @@ const PostList = (list) => {
       >
         <div className="eventList-item">
           <div className="item-image">
-            <img src="" />
+            <img alt="" src={getImageURL()} />
           </div>
           <div className="item-description">
             <h2 className="item-title">{item.title.rendered}</h2>
