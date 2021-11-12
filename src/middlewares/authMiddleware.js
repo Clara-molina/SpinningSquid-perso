@@ -3,6 +3,15 @@ import {
   CHECK_USER,
   GET_USER_INFO,
   getUserDataProfileSuccess,
+  GET_USER_SKATEPARK,
+  getUserDataSkatepark,
+  getUserDataSkateparkSuccess,
+  GET_USER_ARTICLE,
+  getUserDataArticle,
+  getUserDataArticleSuccess,
+  GET_USER_SALE,
+  getUserDataSale,
+  getUserDataSaleSuccess,
   SUBMIT_LOGIN,
   successLogin,
   successRegister,
@@ -94,6 +103,57 @@ const authMiddleware = (store) => (next) => (action) => {
             //console.log('response from API : ');
             //console.log(response.data);
             store.dispatch(getUserDataProfileSuccess(response.data));
+            store.dispatch(getUserDataSkatepark(response.data));
+            store.dispatch(getUserDataArticle(response.data));
+            store.dispatch(getUserDataSale(response.data));
+          })
+          .catch((error) => {
+            console.warn(error);
+          });
+  
+        break;
+      case GET_USER_SKATEPARK:
+        
+        const user_skatepark = store.getState().user.profile.userId;
+        //console.log(user_skatepark);
+        axios
+          .get(baseURI + "/skatepark?author="+user_skatepark,)
+          .then((response) => {
+            console.log('response from API : ');
+            console.log(response);
+            store.dispatch(getUserDataSkateparkSuccess(response.data));
+          })
+          .catch((error) => {
+            console.warn(error);
+          });
+  
+        break;
+      case GET_USER_ARTICLE:
+        
+        const user_article = store.getState().user.profile.userId;
+        console.log(user_article);
+        axios
+          .get(baseURI + "/article?author="+user_article,)
+          .then((response) => {
+            console.log('response from API : ');
+            console.log(response);
+            store.dispatch(getUserDataArticleSuccess(response.data));
+          })
+          .catch((error) => {
+            console.warn(error);
+          });
+  
+        break;
+      case GET_USER_SALE:
+        
+        const user_sale = store.getState().user.profile.userId;
+        console.log(user_sale);
+        axios
+          .get(baseURI + "/article?author="+user_sale,)
+          .then((response) => {
+            console.log('response from API : ');
+            console.log(response);
+            store.dispatch(getUserDataSaleSuccess(response.data));
           })
           .catch((error) => {
             console.warn(error);
