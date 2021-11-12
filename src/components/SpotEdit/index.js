@@ -1,11 +1,58 @@
 import './spotadd.scss';
+import axios from 'axios';
+import { baseSpinningSquid } from 'src/routesBack';
 
-const SpotAdd = (props) => {
+const SpotEdit = (props) => {
+  props.getSkateparkDetails(props.skateparkId);
+  props.fillState();
+
   const transfer = (event) => {
-    props.handleUploadLocalImage(event);
-    // console.log(event);
+    //console.log(event);
     const fileChosen = document.getElementById('file-chosen');
     fileChosen.textContent = event.target.files[0].name;
+  };
+  const tryUpdateBDD = () => {
+    // const options_UPDATE = {
+    //   headers: {
+    //     Authorization:
+    //       'Bearer ' + JSON.parse(localStorage.getItem('userData')).token,
+    //   },
+    // };
+    //console.log(options_UPDATE);
+    axios
+      .post(baseSpinningSquid + '/skatepark-edit', {
+        id: 151,
+        title: 'prouttt',
+        skatepark: '',
+        pumptrack: '',
+        streetspot: '',
+        street: '',
+        zipcode: '04000',
+        city: 'marseille',
+        latitude: '',
+        longitude: '',
+        parking: '',
+        water: '',
+        trashcan: '',
+        lighting: '',
+        table: '',
+        benche: '',
+        state: '',
+        image: '',
+      })
+      .then((response) => {
+        console.log('response from API : ');
+        console.log(response);
+        window.alert(
+          `
+            La modification de skatepark a bien été enregistrée.
+            Bisous.
+            `
+        );
+      })
+      .catch((error) => {
+        console.warn(error);
+      });
   };
   return (
     <div className="spotadd-container">
@@ -24,7 +71,10 @@ const SpotAdd = (props) => {
           />
         </div>
         <div className="spotadd-container-category">
-          <label htmlFor="category-skatepark" className="spotadd-label-category">
+          <label
+            htmlFor="category-skatepark"
+            className="spotadd-label-category"
+          >
             SkatePark
             <input
               id="categorySkatepark"
@@ -35,7 +85,10 @@ const SpotAdd = (props) => {
             />
           </label>
 
-          <label htmlFor="category-pumptrack" className="spotadd-label-category">
+          <label
+            htmlFor="category-pumptrack"
+            className="spotadd-label-category"
+          >
             PumpTrack
             <input
               id="categoryPumptrack"
@@ -177,7 +230,11 @@ const SpotAdd = (props) => {
 
         <div className="spotadd-container-image">
           <h2 className="spotadd-title">Image</h2>
-          <label id="image-label" htmlFor="uploadImage" className="spotadd-label-image">
+          <label
+            id="image-label"
+            htmlFor="uploadImage"
+            className="spotadd-label-image"
+          >
             Parcourir
           </label>
           <input
@@ -188,7 +245,7 @@ const SpotAdd = (props) => {
             accept="image/png, image/jpeg"
             multiple
             required
-            onChange={transfer}
+            onChange={(props.handleUploadLocalImage, transfer)}
             hidden
           />
           <span id="file-chosen">No file chosen</span>
@@ -237,13 +294,16 @@ const SpotAdd = (props) => {
             />
           </label>
         </div>
-        <button type="submit" className="spotadd-button">
-          Ajouter un Spot
+        <button
+          type="submit"
+          className="spotadd-button"
+          onClick={props.handleSubmitEditPost}
+        >
+          Modifie ton Spot
         </button>
       </form>
     </div>
   );
 };
 
-
-export default SpotAdd;
+export default SpotEdit;

@@ -1,10 +1,15 @@
 import { UPDATE_FIELD } from 'src/actions/userActions';
 import {
+  FILL_STATE,
   SKATEPARK_ON_LOADING,
+  UPDATE_LOCATION_ON_MAP,
+  SKATEPARK_DETAILS_ON_LOADING,
   GET_SKATEPARK_LIST_SUCCESS,
+  GET_SKATEPARK_DETAILS_SUCCESS,
   SUBMIT_ADD_SPOT_SUCCESS,
   SUBMIT_UPDATE_SPOT_SUCCESS,
   SUBMIT_DELETE_SPOT_SUCCESS,
+  GET_SKATEPARK_BY_CITY_SUCCESS,
 } from 'src/actions/skateparkActions';
 
 export const initialState = {
@@ -13,8 +18,13 @@ export const initialState = {
   responseAPI: {},
   isLoaded: false,
   isLoading: false,
+  locationOnMap: {
+    lat: 37.42216,
+    lng: -122.08427,
+  },
   skateparkToDisplay_Id: 'initial state showDetails',
   addSpot: {
+    id: '',
     title: '',
     categorySkatepark: false,
     categoryPumptrack: false,
@@ -230,7 +240,29 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         isLoading: true,
       };
+    case UPDATE_LOCATION_ON_MAP:
+      return {
+        ...state,
+        locationOnMap: action.locationOnMap,
+      };
+    case SKATEPARK_DETAILS_ON_LOADING:
+      return {
+        ...state,
+        isLoading: true,
+      };
     case GET_SKATEPARK_LIST_SUCCESS:
+      return {
+        ...state,
+        responseAPI: action.responseAPI,
+        isLoaded: action.loaded,
+      };
+    case GET_SKATEPARK_DETAILS_SUCCESS:
+      return {
+        ...state,
+        responseAPI: action.responseAPI,
+        isLoaded: true,
+      };
+    case GET_SKATEPARK_BY_CITY_SUCCESS:
       return {
         ...state,
         responseAPI: action.responseAPI,
@@ -241,12 +273,38 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         message: action.message_success,
       };
-    //--------------------------------------------------------------
-    // à compléter
     case SUBMIT_UPDATE_SPOT_SUCCESS:
       return {
         ...state,
+        message: action.message_success,
       };
+    case FILL_STATE:
+      return {
+        ...state,
+        addSpot: {
+          ...state.addSpot,
+          id: action.skateparkId,
+          title: '',
+          categorySkatepark: false,
+          categoryPumptrack: false,
+          categoryStreet: false,
+          street: '',
+          postal: '',
+          town: '',
+          latitude: '',
+          longitude: '',
+          parking: false,
+          water: false,
+          trashcan: false,
+          lighting: false,
+          table: false,
+          benche: false,
+          etatRadioBtn: 'initial etatRadioBtn value into state',
+          uploadedImg: 'initial state',
+        },
+      };
+    //--------------------------------------------------------------
+    // à compléter
     case SUBMIT_DELETE_SPOT_SUCCESS:
       return {
         ...state,
