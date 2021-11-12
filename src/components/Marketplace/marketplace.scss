@@ -52,6 +52,63 @@
   }
 }
 
+// ---------------------------
+// PostArticle component
+// ---------------------------
+
+#postarticle {
+  margin: 2rem;
+  font-family: 'Righteous';
+  color: vars.$white;
+
+  .title {
+
+  }
+
+  .postarticle-block {
+    display: flex;
+    margin: auto;
+    width: 50%;
+
+    .postarticle-characteristics {
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      width: 50%;
+
+      .postarticle-input {
+        margin: 0.5em;
+        width: 100%;
+      }
+    }
+  }
+
+  .postarticle-description {
+    width: 100%;
+    padding: 2rem 0;
+    height: fit-content;
+    text-align: center;
+
+    #postarticle-description {
+      width: 60vw;
+      height: 20vh;
+    }
+  }
+
+  .postarticle-button {
+    margin-bottom: 3rem;
+
+    .button {
+      font-size: 1.2rem;
+      width: 140px;
+      height: 60px;
+    }
+  }
+
+}
+
+
+
 @media (max-width: 764px) {
   #marketplace {
     .article-list {

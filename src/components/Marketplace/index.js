@@ -16,7 +16,7 @@ const Marketplace = (props) => {
         <h2 className="title search-title">Trouve ton Matos</h2>
         <div className="marketplace-post">
           <Link to="/trouve-ton-matos/ajoute-ton-matos">
-            <button className="button">Poster une annonce</button>
+            <button type="button" className="button">Poster une annonce</button>
           </Link>
         </div>
         <form className="marketplace-form" onSubmit={props.submitArticleSearch}>
