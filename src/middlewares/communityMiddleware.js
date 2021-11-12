@@ -14,26 +14,26 @@ import { baseURI, baseSpinningSquid } from 'src/routesBack';
 const communityMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_ARTICLE_LIST:
-      // const endPointArticle = baseURI + '/article?_embed=true';
-      // console.log('on y passe youpi');
-      // axios
-      //   .get(baseURI + endPointArticle)
-      //   .then((response) => {
-      //     console.log('response from API : ');
-      //     console.log(response);
-      //     store.dispatch(successGetArticleList(response.data));
-      //   })
-      //   .catch((error) => {
-      //     console.warn(error);
-      //   });
-      setTimeout(() => {
-        store.dispatch(
-          successGetArticleList(
-            'a remplacer par le call API dans communityMiddleware',
-          ),
-        );
-        console.log('call API ok');
-      }, 3000);
+      const endPointArticle = baseURI + '/article?_embed=true';
+      console.log('on y passe youpi');
+      axios
+        .get(endPointArticle)
+        .then((response) => {
+          console.log('response from API : ');
+          console.log(response);
+          store.dispatch(successGetArticleList(response.data));
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+      // setTimeout(() => {
+      //   store.dispatch(
+      //     successGetArticleList(
+      //       'a remplacer par le call API dans communityMiddleware',
+      //     ),
+      //   );
+      //   console.log('call API ok');
+      // }, 3000);
 
       break;
 

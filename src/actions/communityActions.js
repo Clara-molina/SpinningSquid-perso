@@ -15,9 +15,8 @@ export const ARTICLE_ON_LOADING = 'ARTICLE_ON_LOADING';
 export const callGetArticleList = () => ({
   type: GET_ARTICLE_LIST,
 });
-export const successGetArticleList = (message, data) => ({
+export const successGetArticleList = (data) => ({
   type: GET_ARTICLE_LIST_SUCCESS,
-  message_success: message,
   responseApi: data,
   loaded: true,
 });

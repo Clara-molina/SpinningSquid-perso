@@ -30,9 +30,7 @@ const Community = (props) => {
           </div>
         </>
       )}
-      {props.isLoaded && <PostList />}
-
-      <div className="shadowDiv"></div>
+      {props.isLoaded && <PostList itemList={props.responseApi} />}
     </div>
   );
 };

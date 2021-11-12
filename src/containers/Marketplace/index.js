@@ -10,6 +10,7 @@ import {
 
 const mapStateToProps = (state) => ({
   articlesList: state.marketplace.articlesList,
+  responseApi: state.marketplace.responseApi,
   isLoaded: state.marketplace.isLoaded,
   isLoading: state.marketplace.isLoading,
 });

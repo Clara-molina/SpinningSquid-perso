@@ -59,9 +59,9 @@ const SearchList = (list) => {
       lat: item.meta.latitude,
       lng: item.meta.longitude,
     };
-    const updateMap = ()=>{
+    const updateMap = () => {
       list.moveLocationOnMap(location);
-    }
+    };
     return (
       <article
         key={item.id}
@@ -80,8 +80,9 @@ const SearchList = (list) => {
               : 'SkatePark'}
         </h3>
         <button
-        className="search-list-button"
-        onClick={updateMap}
+          className="search-list-button"
+          type="button"
+          onClick={updateMap}
         >
           Voir
         </button>
