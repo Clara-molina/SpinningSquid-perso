@@ -181,19 +181,19 @@ const SpotAdd = (props) => {
       <div className="spotadd-container-image">
         <h2 className="spotadd-title">Image</h2>
         <label id="image-label" htmlFor="uploadImage" className="spotadd-label-image">
-          Parcourir
-          </label>
-          <input
-            id="uploadImage"
-            className="spotadd-input-image"
-            type="file"
-            name="image"
-            accept="image/png, image/jpeg"
-            multiple
-            required
-            onChange={props.handleUploadLocalImage, transfer}
-            hidden
-          />
+          Parcourir <> <br /> </>
+        </label>
+        <input
+          id="uploadImage"
+          className="spotadd-input-image"
+          type="file"
+          name="image"
+          accept="image/png, image/jpeg"
+          multiple
+          required
+          onChange={props.handleUploadLocalImage, transfer}
+          hidden
+        />
         <span id="file-chosen">No file chosen</span>
       </div>
 
