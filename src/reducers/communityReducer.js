@@ -15,6 +15,8 @@ export const initialState = {
   isLoading: false,
   isLoaded: false,
   addArticle: {
+    postAddIsLoading: false,
+    id: 'initial state',
     title: '',
     date: '',
     place: '',
@@ -87,7 +89,17 @@ const reducer = (state = initialState, action = {}) => {
     case GET_ARTICLE_DETAILS_SUCCESS:
       return {
         ...state,
-        searchField: action.fieldValue,
+        responseApi: action.responseApi,
+        isLoaded: true,
+        addArticle: {
+          postAddIsLoading: true,
+          id: action.responseApi.id,
+          title: action.responseApi.title.rendered,
+          date: action.responseApi.meta.date,
+          place: action.responseApi.meta.place,
+          image: action.responseApi._embedded['wp:featuredmedia'][0].source_url,
+          story: action.responseApi.content.rendered,
+        },
       };
     case POST_ADD_ARTICLE_SUCCESS:
       return {

@@ -20,13 +20,13 @@ export const successGetArticleList = (data) => ({
   responseApi: data,
   loaded: true,
 });
-export const submitGetArticleDetails = (options) => ({
+export const submitGetArticleDetails = (articleId) => ({
   type: GET_ARTICLE_DETAILS,
-  id: options,
+  articleId: articleId,
 });
-export const successSubmitGetArticleDetails = (message) => ({
+export const successSubmitGetArticleDetails = (data) => ({
   type: GET_ARTICLE_DETAILS_SUCCESS,
-  message_success: message,
+  responseApi: data,
 });
 export const submitAddArticle = () => ({
   type: SUBMIT_ADD_ARTICLE,
