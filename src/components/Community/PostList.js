@@ -4,23 +4,23 @@ import logo2 from 'src/assets/img/logo2.png';
 const PostList = (list) => {
   console.log('test' + list.itemList);
   const mappingPosts = list.itemList.map((item) => {
-    // const getImageURL = () => {
+    const getImageURL = () => {
     // Vérification : l'article a-t-il une image
-    //   if (item._embedded['wp:featuredmedia']) {
-    //     if (item._embedded['wp:featuredmedia'][0].media_details.sizes.large) {
-    //       return item._embedded['wp:featuredmedia'][0].media_details.sizes.large.source_url;
-    //     }
-    //     else if (item._embedded['wp:featuredmedia'][0].media_details.sizes.full) {
-    //       return item._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url;
-    //     }
-    //     else {
-    //       return item._embedded['wp:featuredmedia'][0].source_url;
-    //     }
-    //   }
-    //   else {
-    //     return { logo2 };
-    //   }
-    // };
+      if (item._embedded['wp:featuredmedia']) {
+        if (item._embedded['wp:featuredmedia'][0].media_details.sizes.large) {
+          return item._embedded['wp:featuredmedia'][0].media_details.sizes.large.source_url;
+        }
+        else if (item._embedded['wp:featuredmedia'][0].media_details.sizes.full) {
+          return item._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url;
+        }
+        else {
+          return item._embedded['wp:featuredmedia'][0].source_url;
+        }
+      }
+      else {
+        return { logo2 };
+      }
+    };
     const urlDetailPost = '/communaute/' + item.id;
     return (
       <article
