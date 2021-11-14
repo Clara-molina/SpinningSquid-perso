@@ -69,8 +69,8 @@ const communityMiddleware = (store) => (next) => (action) => {
           );
           window.alert(
             `
-            L'ajout de votre article dans Whassup?! a bien été enregistré.
-            Bisous.
+            L'ajout de ton article dans Whassup?! a bien été enregistré.
+            Merci.
             `
           );
         })
@@ -90,7 +90,7 @@ const communityMiddleware = (store) => (next) => (action) => {
       console.log(action.articleId);
       const endPointDetails_Article =
         baseURI + '/article/' + article_Id + '?_embed=true';
-      //console.log('on y passe youpi');
+      // console.log('on y passe youpi');
       axios
         .get(endPointDetails_Article)
         .then((response) => {

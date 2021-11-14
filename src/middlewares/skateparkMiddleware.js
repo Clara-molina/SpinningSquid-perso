@@ -166,7 +166,7 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       const skatepark_Id = action.skateparkId;
       const endPointDetails_Spot =
         baseURI + '/skatepark/' + skatepark_Id + '?_embed=true';
-      //console.log('on y passe youpi');
+      // console.log('on y passe youpi');
       axios
         .get(endPointDetails_Spot)
         .then((response) => {

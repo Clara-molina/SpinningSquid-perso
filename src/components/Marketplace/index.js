@@ -20,16 +20,29 @@ const Marketplace = (props) => {
           </Link>
         </div>
         <form className="marketplace-form" onSubmit={props.submitArticleSearch}>
-          <input
-            id="marketplace-search"
-            className="marketplace-input"
-            type="text"
-            name="search"
-            placeholder="Recherche"
-            required
-            onChange={props.handleOnChange}
-          />
-          <button className="button" type="submit">
+          <label htmlFor="marketplace-search">Recherche
+            <input
+              id="marketplace-search"
+              className="marketplace-input"
+              type="text"
+              name="search"
+              placeholder="Skateboard, roulement ..."
+              required
+              onChange={props.handleOnChange}
+            />
+          </label>
+          <label htmlFor="marketplace-search-where">Ou ?
+            <input
+              id="marketplace-search-where"
+              className="marketplace-input"
+              type="text"
+              name="where"
+              placeholder="Paris"
+              required
+              onChange={props.handleOnChange}
+            />
+          </label>
+          <button className="button marketplace-search-button" type="submit">
             Rechercher
           </button>
         </form>
