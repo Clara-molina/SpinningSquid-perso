@@ -10,7 +10,6 @@ import {
   successMarketplaceSearch,
   successMarketplaceSearchDetails,
   successMarketplaceInitialSearch,
-  successMarketplaceSearchDetails,
   successMarketplaceAddArticle,
   successMarketplaceUpdateArticle,
   successMarketplaceDeleteArticle,
@@ -25,9 +24,7 @@ const marketplaceMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           console.log('response from API : ');
           console.log(response);
-          store.dispatch(
-            successMarketplaceInitialSearch(response.data),
-          );
+          store.dispatch(successMarketplaceInitialSearch(response.data));
         })
         .catch((error) => {
           console.warn(error);
@@ -60,8 +57,8 @@ const marketplaceMiddleware = (store) => (next) => (action) => {
       setTimeout(() => {
         store.dispatch(
           successMarketplaceSearch(
-            'a remplacer par le call API dans marketplaceMiddleware',
-          ),
+            'a remplacer par le call API dans marketplaceMiddleware'
+          )
         );
       }, 3000);
 
@@ -70,7 +67,8 @@ const marketplaceMiddleware = (store) => (next) => (action) => {
     case GET_MARKETPLACE_ARTICLE_DETAILS:
       const sale_Id = action.saleId;
       console.log(action.saleId);
-      const endPointDetails_Sale = baseURI + '/sale/' + sale_Id + '?_embed=true';
+      const endPointDetails_Sale =
+        baseURI + '/sale/' + sale_Id + '?_embed=true';
       // console.log('on y passe youpi');
       axios
         .get(endPointDetails_Sale)
@@ -78,9 +76,7 @@ const marketplaceMiddleware = (store) => (next) => (action) => {
           console.log('response from API : ');
           console.log(response);
           console.log(response.data);
-          store.dispatch(
-            successMarketplaceSearchDetails(response.data),
-          );
+          store.dispatch(successMarketplaceSearchDetails(response.data));
         })
         .catch((error) => {
           console.warn(error);

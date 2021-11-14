@@ -7,9 +7,12 @@ export const GET_MARKETPLACE_INITIAL_LIST_SUCCESS =
   'GET_MARKETPLACE_INITIAL_LIST_SUCCESS';
 export const GET_MARKETPLACE_ARTICLE_LIST = 'GET_MARKETPLACE_ARTICLE_LIST';
 
-export const GET_MARKETPLACE_ARTICLE_LIST_SUCCESS = 'GET_MARKETPLACE_ARTICLE_LIST_SUCCESS';
-export const GET_MARKETPLACE_ARTICLE_DETAILS = 'GET_MARKETPLACE_ARTICLE_DETAILS';
-export const GET_MARKETPLACE_ARTICLE_DETAILS_SUCCESS = 'GET_MARKETPLACE_ARTICLE_DETAILS_SUCCESS';
+export const GET_MARKETPLACE_ARTICLE_LIST_SUCCESS =
+  'GET_MARKETPLACE_ARTICLE_LIST_SUCCESS';
+export const GET_MARKETPLACE_ARTICLE_DETAILS =
+  'GET_MARKETPLACE_ARTICLE_DETAILS';
+export const GET_MARKETPLACE_ARTICLE_DETAILS_SUCCESS =
+  'GET_MARKETPLACE_ARTICLE_DETAILS_SUCCESS';
 export const POST_MARKETPLACE_ADD_ARTICLE = 'POST_MARKETPLACE_ADD_ARTICLE';
 export const POST_MARKETPLACE_ADD_ARTICLE_SUCCESS =
   'POST_MARKETPLACE_ADD_ARTICLE_SUCCESS';
@@ -45,10 +48,6 @@ export const successMarketplaceSearch = (data) => ({
   responseApi: data,
   loaded: true,
 });
-export const submitMarketplaceSearchDetails = (options) => ({
-  type: GET_MARKETPLACE_ARTICLE_DETAILS,
-  id: options,
-});
 export const successMarketplaceSearchDetails = (data) => ({
   type: GET_MARKETPLACE_ARTICLE_DETAILS_SUCCESS,
   responseApi: data,
@@ -57,11 +56,6 @@ export const successMarketplaceSearchDetails = (data) => ({
 export const submitMarketplaceSearchDetails = (saleId) => ({
   type: GET_MARKETPLACE_ARTICLE_DETAILS,
   saleId: saleId,
-});
-export const successMarketplaceSearchDetails = (data) => ({
-  type: GET_MARKETPLACE_ARTICLE_DETAILS_SUCCESS,
-  responseApi: data,
-  loaded: true,
 });
 
 //----------------------------------------------------

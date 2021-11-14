@@ -17,7 +17,6 @@ export const initialState = {
   isLoading: false,
   isLoaded: false,
   addSale: {
-
     saleAddIsLoading: false,
     id: 'initial state',
     title: '',
