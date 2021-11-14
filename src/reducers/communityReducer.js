@@ -1,6 +1,7 @@
 import { UPDATE_FIELD } from 'src/actions/userActions';
 import {
   ARTICLE_ON_LOADING,
+  ARTICLE_DETAILS_ON_LOADING,
   GET_ARTICLE_LIST_SUCCESS,
   GET_ARTICLE_DETAILS_SUCCESS,
   POST_ADD_ARTICLE_SUCCESS,
@@ -11,7 +12,7 @@ import {
 export const initialState = {
   articleList: ['un', 'deux', 'trois'],
   searchField: 'communityField initial state',
-  responseApi: { },
+  responseApi: {},
   isLoading: false,
   isLoaded: false,
   addArticle: {
@@ -80,6 +81,12 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         isLoading: true,
       };
+
+    case ARTICLE_DETAILS_ON_LOADING:
+      return {
+        ...state,
+        isLoading: true,
+      };
     case GET_ARTICLE_LIST_SUCCESS:
       return {
         ...state,
@@ -90,8 +97,10 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         responseApi: action.responseApi,
+        isLoading: false,
         isLoaded: true,
         addArticle: {
+          ...state.addArticle,
           postAddIsLoading: true,
           id: action.responseApi.id,
           title: action.responseApi.title.rendered,

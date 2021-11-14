@@ -245,6 +245,7 @@ const reducer = (state = initialState, action = {}) => {
           },
         };
       }
+      return state;
 
     case SKATEPARK_ON_LOADING:
       return {
@@ -268,7 +269,7 @@ const reducer = (state = initialState, action = {}) => {
         isLoaded: action.loaded,
       };
     case GET_SKATEPARK_DETAILS_SUCCESS:
-      console.log(action.responseAPI);
+      // console.log(action.responseAPI);
       return {
         ...state,
         responseAPI: action.responseAPI,
@@ -295,7 +296,7 @@ const reducer = (state = initialState, action = {}) => {
           etatRadioBtn: action.responseAPI.meta.state,
           uploadedImg: action.responseAPI._embedded['wp:featuredmedia'][0].source_url,
         },
-        
+
       };
     case GET_SKATEPARK_BY_CITY_SUCCESS:
       return {

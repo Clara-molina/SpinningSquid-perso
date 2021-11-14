@@ -9,6 +9,7 @@ export const UPDATE_ARTICLE_DETAILS_SUCCESS = 'UPDATE_ARTICLE_DETAILS_SUCCESS';
 export const SUBMIT_DELETE_ARTICLE = 'DELETE_ARTICLE_DETAILS';
 export const DELETE_ARTICLE_DETAILS_SUCCESS = 'DELETE_ARTICLE_DETAILS_SUCCESS';
 export const ARTICLE_ON_LOADING = 'ARTICLE_ON_LOADING';
+export const ARTICLE_DETAILS_ON_LOADING = 'ARTICLE_DETAILS_ON_LOADING';
 
 //------------------------------------------------------------
 // à compléter
@@ -51,4 +52,7 @@ export const successSubmitDeleteArticle = (message) => ({
 });
 export const setOnLoadingStatus = () => ({
   type: ARTICLE_ON_LOADING,
+});
+export const setOnLoadingDetail = () => ({
+  type: ARTICLE_DETAILS_ON_LOADING,
 });
