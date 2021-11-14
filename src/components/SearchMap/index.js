@@ -10,8 +10,8 @@ const SearchMap = (props) => {
   }
   return (
     <div className="main-container search">
-      <h1 className="search-title">Trouve ton SkatePark</h1>
-      <button className="button-addspot" type="button">
+      <h1 className="title">Trouve ton SkatePark</h1>
+      <button className="button" type="button">
         <Link to="/trouve-ton-skatepark/ajoute-ton-spot">Ajoute ton spot!</Link>
       </button>
 

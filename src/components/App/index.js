@@ -1,7 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 // == Import
-import { Router, Route, Switch } from 'react-router-dom';
-import { Redirect } from 'react-router-dom';
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { history } from 'src/store';
 import './styles.scss';
 
@@ -11,7 +10,7 @@ import AddPost from 'src/containers/AddPost';
 import Community from 'src/containers/Community';
 import Connection from 'src/containers/Connection';
 import Contact from 'src/containers/Contact';
-import DetailsArticle from 'src/containers/Marketplace/DetailsArticle';
+import DetailsArticle from 'src/containers/DetailsArticle';
 import DetailsPost from 'src/containers/DetailsPost';
 import Header from 'src/containers/Header/';
 import Marketplace from 'src/containers/Marketplace';
@@ -26,7 +25,6 @@ import SpotEdit from 'src/containers/SpotEdit';
 import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
 import Loading from 'src/components/Loading';
-// import PostArticle from 'src/components/Marketplace/PostArticle';
 
 // Import page d'erreur
 import NotFound from 'src/components/NotFound';
@@ -41,6 +39,8 @@ const App = (props) => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/trouve-ton-skatepark" component={SearchMap} />
+          <Route exact path="/trouve-ton-matos" component={Marketplace} />
+          <Route exact path="/communaute" component={Community} />
           <Route
             path="/trouve-ton-skatepark/ajoute-ton-spot"
             component={SpotAdd}
@@ -53,22 +53,11 @@ const App = (props) => {
             path="/trouve-ton-skatepark/:resultat"
             component={SearchSkateResults}
           />
-          <Route exact path="/trouve-ton-matos" component={Marketplace} />
           <Route
-            exact
             path="/trouve-ton-matos/ajoute-ton-matos"
             component={AddSale}
           />
-          {/* <Route
-            exact
-            path="/trouve-ton-matos/modifie-ton-matos"
-            component={PostArticle}
-          /> */}
-          <Route
-            path="/trouve-ton-matos/:articleId"
-            component={DetailsArticle}
-          />
-          <Route exact path="/communaute" component={Community} />
+          <Route path="/trouve-ton-matos/:saleId" component={DetailsArticle} />
           <Route path="/communaute/:articleId" component={DetailsPost} />
           <Route path="/communaute/ajoute-ton-evenement" component={AddPost} />
           <Route path="/communaute/modifie-ton-evenement" component={AddPost} />

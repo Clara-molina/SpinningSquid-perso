@@ -1,7 +1,7 @@
 import { UPDATE_FIELD } from 'src/actions/userActions';
 import {
   MARKETPLACE_ON_LOADING,
-  TOGGLE_ARTICLE_DETAILS_IS_LOADING,
+  MARKETPLACE_DETAILS_ON_LOADING,
   GET_MARKETPLACE_INITIAL_LIST_SUCCESS,
   GET_MARKETPLACE_ARTICLE_LIST_SUCCESS,
   GET_MARKETPLACE_ARTICLE_DETAILS_SUCCESS,
@@ -17,9 +17,9 @@ export const initialState = {
   isLoading: false,
   isLoaded: false,
   addSale: {
-    detailsArticleIsLoading: false,
-    detailsArticleIsLoaded: false,
-    responseApi: '',
+
+    saleAddIsLoading: false,
+    id: 'initial state',
     title: '',
     place: '',
     price: '',
@@ -89,19 +89,19 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         isLoading: true,
       };
-    case TOGGLE_ARTICLE_DETAILS_IS_LOADING:
+
+    case MARKETPLACE_DETAILS_ON_LOADING:
       return {
         ...state,
-        addSale: {
-          ...state.addSale,
-          detailsArticleIsLoading: !state.addSale.detailsArticleIsLoading,
-        },
+        isLoading: true,
       };
+
     case GET_MARKETPLACE_ARTICLE_LIST_SUCCESS:
       return {
         ...state,
         responseApi: action.responseApi,
       };
+
     case GET_MARKETPLACE_INITIAL_LIST_SUCCESS:
       return {
         ...state,
@@ -118,21 +118,42 @@ const reducer = (state = initialState, action = {}) => {
         },
       };
 
+    case GET_MARKETPLACE_ARTICLE_DETAILS_SUCCESS:
+      return {
+        ...state,
+        responseApi: action.responseApi,
+        isLoading: false,
+        isLoaded: true,
+        addSale: {
+          ...state.addSale,
+          saleAddIsLoading: true,
+          id: action.responseApi.id,
+          title: action.responseApi.title.rendered,
+          price: action.responseApi.meta.price,
+          place: action.responseApi.meta.place,
+          image: action.responseApi._embedded['wp:featuredmedia'][0].source_url,
+          story: action.responseApi.content.rendered,
+        },
+      };
+
     case POST_MARKETPLACE_ADD_ARTICLE_SUCCESS:
       return {
         ...state,
         message: action.message_success,
       };
+
     case POST_MARKETPLACE_UPDATE_ARTICLE_SUCCESS:
       return {
         ...state,
         searchField: action.fieldValue,
       };
+
     case POST_MARKETPLACE_DELETE_ARTICLE_SUCCESS:
       return {
         ...state,
         searchField: action.fieldValue,
       };
+
     default:
       return state;
   }

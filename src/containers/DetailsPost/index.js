@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import {
   submitGetArticleDetails,
-  setOnLoadingStatus,
+  setOnLoadingDetail,
 } from 'src/actions/communityActions';
 import DetailsPost from '../../components/Community/DetailsPost';
 
 const mapStateToProps = (state, ownProps) => {
-  //console.log(ownProps);
+  console.log(ownProps);
   return {
     articleId: ownProps.match.params.articleId,
     isLoaded: state.community.isLoaded,
@@ -25,7 +25,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(submitGetArticleDetails(articleId));
   },
   setOnLoading: () => {
-    dispatch(setOnLoadingStatus());
+    dispatch(setOnLoadingDetail());
   },
 });
 
