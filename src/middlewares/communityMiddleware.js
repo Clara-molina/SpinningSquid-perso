@@ -69,8 +69,8 @@ const communityMiddleware = (store) => (next) => (action) => {
           );
           window.alert(
             `
-            L'ajout de votre article dans Whassup?! a bien été enregistré.
-            Bisous.
+            L'ajout de ton article dans Whassup?! a bien été enregistré.
+            Merci.
             `
           );
         })
