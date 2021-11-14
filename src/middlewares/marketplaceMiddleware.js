@@ -8,6 +8,7 @@ import {
   POST_MARKETPLACE_UPDATE_ARTICLE,
   POST_MARKETPLACE_DELETE_ARTICLE,
   successMarketplaceSearch,
+  successMarketplaceSearchDetails,
   successMarketplaceInitialSearch,
   successMarketplaceAddArticle,
   successMarketplaceUpdateArticle,
@@ -23,9 +24,7 @@ const marketplaceMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           console.log('response from API : ');
           console.log(response);
-          store.dispatch(
-            successMarketplaceInitialSearch(response.data)
-          );
+          store.dispatch(successMarketplaceInitialSearch(response.data));
         })
         .catch((error) => {
           console.warn(error);
@@ -40,7 +39,7 @@ const marketplaceMiddleware = (store) => (next) => (action) => {
       // }, 3000);
 
       break;
-    case GET_MARKETPLACE_ARTICLE_LIST:
+    case GET_MARKETPLACE_ARTICLE_LIST: //recherche avec filtre
       // const endPointSale = '/sale?_embed=true';
       // axios
       //   .get(baseURI + endPointSale)
@@ -64,23 +63,24 @@ const marketplaceMiddleware = (store) => (next) => (action) => {
 
       break;
     case GET_MARKETPLACE_ARTICLE_DETAILS:
-      // axios
-      //   .get(baseURI + endPointSale)
-      //   .then((response) => {
-      //     console.log('response from API : ');
-      //     console.log(response);
+      const articleId = action.id;
+      const endPointSaleArticleDetails = '/sale/' + articleId + '?_embed_true';
+      console.log(baseURI + endPointSaleArticleDetails);
+      axios
+        .get(baseURI + endPointSaleArticleDetails)
+        .then((response) => {
+          console.log('response from API : ');
+          console.log(response);
+          store.dispatch(successMarketplaceSearchDetails(response.data));
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
       // store.dispatch(
-      //   successGetSkateparkList(response.data)
+      //   successMarketplaceSearchDetails(
+      //     'a remplacer par le call API dans marketplaceMiddleware'
+      //   )
       // );
-      // })
-      // .catch((error) => {
-      //   console.warn(error);
-      // });
-      store.dispatch(
-        successMarketplaceSearchDetails(
-          'a remplacer par le call API dans marketplaceMiddleware'
-        )
-      );
 
       break;
     case POST_MARKETPLACE_ADD_ARTICLE:
@@ -103,14 +103,12 @@ const marketplaceMiddleware = (store) => (next) => (action) => {
             image: store.getState().marketplace.addSale.image,
             story: store.getState().marketplace.addSale.story,
           },
-          options_ADD,
+          options_ADD
         )
         .then((response) => {
           console.log('response from API : ');
           console.log(response);
-          store.dispatch(
-            successMarketplaceAddArticle(),
-          );
+          store.dispatch(successMarketplaceAddArticle());
           window.alert(
             `
             L'ajout de votre matos à vendre a bien été enregistré.

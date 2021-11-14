@@ -11,6 +11,7 @@ import AddPost from 'src/containers/AddPost';
 import Community from 'src/containers/Community';
 import Connection from 'src/containers/Connection';
 import Contact from 'src/containers/Contact';
+import DetailsArticle from 'src/containers/Marketplace/DetailsArticle';
 import DetailsPost from 'src/containers/DetailsPost';
 import Header from 'src/containers/Header/';
 import Marketplace from 'src/containers/Marketplace';
@@ -22,7 +23,6 @@ import SpotAdd from 'src/containers/SpotAdd';
 import SpotEdit from 'src/containers/SpotEdit';
 
 // Import Components
-import DetailsArticle from 'src/components/Marketplace/DetailsArticle';
 import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
 import Loading from 'src/components/Loading';
@@ -64,7 +64,10 @@ const App = (props) => {
             path="/trouve-ton-matos/modifie-ton-matos"
             component={PostArticle}
           /> */}
-          <Route path="/trouve-ton-matos/:id" component={DetailsArticle} />
+          <Route
+            path="/trouve-ton-matos/:articleId"
+            component={DetailsArticle}
+          />
           <Route exact path="/communaute" component={Community} />
           <Route path="/communaute/:articleId" component={DetailsPost} />
           <Route path="/communaute/ajoute-ton-evenement" component={AddPost} />

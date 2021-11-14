@@ -102,6 +102,7 @@ const SearchSkateResults = (props) => {
       >
         modifie ton spot
       </Link>
+      <button onClick={props.callDeleteSkatepark}>Supprimer ce Spot</button>
     </div>
   );
 };

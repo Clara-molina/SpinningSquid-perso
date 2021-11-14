@@ -1,4 +1,8 @@
 const DetailsArticle = (props) => {
+  if (!props.detailsArticleIsLoading) {
+    props.getDetailsArticle(props.articleId);
+    props.handleIsLoading();
+  }
   const styleBackground = 'background: url(' + props.photo + ') center/cover';
   return (
     <>
@@ -26,8 +30,6 @@ const DetailsArticle = (props) => {
           <p>dfghierhgezhghzeotughzotrughorztghrotghortg</p>
         </div>
       </div>
-
-      <div className="shadowDiv"></div>
     </>
   );
 };

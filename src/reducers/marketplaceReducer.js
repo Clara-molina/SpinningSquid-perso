@@ -1,8 +1,10 @@
 import { UPDATE_FIELD } from 'src/actions/userActions';
 import {
   MARKETPLACE_ON_LOADING,
+  TOGGLE_ARTICLE_DETAILS_IS_LOADING,
   GET_MARKETPLACE_INITIAL_LIST_SUCCESS,
   GET_MARKETPLACE_ARTICLE_LIST_SUCCESS,
+  GET_MARKETPLACE_ARTICLE_DETAILS_SUCCESS,
   POST_MARKETPLACE_ADD_ARTICLE_SUCCESS,
   POST_MARKETPLACE_UPDATE_ARTICLE_SUCCESS,
   POST_MARKETPLACE_DELETE_ARTICLE_SUCCESS,
@@ -15,6 +17,9 @@ export const initialState = {
   isLoading: false,
   isLoaded: false,
   addSale: {
+    detailsArticleIsLoading: false,
+    detailsArticleIsLoaded: false,
+    responseApi: '',
     title: '',
     place: '',
     price: '',
@@ -84,6 +89,14 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         isLoading: true,
       };
+    case TOGGLE_ARTICLE_DETAILS_IS_LOADING:
+      return {
+        ...state,
+        addSale: {
+          ...state.addSale,
+          detailsArticleIsLoading: !state.addSale.detailsArticleIsLoading,
+        },
+      };
     case GET_MARKETPLACE_ARTICLE_LIST_SUCCESS:
       return {
         ...state,
@@ -94,6 +107,15 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         responseApi: action.responseApi,
         isLoaded: action.loaded,
+      };
+    case GET_MARKETPLACE_ARTICLE_DETAILS_SUCCESS:
+      return {
+        ...state,
+        addSale: {
+          ...state.addSale,
+          responseApi: action.responseApi,
+          detailsArticleIsLoaded: action.loaded,
+        },
       };
 
     case POST_MARKETPLACE_ADD_ARTICLE_SUCCESS:
