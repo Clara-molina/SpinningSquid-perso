@@ -7,7 +7,7 @@ const DetailsPost = (props) => {
   }
 
   return (
-    <div id="detailpost">
+    <div id="detailpost" className="main-container">
       <div className="detailpost-block">
         <img className="detailpost-image" alt="" src={props.image} />
         <div className="detailpost-resume">

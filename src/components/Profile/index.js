@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Profile = (props) => {
   if(!props.profileIsLoading){props.handleCheckUserUpdateProfile();}
   return (
-    <div className="profile">
+    <div className="profile main-container">
       <h1 className="profile-title">Bienvenue {props.usernameConnection}</h1>
 
       <div className="profile-container">

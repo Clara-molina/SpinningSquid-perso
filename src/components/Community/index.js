@@ -9,7 +9,7 @@ const Community = (props) => {
     props.setOnLoading();
   }
   return (
-    <div id="community">
+    <div id="community" className="main-container">
       <div className="community-header">
         <div>
           <h2 className="title community-title">Whassup ?!</h2>

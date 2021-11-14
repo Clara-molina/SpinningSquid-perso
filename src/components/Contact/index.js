@@ -1,7 +1,7 @@
 import './contact.scss';
 
 const Contact = (props) => (
-  <div className="contact">
+  <div className="contact main-container">
     <h1 className="contact-title">Que puis-je pour toi jeune skateur ?</h1>
     <div className="contact-container">
       <img className="contact-image" alt="" src={props.logo} />

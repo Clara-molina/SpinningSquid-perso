@@ -9,7 +9,7 @@ const Connection = (props) => {
   };
 
   return (
-    <div className="connection">
+    <div className="connection main-container">
       <h1 className="title-connection">Connecte toi et sinon, inscrit toi.</h1>
 
       <div className="container-forms">
