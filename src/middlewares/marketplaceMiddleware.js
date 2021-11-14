@@ -8,6 +8,7 @@ import {
   POST_MARKETPLACE_UPDATE_ARTICLE,
   POST_MARKETPLACE_DELETE_ARTICLE,
   successMarketplaceSearch,
+  successMarketplaceSearchDetails,
   successMarketplaceInitialSearch,
   successMarketplaceSearchDetails,
   successMarketplaceAddArticle,
@@ -84,6 +85,11 @@ const marketplaceMiddleware = (store) => (next) => (action) => {
         .catch((error) => {
           console.warn(error);
         });
+      // store.dispatch(
+      //   successMarketplaceSearchDetails(
+      //     'a remplacer par le call API dans marketplaceMiddleware'
+      //   )
+      // );
 
       break;
 
@@ -107,14 +113,12 @@ const marketplaceMiddleware = (store) => (next) => (action) => {
             image: store.getState().marketplace.addSale.image,
             story: store.getState().marketplace.addSale.story,
           },
-          options_ADD,
+          options_ADD
         )
         .then((response) => {
           console.log('response from API : ');
           console.log(response);
-          store.dispatch(
-            successMarketplaceAddArticle(),
-          );
+          store.dispatch(successMarketplaceAddArticle());
           window.alert(
             `
             L'ajout de votre matos à vendre a bien été enregistré.

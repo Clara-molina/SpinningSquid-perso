@@ -17,6 +17,7 @@ export const initialState = {
   isLoading: false,
   isLoaded: false,
   addSale: {
+
     saleAddIsLoading: false,
     id: 'initial state',
     title: '',
@@ -106,6 +107,15 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         responseApi: action.responseApi,
         isLoaded: action.loaded,
+      };
+    case GET_MARKETPLACE_ARTICLE_DETAILS_SUCCESS:
+      return {
+        ...state,
+        addSale: {
+          ...state.addSale,
+          responseApi: action.responseApi,
+          detailsArticleIsLoaded: action.loaded,
+        },
       };
 
     case GET_MARKETPLACE_ARTICLE_DETAILS_SUCCESS:

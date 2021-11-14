@@ -1,10 +1,10 @@
 const DetailsArticle = (props) => {
+
   if (!props.saleAddIsLoading) {
     // console.log(props.saleId);
     props.getSaleDetails(props.saleId);
     props.setOnLoadingSale();
   }
-
   return (
     <div className="main-container">
       <div className="detailarticle-block">

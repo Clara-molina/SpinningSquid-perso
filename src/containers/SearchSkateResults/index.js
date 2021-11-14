@@ -3,6 +3,7 @@ import { updateField } from 'src/actions/userActions';
 import {
   callGetSkateparkDetails,
   setOnSkateparkDetailsLoading,
+  submitDeleteSpot,
 } from 'src/actions/skateparkActions';
 import SearchSkateResults from 'src/components/SearchSkateResults';
 
@@ -21,6 +22,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => ({
   getSkateparkDetails: (skateparkName) => {
     dispatch(callGetSkateparkDetails(skateparkName));
+  },
+  callDeleteSkatepark: () => {
+    dispatch(submitDeleteSpot());
   },
   setOnLoading: () => {
     dispatch(setOnSkateparkDetailsLoading());
