@@ -38,7 +38,7 @@ const Marketplace = (props) => {
               onChange={props.handleOnChange}
             />
           </label>
-          <label htmlFor="marketplace-search-where">Ou ?
+          {/* <label htmlFor="marketplace-search-where">Ou ?
             <input
               id="marketplace-search-where"
               className="marketplace-input"
@@ -48,7 +48,7 @@ const Marketplace = (props) => {
               required
               onChange={props.handleOnChange}
             />
-          </label>
+          </label> */}
           <button className="button marketplace-search-button" type="submit">
             Rechercher
           </button>

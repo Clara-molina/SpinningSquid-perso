@@ -25,7 +25,7 @@ const ArticleList = (list, isLogged) => {
     };
     const urlDetailSale = '/trouve-ton-matos/' + item.id;
     return (
-      <article className="list-item">
+      <article key={item.id} className="list-item">
         <h2 className="article-list-title">{item.title.rendered}</h2>
         <p>Combien? {item.meta.price}€</p>
         <p>Ou? {item.meta.place}</p>
