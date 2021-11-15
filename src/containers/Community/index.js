@@ -5,9 +5,11 @@ import { updateField } from 'src/actions/userActions';
 import {
   callGetArticleList,
   setOnLoadingStatus,
+  emptyDetailsArticle,
 } from 'src/actions/communityActions';
 
 const mapStateToProps = (state) => ({
+  detailsLoaded: state.community.addArticle.postAddIsLoading,
   articlesList: state.community.articlesList,
   responseApi: state.community.responseApi,
   isLoaded: state.community.isLoaded,
@@ -23,6 +25,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   setOnLoading: () => {
     dispatch(setOnLoadingStatus());
+  },
+  emptyDetailsArticle: () => {
+    dispatch(emptyDetailsArticle());
   },
 });
 

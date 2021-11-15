@@ -26,7 +26,7 @@ const Marker = (props) => {
 };
 
 const SearchSkateResults = (props) => {
-  if (!props.isLoading) {
+  if (!props.isLoading || props.detailsNotMatching) {
     props.getSkateparkDetails(props.skateparkName);
     props.setOnLoading();
   }

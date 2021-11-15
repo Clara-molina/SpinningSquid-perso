@@ -1,5 +1,6 @@
 import { UPDATE_FIELD } from 'src/actions/userActions';
 import {
+  EMPTY_DETAILS_ARTICLE,
   ARTICLE_ON_LOADING,
   ARTICLE_DETAILS_ON_LOADING,
   GET_ARTICLE_LIST_SUCCESS,
@@ -17,6 +18,7 @@ export const initialState = {
   isLoaded: false,
   addArticle: {
     postAddIsLoading: false,
+    postAddIsLoaded: false,
     id: 'initial state',
     title: '',
     date: '',
@@ -76,6 +78,14 @@ const reducer = (state = initialState, action = {}) => {
       }
       return state;
 
+    case EMPTY_DETAILS_ARTICLE:
+      return {
+        ...state,
+        addArticle: {
+          ...state.addArticle,
+          postAddIsLoading: false,
+        },
+      };
     case ARTICLE_ON_LOADING:
       return {
         ...state,
