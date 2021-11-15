@@ -1,7 +1,7 @@
 import './detailpost.scss';
 
 const DetailsPost = (props) => {
-  if (!props.postAddIsLoading) {
+  if (!props.postAddIsLoading || props.detailsNotMatching) {
     props.getArticleDetails(props.articleId);
     props.setOnLoading();
   }

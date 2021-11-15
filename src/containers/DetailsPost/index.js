@@ -6,8 +6,16 @@ import {
 import DetailsPost from '../../components/Community/DetailsPost';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps);
+  // console.log(ownProps);
+  // console.log(
+  //   'ownProps.match.params.articleId : ' + ownProps.match.params.articleId
+  // );
+  // console.log(
+  //   'state.community.addArticle.id : ' + state.community.addArticle.id
+  // );
   return {
+    detailsNotMatching:
+      ownProps.match.params.articleId != state.community.addArticle.id,
     articleId: ownProps.match.params.articleId,
     isLoaded: state.community.isLoaded,
     postAddIsLoading: state.community.addArticle.postAddIsLoading,
