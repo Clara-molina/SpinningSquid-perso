@@ -59,20 +59,20 @@ const communityMiddleware = (store) => (next) => (action) => {
             image: store.getState().community.addArticle.image,
             story: store.getState().community.addArticle.story,
           },
-          options_ADD,
+          options_ADD
         )
         .then((response) => {
           console.log('response from API : ');
           console.log(response);
-          store.dispatch(
-            successSubmitAddArticle(),
-          );
+          store.dispatch(successSubmitAddArticle());
           window.alert(
             `
             L'ajout de ton article dans Whassup?! a bien été enregistré.
             Merci.
             `
           );
+          store.dispatch(push('/communaute'));
+          location.reload();
         })
         .catch((error) => {
           console.warn(error);
@@ -137,8 +137,8 @@ const communityMiddleware = (store) => (next) => (action) => {
       //   });
       store.dispatch(
         successSubmitUpdateArticle(
-          'a remplacer par le call API dans communityMiddleware',
-        ),
+          'a remplacer par le call API dans communityMiddleware'
+        )
       );
 
       break;
@@ -175,8 +175,8 @@ const communityMiddleware = (store) => (next) => (action) => {
       //   });
       store.dispatch(
         successSubmitDeleteArticle(
-          'a remplacer par le call API dans communityMiddleware',
-        ),
+          'a remplacer par le call API dans communityMiddleware'
+        )
       );
 
       break;

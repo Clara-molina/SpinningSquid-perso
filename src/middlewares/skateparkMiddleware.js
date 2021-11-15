@@ -154,6 +154,7 @@ const skateparkMiddleware = (store) => (next) => (action) => {
             `
           );
           store.dispatch(push('/trouve-ton-skatepark'));
+          location.reload();
         })
         .catch((error) => {
           console.warn(error);
@@ -233,7 +234,9 @@ const skateparkMiddleware = (store) => (next) => (action) => {
                   Bisous.
                   `
           );
+          location.reload();
         })
+
         .catch((error) => {
           console.warn(error);
         });
@@ -282,6 +285,7 @@ const skateparkMiddleware = (store) => (next) => (action) => {
                 `
           );
           store.dispatch(push('/trouve-ton-skatepark'));
+          window.location.reload();
         })
         .catch((error) => {
           console.warn(error);

@@ -97,7 +97,7 @@ const Connection = (props) => {
               value={props.passwordInscription}
             />
           </label>
-          <button className="form-register-button" type="submit">
+          <button className="form-register-button button" type="submit">
             Inscription
           </button>
         </form>
@@ -124,7 +124,7 @@ const Connection = (props) => {
               onChange={handleOnChange}
             />
           </label>
-          <button className="form-connection-button" type="submit">
+          <button className="form-connection-button button" type="submit">
             Connexion
           </button>
         </form>

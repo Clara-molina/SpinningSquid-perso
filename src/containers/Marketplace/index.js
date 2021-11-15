@@ -23,6 +23,11 @@ const mapDispatchToProps = (dispatch) => ({
   setOnLoading: () => {
     dispatch(setOnLoadingStatus());
   },
+  searchFieldTitle: (event) => {
+    const inputId = event.target.id;
+    const inputValue = event.target.value;
+    dispatch(updateField(inputId, inputValue));
+  },
   handleOnChange: (event) => {
     dispatch(updateField(event.target.id, event.target.value));
   },
