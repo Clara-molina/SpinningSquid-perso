@@ -26,7 +26,7 @@ const Marker = (props) => {
 };
 
 const SearchSkateResults = (props) => {
-  if (!props.isLoading) {
+  if (!props.isLoading || props.detailsNotMatching) {
     props.getSkateparkDetails(props.skateparkName);
     props.setOnLoading();
   }
@@ -44,13 +44,13 @@ const SearchSkateResults = (props) => {
       {props.isLoaded && (
         <>
           <h3 className="searchresulttitle">Résultat</h3>
-          <h4 className="searchresultname">{props.title}</h4>
+          <h4 className="searchresultname">{props.skateparkTitle}</h4>
           <img
             className="searchresultimage"
-            src={Img}
+            src={props.skateparkImg}
             alt="skatepark Achères"
           />
-          <span className="searchresultstars">Etoiles</span>
+          {/* <span className="searchresultstars">Etoiles</span>
 
           <div className="rating">
             <a href="#5" title="Génial !">
@@ -68,12 +68,26 @@ const SearchSkateResults = (props) => {
             <a href="#1" title="Nul">
               ★
             </a>
-          </div>
+          </div> */}
           <span className="searchresultadress">
-            Adresse : 227 Route Départementale 30, 78260 Achères
+            Adresse: {props.adresse} {props.town} {props.postal}
           </span>
-          <span className="detailssearchresult">Parking</span>
-          <span className="detailssearchresult">Poubelles</span>
+          <span className="detailssearchresult">Equipement:</span>
+          <span className="detailssearchresult">
+            {props.parking && 'Parking'}
+            {props.water && 'Eau'}
+            {props.trashcan && 'Poubelle'}
+            {props.lighting && 'Eclairage'}
+            {props.table && 'Tables'}
+            {props.benche && 'Bancs'}
+          </span>
+          <span className="detailssearchresult">Etat général:</span>
+          <span className="detailssearchresult">
+            {props.etatRadioBtn === 'New' ? 'Neuf' : ''}
+            {props.etatRadioBtn === 'Good' ? 'Bien' : ''}
+            {props.etatRadioBtn === 'Way' ? 'Moyen' : ''}
+            {props.etatRadioBtn === 'Endoflife' ? 'En fin de vie' : ''}
+          </span>
 
           <div className="searchresultmap">Map de l'adresse</div>
           <div className="search-map">
@@ -90,8 +104,8 @@ const SearchSkateResults = (props) => {
                 key={props.id}
                 id={props.id}
                 //text={place.name}
-                lat={props.locationOnMap.lat}
-                lng={props.locationOnMap.lng}
+                lat={props.latitude}
+                lng={props.longitude}
               />
             </GoogleMapReact>
           </div>
@@ -102,6 +116,7 @@ const SearchSkateResults = (props) => {
       >
         modifie ton spot
       </Link>
+      <button onClick={props.callDeleteSkatepark}>Supprimer ce Spot</button>
     </div>
   );
 };

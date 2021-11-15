@@ -10,10 +10,18 @@ const SearchMap = (props) => {
   }
   return (
     <div className="main-container search">
-      <h1 className="search-title">Trouve ton SkatePark</h1>
-      <button className="button-addspot" type="button">
-        <Link to="/trouve-ton-skatepark/ajoute-ton-spot">Ajoute ton spot!</Link>
-      </button>
+      <h1 className="title">Trouve ton SkatePark</h1>
+      {props.isLogged && (
+        <button className="button addSpot-button" type="button">
+          <Link to="/trouve-ton-skatepark/ajoute-ton-spot">Ajoute ton spot!</Link>
+        </button>
+      )}
+      {!props.isLogged && (
+        <button className="button addSpot-button" type="button">
+          <Link to="/connexion">Ajoute ton spot!</Link>
+        </button>
+      )}
+
 
       <form className="search-form" onSubmit={props.submitSkateparkSearch}>
         <label className="search-label">
@@ -40,10 +48,10 @@ const SearchMap = (props) => {
             </div>
           </>
         )}
-        {props.isLoaded && <BlockMap 
-        responseAPI={props.responseAPI} 
-        locationOnMap={props.locationOnMap}
-        moveLocationOnMap={props.moveLocationOnMap}/>}
+        {props.isLoaded && <BlockMap
+          responseAPI={props.responseAPI}
+          locationOnMap={props.locationOnMap}
+          moveLocationOnMap={props.moveLocationOnMap} />}
       </div>
     </div>
   );

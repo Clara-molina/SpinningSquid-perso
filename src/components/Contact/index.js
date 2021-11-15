@@ -28,11 +28,10 @@ const Contact = (props) => (
           type="email"
         />
         <label className="contact-label"> Message</label>
-        <input
+        <textarea
           id="message"
           onChange={props.handleChange}
           className="contact-input-message"
-          type="text"
         />
 
         <button className="contact-button button" type="submit">

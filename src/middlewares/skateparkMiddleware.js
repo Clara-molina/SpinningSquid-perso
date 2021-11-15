@@ -83,8 +83,10 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       break;
 
     case GET_SKATEPARK_BY_CITY:
-
-      const endPointSkateparkByCity = 'http://romain-talbot.vpnuser.lan/SpinningSquad_Apotheose/projet-skatepark/public/wp-json/wp/v2/skatepark/?meta_key=city&meta_value=' + store.getState().skatepark.searchFieldTown;
+      const endPointSkateparkByCity =
+        baseURI +
+        '/skatepark/?meta_key=city&meta_value=' +
+        store.getState().skatepark.searchFieldTown;
       console.log(store.getState().skatepark.searchFieldTown);
       axios
         .get(endPointSkateparkByCity)
@@ -151,6 +153,7 @@ const skateparkMiddleware = (store) => (next) => (action) => {
             Bisous.
             `
           );
+          store.dispatch(push('/trouve-ton-skatepark'));
         })
         .catch((error) => {
           console.warn(error);
@@ -166,7 +169,7 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       const skatepark_Id = action.skateparkId;
       const endPointDetails_Spot =
         baseURI + '/skatepark/' + skatepark_Id + '?_embed=true';
-      //console.log('on y passe youpi');
+      // console.log('on y passe youpi');
       axios
         .get(endPointDetails_Spot)
         .then((response) => {
@@ -183,57 +186,57 @@ const skateparkMiddleware = (store) => (next) => (action) => {
 
     case SUBMIT_UPDATE_SPOT:
       const endPointUpdate_Spot = '/skatepark-edit';
-      //console.log(JSON.parse(localStorage.getItem('userData')).token);
-      // const options_UPDATE = {
-      //   headers: {
-      //     Authorization:
-      //       'Bearer ' + JSON.parse(localStorage.getItem('userData')).token,
-      //   },
-      // };
-      //console.log('on y passe youpi');
-      // axios
-      //   .post(
-      //     baseSpinningSquid + endPointAdd_Spot,
-      //     {
-      //       id: store.getState().skatepark.addSpot.id,
-      //       title: store.getState().skatepark.addSpot.title,
-      //       skatepark: store.getState().skatepark.addSpot.categorySkatepark,
-      //       pumptrack: store.getState().skatepark.addSpot.categoryPumptrack,
-      //       streetspot: store.getState().skatepark.addSpot.categoryStreet,
-      //       street: store.getState().skatepark.addSpot.street,
-      //       zipcode: store.getState().skatepark.addSpot.postal,
-      //       city: store.getState().skatepark.addSpot.town,
-      //       latitude: store.getState().skatepark.addSpot.latitude,
-      //       longitude: store.getState().skatepark.addSpot.longitude,
-      //       parking: store.getState().skatepark.addSpot.parking,
-      //       water: store.getState().skatepark.addSpot.water,
-      //       trashcan: store.getState().skatepark.addSpot.trashcan,
-      //       lighting: store.getState().skatepark.addSpot.lighting,
-      //       table: store.getState().skatepark.addSpot.table,
-      //       benche: store.getState().skatepark.addSpot.benche,
-      //       state: store.getState().skatepark.addSpot.etatRadioBtn,
-      //       image: store.getState().skatepark.addSpot.uploadedImg,
-      //     },
-      //     options_ADD
-      //   )
-      //   .then((response) => {
-      //     console.log('response from API : ');
-      //     console.log(response);
-      //     store.dispatch(
-      //       successSubmitUpdateSpot(
-      //         'a remplacer par kekchose ou pas dans skateparkMiddleware'
-      //       )
-      //     );
-      //     window.alert(
-      //       `
-      //             L'ajout de skatepark a bien été enregistré.
-      //             Bisous.
-      //             `
-      //     );
-      //   })
-      //   .catch((error) => {
-      //     console.warn(error);
-      //   });
+      console.log(JSON.parse(localStorage.getItem('userData')).token);
+      const options_UPDATE = {
+        headers: {
+          Authorization:
+            'Bearer ' + JSON.parse(localStorage.getItem('userData')).token,
+        },
+      };
+      console.log('on y passe youpi');
+      axios
+        .post(
+          baseSpinningSquid + endPointUpdate_Spot,
+          {
+            id: store.getState().skatepark.addSpot.id,
+            title: store.getState().skatepark.addSpot.title,
+            skatepark: store.getState().skatepark.addSpot.categorySkatepark,
+            pumptrack: store.getState().skatepark.addSpot.categoryPumptrack,
+            streetspot: store.getState().skatepark.addSpot.categoryStreet,
+            street: store.getState().skatepark.addSpot.street,
+            zipcode: store.getState().skatepark.addSpot.postal,
+            city: store.getState().skatepark.addSpot.town,
+            latitude: store.getState().skatepark.addSpot.latitude,
+            longitude: store.getState().skatepark.addSpot.longitude,
+            parking: store.getState().skatepark.addSpot.parking,
+            water: store.getState().skatepark.addSpot.water,
+            trashcan: store.getState().skatepark.addSpot.trashcan,
+            lighting: store.getState().skatepark.addSpot.lighting,
+            table: store.getState().skatepark.addSpot.table,
+            benche: store.getState().skatepark.addSpot.benche,
+            state: store.getState().skatepark.addSpot.etatRadioBtn,
+            image: store.getState().skatepark.addSpot.uploadedImg,
+          },
+          options_UPDATE
+        )
+        .then((response) => {
+          console.log('response from API : ');
+          console.log(response);
+          store.dispatch(
+            successSubmitUpdateSpot(
+              'a remplacer par kekchose ou pas dans skateparkMiddleware'
+            )
+          );
+          window.alert(
+            `
+                  L'ajout de skatepark a bien été enregistré.
+                  Bisous.
+                  `
+          );
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
       store.dispatch(
         successSubmitUpdateSpot(
           'a remplacer par kekchose ou pas dans skateparkMiddleware'
@@ -241,26 +244,29 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       );
       console.log('requete update ok');
       store.dispatch(push('/newsletter'));
-      store.dispatch(goForward());
+      //store.dispatch(goForward());
       console.log('redirection');
-
 
       break;
 
-    //----------------------------------------------------------------------------------
-    // à compléter
     case SUBMIT_DELETE_SPOT:
-      const endPointDelete_Spot = '';
-      console.log(JSON.parse(localStorage.getItem('userData')).token);
+      const endPointDelete_Spot = '/skatepark-delete';
+      //console.log(JSON.parse(localStorage.getItem('userData')).token);
       const options_DELETE = {
         headers: {
           Authorization:
             'Bearer ' + JSON.parse(localStorage.getItem('userData')).token,
         },
       };
-      //console.log('on y passe youpi');
+      console.log('on y passe youpi');
       axios
-        .post(baseSpinningSquid + endPointAdd_Spot, {}, options)
+        .post(
+          baseSpinningSquid + endPointDelete_Spot,
+          {
+            id: store.getState().skatepark.addSpot.id,
+          },
+          options_DELETE
+        )
         .then((response) => {
           console.log('response from API : ');
           console.log(response);
@@ -271,22 +277,23 @@ const skateparkMiddleware = (store) => (next) => (action) => {
           );
           window.alert(
             `
-            L'ajout de skatepark a bien été enregistré.
-            Bisous.
-            `
+                Le skatepark a bien été supprimé.
+                Bisous.
+                `
           );
+          store.dispatch(push('/trouve-ton-skatepark'));
         })
         .catch((error) => {
           console.warn(error);
         });
-      // store.dispatch(
-      //   successSubmitAddSpot(
-      //     'a remplacer par kekchose ou pas dans skateparkMiddleware'
-      //   )
-      // );
+      console.log('on passe dans skateparkMiddleware');
+      store.dispatch(
+        successSubmitDeleteSpot(
+          'transmission données ok depuis skateparkMiddleware'
+        )
+      );
 
       break;
-    //----------------------------------------------------------------------------------
     default:
   }
   next(action);

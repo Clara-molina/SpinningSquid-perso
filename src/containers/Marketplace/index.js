@@ -9,7 +9,9 @@ import {
 } from 'src/actions/marketplaceActions';
 
 const mapStateToProps = (state) => ({
+  isLogged: state.user.isLogged,
   articlesList: state.marketplace.articlesList,
+  responseApi: state.marketplace.responseApi,
   isLoaded: state.marketplace.isLoaded,
   isLoading: state.marketplace.isLoading,
 });

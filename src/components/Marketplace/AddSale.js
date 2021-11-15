@@ -6,7 +6,7 @@ const AddSale = (props) => {
     fileChosen.textContent = event.target.files[0].name;
   };
   return (
-    <div id="postarticle">
+    <div id="postarticle" className="main-container">
       <h2 className="title">Ajoute du matos</h2>
       <form onSubmit={props.handleAddArticle}>
 

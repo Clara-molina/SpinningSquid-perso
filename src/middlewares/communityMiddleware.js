@@ -8,32 +8,34 @@ import {
   successSubmitUpdateArticle,
   SUBMIT_DELETE_ARTICLE,
   successSubmitDeleteArticle,
+  GET_ARTICLE_DETAILS,
+  successSubmitGetArticleDetails,
 } from 'src/actions/communityActions';
 import { baseURI, baseSpinningSquid } from 'src/routesBack';
 
 const communityMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_ARTICLE_LIST:
-      // const endPointArticle = baseURI + '/article?_embed=true';
-      // console.log('on y passe youpi');
-      // axios
-      //   .get(baseURI + endPointArticle)
-      //   .then((response) => {
-      //     console.log('response from API : ');
-      //     console.log(response);
-      //     store.dispatch(successGetArticleList(response.data));
-      //   })
-      //   .catch((error) => {
-      //     console.warn(error);
-      //   });
-      setTimeout(() => {
-        store.dispatch(
-          successGetArticleList(
-            'a remplacer par le call API dans communityMiddleware',
-          ),
-        );
-        console.log('call API ok');
-      }, 3000);
+      const endPointArticle = baseURI + '/article?_embed=true';
+      console.log('on y passe youpi');
+      axios
+        .get(endPointArticle)
+        .then((response) => {
+          console.log('response from API : ');
+          console.log(response);
+          store.dispatch(successGetArticleList(response.data));
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+      // setTimeout(() => {
+      //   store.dispatch(
+      //     successGetArticleList(
+      //       'a remplacer par le call API dans communityMiddleware',
+      //     ),
+      //   );
+      //   console.log('call API ok');
+      // }, 3000);
 
       break;
 
@@ -67,8 +69,8 @@ const communityMiddleware = (store) => (next) => (action) => {
           );
           window.alert(
             `
-            L'ajout de votre article dans Whassup?! a bien été enregistré.
-            Bisous.
+            L'ajout de ton article dans Whassup?! a bien été enregistré.
+            Merci.
             `
           );
         })
@@ -80,6 +82,26 @@ const communityMiddleware = (store) => (next) => (action) => {
       //     'a remplacer par le call API dans communityMiddleware',
       //   ),
       // );
+
+      break;
+
+    case GET_ARTICLE_DETAILS:
+      const article_Id = action.articleId;
+      console.log(action.articleId);
+      const endPointDetails_Article =
+        baseURI + '/article/' + article_Id + '?_embed=true';
+      // console.log('on y passe youpi');
+      axios
+        .get(endPointDetails_Article)
+        .then((response) => {
+          console.log('response from API : ');
+          console.log(response);
+          console.log(response.data);
+          store.dispatch(successSubmitGetArticleDetails(response.data));
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
 
       break;
 

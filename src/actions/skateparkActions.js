@@ -2,6 +2,7 @@ export const FILL_STATE = 'FILL_STATE';
 export const SKATEPARK_ON_LOADING = 'SKATEPARK_ON_LOADING';
 export const SKATEPARK_DETAILS_ON_LOADING = 'SKATEPARK_DETAILS_ON_LOADING';
 export const UPDATE_LOCATION_ON_MAP = 'UPDATE_LOCATION_ON_MAP';
+export const RESET_LOCATION_ON_MAP = 'RESET_LOCATION_ON_MAP';
 export const GET_SKATEPARK_LIST = 'GET_SKATEPARK_LIST';
 export const GET_SKATEPARK_LIST_SUCCESS = 'GET_SKATEPARK_LIST_SUCCESS';
 export const GET_SKATEPARK_DETAILS = 'GET_SKATEPARK_DETAILS';
@@ -24,6 +25,10 @@ export const setOnSkateparkDetailsLoading = () => ({
 });
 export const updateLocationOnMap = (data) => ({
   type: UPDATE_LOCATION_ON_MAP,
+  locationOnMap: data,
+});
+export const resetLocationOnMap = (data) => ({
+  type: RESET_LOCATION_ON_MAP,
   locationOnMap: data,
 });
 export const callGetSkateparkList = () => ({

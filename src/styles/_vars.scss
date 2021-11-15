@@ -35,9 +35,10 @@ box-shadow: 0 0 40px 40px $orange inset, 0 0 0 0 $orange;
 transition: all 150ms ease-in-out;
 padding: 1px !important;
 
-&:hover {
-  box-shadow: 0 0 10px 0 $orange inset, 0 0 10px 4px $orange;
-}
+
+  &:hover {
+    box-shadow: 0 0 10px 0 $orange inset, 0 0 10px 4px $orange;
+  }
 }
 
 .list {
@@ -63,11 +64,8 @@ padding: 1px !important;
 .list-item-description {
   margin: auto;
 }
-//éviter masquage par le footer
-.shadowDiv {
-  height: 76px;
-}
-//composant en attente de chargement
+
+// composant en attente de chargement
 .loading-wheel {
   height: 5rem;
   width: 5rem;

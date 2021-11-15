@@ -16,9 +16,16 @@ const Community = (props) => {
         </div>
       </div>
       <div className="community-post">
-        <Link to="/communaute/ajoute-ton-evenement">
-          <button type="button" className="button">Proposer un évènement</button>
-        </Link>
+        {props.isLogged && (
+          <Link to="/communaute/ajoute-ton-evenement">
+            <button type="button" className="button">Proposer un évènement</button>
+          </Link>
+        )}
+        {!props.isLogged && (
+          <Link to="/connexion">
+            <button type="button" className="button">Proposer un évènement</button>
+          </Link>
+        )}
       </div>
 
       {!props.isLoaded && (
@@ -30,9 +37,7 @@ const Community = (props) => {
           </div>
         </>
       )}
-      {props.isLoaded && <PostList />}
-
-      <div className="shadowDiv"></div>
+      {props.isLoaded && <PostList itemList={props.responseApi} />}
     </div>
   );
 };

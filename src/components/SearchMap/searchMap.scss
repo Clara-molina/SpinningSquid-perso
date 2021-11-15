@@ -40,26 +40,16 @@
       }
   }
 
-  .button-addspot {
-    height: 30px;
-    width: 130px;
-    background-color: vars.$orange;
-    border-radius: 12px;
-    border: solid 1px;
-    margin-left: 5em;
+  .addSpot-button {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Righteous';
-    color: black;
-    border-color: vars.$orange;
-    box-shadow: 0 0 40px 40px vars.$orange inset, 0 0 0 0 vars.$orange;
-    transition: all 150ms ease-in-out;
-  
-    &:hover {
-      box-shadow: 0 0 10px 0 vars.$orange inset, 0 0 10px 4px vars.$orange;
-    }
+    justify-content: flex-end;
+    margin-right: 2em;
   }
+    .button {
+      font-size: 1rem;
+      width: 120px;
+      height: 50px;
+    }
 
   .search-form {
     display: flex;
@@ -99,8 +89,8 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    margin: 1em auto 0;
-    max-width: 1200px;
+    margin: 1em auto 2em;
+    max-width: 1500px;
 
 
     .search-map {
@@ -110,8 +100,9 @@
       border-color: vars.$orange;
       box-shadow: 0 0 40px 40px vars.$orange inset, 0 0 0 0 vars.$orange;
       transition: all 150ms ease-in-out;
-      margin-bottom: 12em;
-      height: 700px;
+      height: 800px;
+      width: 50%;
+      margin: 2em 2em 0 0;
       
       &:hover {
         box-shadow: 0 0 10px 0 vars.$orange inset, 0 0 10px 4px vars.$orange;
@@ -122,8 +113,7 @@
       box-sizing: border-box;
       width: 50%;
       height: auto;
-      padding: 2em;
-      margin-bottom: 12em;
+      margin: 2em;
 
       .search-list-item {
         padding: 1em;

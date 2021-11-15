@@ -1,6 +1,8 @@
 import { UPDATE_FIELD } from 'src/actions/userActions';
 import {
+  EMPTY_DETAILS_ARTICLE,
   ARTICLE_ON_LOADING,
+  ARTICLE_DETAILS_ON_LOADING,
   GET_ARTICLE_LIST_SUCCESS,
   GET_ARTICLE_DETAILS_SUCCESS,
   POST_ADD_ARTICLE_SUCCESS,
@@ -15,6 +17,9 @@ export const initialState = {
   isLoading: false,
   isLoaded: false,
   addArticle: {
+    postAddIsLoading: false,
+    postAddIsLoaded: false,
+    id: 'initial state',
     title: '',
     date: '',
     place: '',
@@ -73,7 +78,21 @@ const reducer = (state = initialState, action = {}) => {
       }
       return state;
 
+    case EMPTY_DETAILS_ARTICLE:
+      return {
+        ...state,
+        addArticle: {
+          ...state.addArticle,
+          postAddIsLoading: false,
+        },
+      };
     case ARTICLE_ON_LOADING:
+      return {
+        ...state,
+        isLoading: true,
+      };
+
+    case ARTICLE_DETAILS_ON_LOADING:
       return {
         ...state,
         isLoading: true,
@@ -87,7 +106,19 @@ const reducer = (state = initialState, action = {}) => {
     case GET_ARTICLE_DETAILS_SUCCESS:
       return {
         ...state,
-        searchField: action.fieldValue,
+        responseApi: action.responseApi,
+        isLoading: false,
+        isLoaded: false,
+        addArticle: {
+          ...state.addArticle,
+          postAddIsLoading: true,
+          id: action.responseApi.id,
+          title: action.responseApi.title.rendered,
+          date: action.responseApi.meta.date,
+          place: action.responseApi.meta.place,
+          image: action.responseApi._embedded['wp:featuredmedia'][0].source_url,
+          story: action.responseApi.content.rendered,
+        },
       };
     case POST_ADD_ARTICLE_SUCCESS:
       return {
