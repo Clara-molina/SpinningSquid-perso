@@ -2,8 +2,14 @@
 
 .app {
   background: radial-gradient(ellipse at top, #242424 0%, #000000 80%);
-  min-height: 100vh;
+  min-height: 95vh;
+  max-height: auto;
   position: relative;
+}
+
+.main-container {
+  min-height: calc(100vh - 120px - 70px);
+  // padding-bottom: 100px;
 }
 
 

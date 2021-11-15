@@ -1,29 +1,29 @@
 /* eslint-disable import/no-extraneous-dependencies */
 // == Import
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Redirect } from 'react-router-dom';
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
+import { history } from 'src/store';
 import './styles.scss';
 
 // Import Containers
+import AddSale from 'src/containers/AddSale';
+import AddPost from 'src/containers/AddPost';
+import Community from 'src/containers/Community';
 import Connection from 'src/containers/Connection';
 import Contact from 'src/containers/Contact';
+import DetailsArticle from 'src/containers/DetailsArticle';
+import DetailsPost from 'src/containers/DetailsPost';
 import Header from 'src/containers/Header/';
 import Marketplace from 'src/containers/Marketplace';
 import NewsLetter from 'src/containers/NewsLetter';
 import Profile from 'src/containers/Profile';
 import SearchMap from 'src/containers/SearchMap';
+import SearchSkateResults from 'src/containers/SearchSkateResults';
 import SpotAdd from 'src/containers/SpotAdd';
+import SpotEdit from 'src/containers/SpotEdit';
 
 // Import Components
-import AddPost from 'src/components/Community/AddPost';
-import Community from 'src/components/Community';
-import DetailsArticle from 'src/components/Marketplace/DetailsArticle';
-import DetailsPost from 'src/components/Community/DetailsPost';
 import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
-import PostArticle from 'src/components/Marketplace/PostArticle';
-import SearchSkateResults from 'src/components/SearchSkateResults';
-
 import Loading from 'src/components/Loading';
 
 // Import page d'erreur
@@ -34,32 +34,40 @@ const App = (props) => {
   props.getLocalStorageDataToState();
   return (
     <div className="app">
-      <Router>
+      <Router history={history}>
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/trouve-ton-skatepark" component={SearchMap} />
+          <Route exact path="/trouve-ton-matos" component={Marketplace} />
+          <Route exact path="/communaute" component={Community} />
           <Route
             path="/trouve-ton-skatepark/ajoute-ton-spot"
             component={SpotAdd}
           />
           <Route
-            path="/trouve-ton-skatepark/resultat"
+            path="/trouve-ton-skatepark/modifie-ton-spot/:skateparkId"
+            component={SpotEdit}
+          />
+          <Route
+            path="/trouve-ton-skatepark/:resultat"
             component={SearchSkateResults}
           />
-          <Route exact path="/trouve-ton-matos" component={Marketplace} />
           <Route
-            exact
             path="/trouve-ton-matos/ajoute-ton-matos"
-            component={PostArticle}
+            component={AddSale}
           />
-          <Route path="/trouve-ton-matos/details" component={DetailsArticle} />
-          <Route exact path="/communaute" component={Community} />
-          <Route path="/communaute/details" component={DetailsPost} />
+          <Route path="/trouve-ton-matos/:saleId" component={DetailsArticle} />
+          <Route path="/communaute/:articleId" component={DetailsPost} />
           <Route path="/communaute/ajoute-ton-evenement" component={AddPost} />
+          <Route path="/communaute/modifie-ton-evenement" component={AddPost} />
           <Route path="/contact" component={Contact} />
           <Route exact path="/connexion">
-            {props.isLogged ? <Redirect to="/connexion/profil" /> : <Connection />}
+            {props.isLogged ? (
+              <Redirect to="/connexion/profil" />
+            ) : (
+              <Connection />
+            )}
           </Route>
           <Route exact path="/connexion/profil" component={Profile} />
           <Route path="/newsletter" component={NewsLetter} />

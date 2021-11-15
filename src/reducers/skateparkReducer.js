@@ -1,8 +1,16 @@
 import { UPDATE_FIELD } from 'src/actions/userActions';
 import {
-  GET_SKATEPARK_LIST_SUCCESS,
-  SUBMIT_ADD_SPOT_SUCCESS,
+  FILL_STATE,
   SKATEPARK_ON_LOADING,
+  UPDATE_LOCATION_ON_MAP,
+  RESET_LOCATION_ON_MAP,
+  SKATEPARK_DETAILS_ON_LOADING,
+  GET_SKATEPARK_LIST_SUCCESS,
+  GET_SKATEPARK_DETAILS_SUCCESS,
+  SUBMIT_ADD_SPOT_SUCCESS,
+  SUBMIT_UPDATE_SPOT_SUCCESS,
+  SUBMIT_DELETE_SPOT_SUCCESS,
+  GET_SKATEPARK_BY_CITY_SUCCESS,
 } from 'src/actions/skateparkActions';
 
 export const initialState = {
@@ -11,8 +19,14 @@ export const initialState = {
   responseAPI: {},
   isLoaded: false,
   isLoading: false,
+  locationOnMap: {
+    lat: 46.23219,
+    lng: 2.20966,
+  },
   skateparkToDisplay_Id: 'initial state showDetails',
   addSpot: {
+    spotAddIsLoading: false,
+    id: 'initial state',
     title: '',
     categorySkatepark: false,
     categoryPumptrack: false,
@@ -30,6 +44,7 @@ export const initialState = {
     benche: false,
     etatRadioBtn: 'initial etatRadioBtn value into state',
     uploadedImg: 'initial state',
+    imgNameToDisplay: 'No file chosen',
   },
 };
 
@@ -222,8 +237,80 @@ const reducer = (state = initialState, action = {}) => {
           },
         };
       }
+      if (action.fieldName === 'imgNameToDisplay') {
+        return {
+          ...state,
+          addSpot: {
+            ...state.addSpot,
+            imgNameToDisplay: action.fieldValue,
+          },
+        };
+      }
+      return state;
 
+    case SKATEPARK_ON_LOADING:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case UPDATE_LOCATION_ON_MAP:
+      return {
+        ...state,
+        locationOnMap: action.locationOnMap,
+      };
+    case RESET_LOCATION_ON_MAP:
+      return {
+        ...state,
+        locationOnMap: action.locationOnMap,
+      };
+    case RESET_LOCATION_ON_MAP:
+      return {
+        ...state,
+        locationOnMap: action.locationOnMap,
+      };
+    case SKATEPARK_DETAILS_ON_LOADING:
+      return {
+        ...state,
+        isLoading: true,
+      };
     case GET_SKATEPARK_LIST_SUCCESS:
+      return {
+        ...state,
+        responseAPI: action.responseAPI,
+        isLoaded: action.loaded,
+      };
+    case GET_SKATEPARK_DETAILS_SUCCESS:
+      // console.log(action.responseAPI);
+      return {
+        ...state,
+        responseAPI: action.responseAPI,
+        isLoading: false,
+        isLoaded: false,
+        addSpot: {
+          ...state.addSpot,
+          spotAddIsLoading: true,
+          id: action.responseAPI.id,
+          title: action.responseAPI.title.rendered,
+          categorySkatepark: action.responseAPI.meta.skatepark,
+          categoryPumptrack: action.responseAPI.meta.pumptrack,
+          categoryStreet: action.responseAPI.meta.streetspot,
+          street: action.responseAPI.meta.street,
+          postal: action.responseAPI.meta.zipcode,
+          town: action.responseAPI.meta.city,
+          latitude: action.responseAPI.meta.latitude,
+          longitude: action.responseAPI.meta.longitude,
+          parking: action.responseAPI.meta.parking,
+          water: action.responseAPI.meta.water,
+          trashcan: action.responseAPI.meta.trashcan,
+          lighting: action.responseAPI.meta.lighting,
+          table: action.responseAPI.meta.table,
+          benche: action.responseAPI.meta.benche,
+          etatRadioBtn: action.responseAPI.meta.state,
+          uploadedImg:
+            action.responseAPI._embedded['wp:featuredmedia'][0].source_url,
+        },
+      };
+    case GET_SKATEPARK_BY_CITY_SUCCESS:
       return {
         ...state,
         responseAPI: action.responseAPI,
@@ -234,11 +321,22 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         message: action.message_success,
       };
-    case SKATEPARK_ON_LOADING:
+    case SUBMIT_UPDATE_SPOT_SUCCESS:
       return {
         ...state,
-        isLoading: true,
+        message: action.message_success,
       };
+    case FILL_STATE:
+      return {
+        ...state,
+      };
+    //--------------------------------------------------------------
+    // à compléter
+    case SUBMIT_DELETE_SPOT_SUCCESS:
+      return {
+        ...state,
+      };
+    //-------------------------------------------------------------
     default:
       return state;
   }

@@ -4,6 +4,10 @@ import {
   SUCCESS_LOGOUT,
   FILL_STATE_USERDATA,
   SUCCESS_REGISTER,
+  GET_USER_INFO_SUCCESS,
+  GET_USER_SKATEPARK_SUCCESS,
+  GET_USER_ARTICLE_SUCCESS,
+  GET_USER_SALE_SUCCESS,
 } from 'src/actions/userActions';
 
 export const initialState = {
@@ -19,6 +23,8 @@ export const initialState = {
   usernameConnexion: '',
   passwordConnexion: '',
   profile: {
+    profileIsLoading: false,
+    userId: '',
     usernameEdit: 'initial state name',
     passwordEdit: 'initial state',
     emailEdit: 'initial state',
@@ -213,6 +219,50 @@ const reducer = (state = initialState, action = {}) => {
         street: '',
         postal: '',
         city: '',
+      };
+    case GET_USER_INFO_SUCCESS:
+      //console.log('case: GET_USER_INFO_SUCCESS');
+      //console.log(action.responseAPI[0]);
+      return {
+        ...state,
+        profile: {
+          ...state.profile,
+          profileIsLoading: true,
+          userId: action.responseAPI[0].id,
+          usernameEdit: action.responseAPI[0].meta.username,
+          passwordEdit: action.responseAPI[0].slug,
+          emailEdit: action.responseAPI[0].meta.email,
+          lastnameEdit: action.responseAPI[0].meta.lastname,
+          firstnameEdit: action.responseAPI[0].meta.firstname,
+          streetEdit: action.responseAPI[0].meta.street,
+          postalEdit: action.responseAPI[0].meta.zipcode,
+          cityEdit: action.responseAPI[0].meta.city,
+          avatarImage: action.responseAPI[0].meta.avatar,
+        },
+      };
+    case GET_USER_SKATEPARK_SUCCESS:
+      return {
+        ...state,
+        profile: {
+          ...state.profile,
+          responseAPIDataSkatepark: action.responseAPI,
+        },
+      };
+    case GET_USER_ARTICLE_SUCCESS:
+      return {
+        ...state,
+        profile: {
+          ...state.profile,
+          responseAPIDataArticle: action.responseAPI,
+        },
+      };
+    case GET_USER_SALE_SUCCESS:
+      return {
+        ...state,
+        profile: {
+          ...state.profile,
+          responseAPIDataSale: action.responseAPI,
+        },
       };
 
     default:

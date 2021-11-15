@@ -1,7 +1,7 @@
 import './contact.scss';
 
 const Contact = (props) => (
-  <div className="contact">
+  <div className="contact main-container">
     <h1 className="contact-title">Que puis-je pour toi jeune skateur ?</h1>
     <div className="contact-container">
       <img className="contact-image" alt="" src={props.logo} />
@@ -28,11 +28,10 @@ const Contact = (props) => (
           type="email"
         />
         <label className="contact-label"> Message</label>
-        <input
+        <textarea
           id="message"
           onChange={props.handleChange}
           className="contact-input-message"
-          type="text"
         />
 
         <button className="contact-button" type="submit">

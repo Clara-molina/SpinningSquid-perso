@@ -1,10 +1,15 @@
+import Loading from 'src/components/Loading';
 import { Link } from 'react-router-dom';
 import PostList from './PostList';
 import './community.scss';
 
-const Community = ({ eventList = [] }) => {
+const Community = (props) => {
+  if (!props.isLoading) {
+    props.callArticleApiGet();
+    props.setOnLoading();
+  }
   return (
-    <div id="community">
+    <div id="community" className="main-container">
       <div className="community-header">
         <div>
           <h2 className="title community-title">Whassup ?!</h2>
@@ -12,11 +17,20 @@ const Community = ({ eventList = [] }) => {
       </div>
       <div className="community-post">
         <Link to="/communaute/ajoute-ton-evenement">
-          <button className="button">Proposer évenment</button>
+          <button type="button" className="button">Proposer un évènement</button>
         </Link>
       </div>
-      <PostList />
-      <div className="shadowDiv"></div>
+
+      {!props.isLoaded && (
+        <>
+          <div className="community-loading-wheel">
+            <div className="loading-wheel">
+              <Loading color={'#FF8552'} />
+            </div>
+          </div>
+        </>
+      )}
+      {props.isLoaded && <PostList itemList={props.responseApi} />}
     </div>
   );
 };

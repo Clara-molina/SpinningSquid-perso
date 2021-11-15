@@ -2,10 +2,16 @@ import { connect } from 'react-redux';
 import returnBase64Img from 'src/generic_functions';
 
 import Profile from 'src/components/Profile';
-import { updateField, submitUpdateProfile, checkUserUpdateProfile } from 'src/actions/userActions';
+import {
+  updateField,
+  submitUpdateProfile,
+  checkUserUpdateProfile,
+  getUserDataProfile,
+} from 'src/actions/userActions';
 
 const mapStateToProps = (state) => ({
-  usernameConnection: state.user.usernameConnexion,
+  profileIsLoading: state.user.profile.profileIsLoading,
+  usernameConnection: state.user.profile.usernameEdit,
   usernameEdit: state.user.profile.usernameEdit,
   passwordEdit: state.user.profile.passwordEdit,
   lastnameEdit: state.user.profile.lastnameEdit,
@@ -38,9 +44,8 @@ const mapDispatchToProps = (dispatch) => ({
     console.log('commande envoyée');
   },
   handleCheckUserUpdateProfile: (event) => {
-    console.log('essai');
-    event.preventDefault();
-    dispatch(checkUserUpdateProfile());
+    //console.log('essai');
+    dispatch(getUserDataProfile());
   },
   handleSubmitUpdateProfile: (event) => {
     event.preventDefault();
