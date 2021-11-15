@@ -1,3 +1,4 @@
+export const EMPTY_DETAILS_ARTICLE = 'EMPTY_DETAILS_ARTICLE';
 export const GET_ARTICLE_LIST = 'GET_ARTICLE_LIST';
 export const GET_ARTICLE_LIST_SUCCESS = 'GET_ARTICLE_LIST_SUCCESS';
 export const GET_ARTICLE_DETAILS = 'GET_ARTICLE_DETAILS';
@@ -13,6 +14,9 @@ export const ARTICLE_DETAILS_ON_LOADING = 'ARTICLE_DETAILS_ON_LOADING';
 
 //------------------------------------------------------------
 // à compléter
+export const emptyDetailsArticle = () => ({
+  type: EMPTY_DETAILS_ARTICLE,
+});
 export const callGetArticleList = () => ({
   type: GET_ARTICLE_LIST,
 });

@@ -8,10 +8,13 @@ export const initialState = {
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case UPDATE_FIELD:
-      if (action.fieldName === 'email') {
+      if (action.fieldName === 'newsletteremail') {
         return {
           ...state,
-          firstname: action.fieldValue,
+          newsletter: {
+            ...state.newsletter,
+            email: action.fieldValue,
+          },
         };
       }
 
