@@ -107,22 +107,22 @@ const reducer = (state = initialState, action = {}) => {
         responseApi: action.responseApi,
         isLoaded: action.loaded,
       };
-    case GET_MARKETPLACE_ARTICLE_DETAILS_SUCCESS:
-      return {
-        ...state,
-        addSale: {
-          ...state.addSale,
-          responseApi: action.responseApi,
-          detailsArticleIsLoaded: action.loaded,
-        },
-      };
+    // case GET_MARKETPLACE_ARTICLE_DETAILS_SUCCESS:
+    //   return {
+    //     ...state,
+    //     addSale: {
+    //       ...state.addSale,
+    //       responseApi: action.responseApi,
+    //       detailsArticleIsLoaded: action.loaded,
+    //     },
+    //   };
 
     case GET_MARKETPLACE_ARTICLE_DETAILS_SUCCESS:
       return {
         ...state,
         responseApi: action.responseApi,
         isLoading: false,
-        isLoaded: true,
+        isLoaded: false,
         addSale: {
           ...state.addSale,
           saleAddIsLoading: true,

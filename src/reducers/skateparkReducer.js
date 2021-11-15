@@ -273,7 +273,8 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         responseAPI: action.responseAPI,
-        isLoaded: true,
+        isLoading: false,
+        isLoaded: false,
         addSpot: {
           ...state.addSpot,
           spotAddIsLoading: true,
@@ -294,9 +295,9 @@ const reducer = (state = initialState, action = {}) => {
           table: action.responseAPI.meta.table,
           benche: action.responseAPI.meta.benche,
           etatRadioBtn: action.responseAPI.meta.state,
-          uploadedImg: action.responseAPI._embedded['wp:featuredmedia'][0].source_url,
+          uploadedImg:
+            action.responseAPI._embedded['wp:featuredmedia'][0].source_url,
         },
-
       };
     case GET_SKATEPARK_BY_CITY_SUCCESS:
       return {

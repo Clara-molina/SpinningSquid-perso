@@ -98,7 +98,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         responseApi: action.responseApi,
         isLoading: false,
-        isLoaded: true,
+        isLoaded: false,
         addArticle: {
           ...state.addArticle,
           postAddIsLoading: true,
