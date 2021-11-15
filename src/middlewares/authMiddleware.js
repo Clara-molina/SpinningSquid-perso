@@ -17,8 +17,10 @@ import {
   successRegister,
   SUBMIT_REGISTER,
   SUBMIT_UPDATE_PROFILE,
+  SUBMIT_DELETE_PROFILE,
 } from 'src/actions/userActions';
 import { baseURIUser, baseSpinningSquid, baseURI } from 'src/routesBack';
+import { push, goForward } from 'connected-react-router';
 
 const authMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -81,6 +83,7 @@ const authMiddleware = (store) => (next) => (action) => {
             window.alert(
               `
               Inscription réussie!
+              Connectez-vous.
               `
             );
           }
@@ -201,6 +204,41 @@ const authMiddleware = (store) => (next) => (action) => {
             Bisous.
             `
           );
+          store.dispatch(push('/connexion'));
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+
+      break;
+    case SUBMIT_DELETE_PROFILE:
+      console.log('Renseigner path update profile dans la requete axios');
+      const options_Delete = {
+        headers: {
+          Authorization:
+            'Bearer ' + JSON.parse(localStorage.getItem('userData')).token,
+        },
+      };
+      axios
+        .post(
+          baseSpinningSquid + '/user-delete',
+          {
+            //id: store.getState().user.profile.userId,
+          },
+          options_Delete
+        )
+        .then((response) => {
+          console.log('response from API : ');
+          console.log(response);
+          window.alert(
+            `
+            La modification de votre profil a bien été enregistrée.
+            Rendez-vous dans la page de votre Profil pour
+            voir les modifications.
+            Bisous.
+            `
+          );
+          store.dispatch(push('/connexion'));
         })
         .catch((error) => {
           console.warn(error);

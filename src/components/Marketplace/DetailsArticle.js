@@ -1,6 +1,5 @@
 const DetailsArticle = (props) => {
-
-  if (!props.saleAddIsLoading) {
+  if (!props.saleAddIsLoading || props.detailsNotMatching) {
     // console.log(props.saleId);
     props.getSaleDetails(props.saleId);
     props.setOnLoadingSale();
