@@ -33,11 +33,20 @@ const ArticleList = (list) => {
           <img src={getImageURL()} alt="" />
         </div>
         <div>
-          <Link to={urlDetailSale}>
-            <button className="button" type="button">
-              Voir
-            </button>
-          </Link>
+          {list.isLogged && (
+            <Link to={urlDetailSale}>
+              <button className="button" type="button">
+                Voir
+              </button>
+            </Link>
+          )}
+          {!list.isLogged && (
+            <Link to="/connexion">
+              <button className="button" type="button">
+                Voir
+              </button>
+            </Link>
+          )}
         </div>
       </article>
     );
