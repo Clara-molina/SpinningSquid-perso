@@ -79,15 +79,18 @@ const SearchList = (list) => {
               ? 'PumpTrack'
               : 'SkatePark'}
         </h3>
-        <button
-        className="search-list-button button"
-        onClick={updateMap}
-        >
+
+        <div className="buttonflex">
+          <button
+          className="search-list-button button linkbutton"
+          onClick={updateMap}
+          >
           Voir
-        </button>
-        <button className="button">
+          </button>
+        <button className="button linkbutton">
         <Link to={urlDetailSkatepark}>Details</Link>
         </button>
+        </div>
       </article>
 
     );
