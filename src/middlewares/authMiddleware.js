@@ -41,6 +41,9 @@ const authMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.warn(error);
+          window.alert(`
+          Votre nom utilisateur et/ou votre mot de passe est incorrect.
+          `);
         });
 
       break;
@@ -73,93 +76,90 @@ const authMiddleware = (store) => (next) => (action) => {
         });
 
       break;
-      case CHECK_USER:
-        //console.log(JSON.parse(localStorage.getItem('userData')).token);
-        const options = {
-          headers: {
-            Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('userData')).token
-          }
-        };
-        axios
-          .post(baseURIUser + '/token/validate', 
-          null,
-          options)
-          .then((response) => {
-            //console.log('response from API : ');
-            //console.log(response.data);
-          })
-          .catch((error) => {
-            console.warn(error);
-          });
-  
-        break;
-      case GET_USER_INFO:
-        
-        const userVar = JSON.parse(localStorage.getItem('userData')).user_display_name; //username localstorage
-        //console.log(userVar);
-        axios
-          .get(baseURI + '/users?slug=' + userVar,)
-          .then((response) => {
-            //console.log('response from API : ');
-            //console.log(response.data);
-            store.dispatch(getUserDataProfileSuccess(response.data));
-            store.dispatch(getUserDataSkatepark(response.data));
-            store.dispatch(getUserDataArticle(response.data));
-            store.dispatch(getUserDataSale(response.data));
-          })
-          .catch((error) => {
-            console.warn(error);
-          });
-  
-        break;
-      case GET_USER_SKATEPARK:
-        
-        const user_skatepark = store.getState().user.profile.userId;
-        //console.log(user_skatepark);
-        axios
-          .get(baseURI + "/skatepark?author="+user_skatepark,)
-          .then((response) => {
-            console.log('response from API : ');
-            console.log(response);
-            store.dispatch(getUserDataSkateparkSuccess(response.data));
-          })
-          .catch((error) => {
-            console.warn(error);
-          });
-  
-        break;
-      case GET_USER_ARTICLE:
-        
-        const user_article = store.getState().user.profile.userId;
-        console.log(user_article);
-        axios
-          .get(baseURI + "/article?author="+user_article,)
-          .then((response) => {
-            console.log('response from API : ');
-            console.log(response);
-            store.dispatch(getUserDataArticleSuccess(response.data));
-          })
-          .catch((error) => {
-            console.warn(error);
-          });
-  
-        break;
-      case GET_USER_SALE:
-        
-        const user_sale = store.getState().user.profile.userId;
-        console.log(user_sale);
-        axios
-          .get(baseURI + "/article?author="+user_sale,)
-          .then((response) => {
-            console.log('response from API : ');
-            console.log(response);
-            store.dispatch(getUserDataSaleSuccess(response.data));
-          })
-          .catch((error) => {
-            console.warn(error);
-          });
-  
-        break;
+    case CHECK_USER:
+      //console.log(JSON.parse(localStorage.getItem('userData')).token);
+      const options = {
+        headers: {
+          Authorization:
+            'Bearer ' + JSON.parse(localStorage.getItem('userData')).token,
+        },
+      };
+      axios
+        .post(baseURIUser + '/token/validate', null, options)
+        .then((response) => {
+          //console.log('response from API : ');
+          //console.log(response.data);
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+
+      break;
+    case GET_USER_INFO:
+      const userVar = JSON.parse(
+        localStorage.getItem('userData')
+      ).user_display_name; //username localstorage
+      //console.log(userVar);
+      axios
+        .get(baseURI + '/users?slug=' + userVar)
+        .then((response) => {
+          //console.log('response from API : ');
+          //console.log(response.data);
+          store.dispatch(getUserDataProfileSuccess(response.data));
+          store.dispatch(getUserDataSkatepark(response.data));
+          store.dispatch(getUserDataArticle(response.data));
+          store.dispatch(getUserDataSale(response.data));
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+
+      break;
+    case GET_USER_SKATEPARK:
+      const user_skatepark = store.getState().user.profile.userId;
+      //console.log(user_skatepark);
+      axios
+        .get(baseURI + '/skatepark?author=' + user_skatepark)
+        .then((response) => {
+          console.log('response from API : ');
+          console.log(response);
+          store.dispatch(getUserDataSkateparkSuccess(response.data));
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+
+      break;
+    case GET_USER_ARTICLE:
+      const user_article = store.getState().user.profile.userId;
+      console.log(user_article);
+      axios
+        .get(baseURI + '/article?author=' + user_article)
+        .then((response) => {
+          console.log('response from API : ');
+          console.log(response);
+          store.dispatch(getUserDataArticleSuccess(response.data));
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+
+      break;
+    case GET_USER_SALE:
+      const user_sale = store.getState().user.profile.userId;
+      console.log(user_sale);
+      axios
+        .get(baseURI + '/article?author=' + user_sale)
+        .then((response) => {
+          console.log('response from API : ');
+          console.log(response);
+          store.dispatch(getUserDataSaleSuccess(response.data));
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+
+      break;
     case SUBMIT_UPDATE_PROFILE:
       console.log('Renseigner path update profile dans la requete axios');
       axios

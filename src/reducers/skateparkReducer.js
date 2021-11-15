@@ -3,6 +3,7 @@ import {
   FILL_STATE,
   SKATEPARK_ON_LOADING,
   UPDATE_LOCATION_ON_MAP,
+  RESET_LOCATION_ON_MAP,
   SKATEPARK_DETAILS_ON_LOADING,
   GET_SKATEPARK_LIST_SUCCESS,
   GET_SKATEPARK_DETAILS_SUCCESS,
@@ -253,6 +254,16 @@ const reducer = (state = initialState, action = {}) => {
         isLoading: true,
       };
     case UPDATE_LOCATION_ON_MAP:
+      return {
+        ...state,
+        locationOnMap: action.locationOnMap,
+      };
+    case RESET_LOCATION_ON_MAP:
+      return {
+        ...state,
+        locationOnMap: action.locationOnMap,
+      };
+    case RESET_LOCATION_ON_MAP:
       return {
         ...state,
         locationOnMap: action.locationOnMap,

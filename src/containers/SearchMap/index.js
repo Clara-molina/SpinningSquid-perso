@@ -7,6 +7,7 @@ import {
   setOnLoadingStatus,
   getSkateparkByCity,
   updateLocationOnMap,
+  resetLocationOnMap,
 } from 'src/actions/skateparkActions';
 import SearchMap from 'src/components/SearchMap';
 
