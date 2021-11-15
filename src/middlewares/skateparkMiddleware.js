@@ -84,7 +84,7 @@ const skateparkMiddleware = (store) => (next) => (action) => {
 
     case GET_SKATEPARK_BY_CITY:
       const endPointSkateparkByCity =
-        'http://romain-talbot.vpnuser.lan/SpinningSquad_Apotheose/projet-skatepark/public/wp-json/wp/v2/skatepark/?meta_key=city&meta_value=' +
+        baseURI + '/skatepark/?meta_key=city&meta_value=' +
         store.getState().skatepark.searchFieldTown;
       console.log(store.getState().skatepark.searchFieldTown);
       axios
