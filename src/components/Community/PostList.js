@@ -27,7 +27,7 @@ const PostList = () => (
         <div className="description-link">
           <Link to="/communaute/details">
             <button type="button" className="button">
-              lire plus <span>&#10148;</span>
+              Lire plus <span>&#10148;</span>
             </button>
           </Link>
         </div>

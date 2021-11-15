@@ -9,7 +9,7 @@ import logo from 'src/assets/img/logo1.png';
 import './home.scss';
 
 const Home = () => (
-  <div className="home-container main-container">
+  <div className="home-container main-containerw">
     <h1 className="home-title">Spinning Squid</h1>
     <img className="home-logo" src={logo} alt="logo spinning squid" />
     <img className="home-image" src={imageHome} alt="skatepark" />

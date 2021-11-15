@@ -80,12 +80,14 @@ const SearchList = (list) => {
               : 'SkatePark'}
         </h3>
         <button
-        className="search-list-button"
+        className="search-list-button button"
         onClick={updateMap}
         >
           Voir
         </button>
-        <Link to={urlDetailSkatepark}>details</Link>
+        <button className="button">
+        <Link to={urlDetailSkatepark}>Details</Link>
+        </button>
       </article>
 
     );

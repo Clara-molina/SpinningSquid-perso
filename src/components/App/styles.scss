@@ -11,3 +11,25 @@
   min-height: calc(100vh - 120px - 70px);
   padding-bottom: 100px;
 }
+
+.button {
+
+  height: 30px;
+    width: 130px;
+    background-color: vars.$orange;
+    border-radius: 12px;
+    border: solid 1px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Righteous';
+    color: black;
+    border-color: 1px solid black;
+    box-shadow: 0 0 40px 40px vars.$orange inset, 0 0 0 0 vars.$orange;
+    transition: all 150ms ease-in-out;
+  
+    &:hover {
+      box-shadow: 0 0 10px 0 vars.$orange inset, 0 0 10px 4px vars.$orange;
+    }
+}
