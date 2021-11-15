@@ -12,7 +12,7 @@ import {
 
 export const initialState = {
   articleList: ['un', 'deux', 'trois'],
-  searchField: 'marketplaceField initial state',
+  searchFieldSale: 'marketplaceField initial state',
   responseApi: {},
   isLoading: false,
   isLoaded: false,
@@ -33,7 +33,7 @@ const reducer = (state = initialState, action = {}) => {
       if (action.fieldName === 'marketplace-search') {
         return {
           ...state,
-          searchField: action.fieldValue,
+          searchFieldSale: action.fieldValue,
         };
       }
       if (action.fieldName === 'addSaleTitle') {
@@ -99,6 +99,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         responseApi: action.responseApi,
+        isLoaded: action.loaded,
       };
 
     case GET_MARKETPLACE_INITIAL_LIST_SUCCESS:
