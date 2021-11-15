@@ -30,9 +30,11 @@ $orange: #ff8552;
   justify-content: center;
   font-family: 'Righteous';
   color: black;
-  border-color: $orange;
-  box-shadow: 0 0 40px 40px $orange inset, 0 0 0 0 $orange;
-  transition: all 150ms ease-in-out;
+  border-color: 1px solid black;
+box-shadow: 0 0 40px 40px $orange inset, 0 0 0 0 $orange;
+transition: all 150ms ease-in-out;
+padding: 1px !important;
+
 
   &:hover {
     box-shadow: 0 0 10px 0 $orange inset, 0 0 10px 4px $orange;

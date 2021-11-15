@@ -34,7 +34,7 @@ const Contact = (props) => (
           className="contact-input-message"
         />
 
-        <button className="contact-button" type="submit">
+        <button className="contact-button button" type="submit">
           Envoyer
         </button>
       </form>
