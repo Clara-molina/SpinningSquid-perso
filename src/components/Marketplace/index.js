@@ -35,7 +35,7 @@ const Marketplace = (props) => {
               name="search"
               placeholder="Skateboard, roulement ..."
               required
-              onChange={props.handleOnChange}
+              onChange={props.searchFieldTitle}
             />
           </label>
           {/* <label htmlFor="marketplace-search-where">Ou ?
