@@ -64,7 +64,7 @@ const Marketplace = (props) => {
           </div>
         </>
       )}
-      {props.isLoaded && <ArticleList itemList={props.responseApi} />}
+      {props.isLoaded && <ArticleList isLogged={props.isLogged} itemList={props.responseApi} />}
     </div>
   );
 };
