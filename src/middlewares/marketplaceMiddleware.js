@@ -121,6 +121,8 @@ const marketplaceMiddleware = (store) => (next) => (action) => {
             Bisous.
             `
           );
+          store.dispatch(push('/trouve-ton-matos'));
+          location.reload();
         })
         .catch((error) => {
           console.warn(error);
