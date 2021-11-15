@@ -10,6 +10,8 @@ import SearchSkateResults from 'src/components/SearchSkateResults';
 const mapStateToProps = (state, ownProps) => {
   //console.log(ownProps);
   return {
+    detailsNotMatching:
+      ownProps.match.params.resultat != state.skatepark.addSpot.id,
     skateparkName: ownProps.match.params.resultat,
     isLoaded: state.skatepark.addSpot.spotAddIsLoaded,
     isLoading: state.skatepark.addSpot.spotAddIsLoading,

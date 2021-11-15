@@ -8,6 +8,8 @@ import DetailsArticle from '../../components/Marketplace/DetailsArticle';
 const mapStateToProps = (state, ownProps) => {
   console.log(ownProps);
   return {
+    detailsNotMatching:
+      ownProps.match.params.saleId != state.marketplace.addSale.id,
     saleId: ownProps.match.params.saleId,
     isLoaded: state.marketplace.isLoaded,
     saleAddIsLoading: state.marketplace.addSale.saleAddIsLoading,
