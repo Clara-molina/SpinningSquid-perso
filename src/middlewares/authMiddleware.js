@@ -87,7 +87,6 @@ const authMiddleware = (store) => (next) => (action) => {
               `
             );
           }
-
           const clearInput = successRegister();
           store.dispatch(clearInput);
         })

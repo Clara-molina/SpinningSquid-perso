@@ -15,9 +15,16 @@ const Marketplace = (props) => {
       <div className="search">
         <h2 className="title search-title">Trouve ton Matos</h2>
         <div className="marketplace-post">
-          <Link to="/trouve-ton-matos/ajoute-ton-matos">
-            <button type="button" className="button">Poster une annonce</button>
-          </Link>
+          {props.isLogged && (
+            <Link to="/trouve-ton-matos/ajoute-ton-matos">
+              <button type="button" className="button">Poster une annonce</button>
+            </Link>
+          )}
+          {!props.isLogged && (
+            <Link to="/connexion">
+              <button type="button" className="button">Poster une annonce</button>
+            </Link>
+          )}
         </div>
         <form className="marketplace-form" onSubmit={props.submitArticleSearch}>
           <label htmlFor="marketplace-search">Recherche
@@ -57,7 +64,7 @@ const Marketplace = (props) => {
           </div>
         </>
       )}
-      {props.isLoaded && <ArticleList itemList={props.responseApi} />}
+      {props.isLoaded && <ArticleList isLogged={props.isLogged} itemList={props.responseApi} />}
     </div>
   );
 };
