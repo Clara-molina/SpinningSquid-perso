@@ -11,9 +11,11 @@ const SearchMap = (props) => {
   return (
     <div className="search">
       <h1 className="search-title">Trouve ton SkatePark</h1>
-      <button className="button-addspot" type="button">
-        <Link to="/trouve-ton-skatepark/ajoute-ton-spot">Ajoute ton spot!</Link>
-      </button>
+      <div className="button-addspot">
+        <button className="button" type="button">
+          <Link to="/trouve-ton-skatepark/ajoute-ton-spot">Ajoute ton spot!</Link>
+        </button>
+      </div>
 
       <form className="search-form" onSubmit={props.submitSkateparkSearch}>
         <label className="search-label">
