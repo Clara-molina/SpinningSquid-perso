@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import logo2 from 'src/assets/img/logo2.png';
 
-const ArticleList = (list) => {
+const ArticleList = (list, isLogged) => {
   console.log('test' + list.itemList);
 
   const mappingArticles = list.itemList.map((item) => {
@@ -33,11 +33,20 @@ const ArticleList = (list) => {
           <img src={getImageURL()} alt="" />
         </div>
         <div>
-          <Link to={urlDetailSale}>
-            <button className="button" type="button">
-              Voir
-            </button>
-          </Link>
+          {isLogged && (
+            <Link to={urlDetailSale}>
+              <button className="button" type="button">
+                Voir
+              </button>
+            </Link>
+          )}
+          {!isLogged && (
+            <Link to="/connexion">
+              <button className="button" type="button">
+                Voir
+              </button>
+            </Link>
+          )}
         </div>
       </article>
     );

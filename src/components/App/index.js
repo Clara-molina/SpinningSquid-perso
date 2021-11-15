@@ -38,12 +38,23 @@ const App = (props) => {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/connexion">
+            {props.isLogged ? (
+              <Redirect to="/connexion/profil" />
+            ) : (
+              <Connection />
+            )}
+          </Route>
           <Route exact path="/trouve-ton-skatepark" component={SearchMap} />
           <Route exact path="/trouve-ton-matos" component={Marketplace} />
           <Route exact path="/communaute" component={Community} />
           <Route
             path="/trouve-ton-skatepark/ajoute-ton-spot"
             component={SpotAdd}
+          />
+          <Route
+            path="/trouve-ton-matos/ajoute-ton-matos"
+            component={AddSale}
           />
           <Route
             path="/trouve-ton-skatepark/modifie-ton-spot/:skateparkId"
@@ -53,23 +64,12 @@ const App = (props) => {
             path="/trouve-ton-skatepark/:resultat"
             component={SearchSkateResults}
           />
-          <Route
-            path="/trouve-ton-matos/ajoute-ton-matos"
-            component={AddSale}
-          />
           <Route path="/trouve-ton-matos/:saleId" component={DetailsArticle} />
-          <Route path="/communaute/:articleId" component={DetailsPost} />
           <Route path="/communaute/ajoute-ton-evenement" component={AddPost} />
           <Route path="/communaute/modifie-ton-evenement" component={AddPost} />
+          <Route path="/communaute/:articleId" component={DetailsPost} />
+          <Route path="/connexion/profil" component={Profile} />
           <Route path="/contact" component={Contact} />
-          <Route exact path="/connexion">
-            {props.isLogged ? (
-              <Redirect to="/connexion/profil" />
-            ) : (
-              <Connection />
-            )}
-          </Route>
-          <Route exact path="/connexion/profil" component={Profile} />
           <Route path="/newsletter" component={NewsLetter} />
           <Route path="/loading" component={Loading} />
           <Route component={NotFound} />
