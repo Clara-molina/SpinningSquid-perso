@@ -84,7 +84,8 @@ const skateparkMiddleware = (store) => (next) => (action) => {
 
     case GET_SKATEPARK_BY_CITY:
       const endPointSkateparkByCity =
-        baseURI + '/skatepark/?meta_key=city&meta_value=' +
+        baseURI +
+        '/skatepark/?meta_key=city&meta_value=' +
         store.getState().skatepark.searchFieldTown;
       console.log(store.getState().skatepark.searchFieldTown);
       axios
@@ -152,6 +153,7 @@ const skateparkMiddleware = (store) => (next) => (action) => {
             Bisous.
             `
           );
+          store.dispatch(push('/trouve-ton-skatepark'));
         })
         .catch((error) => {
           console.warn(error);
@@ -248,35 +250,42 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       break;
 
     case SUBMIT_DELETE_SPOT:
-      // const endPointDelete_Spot = '';
-      // console.log(JSON.parse(localStorage.getItem('userData')).token);
-      // const options_DELETE = {
-      //   headers: {
-      //     Authorization:
-      //       'Bearer ' + JSON.parse(localStorage.getItem('userData')).token,
-      //   },
-      // };
-      // console.log('on y passe youpi');
-      // axios
-      //   .post(baseSpinningSquid + endPointAdd_Spot, {}, options_DELETE)
-      //   .then((response) => {
-      //     console.log('response from API : ');
-      //     console.log(response);
-      //     store.dispatch(
-      //       successSubmitDeleteSpot(
-      //         'a remplacer par kekchose ou pas dans skateparkMiddleware'
-      //       )
-      //     );
-      //     window.alert(
-      //       `
-      //           L'ajout de skatepark a bien été enregistré.
-      //           Bisous.
-      //           `
-      //     );
-      //   })
-      //   .catch((error) => {
-      //     console.warn(error);
-      //   });
+      const endPointDelete_Spot = '/skatepark-delete';
+      //console.log(JSON.parse(localStorage.getItem('userData')).token);
+      const options_DELETE = {
+        headers: {
+          Authorization:
+            'Bearer ' + JSON.parse(localStorage.getItem('userData')).token,
+        },
+      };
+      console.log('on y passe youpi');
+      axios
+        .post(
+          baseSpinningSquid + endPointDelete_Spot,
+          {
+            id: store.getState().skatepark.addSpot.id,
+          },
+          options_DELETE
+        )
+        .then((response) => {
+          console.log('response from API : ');
+          console.log(response);
+          store.dispatch(
+            successSubmitDeleteSpot(
+              'a remplacer par kekchose ou pas dans skateparkMiddleware'
+            )
+          );
+          window.alert(
+            `
+                Le skatepark a bien été supprimé.
+                Bisous.
+                `
+          );
+          store.dispatch(push('/trouve-ton-skatepark'));
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
       console.log('on passe dans skateparkMiddleware');
       store.dispatch(
         successSubmitDeleteSpot(

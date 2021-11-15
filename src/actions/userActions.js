@@ -11,6 +11,7 @@ export const FILL_STATE_USERDATA = 'FILL_STATE_USERDATA';
 export const UPDATE_FIELD = 'UPDATE_FIELD';
 export const SUBMIT_LOGIN = 'SUBMIT_LOGIN';
 export const SUBMIT_UPDATE_PROFILE = 'SUBMIT_UPDATE_PROFILE';
+export const SUBMIT_DELETE_PROFILE = 'SUBMIT_DELETE_PROFILE';
 export const SUBMIT_REGISTER = 'SUBMIT_REGISTER';
 export const SUCCESS_LOGIN = 'SUCCESS_LOGIN';
 export const SUCCESS_LOGOUT = 'SUCCESS_LOGOUT';
@@ -50,7 +51,7 @@ export const successRegister = (
   firstname,
   street,
   postal,
-  city,
+  city
 ) => ({
   type: SUCCESS_REGISTER,
   isLogged: isLogged,
@@ -74,6 +75,9 @@ export const submitRegister = () => ({
 
 export const submitUpdateProfile = () => ({
   type: SUBMIT_UPDATE_PROFILE,
+});
+export const submitDeleteProfile = () => ({
+  type: SUBMIT_DELETE_PROFILE,
 });
 export const checkUserUpdateProfile = () => ({
   type: CHECK_USER,

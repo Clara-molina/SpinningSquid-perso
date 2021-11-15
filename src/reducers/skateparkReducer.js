@@ -26,6 +26,7 @@ export const initialState = {
   skateparkToDisplay_Id: 'initial state showDetails',
   addSpot: {
     spotAddIsLoading: false,
+    spotAddIsLoaded: false,
     id: 'initial state',
     title: '',
     categorySkatepark: false,
@@ -288,7 +289,8 @@ const reducer = (state = initialState, action = {}) => {
         isLoaded: false,
         addSpot: {
           ...state.addSpot,
-          spotAddIsLoading: true,
+          spotAddIsLoading: !state.addSpot.isLoading,
+          spotAddIsLoaded: !state.addSpot.isLoaded,
           id: action.responseAPI.id,
           title: action.responseAPI.title.rendered,
           categorySkatepark: action.responseAPI.meta.skatepark,
