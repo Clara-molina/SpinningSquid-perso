@@ -2,13 +2,14 @@
 
 .contact {
   font-family: 'Righteous';
+
   .contact-title {
     color: vars.$white;
     text-align: center;
     padding: 1em;
     font-size: 2em;
     height: 100px;
-    margin-bottom: 1em;
+    margin-bottom: 3em;
   }
 
   .contact-container {
@@ -29,6 +30,7 @@
       .contact-input {
         display: flex;
         width: 100%;
+        margin-bottom: 1em;
       }
 
       .contact-input-message {

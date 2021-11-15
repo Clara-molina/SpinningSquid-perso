@@ -8,7 +8,7 @@ const SpotAdd = (props) => {
     fileChosen.textContent = event.target.files[0].name;
   };
   return (
-    <div className="spotadd-container">
+    <div className="spotadd-container main-container">
       <h2 className="title">Ajoute ton Spot</h2>
 
       <form className="spotadd-form" onSubmit={props.handleSubmitAddPost}>
@@ -90,6 +90,7 @@ const SpotAdd = (props) => {
             id="addSpotlongitude"
             className="spotadd-input"
             type="number"
+            step="0.00001"
             name="longitude"
             placeholder="longitude"
             required
@@ -99,6 +100,7 @@ const SpotAdd = (props) => {
             id="addSpotlatitude"
             className="spotadd-input"
             type="number"
+            step="0.00001"
             name="latitude"
             placeholder="latitude"
             required
@@ -185,7 +187,7 @@ const SpotAdd = (props) => {
             className="spotadd-input-image"
             type="file"
             name="image"
-            accept="image/png, image/jpeg"
+            accept="image/png, image/jpeg, image/jpg"
             multiple
             required
             onChange={transfer}

@@ -9,8 +9,9 @@
 
 .main-container {
   min-height: calc(100vh - 120px - 70px);
-  padding-bottom: 100px;
+  // padding-bottom: 100px;
 }
+
 
 .button {
 
@@ -33,3 +34,4 @@
       box-shadow: 0 0 10px 0 vars.$orange inset, 0 0 10px 4px vars.$orange;
     }
 }
+

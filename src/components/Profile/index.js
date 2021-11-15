@@ -4,8 +4,11 @@ import Popup from 'reactjs-popup';
 import { Link } from 'react-router-dom';
 
 const Profile = (props) => {
+  if (!props.profileIsLoading) {
+    props.handleCheckUserUpdateProfile();
+  }
   return (
-    <div className="profile">
+    <div className="profile main-container">
       <h1 className="profile-title">Bienvenue {props.usernameConnection}</h1>
 
       <div className="profile-container">
@@ -154,6 +157,7 @@ const Profile = (props) => {
           <h2 className="profile-articles-title">Titre de l'annonce 2</h2>
         </Link>
       </div>
+      <button onClick={props.handleDelete}>Supprimer compte</button>
     </div>
   );
 };

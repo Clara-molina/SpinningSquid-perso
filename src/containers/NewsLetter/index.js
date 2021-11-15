@@ -12,7 +12,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   handleChange: (event) => {
-    dispatch(updateField(event.target.id, event.target.value));
+    dispatch(updateField('newsletter' + event.target.id, event.target.value));
   },
   submitNewsLetter: (event) => {
     event.preventDefault();

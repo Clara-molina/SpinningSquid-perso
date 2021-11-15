@@ -6,7 +6,7 @@ import avatar from 'src/assets/img/logo2.png';
 import './header.scss';
 import { resetStorage } from '../../generic_functions';
 
-const Header = ({ handleCheckUserUpdateProfile ,isLogged, handleLogout }) => (
+const Header = ({ handleCheckUserUpdateProfile, isLogged, handleLogout }) => (
 
   <nav className="nav">
     <div className="left-half-header">

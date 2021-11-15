@@ -1,15 +1,17 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import styled from 'styled-components';
-import logo1 from 'src/assets/img/logo-hover.png';
+import logo1 from 'src/assets/img/logo-hover-5.png';
 
 const _onChildMouseEnter = (event) => {
   //console.log('on entering child');
   //console.log(event);
-  var sheet = document.createElement('style')
-  sheet.id = "stylesheethovericon";
-  const element = "#article"+event;
-  sheet.innerHTML = element +`{
+  var sheet = document.createElement('style');
+  sheet.id = 'stylesheethovericon';
+  const element = '#article' + event;
+  sheet.innerHTML =
+    element +
+    `{
     background-color: red;
   }`;
   document.body.appendChild(sheet);
@@ -24,24 +26,26 @@ const _onChildMouseLeave = (event) => {
 const Wrapper = styled.img`
   //background-color: black;
   border-radius: 25px;
-  width: 30px;
-  height: 30px;
-  transform: translate(-15px,-15px);
+  width: 50px;
+  height: 50px;
+  transform: translate(-25px, -25px);
   &:hover {
-    width: 50px;
-    height: 50px;
-    transform: translate(-25px,-35px);
+    width: 80px;
+    height: 80px;
+    transform: translate(-40px, -55px);
   }
 `;
 //&#9733;
-const hoverIcon = (event)=>{
+const hoverIcon = (event) => {
   console.log(event);
 };
 const Marker = (props) => {
   //console.log('conselog de marker');
   //console.log(props);
   //console.log(props.$hover);
-  return <Wrapper id={'WrapperId'+props.id} className="" src={logo1} ></Wrapper>;
+  return (
+    <Wrapper id={'WrapperId' + props.id} className="" src={logo1}></Wrapper>
+  );
 };
 const places = [
   {
@@ -52,7 +56,6 @@ const places = [
   },
 ];
 const MapAndMarkers = (props) => {
-
   return (
     <GoogleMapReact
       id="googlemapreact"
@@ -60,7 +63,7 @@ const MapAndMarkers = (props) => {
         key: 'AIzaSyAglZjyBm532ApJYhxUDEVnmIo0Zd_JsjY',
       }}
       center={props.locationOnMap}
-      defaultZoom={8}
+      defaultZoom={6}
       yesIWantToUseGoogleMapApiInternals
       onChildMouseEnter={_onChildMouseEnter}
       onChildMouseLeave={_onChildMouseLeave}
@@ -69,15 +72,15 @@ const MapAndMarkers = (props) => {
         //console.log(place.id);
         //console.log(place);
         return (
-        
-        <Marker
-          key={place.id}
-          id={place.id}
-          //text={place.name}
-          lat={place.meta.latitude}
-          lng={place.meta.longitude}
-        />
-      )})}
+          <Marker
+            key={place.id}
+            id={place.id}
+            //text={place.name}
+            lat={place.meta.latitude}
+            lng={place.meta.longitude}
+          />
+        );
+      })}
     </GoogleMapReact>
   );
 };

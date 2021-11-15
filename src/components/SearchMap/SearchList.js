@@ -37,31 +37,32 @@ const SearchList = (list) => {
 
   const mappingArticles = list.itemList.map((item) => {
 
-    // const getImageURL = () => {
-    //   // Vérification : la recette a-t-elle une image
-    //   if (item._embedded['wp:featuredmedia']) {
-    //     if (item._embedded['wp:featuredmedia'][0].media_details.sizes.large) {
-    //       return item._embedded['wp:featuredmedia'][0].media_details.sizes.large.source_url;
-    //     }
-    //     else if (item._embedded['wp:featuredmedia'][0].media_details.sizes.full) {
-    //       return item._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url;
-    //     }
-    //     else {
-    //       return item._embedded['wp:featuredmedia'][0].source_url;
-    //     }
-    //   }
-    //   else {
-    //     return { logo2 };
-    //   }
-    // };
+    const getImageURL = () => {
+      // Vérification : la recette a-t-elle une image
+      if (item._embedded['wp:featuredmedia'] && item._embedded['wp:featuredmedia'][0].media_details && item._embedded['wp:featuredmedia'][0].media_details.sizes) {
+        console.log(item._embedded['wp:featuredmedia']);
+        if (item._embedded['wp:featuredmedia'][0].media_details.sizes.large) {
+          return item._embedded['wp:featuredmedia'][0].media_details.sizes.large.source_url;
+        }
+        else if (item._embedded['wp:featuredmedia'][0].media_details.sizes.full) {
+          return item._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url;
+        }
+        else {
+          return item._embedded['wp:featuredmedia'][0].source_url;
+        }
+      }
+      else {
+        return { logo2 };
+      }
+    };
     const urlDetailSkatepark = '/trouve-ton-skatepark/' + item.id;
     const location = {
       lat: item.meta.latitude,
       lng: item.meta.longitude,
     };
-    const updateMap = ()=>{
+    const updateMap = () => {
       list.moveLocationOnMap(location);
-    }
+    };
     return (
       <article
         key={item.id}
@@ -70,7 +71,7 @@ const SearchList = (list) => {
         onMouseLeave={_onMouseLeave}
         className="search-list-item"
       >
-        <img className="search-list-image" src="" alt="" />
+        <img className="search-list-image" src={getImageURL()} alt="" />
         <h2 className="search-list-title">{item.title.rendered}</h2>
         <h3 className="search-list-description">
           {item.meta.streetspot
@@ -79,12 +80,21 @@ const SearchList = (list) => {
               ? 'PumpTrack'
               : 'SkatePark'}
         </h3>
+<<<<<<< HEAD
 
         <div className="buttonflex">
           <button
           className="search-list-button button linkbutton"
           onClick={updateMap}
           >
+=======
+        <button
+        className="search-list-button button"
+        type="button"
+        onClick={updateMap}
+
+        >
+>>>>>>> 2b8a0c05e866e211a4f3d0942e8752f95fffc1ed
           Voir
           </button>
         <button className="button linkbutton">
