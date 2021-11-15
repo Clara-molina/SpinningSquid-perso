@@ -63,11 +63,27 @@ const authMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           console.log('response from API : ');
           console.log(response);
-          window.alert(
-            `
-            Inscription réussie! Merci de te connecter.
-            `
-          );
+          console.log(response.data);
+          console.log(response.data.succes);
+          if (response.data.succes === 'this username already exist') {
+            window.alert(
+              `
+              Cet utilisateur est déjà inscrit.
+              `
+            );
+          } else if (response.data.succes === 'this email is already used') {
+            window.alert(
+              `
+              Cet email est déjà utilisé.
+              `
+            );
+          } else {
+            window.alert(
+              `
+              Inscription réussie!
+              `
+            );
+          }
           const clearInput = successRegister();
           store.dispatch(clearInput);
         })
