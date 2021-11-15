@@ -7,6 +7,7 @@ import {
   submitUpdateProfile,
   checkUserUpdateProfile,
   getUserDataProfile,
+  submitDeleteProfile,
 } from 'src/actions/userActions';
 
 const mapStateToProps = (state) => ({
@@ -50,6 +51,10 @@ const mapDispatchToProps = (dispatch) => ({
   handleSubmitUpdateProfile: (event) => {
     event.preventDefault();
     dispatch(submitUpdateProfile());
+  },
+  handleDelete: (event) => {
+    event.preventDefault();
+    dispatch(submitDeleteProfile());
   },
 });
 
