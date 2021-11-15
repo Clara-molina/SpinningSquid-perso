@@ -11,25 +11,45 @@ const Marketplace = (props) => {
   }
 
   return (
-    <div id="marketplace">
+    <div id="marketplace" className="main-container">
       <div className="search">
         <h2 className="title search-title">Trouve ton Matos</h2>
         <div className="marketplace-post">
-          <Link to="/trouve-ton-matos/ajoute-ton-matos">
-            <button type="button" className="button">Poster une annonce</button>
-          </Link>
+          {props.isLogged && (
+            <Link to="/trouve-ton-matos/ajoute-ton-matos">
+              <button type="button" className="button">Poster une annonce</button>
+            </Link>
+          )}
+          {!props.isLogged && (
+            <Link to="/connexion">
+              <button type="button" className="button">Poster une annonce</button>
+            </Link>
+          )}
         </div>
         <form className="marketplace-form" onSubmit={props.submitArticleSearch}>
-          <input
-            id="marketplace-search"
-            className="marketplace-input"
-            type="text"
-            name="search"
-            placeholder="Recherche"
-            required
-            onChange={props.handleOnChange}
-          />
-          <button className="button" type="submit">
+          <label htmlFor="marketplace-search">Recherche
+            <input
+              id="marketplace-search"
+              className="marketplace-input"
+              type="text"
+              name="search"
+              placeholder="Skateboard, roulement ..."
+              required
+              onChange={props.handleOnChange}
+            />
+          </label>
+          <label htmlFor="marketplace-search-where">Ou ?
+            <input
+              id="marketplace-search-where"
+              className="marketplace-input"
+              type="text"
+              name="where"
+              placeholder="Paris"
+              required
+              onChange={props.handleOnChange}
+            />
+          </label>
+          <button className="button marketplace-search-button" type="submit">
             Rechercher
           </button>
         </form>
@@ -44,7 +64,7 @@ const Marketplace = (props) => {
           </div>
         </>
       )}
-      {props.isLoaded && <ArticleList itemList={props.responseApi} />}
+      {props.isLoaded && <ArticleList isLogged={props.isLogged} itemList={props.responseApi} />}
     </div>
   );
 };

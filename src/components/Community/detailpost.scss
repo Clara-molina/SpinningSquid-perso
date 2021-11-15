@@ -1,51 +1,53 @@
 @use 'src/styles/vars';
 
-#detailpost {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.6);
-  box-sizing: border-box;
-  .detailpost-participants {
-    background-color: vars.$orange;
-    opacity: 0.9;
-    width: 150px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-bottom-left-radius: 25px;
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
-  }
-  .detailpost-participate-button {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    #participate-button {
-      font-size: 1rem;
-    }
-  }
+#detailpost { 
+  
   .detailpost-block {
     background-color: rgba(255, 255, 255, 0.4);
     padding: 2rem;
     display: flex;
-    position: relative;
+    max-width: 1500px;
+    margin: auto;
+
+    .detailpost-image {
+      width: 800px;
+      height: auto;
+    }
+
     .detailpost-resume {
       font-weight: bold;
       font-size: 1.5rem;
-    }
-    #detailpost-message {
-      font-weight: lighter;
-      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: flex-start;
+      margin: auto;
+
+      .detailpost-title {
+        color: vars.$orange;
+        padding-bottom: 1em;
+      }
+
+      .detailpost-adress {
+        padding-bottom: 1em;
+        margin: auto;
+      }
+
+      .detailpost-date {
+        font-weight: lighter;
+        font-size: 1rem;
+      }
     }
   }
   .detailpost-description {
     padding: 1rem 2rem 2rem 2rem;
-    //background-color: rosybrown;
+    background-color: rgba(255, 255, 255, 0.664);
+    max-width: 1500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
     h2 {
       font-weight: bold;
       margin-bottom: 1.2rem;

@@ -83,8 +83,9 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       break;
 
     case GET_SKATEPARK_BY_CITY:
-
-      const endPointSkateparkByCity = 'http://romain-talbot.vpnuser.lan/SpinningSquad_Apotheose/projet-skatepark/public/wp-json/wp/v2/skatepark/?meta_key=city&meta_value=' + store.getState().skatepark.searchFieldTown;
+      const endPointSkateparkByCity =
+        baseURI + '/skatepark/?meta_key=city&meta_value=' +
+        store.getState().skatepark.searchFieldTown;
       console.log(store.getState().skatepark.searchFieldTown);
       axios
         .get(endPointSkateparkByCity)
@@ -166,7 +167,7 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       const skatepark_Id = action.skateparkId;
       const endPointDetails_Spot =
         baseURI + '/skatepark/' + skatepark_Id + '?_embed=true';
-      //console.log('on y passe youpi');
+      // console.log('on y passe youpi');
       axios
         .get(endPointDetails_Spot)
         .then((response) => {
@@ -214,7 +215,7 @@ const skateparkMiddleware = (store) => (next) => (action) => {
             state: store.getState().skatepark.addSpot.etatRadioBtn,
             image: store.getState().skatepark.addSpot.uploadedImg,
           },
-          options_UPDATE,
+          options_UPDATE
         )
         .then((response) => {
           console.log('response from API : ');
@@ -244,49 +245,46 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       //store.dispatch(goForward());
       console.log('redirection');
 
-
       break;
 
-    //----------------------------------------------------------------------------------
-    // à compléter
     case SUBMIT_DELETE_SPOT:
-      const endPointDelete_Spot = '';
-      console.log(JSON.parse(localStorage.getItem('userData')).token);
-      const options_DELETE = {
-        headers: {
-          Authorization:
-            'Bearer ' + JSON.parse(localStorage.getItem('userData')).token,
-        },
-      };
-      //console.log('on y passe youpi');
-      axios
-        .post(baseSpinningSquid + endPointAdd_Spot, {}, options)
-        .then((response) => {
-          console.log('response from API : ');
-          console.log(response);
-          store.dispatch(
-            successSubmitDeleteSpot(
-              'a remplacer par kekchose ou pas dans skateparkMiddleware'
-            )
-          );
-          window.alert(
-            `
-            L'ajout de skatepark a bien été enregistré.
-            Bisous.
-            `
-          );
-        })
-        .catch((error) => {
-          console.warn(error);
-        });
-      // store.dispatch(
-      //   successSubmitAddSpot(
-      //     'a remplacer par kekchose ou pas dans skateparkMiddleware'
-      //   )
-      // );
+      // const endPointDelete_Spot = '';
+      // console.log(JSON.parse(localStorage.getItem('userData')).token);
+      // const options_DELETE = {
+      //   headers: {
+      //     Authorization:
+      //       'Bearer ' + JSON.parse(localStorage.getItem('userData')).token,
+      //   },
+      // };
+      // console.log('on y passe youpi');
+      // axios
+      //   .post(baseSpinningSquid + endPointAdd_Spot, {}, options_DELETE)
+      //   .then((response) => {
+      //     console.log('response from API : ');
+      //     console.log(response);
+      //     store.dispatch(
+      //       successSubmitDeleteSpot(
+      //         'a remplacer par kekchose ou pas dans skateparkMiddleware'
+      //       )
+      //     );
+      //     window.alert(
+      //       `
+      //           L'ajout de skatepark a bien été enregistré.
+      //           Bisous.
+      //           `
+      //     );
+      //   })
+      //   .catch((error) => {
+      //     console.warn(error);
+      //   });
+      console.log('on passe dans skateparkMiddleware');
+      store.dispatch(
+        successSubmitDeleteSpot(
+          'transmission données ok depuis skateparkMiddleware'
+        )
+      );
 
       break;
-    //----------------------------------------------------------------------------------
     default:
   }
   next(action);

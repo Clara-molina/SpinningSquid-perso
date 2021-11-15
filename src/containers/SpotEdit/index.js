@@ -31,7 +31,7 @@ const mapStateToProps = (state, ownProps) => {
     table: state.skatepark.addSpot.table,
     benche: state.skatepark.addSpot.benche,
     etatRadioBtn: state.skatepark.addSpot.etatRadioBtn,
-    uploadedImg: state.skatepark.addSpot.uploadedImg,
+    uploadedImg: state.skatepark.addSpot.imgNameToDisplay,
 }};
 
 const mapDispatchToProps = (dispatch, state) => ({
@@ -49,13 +49,16 @@ const mapDispatchToProps = (dispatch, state) => ({
   },
   handleUploadLocalImage: async (event) => {
     const imgName = event.target.id;
+    const nameForField = event.nativeEvent.target.files[0].name;
     const imgValue = event.target.files[0];
     const imgValueURL = URL.createObjectURL(event.target.files[0]);
     const imgBase64 = await returnBase64Img(imgValue);
+    console.log(event.nativeEvent);
+    console.log(nameForField);
     console.log(imgName);
     console.log(imgValueURL);
     console.log(imgBase64);
-    dispatch(updateField(imgName, imgValue));
+    dispatch(updateField('imgNameToDisplay', nameForField));
     dispatch(updateField('uploadImage', imgBase64));
     console.log('commande envoyée');
   },

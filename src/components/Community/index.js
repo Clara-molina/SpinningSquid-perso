@@ -9,16 +9,23 @@ const Community = (props) => {
     props.setOnLoading();
   }
   return (
-    <div id="community">
+    <div id="community" className="main-container">
       <div className="community-header">
         <div>
           <h2 className="title community-title">Whassup ?!</h2>
         </div>
       </div>
       <div className="community-post">
-        <Link to="/communaute/ajoute-ton-evenement">
-          <button type="button" className="button">Proposer un évènement</button>
-        </Link>
+        {props.isLogged && (
+          <Link to="/communaute/ajoute-ton-evenement">
+            <button type="button" className="button">Proposer un évènement</button>
+          </Link>
+        )}
+        {!props.isLogged && (
+          <Link to="/connexion">
+            <button type="button" className="button">Proposer un évènement</button>
+          </Link>
+        )}
       </div>
 
       {!props.isLoaded && (

@@ -39,7 +39,8 @@ const SearchList = (list) => {
 
     const getImageURL = () => {
       // Vérification : la recette a-t-elle une image
-      if (item._embedded['wp:featuredmedia']) {
+      if (item._embedded['wp:featuredmedia'] && item._embedded['wp:featuredmedia'][0].media_details && item._embedded['wp:featuredmedia'][0].media_details.sizes) {
+        console.log(item._embedded['wp:featuredmedia']);
         if (item._embedded['wp:featuredmedia'][0].media_details.sizes.large) {
           return item._embedded['wp:featuredmedia'][0].media_details.sizes.large.source_url;
         }
