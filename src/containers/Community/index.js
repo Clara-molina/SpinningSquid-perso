@@ -8,6 +8,7 @@ import {
 } from 'src/actions/communityActions';
 
 const mapStateToProps = (state) => ({
+  isLogged: state.user.isLogged,
   articlesList: state.community.articlesList,
   responseApi: state.community.responseApi,
   isLoaded: state.community.isLoaded,

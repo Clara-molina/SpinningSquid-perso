@@ -14,6 +14,7 @@ import SearchMap from 'src/components/SearchMap';
 const mapStateToProps = (state, ownProps) => {
   //console.log(ownProps);
   return {
+    isLogged: state.user.isLogged,
     skateparkLocationList: state.skatepark.skateparkLocationList,
     responseAPI: state.skatepark.responseAPI,
     isLoading: state.skatepark.isLoading,
