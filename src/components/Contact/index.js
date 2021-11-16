@@ -6,16 +6,9 @@ const Contact = (props) => (
     <div className="contact-container">
       <img className="contact-image" alt="" src={props.logo} />
       <form className="contact-form" onSubmit={props.handleSubmitMessage}>
-        <label className="contact-label">Prénom</label>
+        <label className="contact-label">Sujet</label>
         <input
-          id="firstname"
-          onChange={props.handleChange}
-          className="contact-input"
-          type="text"
-        />
-        <label className="contact-label">Nom</label>
-        <input
-          id="name"
+          id="subject"
           onChange={props.handleChange}
           className="contact-input"
           type="text"
