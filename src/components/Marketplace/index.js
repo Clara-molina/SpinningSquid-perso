@@ -5,6 +5,7 @@ import Loading from 'src/components/Loading';
 import './marketplace.scss';
 
 const Marketplace = (props) => {
+  console.log(props.isLogged);
   if (!props.isLoading) {
     props.callMarketplaceApiGet();
     props.setOnLoading();
@@ -38,17 +39,6 @@ const Marketplace = (props) => {
               onChange={props.searchFieldTitle}
             />
           </label>
-          {/* <label htmlFor="marketplace-search-where">Ou ?
-            <input
-              id="marketplace-search-where"
-              className="marketplace-input"
-              type="text"
-              name="where"
-              placeholder="Paris"
-              required
-              onChange={props.handleOnChange}
-            />
-          </label> */}
           <button className="button marketplace-search-button" type="submit">
             Rechercher
           </button>
@@ -64,7 +54,7 @@ const Marketplace = (props) => {
           </div>
         </>
       )}
-      {props.isLoaded && <ArticleList isLogged={props.isLogged} itemList={props.responseApi} />}
+      {props.isLoaded && <ArticleList userLogged={props.isLogged} itemList={props.responseApi} />}
     </div>
   );
 };
