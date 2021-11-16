@@ -168,7 +168,7 @@ const authMiddleware = (store) => (next) => (action) => {
       const user_sale = store.getState().user.profile.userId;
       console.log(user_sale);
       axios
-        .get(baseURI + '/article?author=' + user_sale)
+        .get(baseURI + '/sale?author=' + user_sale)
         .then((response) => {
           console.log('response from API : ');
           console.log(response);
