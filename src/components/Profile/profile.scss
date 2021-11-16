@@ -5,7 +5,7 @@
   font-family: 'Righteous';
 
   .profile-title {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
   }
 
   .profile-container {
@@ -15,7 +15,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: auto;
+    margin: 0 auto 2em;
 
     .profile-avatar {
       width: 70px;
@@ -33,23 +33,39 @@
     }
   }
 
-  .profile-articles {
-    width: 800px;
+  .profile-contribution {
+    max-width: 1000px;
     height: auto;
-    display: flex;
-    justify-content: space-evenly;
     margin: auto;
 
-    .profile-articles-img {
-      width: 300px;
-      height: 150px;
-      background-color: vars.$white;
-      margin-top: 2em;
+    .profile-contribution-title{
+      text-align: center;
+      font-size: 2.8em;
+      margin: 1em;
+      font-family: 'Sedgwick Ave Display';
     }
 
-    .profile-articles-title {
-      text-align: center;
-    }
+    .profile-add-title {
+        text-align: center;
+        margin: 1.5em;
+        font-size: 1.5em;
+      }
+
+    .profile-contribution-articles {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border: solid 1px;
+      padding: 1em;
+
+      .profile-articles-title {
+        margin: auto;
+      }
+
+      .button-articles {
+        margin: 0 1em;
+      }
+    } 
   }
 }
 
