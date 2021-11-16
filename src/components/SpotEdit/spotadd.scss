@@ -5,12 +5,6 @@
   margin: auto;
   font-family: 'Righteous';
 
-  .title {
-    color: vars.$white;
-    text-align: center;
-    padding: 1em;
-    font-size: 2em;
-  }
   .spotadd-title {
     padding: 1em;
     font-size: 1.5em;
@@ -120,15 +114,4 @@
   }
 
 .spotadd-button {
-  align-self: center;
-  width: 150px;
-  height: 30px;
-  margin: auto;
-  display: block;
-  align-items: center;
-  background-color: vars.$orange;
-  border-radius: 50px;
-  border: solid 1px;
-  font-size: 1.2em;
-  margin-bottom: 121px;
 }

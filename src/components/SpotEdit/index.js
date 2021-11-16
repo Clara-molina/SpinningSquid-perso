@@ -56,7 +56,7 @@ const SpotEdit = (props) => {
       });
   };
   return (
-    <div className="spotadd-container">
+    <div className="main-container spotadd-container">
       <h2 className="title">Modifie ton Spot</h2>
 
       <form className="spotadd-form" onSubmit={props.handleSubmitAddPost}>
@@ -314,7 +314,7 @@ const SpotEdit = (props) => {
         </div>
         <button
           type="submit"
-          className="spotadd-button"
+          className="button spotadd-button"
           onClick={props.handleSubmitEditPost}
         >
           Modifie ton Spot

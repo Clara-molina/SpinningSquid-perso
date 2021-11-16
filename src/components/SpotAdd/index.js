@@ -8,7 +8,7 @@ const SpotAdd = (props) => {
     fileChosen.textContent = event.target.files[0].name;
   };
   return (
-    <div className="spotadd-container main-container">
+    <div className="main-container spotadd-container">
       <h2 className="title">Ajoute ton Spot</h2>
 
       <form className="spotadd-form" onSubmit={props.handleSubmitAddPost}>
@@ -239,7 +239,7 @@ const SpotAdd = (props) => {
             />
           </label>
         </div>
-        <button type="submit" className="spotadd-button">
+        <button type="submit" className="button spotadd-button">
           Ajouter un Spot
         </button>
       </form>
