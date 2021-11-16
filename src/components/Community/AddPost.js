@@ -44,7 +44,7 @@ const AddPost = (props) => {
             </label>
             <div className="spotadd-container-image">
               <h2 className="spotadd-title">Image</h2>
-              <label htmlFor="addPostImage">Parcourir </label>
+              <label htmlFor="addPostImage" className="add-image">Parcourir </label>
               <input
                 className="addpost-input"
                 type="file"
