@@ -213,7 +213,7 @@ const authMiddleware = (store) => (next) => (action) => {
       break;
     case SUBMIT_DELETE_PROFILE:
       console.log('Renseigner path update profile dans la requete axios');
-      const options_Delete = {
+      const options_DELETE = {
         headers: {
           Authorization:
             'Bearer ' + JSON.parse(localStorage.getItem('userData')).token,
@@ -223,9 +223,9 @@ const authMiddleware = (store) => (next) => (action) => {
         .post(
           baseSpinningSquid + '/user-delete',
           {
-            //id: store.getState().user.profile.userId,
+            id: store.getState().user.profile.userId,
           },
-          options_Delete
+          options_DELETE
         )
         .then((response) => {
           console.log('response from API : ');
