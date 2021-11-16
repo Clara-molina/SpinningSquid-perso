@@ -8,6 +8,7 @@ const DetailsPost = (props) => {
 
   return (
     <div id="detailpost" className="main-container">
+      <h2 className="title community-title">Whassup ?!</h2>
       <div className="detailpost-block">
         <img className="detailpost-image" alt="" src={props.image} />
         <div className="detailpost-resume">

@@ -12,6 +12,7 @@ const Contact = (props) => (
           onChange={props.handleChange}
           className="contact-input"
           type="text"
+          required
         />
         <label className="contact-label">Email</label>
         <input
@@ -19,12 +20,14 @@ const Contact = (props) => (
           onChange={props.handleChange}
           className="contact-input"
           type="email"
+          required
         />
         <label className="contact-label"> Message</label>
         <textarea
           id="message"
           onChange={props.handleChange}
           className="contact-input-message"
+          required
         />
 
         <button className="button" type="submit">

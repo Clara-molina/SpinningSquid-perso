@@ -25,12 +25,13 @@ const SearchMap = (props) => {
 
       <form className="search-form" onSubmit={props.submitSkateparkSearch}>
         <label className="search-label">
-          Ville :
+          Où ça?
           <input
             id="town-search"
             className="search-input"
             type="text"
             name="town"
+            placeholder="Paris, Lyon ..."
             required
             onChange={props.searchFieldTown}
           />
