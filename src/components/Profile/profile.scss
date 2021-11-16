@@ -5,15 +5,11 @@
   font-family: 'Righteous';
 
   .profile-title {
-    text-align: center;
-    padding: 1em;
-    font-size: 2em;
-    height: 100px;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
   }
 
   .profile-container {
-    width: 500px;
+    width: 600px;
     height: 100px;
     border: solid 1px vars.$white;
     display: flex;
@@ -30,15 +26,10 @@
     }
 
     .profile-name {
-
     }
 
     .profile-button-edit {
-      background-color: vars.$orange;
-      border-radius: 12px;
-      border: solid 1px;
-      width: 120px;
-      height: 30px;
+      margin: 0;
     }
   }
 

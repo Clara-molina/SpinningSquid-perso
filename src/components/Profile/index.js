@@ -9,14 +9,14 @@ const Profile = (props) => {
   }
   return (
     <div className="profile main-container">
-      <h1 className="profile-title">Bienvenue {props.usernameConnection}</h1>
+      <h1 className="title profile-title">Bienvenue sur ton compte {props.usernameConnection}</h1>
 
       <div className="profile-container">
         <img className="profile-avatar" src={logo2} alt="avatar" />
         <p className="profile-name">{props.usernameConnection}</p>
         <Popup
           trigger={
-            <button className="profile-button-edit" type="button">
+            <button className="button profile-button-edit" type="button">
               Editer mon profil
             </button>
           }

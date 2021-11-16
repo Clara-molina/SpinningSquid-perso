@@ -35,7 +35,7 @@ const SearchMap = (props) => {
             onChange={props.searchFieldTown}
           />
         </label>
-        <button className="search-button" type="submit">
+        <button className="button search-button" type="submit">
           Rechercher
         </button>
       </form>

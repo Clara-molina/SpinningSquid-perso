@@ -43,7 +43,7 @@ const SearchSkateResults = (props) => {
       )}
       {props.isLoaded && (
         <>
-          <h3 className="searchresulttitle">Résultat</h3>
+          <h3 className="title searchresulttitle">Résultat</h3>
           <h4 className="searchresultname">{props.skateparkTitle}</h4>
           <img
             className="searchresultimage"
