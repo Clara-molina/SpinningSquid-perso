@@ -22,3 +22,9 @@
     color: vars.$white;
   }
 }
+
+@media (max-width: vars.$smallScreen) {
+  .navFooter .navFooter-link {
+    font-size: 0.75em;
+  }
+}
