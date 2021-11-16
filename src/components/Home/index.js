@@ -30,7 +30,7 @@ const Home = () => (
     <Link to="/communaute" className="home-nav">
       <div className="home-nav-container">
         <img className="home-nav-image" src={image3} alt="skatepark" />
-        <p className="home-nav-description">"Hey homie wassup ?!" voyons voir ce qu'il se passe près de chez toi</p>
+        <p className="home-nav-description">"Hey homie wassup ?!" voyons voir ce qu'il se passe près de chez toi </p>
       </div>
     </Link>
   </div>
