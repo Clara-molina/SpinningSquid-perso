@@ -6,6 +6,9 @@ $white: #ffffff;
 $orange: #ff8552;
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sedgwick+Ave+Display&display=swap');
 
+$smallScreen: 480px;
+$mediumScreen: 800px; 
+
 // Generic class
 .block {
   height: auto;
@@ -18,7 +21,6 @@ $orange: #ff8552;
   padding: 1em;
   font-size: 3em;
   font-family: 'Sedgwick Ave Display';
-
 }
 .button {
   height: 30px;
@@ -41,7 +43,6 @@ $orange: #ff8552;
     box-shadow: 0 0 10px 0 $orange inset, 0 0 10px 4px $orange;
   }
 }
-
 .list {
   display: flex;
   align-items: center;
@@ -65,10 +66,23 @@ $orange: #ff8552;
 .list-item-description {
   margin: auto;
 }
-
 // composant en attente de chargement
 .loading-wheel {
   height: 5rem;
   width: 5rem;
   margin-top: 5rem;
+}
+
+
+@media (max-width: $mediumScreen) {
+  .title {
+    padding: 1em;
+    font-size: 2.5em;
+  }
+}
+@media (max-width: $smallScreen) {
+  .title {
+    padding: 1em;
+    font-size: 1.5em;
+  }
 }

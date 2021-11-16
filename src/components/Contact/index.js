@@ -2,7 +2,7 @@ import './contact.scss';
 
 const Contact = (props) => (
   <div className="contact main-container">
-    <h1 className="title contact-title">Que puis-je pour toi jeune skateur ?</h1>
+    <h1 className="title">Que puis-je pour toi jeune skateur ?</h1>
     <div className="contact-container">
       <img className="contact-image" alt="" src={props.logo} />
       <form className="contact-form" onSubmit={props.handleSubmitMessage}>
