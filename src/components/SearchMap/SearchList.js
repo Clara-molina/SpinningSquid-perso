@@ -80,21 +80,12 @@ const SearchList = (list) => {
               ? 'PumpTrack'
               : 'SkatePark'}
         </h3>
-<<<<<<< HEAD
 
         <div className="buttonflex">
           <button
           className="search-list-button button linkbutton"
           onClick={updateMap}
           >
-=======
-        <button
-        className="search-list-button button"
-        type="button"
-        onClick={updateMap}
-
-        >
->>>>>>> 2b8a0c05e866e211a4f3d0942e8752f95fffc1ed
           Voir
           </button>
         <button className="button linkbutton">

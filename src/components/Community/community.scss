@@ -57,6 +57,13 @@
     }
     .description-resume {
       margin: 2rem;
+      text-align: center !important;
+      --responsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 420px) / (1200 - 420))); 
+      --max-font: 15;
+      --min-font: 5;
+      font-size: var(--responsive) ;
+      color: white ;
+      text-shadow: black 1px 1px 1px ;
     }
     .description-link {
       text-align: left;

@@ -15,13 +15,19 @@
     }
 
     .detailpost-resume {
-      font-weight: bold;
-      font-size: 1.5rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       align-content: flex-start;
+      text-align: center !important;
+      --responsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 420px) / (1200 - 420))); 
+      --max-font: 15;
+      --min-font: 5;
+      font-size: var(--responsive) ;
+      color: white ;
+      text-shadow: black 1px 1px 1px ;
       margin: auto;
+    }
 
       .detailpost-title {
         color: vars.$orange;
@@ -53,4 +59,3 @@
       margin-bottom: 1.2rem;
     }
   }
-}
