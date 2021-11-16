@@ -56,8 +56,6 @@
       }
     }
     .description-resume {
-      margin: 2rem;
-      text-align: center !important;
       --responsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 420px) / (1200 - 420))); 
       --max-font: 15;
       --min-font: 5;
@@ -72,7 +70,7 @@
 }
 }
 
-@media (max-width: 764px) {
+@media (max-width: 800px) {
   #community {
     .community-post {
       right: 1.5%;
@@ -82,7 +80,7 @@
       display: none;
     }
     .eventList-item {
-      flex-direction: column;
+      flex-direction: row;
       .item-image {
         margin: 0 auto 0;
       }
@@ -94,12 +92,18 @@
       }
     }
     .eventList-item:nth-child(2n + 1) {
-      flex-direction: column;
+      flex-direction: row;
       .description-link {
         text-align: center;
       }
     }
   }
+}
+
+
+@media (max-width: 500px){
+
+  
 }
 
 //-------------------------------------------------
