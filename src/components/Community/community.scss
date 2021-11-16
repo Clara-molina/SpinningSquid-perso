@@ -70,7 +70,7 @@
 }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 880px) {
   #community {
     .community-post {
       right: 1.5%;
@@ -103,7 +103,10 @@
 
 @media (max-width: 500px){
 
-  
+  .item-image{
+    width: 30%;
+
+  }
 }
 
 //-------------------------------------------------
