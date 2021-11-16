@@ -15,7 +15,7 @@ const contactMiddleware = (store) => (next) => (action) => {
         axios
           .post(baseSpinningSquid + endPointAdd_Spot, {
             subject: 'test_sujet',
-            email: 'romain.talbot.33@gmail.com',
+            email: 'pierre@mail.com',
             message: 'test_message',
           })
           .then((response) => {
