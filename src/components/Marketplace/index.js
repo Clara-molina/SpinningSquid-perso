@@ -27,13 +27,13 @@ const Marketplace = (props) => {
           )}
         </div>
         <form className="marketplace-form" onSubmit={props.submitArticleSearch}>
-          <label htmlFor="marketplace-search">Recherche
+          <label htmlFor="marketplace-search">Où ça?
             <input
               id="marketplace-search"
               className="marketplace-input"
               type="text"
               name="search"
-              placeholder="Skateboard, roulement ..."
+              placeholder="Lyon, Paris ..."
               required
               onChange={props.searchFieldTitle}
             />
