@@ -18,13 +18,10 @@ $orange: #ff8552;
   padding: 1em;
   font-size: 3em;
   font-family: 'Sedgwick Ave Display';
-
 }
 .button {
-  height: 30px;
-  width: 130px;
   background-color: $orange;
-  border-radius: 12px;
+  border-radius: 50px;
   border: none;
   margin: auto;
   display: flex;
@@ -34,8 +31,7 @@ $orange: #ff8552;
   color: black;
   box-shadow: 0 0 40px 40px $orange inset, 0 0 0 0 $orange;
   transition: all 150ms ease-in-out;
-  padding: 1px !important;
-
+  //padding: 1px !important;
 
   &:hover {
     box-shadow: 0 0 10px 0 $orange inset, 0 0 10px 4px $orange;

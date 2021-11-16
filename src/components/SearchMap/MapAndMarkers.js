@@ -12,7 +12,7 @@ const _onChildMouseEnter = (event) => {
   sheet.innerHTML =
     element +
     `{
-    background-color: red;
+    background-color: #c2c2c2;
   }`;
   document.body.appendChild(sheet);
 };
