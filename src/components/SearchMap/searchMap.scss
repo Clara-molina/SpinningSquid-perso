@@ -110,6 +110,16 @@
       }
     }
   }
+
+  .buttonflex{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .linkbutton {
+    margin-right: 15px;
+    width: 75px;
+  }
 }
 
 .search-list-item {
@@ -163,21 +173,41 @@
 }
 
 @media (max-width: 400px) {
-  // .search-list-item {
-  //   display: flex;
-  //   flex-wrap: wrap;
-  //   flex-direction: column;
-  //   align-items: center !important;
-  //   justify-content: center;
 
-  //   .search-list-image {
-  //     margin-right: 0 !important;
-  //   }
+  .addSpot-button{
+  margin-right: 100px !important;
 
-  //   .search-list-button {
-  //     margin-right: 0 !important;
-  //     margin-left: 0 !important;
-  //     margin-top: 5px;
-  //   }
-  // }
-}
+  }
+
+  .search-list-item {
+    display : flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center;
+
+    .search-list-image {
+      margin-right: 0 !important;
+    }
+
+    .search-list-button{
+      margin: 5px !important;
+
+
+    }
+
+    .buttonflex{
+      display: flex;
+      justify-content: space-between;
+      margin: 10px !important;
+      margin-left: 30px !important;
+    }
+  
+  }
+
+    .search-list-button {
+       margin-right: 0 !important;
+       margin-left: 0 !important;
+       margin-top: 5px;
+    }
+   }
