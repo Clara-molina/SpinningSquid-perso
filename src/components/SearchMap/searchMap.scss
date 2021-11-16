@@ -110,6 +110,16 @@
       }
     }
   }
+
+  .buttonflex{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .linkbutton {
+    margin-right: 15px;
+    width: 75px;
+  }
 }
 
 .search-list-item {
@@ -208,3 +218,4 @@
   //   }
   // }
 }
+

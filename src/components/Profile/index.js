@@ -2,8 +2,10 @@ import './profile.scss';
 import logo2 from 'src/assets/img/logo2.png';
 import Popup from 'reactjs-popup';
 import { Link } from 'react-router-dom';
+import ContributeList from './ContributeList';
 
 const Profile = (props) => {
+  console.log(props.responseAPIDataSkatepark);
   if (!props.profileIsLoading) {
     props.handleCheckUserUpdateProfile();
   }
@@ -145,19 +147,11 @@ const Profile = (props) => {
             </div>
           )}
         </Popup>
+        <button className="button profile-button-edit" onClick={props.handleDelete}>Supprimer compte</button>
       </div>
 
-      <div className="profile-articles">
-        <Link to="">
-          <img className="profile-articles-img" src="" alt="" />
-          <h2 className="profile-articles-title">Titre de l'annonce 1</h2>
-        </Link>
-        <Link to="">
-          <img className="profile-articles-img" src="" alt="" />
-          <h2 className="profile-articles-title">Titre de l'annonce 2</h2>
-        </Link>
-      </div>
-      <button onClick={props.handleDelete}>Supprimer compte</button>
+      <ContributeList />
+
     </div>
   );
 };
