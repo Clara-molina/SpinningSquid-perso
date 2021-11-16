@@ -2,20 +2,13 @@ import './contact.scss';
 
 const Contact = (props) => (
   <div className="contact main-container">
-    <h1 className="contact-title">Que puis-je pour toi jeune skateur ?</h1>
+    <h1 className="title contact-title">Que puis-je pour toi jeune skateur ?</h1>
     <div className="contact-container">
       <img className="contact-image" alt="" src={props.logo} />
       <form className="contact-form" onSubmit={props.handleSubmitMessage}>
-        <label className="contact-label">Prénom</label>
+        <label className="contact-label">Sujet</label>
         <input
-          id="firstname"
-          onChange={props.handleChange}
-          className="contact-input"
-          type="text"
-        />
-        <label className="contact-label">Nom</label>
-        <input
-          id="name"
+          id="subject"
           onChange={props.handleChange}
           className="contact-input"
           type="text"

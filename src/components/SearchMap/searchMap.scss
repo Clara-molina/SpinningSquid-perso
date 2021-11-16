@@ -12,32 +12,6 @@
   }
 
   .search-title {
-    color: vars.$white;
-    text-align: center;
-    padding: 1em;
-    font-size: 2em;
-  }
-
-  .search-list-button{
-    
-      height: 30px;
-      width: 130px;
-      background-color: vars.$orange;
-      border-radius: 12px;
-      border: solid 1px;
-      margin-left: 5em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Righteous';
-      color: black;
-      border-color: vars.$orange;
-      box-shadow: 0 0 40px 40px vars.$orange inset, 0 0 0 0 vars.$orange;
-      transition: all 150ms ease-in-out;
-    
-      &:hover {
-        box-shadow: 0 0 10px 0 vars.$orange inset, 0 0 10px 4px vars.$orange;
-      }
   }
 
   .addSpot-button {
@@ -67,21 +41,7 @@
     .search-button{
     height: 30px;
     width: 130px;
-    background-color: vars.$orange;
-    border-radius: 12px;
-    border: solid 1px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Righteous';
-    color: black;
-    border-color: vars.$orange;
-    box-shadow: 0 0 40px 40px vars.$orange inset, 0 0 0 0 vars.$orange;
-    transition: all 150ms ease-in-out;
-  
-      &:hover {
-      box-shadow: 0 0 10px 0 vars.$orange inset, 0 0 10px 4px vars.$orange;
-      }
+    margin: 0;
     }
   }
 
@@ -141,10 +101,6 @@
         }
 
         .search-list-button {
-          margin-left: 2em;
-          background-color: vars.$orange;
-          border-radius: 12px;
-          border: solid 1px;
           width: 60px;
           height: 30px;
         }

@@ -4,12 +4,7 @@
   font-family: 'Righteous';
 
   .contact-title {
-    color: vars.$white;
-    text-align: center;
-    padding: 1em;
-    font-size: 2em;
-    height: 100px;
-    margin-bottom: 3em;
+    margin-bottom: 2em;
   }
 
   .contact-container {
@@ -39,15 +34,7 @@
       }
 
       .contact-button {
-        display: flex;
-        justify-content: center;
-        margin: 1em auto;
-        background-color: vars.$orange;
-        border-radius: 12px;
-        border: solid 1px;
-        width: 80px;
-        height: 30px;
-        font-size: 1.1em;
+        margin-top: 1em;
       }
     }
   }

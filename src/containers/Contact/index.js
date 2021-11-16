@@ -6,8 +6,7 @@ import { updateField } from 'src/actions/userActions';
 import { submitMessage } from 'src/actions/contactActions';
 
 const mapStateToProps = (state) => ({
-  firstname: state.contact.firstname,
-  name: state.contact.name,
+  subject: state.contact.subject,
   email: state.contact.email,
   message: state.contact.message,
   logo: logo,

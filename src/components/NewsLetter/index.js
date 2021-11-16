@@ -2,8 +2,8 @@ import './newsletter.scss';
 
 const NewsLetter = (props) => {
   return (
-    <div className="newsletter">
-      <h1 className="newsletter-title">
+    <div className="main-container newsletter">
+      <h1 className="title newsletter-title">
         Inscrit toi à la newsletter pour ne rien louper !
       </h1>
       <div className="newsletter-container">
@@ -16,7 +16,7 @@ const NewsLetter = (props) => {
             className="newsletter-input"
             type="email"
           />
-          <button className="newsletter-button" type="submit">
+          <button className="button newsletter-button" type="submit">
             Envoyer
           </button>
         </form>
