@@ -5,7 +5,6 @@ export const initialState = {
   subject: "",
   email: "",
   message: "",
-  responseApi: {},
 };
 
 const reducer = (state = initialState, action = {}) => {
