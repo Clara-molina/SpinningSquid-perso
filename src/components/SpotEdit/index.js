@@ -251,7 +251,7 @@ const SpotEdit = (props) => {
           <label
             id="image-label"
             htmlFor="uploadImage"
-            className="spotadd-label-image"
+            className="add-image"
           >
             Parcourir
           </label>

@@ -40,6 +40,13 @@ $mediumScreen: 800px;
     box-shadow: 0 0 10px 0 $orange inset, 0 0 10px 4px $orange;
   }
 }
+.add-image {
+  margin: 1em;
+
+  &:hover {
+    text-shadow:$orange 0 0 10px, $orange 0 0 10px;
+  }
+}
 .list {
   display: flex;
   align-items: center;
