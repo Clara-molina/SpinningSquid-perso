@@ -2,21 +2,16 @@
 
 #marketplace {
   font-family: 'Righteous';
-
   .search {
-
     .search-title {
     }
-
     .marketplace-post {
       display: flex;
       justify-content: flex-end;
       margin-right: 2em;
-
       .button {
       }
     }
-  
     .marketplace-form {
       display: flex;
       align-items: center;
@@ -25,15 +20,12 @@
       max-width: 1000px;
       color: vars.$white;
       height: 80px;
-
       .marketplace-search {
       }
-        .marketplace-input {
-          font-size: 1.1rem;
-          margin: 0 2em 0 0.5em;
-        }
-      
-
+      .marketplace-input {
+        font-size: 1.1rem;
+        margin: 0 2em 0 0.5em;
+      }
       .marketplace-search-button {
         margin: 0;
         height: 30px;
@@ -41,9 +33,6 @@
       }
     }
   }
-
-  
-
   .marketplace-loading-wheel {
     display: flex;
     width: 100%;
@@ -51,89 +40,78 @@
     justify-content: center;
   }
 }
+// -----------------------
+// ArticleList
+// -----------------------
 
-
-  // -----------------------
-  // ArticleList
-  // -----------------------
-
-  .article-list {
-    margin: 0 2rem;
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 20px;
+.article-list {
+  margin: 0 2rem;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  // grid-template-columns: repeat(5, 1fr);
+  // grid-gap: 20px;
+}
+.article-list-title {
+  font-size: 1.3em;
+  margin-bottom: 0.5em;
+}
+.marketplace-list-item {
+  width: 300px;
+  padding: 1rem 0;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  background-color: vars.$grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  transition: all 150ms ease-in-out;
+  &:hover {
+    box-shadow: 0 0 10px 0 vars.$orange inset, 0 0 10px 4px vars.$orange;
   }
-  .article-list-title {
-    font-size: 1.3em;
-    margin-bottom: 0.5em;
-  }
-  .list-item {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0;
-    background-color: rgba(255, 255, 255, 0.4);
-    border: solid 1px;
-    border-color: vars.$orange;
-    transition: all 150ms ease-in-out;
-      
-      &:hover {
-        box-shadow: 0 0 10px 0 vars.$orange inset, 0 0 10px 4px vars.$orange;
-      }
-  }
-  
-  .item-image img {
-    height: 200px;
-    width: 200px;
-    margin: 1em 0 1em;
-    
-  }
-
+}
+.item-image img {
+  height: 200px;
+  width: 200px;
+  margin: 1em 0 1em;
+}
 // ------------------------
-// PostArticle 
+// PostArticle
 // ------------------------
-
 #postarticle {
   margin: 2rem;
   font-family: 'Righteous';
   color: vars.$white;
-
   .title {
   }
-
   .postarticle-block {
     display: flex;
     margin: auto;
     width: 50%;
-
     .postarticle-characteristics {
       display: flex;
       flex-direction: column;
       margin: auto;
       width: 50%;
-
       .postarticle-input {
         margin: 0.5em;
         width: 100%;
       }
     }
   }
-
   .postarticle-description {
     width: 100%;
     padding: 2rem 0;
     height: fit-content;
     text-align: center;
-
     #postarticle-description {
       width: 60vw;
       height: 20vh;
     }
   }
-
   .postarticle-button {
     margin-bottom: 3rem;
-
     .button {
       font-size: 1.2rem;
       width: 140px;
@@ -141,11 +119,9 @@
     }
   }
 }
-
 @media (max-width: 764px) {
   #marketplace {
     .article-list {
-      grid-template-columns: 1fr;
     }
     .search {
       display: flex;
@@ -160,13 +136,10 @@
     }
   }
 }
-
 // ---------------------
 // DetailsArticle
 // ---------------------
-
 .main-container {
-
   .detailarticle-block {
     padding: 2rem;
     display: flex;
@@ -175,12 +148,10 @@
     height: auto;
     margin: auto;
     padding-top: 3em;
-
     .detailarticle-image {
       width: 700px;
       height: auto;
     }
-
     .detailarticle-resume {
       font-weight: bold;
       font-size: 1.5rem;
@@ -190,23 +161,18 @@
       align-content: flex-start;
       margin: auto;
       color: white;
-
       .detailarticle-title {
         color: vars.$orange;
         padding-bottom: 1em;
         font-size: 1.7em;
       }
-
       .detailarticle-adress {
         padding-bottom: 1em;
         margin: auto;
       }
-
       .detailarticle-price {
-                padding-bottom: 1em;
-
+        padding-bottom: 1em;
       }
-
       .detailarticle-description {
         text-align: center;
         font-size: 0.8em;
