@@ -17,7 +17,7 @@ const _onMouseEnter = (event) => {
   sheet.innerHTML =
     element +
     `{
-    background-color: red;
+    background-color: #6e6b6b;
   }`;
   document.body.appendChild(sheet);
 };
@@ -36,22 +36,26 @@ const SearchList = (list) => {
   // console.log(list.itemList[0]._embedded['wp:featuredmedia'][0].source_url);
 
   const mappingArticles = list.itemList.map((item) => {
-
     const getImageURL = () => {
       // Vérification : la recette a-t-elle une image
-      if (item._embedded['wp:featuredmedia'] && item._embedded['wp:featuredmedia'][0].media_details && item._embedded['wp:featuredmedia'][0].media_details.sizes) {
+      if (
+        item._embedded['wp:featuredmedia'] &&
+        item._embedded['wp:featuredmedia'][0].media_details &&
+        item._embedded['wp:featuredmedia'][0].media_details.sizes
+      ) {
         console.log(item._embedded['wp:featuredmedia']);
         if (item._embedded['wp:featuredmedia'][0].media_details.sizes.large) {
-          return item._embedded['wp:featuredmedia'][0].media_details.sizes.large.source_url;
-        }
-        else if (item._embedded['wp:featuredmedia'][0].media_details.sizes.full) {
-          return item._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url;
-        }
-        else {
+          return item._embedded['wp:featuredmedia'][0].media_details.sizes.large
+            .source_url;
+        } else if (
+          item._embedded['wp:featuredmedia'][0].media_details.sizes.full
+        ) {
+          return item._embedded['wp:featuredmedia'][0].media_details.sizes.full
+            .source_url;
+        } else {
           return item._embedded['wp:featuredmedia'][0].source_url;
         }
-      }
-      else {
+      } else {
         return { logo2 };
       }
     };
@@ -77,23 +81,22 @@ const SearchList = (list) => {
           {item.meta.streetspot
             ? 'Street'
             : item.meta.pumptrack
-              ? 'PumpTrack'
-              : 'SkatePark'}
+            ? 'PumpTrack'
+            : 'SkatePark'}
         </h3>
-
-        <div className="buttonflex">
-          <button
-          className="search-list-button button linkbutton"
-          onClick={updateMap}
-          >
-          Voir
-          </button>
-        <button className="button linkbutton">
-        <Link to={urlDetailSkatepark}>Details</Link>
-        </button>
+        <div className="block-buttons">
+          <div id="special-button">
+            <button className="button " type="button" onClick={updateMap}>
+              Centrer
+            </button>
+          </div>
+          <div>
+            <Link to={urlDetailSkatepark}>
+              <button className="button">Details</button>
+            </Link>
+          </div>
         </div>
       </article>
-
     );
   });
   return mappingArticles;

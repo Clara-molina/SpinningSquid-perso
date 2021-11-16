@@ -2,25 +2,18 @@ import { UPDATE_FIELD } from 'src/actions/userActions';
 import { SUBMIT_MESSAGE_SUCCESS } from 'src/actions/contactActions';
 
 export const initialState = {
-  firstname: ['un', 'deux', 'trois'],
-  name: 'searchFieldTown test state',
-  email: {},
-  message: {},
+  subject: "",
+  email: "",
+  message: "",
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case UPDATE_FIELD:
-      if (action.fieldName === 'firstname') {
+      if (action.fieldName === 'subject') {
         return {
           ...state,
-          firstname: action.fieldValue,
-        };
-      }
-      if (action.fieldName === 'name') {
-        return {
-          ...state,
-          name: action.fieldValue,
+          subject: action.fieldValue,
         };
       }
       if (action.fieldName === 'email') {

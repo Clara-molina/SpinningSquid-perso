@@ -1,15 +1,16 @@
 import { Link } from 'react-router-dom';
+import logo404 from 'src/assets/img/logo404.png';
 import './notFound.scss';
 
 const NotFound = () => (
-  <div className="notFound">
-    <h1 className="notFound-title">Oops ... t'as loupé ton back flip ?</h1>
+  <div className="notFound main-container">
     <div className="notFound-container">
-      <img className="notFound-image" alt="" src="" />
-      <p className="notFound-p">Erreur 404, la page n'héxiste pas</p>
+      <h1 className="title">Oops ... t'as loupé ton back flip ?</h1>
+      <p className="notFound-p">Ceci est une erreur 404, la page demandée n'héxiste pas.</p>
       <Link to="/">
         <button className="button" type="button">Retour à l'accueil</button>
       </Link>
+      <img className="notFound-image" alt="" src={logo404} />
     </div>
   </div>
 );

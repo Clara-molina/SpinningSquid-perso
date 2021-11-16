@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import GoogleMapReact from 'google-map-react';
 import styled from 'styled-components';
-import logo1 from 'src/assets/img/logo-hover.png';
+import logo1 from 'src/assets/img/logo-hover-5.png';
 import Img from '../../assets/img/Skateparktest.jpg';
 import './searchSkateResults.scss';
 import Loading from 'src/components/Loading';
@@ -26,12 +26,15 @@ const Marker = (props) => {
 };
 
 const SearchSkateResults = (props) => {
+  console.log(props.id);
+  console.log(props.longitude);
+  console.log(props.latitude);
   if (!props.isLoading || props.detailsNotMatching) {
     props.getSkateparkDetails(props.skateparkName);
     props.setOnLoading();
   }
   return (
-    <div className="searchresult">
+    <div id="skateparkDetails" className="skateparkDetails-searchresult">
       {!props.isLoaded && (
         <>
           <div className="skateparkDetails-loading-wheel">
@@ -43,10 +46,9 @@ const SearchSkateResults = (props) => {
       )}
       {props.isLoaded && (
         <>
-          <h3 className="searchresulttitle">Résultat</h3>
-          <h4 className="searchresultname">{props.skateparkTitle}</h4>
+          <h3 className="skateparkDetails-title">{props.skateparkTitle}</h3>
           <img
-            className="searchresultimage"
+            className="skateparkDetails-searchresultimage"
             src={props.skateparkImg}
             alt="skatepark Achères"
           />
@@ -69,28 +71,41 @@ const SearchSkateResults = (props) => {
               ★
             </a>
           </div> */}
-          <span className="searchresultadress">
-            Adresse: {props.adresse} {props.town} {props.postal}
-          </span>
-          <span className="detailssearchresult">Equipement:</span>
-          <span className="detailssearchresult">
-            {props.parking && 'Parking'}
-            {props.water && 'Eau'}
-            {props.trashcan && 'Poubelle'}
-            {props.lighting && 'Eclairage'}
-            {props.table && 'Tables'}
-            {props.benche && 'Bancs'}
-          </span>
-          <span className="detailssearchresult">Etat général:</span>
-          <span className="detailssearchresult">
-            {props.etatRadioBtn === 'New' ? 'Neuf' : ''}
-            {props.etatRadioBtn === 'Good' ? 'Bien' : ''}
-            {props.etatRadioBtn === 'Way' ? 'Moyen' : ''}
-            {props.etatRadioBtn === 'Endoflife' ? 'En fin de vie' : ''}
-          </span>
+          <div className="skateparkDetails-description">
+            <div className="skateparkDetails-adresse-etat">
+              <div className="skateparkDetails-searchresulttitle">Adresse:</div>
+              <div className="skateparkDetails-searchresultadress">
+                {props.adresse} {props.town} {props.postal}
+              </div>
+              <div className="skateparkDetails-searchresulttitle">
+                Etat général:
+              </div>
+              <div className="skateparkDetails-detailssearchresult">
+                {props.etatRadioBtn === 'New' ? 'Neuf' : ''}
+                {props.etatRadioBtn === 'Good' ? 'Bien' : ''}
+                {props.etatRadioBtn === 'Way' ? 'Moyen' : ''}
+                {props.etatRadioBtn === 'Endoflife' ? 'En fin de vie' : ''}
+              </div>
+            </div>
+            <div className="skateparkDetails-equipement">
+              <div className="skateparkDetails-searchresulttitle">
+                Equipement:
+              </div>
+              <div className="skateparkDetails-detailssearchresult">
+                {props.parking && <div> Parking</div>}
+                {props.water && <div> Eau</div>}
+                {props.trashcan && <div> Poubelle</div>}
+                {props.lighting && <div> Eclairage</div>}
+                {props.table && <div> Tables</div>}
+                {props.benche && <div> Bancs</div>}
+              </div>
+            </div>
+          </div>
 
-          <div className="searchresultmap">Map de l'adresse</div>
-          <div className="search-map">
+          <div className="skateparkDetails-searchresulttitle padding-bottom-2em">
+            Map de l'adresse
+          </div>
+          <div className="skateparkDetails-search-map">
             <GoogleMapReact
               id="googlemapreact"
               bootstrapURLKeys={{
@@ -111,12 +126,21 @@ const SearchSkateResults = (props) => {
           </div>
         </>
       )}
-      <Link
-        to={'/trouve-ton-skatepark/modifie-ton-spot/' + props.skateparkName}
-      >
-        modifie ton spot
-      </Link>
-      <button onClick={props.callDeleteSkatepark}>Supprimer ce Spot</button>
+      <div className="skateparkDetails-buttons">
+        <div>
+          <Link
+            className="padding-right-2rem button"
+            to={'/trouve-ton-skatepark/modifie-ton-spot/' + props.skateparkName}
+          >
+            modifie ton spot
+          </Link>
+        </div>
+        <div>
+          <button className="button" onClick={props.callDeleteSkatepark}>
+            Supprimer ce Spot
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

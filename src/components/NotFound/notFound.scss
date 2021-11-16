@@ -1,15 +1,7 @@
 @use 'src/styles/vars';
 
 .notFound {
-
-  .notFound-title {
-    color: vars.$white;
-    text-align: center;
-    padding: 1em;
-    font-size: 2em;
-    height: 100px;
-    margin-bottom: 1em;
-  }
+  font-family: 'Righteous';
 
   .notFound-container {
     margin: auto;
@@ -19,9 +11,8 @@
     .notFound-image {
       display: flex;
       margin: auto;
-      width: 500px;
-      height: 300px;
-      background-color: azure;
+      width: 800px;
+      height: auto;
     }
 
     .notFound-p {

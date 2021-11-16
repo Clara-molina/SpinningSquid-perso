@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
   // );
   return {
     detailsNotMatching:
-      ownProps.match.params.articleId != state.community.addArticle.id,
+    ownProps.match.params.articleId != state.community.addArticle.id,
     articleId: ownProps.match.params.articleId,
     isLoaded: state.community.isLoaded,
     postAddIsLoading: state.community.addArticle.postAddIsLoading,
@@ -25,6 +25,7 @@ const mapStateToProps = (state, ownProps) => {
     date: state.community.addArticle.date,
     story: state.community.addArticle.story,
     image: state.community.addArticle.image,
+    isLogged: state.user.isLogged,
   };
 };
 

@@ -2,21 +2,23 @@ import './profile.scss';
 import logo2 from 'src/assets/img/logo2.png';
 import Popup from 'reactjs-popup';
 import { Link } from 'react-router-dom';
+import ContributeList from './ContributeList';
 
 const Profile = (props) => {
+  console.log(props.responseAPIDataSkatepark);
   if (!props.profileIsLoading) {
     props.handleCheckUserUpdateProfile();
   }
   return (
     <div className="profile main-container">
-      <h1 className="profile-title">Bienvenue {props.usernameConnection}</h1>
+      <h1 className="title profile-title">Bienvenue sur ton compte {props.usernameConnection}</h1>
 
       <div className="profile-container">
         <img className="profile-avatar" src={logo2} alt="avatar" />
         <p className="profile-name">{props.usernameConnection}</p>
         <Popup
           trigger={
-            <button className="profile-button-edit" type="button">
+            <button className="button profile-button-edit" type="button">
               Editer mon profil
             </button>
           }
@@ -145,19 +147,11 @@ const Profile = (props) => {
             </div>
           )}
         </Popup>
+        <button className="button profile-button-edit" onClick={props.handleDelete}>Supprimer compte</button>
       </div>
 
-      <div className="profile-articles">
-        <Link to="">
-          <img className="profile-articles-img" src="" alt="" />
-          <h2 className="profile-articles-title">Titre de l'annonce 1</h2>
-        </Link>
-        <Link to="">
-          <img className="profile-articles-img" src="" alt="" />
-          <h2 className="profile-articles-title">Titre de l'annonce 2</h2>
-        </Link>
-      </div>
-      <button onClick={props.handleDelete}>Supprimer compte</button>
+      <ContributeList />
+
     </div>
   );
 };

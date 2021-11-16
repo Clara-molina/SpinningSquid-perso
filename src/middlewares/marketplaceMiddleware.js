@@ -40,27 +40,27 @@ const marketplaceMiddleware = (store) => (next) => (action) => {
 
       break;
     case GET_MARKETPLACE_ARTICLE_LIST:
-      // const endPointSkateparkByCity = 'http://romain-talbot.vpnuser.lan/SpinningSquad_Apotheose/projet-skatepark/public/wp-json/wp/v2/sale/?meta_key=title&meta_value=' + store.getState().skatepark.searchFieldTown;
-      // console.log(store.getState().skatepark.searchFieldTown);
-      // axios
-      //   .get(baseURI + endPointSale)
-      //   .then((response) => {
-      //     console.log('response from API : ');
-      //     console.log(response);
-      //     store.dispatch(
-      //       successMarketplaceSearch(response.data)
-      //     );
-      //   })
-      //   .catch((error) => {
-      //     console.warn(error);
-      //   });
-      setTimeout(() => {
-        store.dispatch(
-          successMarketplaceSearch(
-            'a remplacer par le call API dans marketplaceMiddleware'
-          )
-        );
-      }, 3000);
+      const endPointSaleSearch = baseURI + '/sale/?meta_key=place&meta_value=' + store.getState().marketplace.searchFieldSale + '&_embed=true';
+      console.log(store.getState().marketplace.searchFieldSale);
+      axios
+        .get(endPointSaleSearch)
+        .then((response) => {
+          console.log('response from API : ');
+          console.log(response);
+          store.dispatch(
+            successMarketplaceSearch(response.data)
+          );
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+      // setTimeout(() => {
+      //   store.dispatch(
+      //     successMarketplaceSearch(
+      //       'a remplacer par le call API dans marketplaceMiddleware'
+      //     )
+      //   );
+      // }, 3000);
 
       break;
 
@@ -121,6 +121,8 @@ const marketplaceMiddleware = (store) => (next) => (action) => {
             Bisous.
             `
           );
+          store.dispatch(push('/trouve-ton-matos'));
+          location.reload();
         })
         .catch((error) => {
           console.warn(error);

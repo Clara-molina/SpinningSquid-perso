@@ -16,25 +16,22 @@ $orange: #ff8552;
   color: $white;
   text-align: center;
   padding: 1em;
-  font-size: 2em;
+  font-size: 3em;
+  font-family: 'Sedgwick Ave Display';
 }
 .button {
-  height: 30px;
-  width: 130px;
   background-color: $orange;
-  border-radius: 12px;
-  border: solid 1px;
+  border-radius: 50px;
+  border: none;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Righteous';
   color: black;
-  border-color: 1px solid black;
-box-shadow: 0 0 40px 40px $orange inset, 0 0 0 0 $orange;
-transition: all 150ms ease-in-out;
-padding: 1px !important;
-
+  box-shadow: 0 0 40px 40px $orange inset, 0 0 0 0 $orange;
+  transition: all 150ms ease-in-out;
+  //padding: 1px !important;
 
   &:hover {
     box-shadow: 0 0 10px 0 $orange inset, 0 0 10px 4px $orange;

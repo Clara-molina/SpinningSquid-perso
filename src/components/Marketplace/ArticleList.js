@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import logo2 from 'src/assets/img/logo2.png';
 
-const ArticleList = (list, isLogged) => {
+const ArticleList = (list) => {
   console.log('test' + list.itemList);
+  console.log('isLogged:' + list.userLogged);
 
   const mappingArticles = list.itemList.map((item) => {
     const getImageURL = () => {
@@ -25,22 +26,22 @@ const ArticleList = (list, isLogged) => {
     };
     const urlDetailSale = '/trouve-ton-matos/' + item.id;
     return (
-      <article className="list-item">
+      <article key={item.id} className="list-item">
         <h2 className="article-list-title">{item.title.rendered}</h2>
-        <p>Combien? {item.meta.price}€</p>
-        <p>Ou? {item.meta.place}</p>
+        <p>{item.meta.price}€</p>
+        <p>{item.meta.place}</p>
         <div className="item-image">
           <img src={getImageURL()} alt="" />
         </div>
         <div>
-          {isLogged && (
+          {list.userLogged && (
             <Link to={urlDetailSale}>
               <button className="button" type="button">
                 Voir
               </button>
             </Link>
           )}
-          {!isLogged && (
+          {!list.userLogged && (
             <Link to="/connexion">
               <button className="button" type="button">
                 Voir

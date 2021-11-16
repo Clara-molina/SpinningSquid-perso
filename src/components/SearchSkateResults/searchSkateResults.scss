@@ -1,6 +1,6 @@
 @use 'src/styles/vars';
 
-.searchresult {
+.skateparkDetails-searchresult {
   font-family: 'Righteous';
   display: flex;
   flex-direction: column;
@@ -10,42 +10,90 @@
   color: white;
   background: radial-gradient(ellipse at top, #242424 0%, #000000 80%);
 }
-
-.searchresulttitle {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  font-weight: bolder;
-  font-size: 30px;
+.skateparkDetails-title {
+  color: #fff;
+  font-family: 'Sedgwick Ave Display';
+  font-size: 3em;
+  padding: 1em;
+  text-align: center;
 }
-
-.searchresultimage {
+.skateparkDetails-searchresultimage {
   float: center;
-  max-width: 80%;
-  max-height: 50%;
+  max-width: 90vw;
+  max-height: auto;
   object-fit: cover;
   object-position: bottom;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 20px;
 }
-
-.searchresultmap {
-  padding-bottom: 200px;
+#skateparkDetails .padding-bottom-2em {
+  padding-bottom: 2em;
 }
-.search-map {
-  display:block !important;
-  width: 40%;
+#skateparkDetails .padding-right-2rem {
+  margin-right: 2rem;
+}
+.skateparkDetails-search-map {
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  width: 90vw;
+  height: 90vw;
   border: solid 1px;
   border-color: vars.$orange;
   box-shadow: 0 0 40px 40px vars.$orange inset, 0 0 0 0 vars.$orange;
   transition: all 150ms ease-in-out;
-  margin-bottom: 12em;
-  height: 700px;
-  
+
   &:hover {
     box-shadow: 0 0 10px 0 vars.$orange inset, 0 0 10px 4px vars.$orange;
   }
 }
+.skateparkDetails-description {
+  width: 90vw;
+  margin: 0 auto;
+  background-color: vars.$grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  .skateparkDetails-adresse-etat {
+    padding-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    .skateparkDetails-searchresulttitle {
+      text-align: left;
+      padding-bottom: 0.5rem;
+    }
+  }
+  .skateparkDetails-equipement {
+    display: flex;
+    flex-direction: row;
+    .skateparkDetails-detailssearchresult {
+      padding-top: 1rem;
+      padding-left: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      div {
+        padding-bottom: 0.2rem;
+      }
+    }
+  }
+}
+.skateparkDetails-searchresultadress {
+}
+
+.skateparkDetails-detailssearchresult {
+  padding-bottom: 1rem;
+}
+
+.skateparkDetails-searchresulttitle {
+  padding-top: 1rem;
+}
+.skateparkDetails-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+//etoile de rating
 .rating {
   width: 226px;
   margin: 0 auto 1em;
@@ -73,20 +121,6 @@
   color: orange;
   cursor: pointer;
 }
-
-.searchresultadress {
-  padding-bottom: 1em;
-}
-
-.detailssearchresult {
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-}
-
-.searchresultmap {
-  padding-top: 2em;
-}
-
 //loading wheel
 .skateparkDetails-loading-wheel {
   display: flex;
