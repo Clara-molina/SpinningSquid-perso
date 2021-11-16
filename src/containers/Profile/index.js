@@ -21,6 +21,8 @@ const mapStateToProps = (state) => ({
   postalEdit: state.user.profile.postalEdit,
   cityEdit: state.user.profile.cityEdit,
   emailEdit: state.user.profile.emailEdit,
+  responseAPIDataSkatepark: state.user.profile.responseAPIDataSkatepark,
+
 });
 
 const mapDispatchToProps = (dispatch) => ({

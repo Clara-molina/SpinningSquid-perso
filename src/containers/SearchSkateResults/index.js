@@ -31,6 +31,7 @@ const mapStateToProps = (state, ownProps) => {
     etatRadioBtn: state.skatepark.addSpot.etatRadioBtn,
     latitude: state.skatepark.addSpot.latitude,
     longitude: state.skatepark.addSpot.longitude,
+    id: ownProps.match.params.resultat,
   };
 };
 
