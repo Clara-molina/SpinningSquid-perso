@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo2 from 'src/assets/img/logo2.png';
+import logo2 from 'src/assets/img/logo-hover.png';
 
 const ArticleList = (list) => {
   console.log('test' + list.itemList);
@@ -8,7 +8,12 @@ const ArticleList = (list) => {
   const mappingArticles = list.itemList.map((item) => {
     const getImageURL = () => {
       // Vérification : l'annonce a-t-elle une image
-      if (item._embedded['wp:featuredmedia']) {
+      if (
+        item._embedded['wp:featuredmedia'] &&
+        item._embedded['wp:featuredmedia'][0] &&
+        item._embedded['wp:featuredmedia'][0].media_details &&
+        item._embedded['wp:featuredmedia'][0].media_details.sizes
+      ) {
         if (item._embedded['wp:featuredmedia'][0].media_details.sizes.large) {
           return item._embedded['wp:featuredmedia'][0].media_details.sizes.large
             .source_url;
@@ -26,7 +31,7 @@ const ArticleList = (list) => {
     };
     const urlDetailSale = '/trouve-ton-matos/' + item.id;
     return (
-      <article key={item.id} className="list-item">
+      <article key={item.id} className="marketplace-list-item">
         <h2 className="article-list-title">{item.title.rendered}</h2>
         <p>{item.meta.price}€</p>
         <p>{item.meta.place}</p>
