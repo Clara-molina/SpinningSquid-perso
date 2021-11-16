@@ -11,9 +11,6 @@
     font-size: 2rem;
   }
 
-  .search-title {
-  }
-
   .addSpot-button {
     display: flex;
     justify-content: flex-end;
@@ -46,20 +43,20 @@
 
   .search-result {
     display: flex;
+    width: 93vw;
+    flex-direction: row;
     align-items: flex-start;
     justify-content: center;
     margin: 1em auto 2em;
     max-width: 1500px;
 
     .search-map {
-      width: 40vw;
+      height: 60vw;
+      width: 60vw;
       border: solid 1px;
       border-color: vars.$orange;
       box-shadow: 0 0 40px 40px vars.$orange inset, 0 0 0 0 vars.$orange;
       transition: all 150ms ease-in-out;
-      height: 800px;
-      width: 50%;
-      margin: 2em 2em 0 0;
 
       &:hover {
         box-shadow: 0 0 10px 0 vars.$orange inset, 0 0 10px 4px vars.$orange;
@@ -68,9 +65,9 @@
 
     .search-list {
       box-sizing: border-box;
-      width: 50%;
+      width: 40%;
       height: auto;
-      margin: 2em;
+      margin-right: 1em;
 
       .search-list-item {
         padding: 1em;
@@ -87,20 +84,23 @@
           width: 80px;
           margin-right: 1em;
         }
-
-        .search-list-title {
-          margin: auto;
+        .block-titre-type {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
         }
-
         .search-list-description {
-          margin: auto;
           font-size: 0.8em;
+          padding-left: 0.8rem;
         }
         .block-buttons {
           display: flex;
           flex-direction: column;
           #special-button {
             padding-bottom: 0.5rem;
+          }
+          .button {
+            width: 80px;
           }
         }
         .search-list-button {
@@ -123,6 +123,22 @@
 }
 
 @media (max-width: 800px) {
+  .search {
+    .search-result {
+      flex-direction: column-reverse;
+
+      .search-map {
+        width: 90vw;
+        height: 90vw;
+        margin: 0 auto;
+      }
+      .search-list {
+        width: 90vw;
+        margin: 0 auto;
+        padding-top: 2rem;
+      }
+    }
+  }
   // .search .search-result .search-list .search-list-item {
   //   display: flex;
   //   align-items: flex-start;
@@ -163,6 +179,17 @@
 }
 
 @media (max-width: 400px) {
+  .search {
+    .search-result {
+      .search-list {
+        .search-list-item {
+          .block-titre-type {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
   // .search-list-item {
   //   display: flex;
   //   flex-wrap: wrap;
