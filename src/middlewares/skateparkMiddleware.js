@@ -240,13 +240,14 @@ const skateparkMiddleware = (store) => (next) => (action) => {
         .catch((error) => {
           console.warn(error);
         });
-      store.dispatch(
-        successSubmitUpdateSpot(
-          'a remplacer par kekchose ou pas dans skateparkMiddleware'
-        )
-      );
+      // store.dispatch(
+      //   successSubmitUpdateSpot(
+      //     'a remplacer par kekchose ou pas dans skateparkMiddleware'
+      //   )
+      // );
       console.log('requete update ok');
-      store.dispatch(push('/newsletter'));
+      store.dispatch(push('/trouve-ton-skatepark'));
+
       //store.dispatch(goForward());
       console.log('redirection');
 
