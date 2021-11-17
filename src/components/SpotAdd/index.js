@@ -129,15 +129,15 @@ const SpotAdd = (props) => {
               </div>
               <div className="spotadd-container-image">
                 <h2 className="spotadd-title">Image</h2>
-                <label
+                {/* <label
                   htmlFor="uploadImage"
                   className="add-image cursor-pointer"
                 >
                   Parcourir
-                </label>
+                </label> */}
                 <input
                   id="uploadImage"
-                  className="spotadd-input-image"
+                  className="add-image"
                   type="file"
                   name="image"
                   accept="image/png, image/jpeg, image/jpg"
