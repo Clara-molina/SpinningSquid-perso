@@ -4,6 +4,7 @@ import {
   callGetSkateparkDetails,
   setOnSkateparkDetailsLoading,
   submitDeleteSpot,
+  setIsLoadingToFalse,
 } from 'src/actions/skateparkActions';
 import SearchSkateResults from 'src/components/SearchSkateResults';
 
@@ -37,6 +38,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
   getSkateparkDetails: (skateparkName) => {
+    dispatch(setIsLoadingToFalse());
     dispatch(callGetSkateparkDetails(skateparkName));
   },
   callDeleteSkatepark: () => {

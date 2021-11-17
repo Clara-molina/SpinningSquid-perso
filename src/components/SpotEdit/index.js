@@ -1,10 +1,12 @@
-import './spotadd.scss';
+//import './spotadd.scss';
 import axios from 'axios';
 import { baseSpinningSquid } from 'src/routesBack';
 
 const SpotEdit = (props) => {
   console.log(props.skateparkId);
-  if(!props.spotAddIsLoading){props.getSkateparkDetails(props.skateparkId)};
+  if (!props.spotAddIsLoading) {
+    props.getSkateparkDetails(props.skateparkId);
+  }
 
   const transfer = (event) => {
     props.handleUploadLocalImage(event);
@@ -248,11 +250,7 @@ const SpotEdit = (props) => {
 
         <div className="spotadd-container-image">
           <h2 className="spotadd-title">Image</h2>
-          <label
-            id="image-label"
-            htmlFor="uploadImage"
-            className="add-image"
-          >
+          <label id="image-label" htmlFor="uploadImage" className="add-image">
             Parcourir
           </label>
           <input
