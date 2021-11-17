@@ -39,6 +39,8 @@ const SearchList = (list) => {
     const getImageURL = () => {
       // Vérification : la recette a-t-elle une image
       if (
+        item &&
+        item._embedded &&
         item._embedded['wp:featuredmedia'] &&
         item._embedded['wp:featuredmedia'][0].media_details &&
         item._embedded['wp:featuredmedia'][0].media_details.sizes
