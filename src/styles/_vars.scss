@@ -102,3 +102,9 @@ $mediumScreen: 800px;
     font-size: 1.5em;
   }
 }
+
+@media (max-width: $smallScreen) {
+  .add-image {
+    width: 200px;
+  }
+}
