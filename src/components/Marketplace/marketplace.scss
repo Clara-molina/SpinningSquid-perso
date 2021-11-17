@@ -2,14 +2,22 @@
 
 #marketplace {
   font-family: 'Righteous';
+
   .search {
-    .search-title {
-    }
+    .search-title {}
+
     .marketplace-post {
       display: flex;
       justify-content: flex-end;
       margin-right: 2em;
+
+      .button-search {
+        font-size: 1rem;
+        width: 120px;
+        height: 50px;
+      }
     }
+
     .marketplace-form {
       display: flex;
       align-items: center;
@@ -18,12 +26,14 @@
       max-width: 1000px;
       color: vars.$white;
       height: 80px;
-      .marketplace-search {
-      }
+
+      .marketplace-search {}
+
       .marketplace-input {
         font-size: 1.1rem;
         margin: 0 2em 0 0.5em;
       }
+
       .marketplace-search-button {
         margin: 0;
         height: 30px;
@@ -31,6 +41,7 @@
       }
     }
   }
+
   .marketplace-loading-wheel {
     display: flex;
     width: 100%;
@@ -38,6 +49,7 @@
     justify-content: center;
   }
 }
+
 // -----------------------
 // ArticleList
 // -----------------------
@@ -51,10 +63,12 @@
   // grid-template-columns: repeat(5, 1fr);
   // grid-gap: 20px;
 }
+
 .article-list-title {
   font-size: 1.3em;
   margin-bottom: 0.5em;
 }
+
 .marketplace-list-item {
   width: 300px;
   padding: 1rem 0;
@@ -66,67 +80,28 @@
   align-items: center;
   border-radius: 10px;
   transition: all 150ms ease-in-out;
+
   &:hover {
     box-shadow: 0 0 10px 0 vars.$orange inset, 0 0 10px 4px vars.$orange;
   }
 }
+
 .item-image img {
   height: 200px;
   width: 200px;
   margin: 1em 0 1em;
 }
-// ------------------------
-// PostArticle
-// ------------------------
-#postarticle {
-  margin: 2rem;
-  font-family: 'Righteous';
-  color: vars.$white;
-  .title {
-  }
-  .postarticle-block {
-    display: flex;
-    margin: auto;
-    width: 50%;
-    .postarticle-characteristics {
-      display: flex;
-      flex-direction: column;
-      margin: auto;
-      width: 50%;
-      .postarticle-input {
-        margin: 0.5em;
-        width: 100%;
-      }
-    }
-  }
-  .postarticle-description {
-    width: 100%;
-    padding: 2rem 0;
-    height: fit-content;
-    text-align: center;
-    #postarticle-description {
-      width: 60vw;
-      height: 20vh;
-    }
-  }
-  .postarticle-button {
-    margin-bottom: 3rem;
-    .button {
-      font-size: 1.2rem;
-      width: 140px;
-      height: 60px;
-    }
-  }
-}
+
 @media (max-width: 764px) {
   #marketplace {
-    .article-list {
-    }
+    .article-list {}
+
     .search {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
       .marketplace-post {
         position: unset;
         top: unset;
@@ -135,48 +110,137 @@
     }
   }
 }
-// ---------------------
-// DetailsArticle
-// ---------------------
-.main-container {
-  .detailarticle-block {
-    padding: 2rem;
+
+// ------------------------
+// PostArticle
+// ------------------------
+#postarticle {
+  margin: 2rem;
+  font-family: 'Righteous';
+  color: vars.$white;
+
+  .postarticle-block {
     display: flex;
-    align-items: center;
-    max-width: 1500px;
-    height: auto;
     margin: auto;
-    padding-top: 3em;
-    .detailarticle-image {
-      width: 700px;
-      height: auto;
-    }
-    .detailarticle-resume {
-      font-weight: bold;
-      font-size: 1.5rem;
+    width: 70%;
+
+    .postarticle-characteristics {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      align-content: flex-start;
-      margin: auto;
-      color: white;
-      .detailarticle-title {
-        color: vars.$orange;
-        padding-bottom: 1em;
-        font-size: 1.7em;
+      width: 50%;
+
+      .postarticle-input {
+        margin: 0.5em 0;
+        width: 100%;
       }
-      .detailarticle-adress {
-        padding-bottom: 1em;
-        margin: auto;
-      }
-      .detailarticle-price {
-        padding-bottom: 1em;
-      }
-      .detailarticle-description {
-        text-align: center;
-        font-size: 0.8em;
-        margin: 1em;
+    }
+
+    .postarticle-description {
+      width: 50%;
+      height: fit-content;
+      text-align: center;
+
+      #addSaleDescription {
+        width: 90%;
+        min-height: 20vh;
+        margin: 1.5em 0;
       }
     }
   }
 }
+
+@media (max-width: vars.$smallScreen) {
+  #postarticle {
+    .postarticle-block {
+      flex-direction: column;
+      align-items: center;
+      width: 98%;
+
+      .postarticle-characteristics {
+        width: 100%;
+      }
+
+      .postarticle-description {
+        width: 100%;
+
+        #addSaleDescription {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: vars.$smallScreen + 1) and (max-width: vars.$mediumScreen) {
+  #postarticle {
+    .postarticle-block {
+      flex-direction: column;
+      align-items: center;
+      width: 98%;
+
+      .postarticle-characteristics {
+        width: 70%;
+      }
+
+      .postarticle-description {
+        width: 100%;
+
+        #addSaleDescription {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+  // ---------------------
+  // DetailsArticle
+  // ---------------------
+  .main-container {
+    .detailarticle-block {
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      max-width: 1500px;
+      height: auto;
+      margin: auto;
+      padding-top: 3em;
+
+      .detailarticle-image {
+        width: 700px;
+        height: auto;
+      }
+
+      .detailarticle-resume {
+        font-weight: bold;
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: flex-start;
+        margin: auto;
+        color: white;
+
+        .detailarticle-title {
+          color: vars.$orange;
+          padding-bottom: 1em;
+          font-size: 1.7em;
+        }
+
+        .detailarticle-adress {
+          padding-bottom: 1em;
+          margin: auto;
+        }
+
+        .detailarticle-price {
+          padding-bottom: 1em;
+        }
+
+        .detailarticle-description {
+          text-align: center;
+          font-size: 0.8em;
+          margin: 1em;
+        }
+      }
+    }
+  }

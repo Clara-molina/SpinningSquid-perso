@@ -10,20 +10,26 @@ import {
   submitDeleteProfile,
 } from 'src/actions/userActions';
 
-const mapStateToProps = (state) => ({
-  profileIsLoading: state.user.profile.profileIsLoading,
-  usernameConnection: state.user.profile.usernameEdit,
-  usernameEdit: state.user.profile.usernameEdit,
-  passwordEdit: state.user.profile.passwordEdit,
-  lastnameEdit: state.user.profile.lastnameEdit,
-  firstnameEdit: state.user.profile.firstnameEdit,
-  streetEdit: state.user.profile.streetEdit,
-  postalEdit: state.user.profile.postalEdit,
-  cityEdit: state.user.profile.cityEdit,
-  emailEdit: state.user.profile.emailEdit,
-  responseAPIDataSkatepark: state.user.profile.responseAPIDataSkatepark,
+const mapStateToProps = (state) => {
+  console.log('test');
+  console.log(state.user.profile.responseAPIDataSkatepark);
 
-});
+  return ({
+    profileIsLoading: state.user.profile.profileIsLoading,
+    usernameConnection: state.user.profile.usernameEdit,
+    usernameEdit: state.user.profile.usernameEdit,
+    passwordEdit: state.user.profile.passwordEdit,
+    lastnameEdit: state.user.profile.lastnameEdit,
+    firstnameEdit: state.user.profile.firstnameEdit,
+    streetEdit: state.user.profile.streetEdit,
+    postalEdit: state.user.profile.postalEdit,
+    cityEdit: state.user.profile.cityEdit,
+    emailEdit: state.user.profile.emailEdit,
+    contributeSkate: state.user.profile.responseAPIDataSkatepark,
+    contributeArticle: state.user.profile.responseAPIDataArticle,
+    contributeSale: state.user.profile.responseAPIDataSale,
+  })
+};
 
 const mapDispatchToProps = (dispatch) => ({
   handleChange: (event) => {

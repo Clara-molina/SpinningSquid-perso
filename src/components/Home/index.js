@@ -9,11 +9,14 @@ import logo from 'src/assets/img/logo1.png';
 import './home.scss';
 
 const Home = () => (
-  <div className="home-container main-containerw">
-    <h1 className="home-title">Spinning Squid</h1>
-    <img className="home-logo" src={logo} alt="logo spinning squid" />
-    <img className="home-image" src={imageHome} alt="skatepark" />
-    <p className="home-p">spinning squid n'a rien à voir avec une technique ninja de lancé de poulpes ou même de pêche. C'est un site communautaire pour te mettre en relation avec des gens qui partagent la même passion que toi : le skatebord (sous toutes ses formes) ! Ici tu peux partager tes meilleurs spot, les events proches de chez toi ou bien du matos dont tu veux te séparer.</p>
+  <div className="home-container">
+    <div className="home-header">
+      <h1 className="home-title">Spinning Squid</h1>
+      <img className="home-logo" src={logo} alt="logo spinning squid" />
+      <img className="home-image" src={imageHome} alt="skatepark" />
+    </div>
+    <p className="home-p">SPINNING SQUID n'a rien à voir avec une technique ninja de lancé de poulpes ou même de pêche. C'est un site communautaire pour te mettre en relation avec des personnes qui partagent la même passion que toi : le skatebord (sous toutes ses formes) ! <br></br><br></br>
+    Ici tu peux partager tes meilleurs spot, les events proches de chez toi ou bien du matos dont tu veux te séparer.</p>
 
     <Link to="/trouve-ton-skatepark" className="home-nav">
       <div className="home-nav-container">

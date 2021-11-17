@@ -4,9 +4,7 @@ import { baseSpinningSquid } from 'src/routesBack';
 
 const SpotEdit = (props) => {
   console.log(props.skateparkId);
-  if (!props.spotAddIsLoading) {
-    props.getSkateparkDetails(props.skateparkId);
-  }
+  if (!props.spotAddIsLoading || props.checkBadValue) { props.getSkateparkDetails(props.skateparkId) };
 
   const transfer = (event) => {
     props.handleUploadLocalImage(event);
