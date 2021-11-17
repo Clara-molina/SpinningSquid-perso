@@ -2,13 +2,14 @@ import './profile.scss';
 import logo2 from 'src/assets/img/logo2.png';
 import Popup from 'reactjs-popup';
 import { Link } from 'react-router-dom';
-import ContributeList from './ContributeList';
+
 
 const Profile = (props) => {
-  console.log(props.responseAPIDataSkatepark);
+  // console.log(props.contributeSkate);
   if (!props.profileIsLoading) {
     props.handleCheckUserUpdateProfile();
   }
+
   return (
     <div className="profile main-container">
       <h1 className="title profile-title">Bienvenue sur ton compte {props.usernameConnection}</h1>
@@ -150,9 +151,92 @@ const Profile = (props) => {
         <button className="button profile-button-edit" onClick={props.handleDelete}>Supprimer compte</button>
       </div>
 
-      <ContributeList />
+      <div className="profile-contribution">
+        <h2 className="profile-contribution-title">Mes contributions</h2>
+        <h2 className="profile-add-title">Ajout de Spot</h2>
+        <div className="profile-contribution-articles">
+          {props.contributeSkate && props.contributeSkate.map((item) => {
+            const urlSkateId = "/trouve-ton-skatepark/" + item.id
+            const urlSkateEditId = "/trouve-ton-skatepark/modifie-ton-spot/" + item.id
+            return (
+              <>
+                <h3 className="profile-articles-title">{item.title.rendered}</h3>
+                <Link to={urlSkateId}>
+                  <button
+                    className="button button-articles"
+                    type="button"
+                  >
+                    Consulter
+                  </button>
+                </Link>
+                <Link to={urlSkateEditId}>
+                  <button
+                    className="button button-articles"
+                    type="button"
+                  >
+                    Modifier
+                  </button>
+                </Link>
+              </>
+            )
+          })}
+        </div>
+        <h2 className="profile-add-title">Matos à vendre</h2>
+        <div className="profile-contribution-articles">
+          {props.contributeSale && props.contributeSale.map((item) => {
+            const urlSaleId = "/trouve-ton-matos/" + item.id
+            return (
+              <>
+                <h3 className="profile-articles-title">{item.title.rendered}</h3>
+                <Link to={urlSaleId}>
+                  <button
+                    className="button button-articles"
+                    type="button"
+                  >
+                    Consulter
+                  </button>
+                </Link>
+                <button
+                  className="button button-articles"
+                  type="button"
+                  to=""
+                >
+                  Modifier
+                  </button>
+              </>
+            )
+          })}
+        </div>
+        <h2 className="profile-add-title">Ajout d'évènement</h2>
+        <div className="profile-contribution-articles">
+          {props.contributeSale && props.contributeArticle.map((item) => {
+            const urlArticleId = "/communaute/" + item.id
+            return (
+              <>
+                <h3 className="profile-articles-title">{item.title.rendered}</h3>
+                <Link to={urlArticleId}>
+                  <button
+                    className="button button-articles"
+                    type="button"
+                    to="/communaute/"
+                  >
+                    Consulter
+                  </button>
+                </Link>
+                <button
+                  className="button button-articles"
+                  type="button"
+                  to=""
+                >
+                  Modifier
+                  </button>
+              </>
+            )
+          })}
+        </div>
+      </div >
 
-    </div>
+    </div >
   );
 };
 
