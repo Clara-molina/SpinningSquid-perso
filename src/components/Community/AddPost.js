@@ -9,8 +9,9 @@ const AddPost = (props) => {
   };
   return (
     <div id="addpost" className="main-container">
-      <h2 className="addpost-title">Ajoute un évènement</h2>
+      <h2 className="title">Ajoute un évènement</h2>
       <form onSubmit={props.handleAddArticle}>
+        
         <div className="addpost-block">
           <div className="addpost-charateristics">
             <label htmlFor="addPostTitle">Titre
@@ -44,9 +45,8 @@ const AddPost = (props) => {
             </label>
             <div className="spotadd-container-image">
               <h2 className="spotadd-title">Image</h2>
-              <label htmlFor="addPostImage" className="add-image">Parcourir </label>
               <input
-                className="addpost-input"
+                className="add-image"
                 type="file"
                 id="addPostImage"
                 name="image"
@@ -55,20 +55,19 @@ const AddPost = (props) => {
                 onChange={transfer}
                 hidden
               />
-              <span id="file-chosen-addPost">No file chosen</span>
             </div>
           </div>
-        </div>
-        <div className="addpost-description">
-          <textarea
-            id="addPostDescription"
-            name="story"
-            onChange={props.handleOnChange}
-            rows="5"
-            cols="33"
-          >
-            Entre ta description ici
-          </textarea>
+          <div className="addpost-description">
+            <textarea
+              id="addpost-description"
+              name="story"
+              onChange={props.handleOnChange}
+              rows="5"
+              cols="33"
+            >
+              Entre ta description ici
+            </textarea>
+          </div>
         </div>
         <div className="addpost-button">
           <button type="submit" id="addpost-button" className="button">

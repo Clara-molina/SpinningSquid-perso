@@ -44,7 +44,6 @@ const AddSale = (props) => {
 
             <div className="postarticle-container-image">
               <h2 className="postarticle-title">Image</h2>
-              <label htmlFor="addSaleImage"></label>
               <input
                 className="add-image"
                 type="file"

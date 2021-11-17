@@ -1,4 +1,4 @@
-import './spotadd.scss';
+//import './spotadd.scss';
 import axios from 'axios';
 import { baseSpinningSquid } from 'src/routesBack';
 
