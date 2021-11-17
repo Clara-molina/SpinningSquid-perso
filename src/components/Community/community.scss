@@ -57,8 +57,8 @@
     }
     .description-resume {
       --responsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 420px) / (1200 - 420))); 
-      --max-font: 15;
-      --min-font: 5;
+      --max-font: 12;
+      --min-font: 8;
       font-size: var(--responsive) ;
       color: white ;
       text-shadow: black 1px 1px 1px ;

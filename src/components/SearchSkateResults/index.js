@@ -127,19 +127,7 @@ const SearchSkateResults = (props) => {
         </>
       )}
       <div className="skateparkDetails-buttons">
-        <div>
-          <Link
-            className="padding-right-2rem button"
-            to={'/trouve-ton-skatepark/modifie-ton-spot/' + props.skateparkName}
-          >
-            modifie ton spot
-          </Link>
-        </div>
-        <div>
-          <button className="button" onClick={props.callDeleteSkatepark}>
-            Supprimer ce Spot
-          </button>
-        </div>
+
       </div>
     </div>
   );

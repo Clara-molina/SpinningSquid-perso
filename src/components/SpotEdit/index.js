@@ -248,16 +248,9 @@ const SpotEdit = (props) => {
 
         <div className="spotadd-container-image">
           <h2 className="spotadd-title">Image</h2>
-          <label
-            id="image-label"
-            htmlFor="uploadImage"
-            className="add-image"
-          >
-            Parcourir
-          </label>
           <input
             id="uploadImage"
-            className="spotadd-input-image"
+            className="spotadd-input-image add-image"
             type="file"
             name="image"
             accept="image/png, image/jpeg"
@@ -266,7 +259,6 @@ const SpotEdit = (props) => {
             onChange={transfer}
             hidden
           />
-          <span id="file-chosen">{props.uploadedImg}</span>
         </div>
 
         <div className="spotadd-container-state">
@@ -312,14 +304,20 @@ const SpotEdit = (props) => {
             />
           </label>
         </div>
-        <button
-          type="submit"
-          className="button spotadd-button"
-          onClick={props.handleSubmitEditPost}
-        >
-          Modifie ton Spot
+        <div className="div-button">
+          <button
+            type="submit"
+            className="button spotadd-button"
+            onClick={props.handleSubmitEditPost}
+          >
+            Modifie ton Spot
         </button>
+          <button className="button spotDelete-button" onClick={props.callDeleteSkatepark}>
+            Supprimer ce Spot
+          </button>
+        </div>
       </form>
+
     </div>
   );
 };
