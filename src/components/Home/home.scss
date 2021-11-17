@@ -42,16 +42,12 @@
   }
 
   .home-p {
-    background: linear-gradient(to top,
-        vars.$black,
-        vars.$darkGrey,
-        vars.$grey);
     color: vars.$white;
-    font-family: 'Righteous';
-    font-size: 1.2em;
-    line-height: 1.5em;
+    font-size: 1.8em;
+    line-height: 1.2em;
     text-align: center;
     padding: 1em;
+    font-family: 'Sedgwick Ave Display';
   }
 
   .home-nav {
@@ -110,6 +106,10 @@
 
   .home-container {
 
+    .home-p {
+      font-size: 1.3em;
+    }
+
     .home-header {
 
       .home-logo {
@@ -146,7 +146,6 @@
 
     .home-p {
       font-size: 0.8em;
-      line-height: 1.2em;
     }
 
     .home-nav {
@@ -160,7 +159,7 @@
         text-align: center !important;
         --responsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 420px) / (1200 - 420)));
         --max-font: 35;
-        --min-font: 20;
+        --min-font: 10;
         font-size: var(--responsive);
         color: white;
         text-shadow: black 1px 1px 1px;
