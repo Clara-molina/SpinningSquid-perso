@@ -41,10 +41,20 @@ $mediumScreen: 800px;
   }
 }
 .add-image {
-  margin: 1em;
+  margin: 1.5em auto 1em;
+  background-color: $orange;
+  border-radius: 50px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Righteous';
+  color: black;
+  box-shadow: 0 0 40px 40px $orange inset, 0 0 0 0 $orange;
+  transition: all 150ms ease-in-out;
 
   &:hover {
-    text-shadow:$orange 0 0 10px, $orange 0 0 10px;
+    box-shadow: 0 0 10px 0 $orange inset, 0 0 10px 4px $orange;
   }
 }
 .list {

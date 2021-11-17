@@ -44,9 +44,9 @@ const AddSale = (props) => {
 
             <div className="postarticle-container-image">
               <h2 className="postarticle-title">Image</h2>
-              <label htmlFor="addSaleImage">Parcourir</label>
+              <label htmlFor="addSaleImage"></label>
               <input
-                className="postarticle-input"
+                className="add-image"
                 type="file"
                 id="addSaleImage"
                 name="image"
@@ -55,21 +55,19 @@ const AddSale = (props) => {
                 onChange={transfer}
                 hidden
               />
-              <span id="file-chosen-addSale">No file chosen</span>
             </div>
-
           </div>
-        </div>
-        <div className="postarticle-description">
-          <textarea
-            id="addSaleDescription"
-            name="story"
-            rows="5"
-            cols="33"
-            onChange={props.handleOnChange}
-          >
-            Entre ta description ici
-          </textarea>
+          <div className="postarticle-description">
+            <textarea
+              id="addSaleDescription"
+              name="story"
+              rows="5"
+              cols="33"
+              onChange={props.handleOnChange}
+            >
+              Entre ta description ici
+            </textarea>
+          </div>
         </div>
         <div className="postarticle-button">
           <button type="submit" id="postarticle-button" className="button">
