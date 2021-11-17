@@ -32,3 +32,26 @@
     }
   }
 }
+
+@media (max-width: vars.$smallScreen) {
+
+  .notFound {
+    .notFound-container {
+      .notFound-image {
+        width: 300px;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media (min-width: vars.$smallScreen +1 ) and (max-width: vars.$mediumScreen) {
+  .notFound {
+    .notFound-container {
+      .notFound-image {
+        width: 400px;
+        height: auto;
+      }
+    }
+  }
+}
