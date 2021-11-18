@@ -115,7 +115,6 @@
 // PostArticle
 // ------------------------
 #postarticle {
-  margin: 2rem;
   font-family: 'Righteous';
   color: vars.$white;
 
@@ -207,7 +206,7 @@
       padding-top: 3em;
 
       .detailarticle-image {
-        width: 700px;
+        width: 600px;
         height: auto;
       }
 
@@ -218,8 +217,8 @@
         flex-direction: column;
         align-items: center;
         align-content: flex-start;
-        margin: auto;
         color: white;
+        margin-left: 1em;
 
         .detailarticle-title {
           color: vars.$orange;
@@ -244,3 +243,70 @@
       }
     }
   }
+@media (max-width: vars.$smallScreen) {
+  .main-container { 
+    .detailarticle-block {
+      display: flex;
+      flex-direction: column;
+
+      .detailarticle-image {
+        display : block;
+        width: 300px;
+      }
+
+      .detailarticle-resume {
+        font-size: 1em;
+
+        .detailarticle-title {
+          color: vars.$orange;
+          padding: 0.5em 0;
+          font-size: 1.2em;
+        }
+
+        .detailarticle-adress,
+        .detailarticle-price {
+          padding-bottom: 0.5em;
+        }
+
+        .detailarticle-description {
+          text-align: center;
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: vars.$smallScreen +1) and (max-width: vars.$mediumScreen) {
+
+  .main-container { 
+    .detailarticle-block {
+      display: flex;
+      flex-direction: column;
+
+      .detailarticle-image {
+        display : block;
+        width: 400px;
+      }
+      .detailarticle-resume {
+        font-size: 1.2em;
+
+        .detailarticle-title {
+          color: vars.$orange;
+          padding: 0.5em 0;
+          font-size: 1.2em;
+        }
+
+        .detailarticle-adress,
+        .detailarticle-price {
+          padding-bottom: 0.5em;
+        }
+
+        .detailarticle-description {
+          text-align: center;
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}
