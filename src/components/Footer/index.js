@@ -21,12 +21,11 @@ const Footer = () => (
     </NavLink>
 
     <NavLink
-      to=""
       className="navFooter-link"
+      to="/spinning-squad"
       activeClassName="navFooter-link--active"
-      exact
     >
-      Ici un link
+      Spinning Squad
     </NavLink>
   </nav>
 );
