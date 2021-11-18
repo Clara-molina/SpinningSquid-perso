@@ -5,19 +5,20 @@ const PostList = (list) => {
   console.log('test' + list.itemList);
   const mappingPosts = list.itemList.map((item) => {
     const getImageURL = () => {
-    // Vérification : l'article a-t-il une image
+      // Vérification : l'article a-t-il une image
       if (item._embedded['wp:featuredmedia']) {
         if (item._embedded['wp:featuredmedia'][0].media_details.sizes.large) {
-          return item._embedded['wp:featuredmedia'][0].media_details.sizes.large.source_url;
-        }
-        else if (item._embedded['wp:featuredmedia'][0].media_details.sizes.full) {
-          return item._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url;
-        }
-        else {
+          return item._embedded['wp:featuredmedia'][0].media_details.sizes.large
+            .source_url;
+        } else if (
+          item._embedded['wp:featuredmedia'][0].media_details.sizes.full
+        ) {
+          return item._embedded['wp:featuredmedia'][0].media_details.sizes.full
+            .source_url;
+        } else {
           return item._embedded['wp:featuredmedia'][0].source_url;
         }
-      }
-      else {
+      } else {
         return { logo2 };
       }
     };
@@ -30,14 +31,23 @@ const PostList = (list) => {
       >
         <div className="eventList-item">
           <div>
-            <img className="item-image" alt="" src={getImageURL()} />
+            <img
+              id="community-img"
+              className="item-image"
+              alt=""
+              src={getImageURL()}
+            />
           </div>
           <div className="item-description">
-            <h2 className="item-title">{item.title.rendered}</h2>
-            <p>{item.meta.place}</p>
-            <p>{item.meta.date}</p>
-            <div className="description-resume">
-              <div dangerouslySetInnerHTML={{ __html: item.content.rendered }} />
+            <div>
+              <h2 className="item-title">{item.title.rendered}</h2>
+              <p>{item.meta.place}</p>
+              <p>{item.meta.date}</p>
+              <div className="description-resume">
+                <div
+                  dangerouslySetInnerHTML={{ __html: item.content.rendered }}
+                />
+              </div>
             </div>
             <div className="description-link">
               <Link to={urlDetailPost}>
@@ -51,7 +61,7 @@ const PostList = (list) => {
       </article>
     );
   });
-  return mappingPosts;
+  return <div className="community-list-article">{mappingPosts}</div>;
 };
 
 export default PostList;

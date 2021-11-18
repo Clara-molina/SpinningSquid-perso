@@ -4,6 +4,7 @@ import {
   submitUpdateSpot,
   callGetSkateparkDetails,
   fillState,
+  submitDeleteSpot,
 } from 'src/actions/skateparkActions';
 import returnBase64Img from 'src/generic_functions';
 
@@ -71,6 +72,9 @@ const mapDispatchToProps = (dispatch, state) => ({
     //const encodedImg = createBase64Image(selectedImg);
     //console.log('on passe dans handleSubmitUpdatePost');
     dispatch(submitUpdateSpot());
+  },
+  callDeleteSkatepark: () => {
+    dispatch(submitDeleteSpot());
   },
 });
 

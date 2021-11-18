@@ -11,19 +11,21 @@ const Community = (props) => {
   return (
     <div id="community" className="main-container">
       <div className="community-header">
-        <div>
-          <h2 className="title community-title">Whassup ?!</h2>
-        </div>
+        <h2 className="title community-title">Whassup ?!</h2>
       </div>
       <div className="community-post">
         {props.isLogged && (
           <Link to="/communaute/ajoute-ton-evenement">
-            <button type="button" className="button button-post">Proposer un évènement</button>
+            <button type="button" className="button button-post">
+              Proposer un évènement
+            </button>
           </Link>
         )}
         {!props.isLogged && (
           <Link to="/connexion">
-            <button type="button" className=" button button-post">Proposer un évènement</button>
+            <button type="button" className=" button button-post">
+              Proposer un évènement
+            </button>
           </Link>
         )}
       </div>

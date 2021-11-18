@@ -122,8 +122,11 @@ const authMiddleware = (store) => (next) => (action) => {
       axios
         .get(baseURI + '/users?slug=' + userVar)
         .then((response) => {
-          //console.log('response from API : ');
-          //console.log(response.data);
+          console.log('response from API : ');
+          console.log(response.data);
+          //ajouter dispatch pour utiliser l'id de avatar dans une autre requete
+          //renvoyant l'image du user
+          //baseURI + /media/[idAvatar]
           store.dispatch(getUserDataProfileSuccess(response.data));
           store.dispatch(getUserDataSkatepark(response.data));
           store.dispatch(getUserDataArticle(response.data));

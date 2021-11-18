@@ -42,6 +42,9 @@ $largeScreen: 1500px;
     box-shadow: 0 0 10px 0 $orange inset, 0 0 10px 4px $orange;
   }
 }
+.cursor-pointer {
+  cursor: pointer;
+}
 .add-image {
   margin: 1.5em auto 1em;
   background-color: $orange;
