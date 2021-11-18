@@ -34,7 +34,7 @@ const Profile = (props) => {
                 <div className="header"> Modifie ton profil </div>
                 <form className="form" onSubmit={props.handleSubmitUpdateProfile}>
                   <div className="content">
-                    <label className="form-edit-label" htmlFor="usernameEdit">
+                    {/* <label className="form-edit-label" htmlFor="usernameEdit">
                       Nom d'utilisateur
                       <input
                         id="usernameEdit"
@@ -44,7 +44,7 @@ const Profile = (props) => {
                         // required
                         onChange={props.handleChange}
                       />
-                    </label>
+                    </label> */}
                     <label className="form-edit-label" htmlFor="lastnameEdit">
                       Nom
                       <input

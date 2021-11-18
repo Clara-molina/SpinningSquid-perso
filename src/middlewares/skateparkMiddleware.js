@@ -86,7 +86,7 @@ const skateparkMiddleware = (store) => (next) => (action) => {
       const endPointSkateparkByCity =
         baseURI +
         '/skatepark/?meta_key=city&meta_value=' +
-        store.getState().skatepark.searchFieldTown;
+        store.getState().skatepark.searchFieldTown + "&_embed=true";
       console.log(store.getState().skatepark.searchFieldTown);
       axios
         .get(endPointSkateparkByCity)
