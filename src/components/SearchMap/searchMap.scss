@@ -3,7 +3,7 @@
 .search {
   height: auto;
   max-width: 100%;
-  font-family: 'Righteous';
+  font-family: "Righteous";
 
   .iconeMarker {
     height: 25px;
@@ -115,7 +115,7 @@
     }
   }
 
-  .buttonflex{
+  .buttonflex {
     display: flex;
     justify-content: space-between;
   }
@@ -134,6 +134,20 @@
   align-items: center;
   justify-content: space-between;
   background-color: vars.$white;
+}
+
+@media (min-width: vars.$largeScreen) {
+  .search {
+    .search-result {
+      .search-map {
+        width: 50vw;
+        height: 45vw;
+        margin: 0 auto;
+      }
+      .search-list {
+      }
+    }
+  }
 }
 
 @media (max-width: 800px) {
@@ -222,4 +236,3 @@
   //   }
   // }
 }
-
