@@ -1,6 +1,11 @@
-/* eslint-disable import/no-extraneous-dependencies */
 // == Import
-import { Router, Route, Switch, Redirect } from 'react-router-dom';
+import {
+  Router,
+  Route,
+  Switch,
+  Redirect,
+}
+  from 'react-router-dom';
 import { history } from 'src/store';
 import './styles.scss';
 
@@ -25,8 +30,9 @@ import SpotEdit from 'src/containers/SpotEdit';
 import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
 import Loading from 'src/components/Loading';
+import Squad from 'src/components/Squad';
 
-// Import page d'erreur
+// Import 404
 import NotFound from 'src/components/NotFound';
 
 // == Composant
@@ -48,22 +54,10 @@ const App = (props) => {
           <Route exact path="/trouve-ton-skatepark" component={SearchMap} />
           <Route exact path="/trouve-ton-matos" component={Marketplace} />
           <Route exact path="/communaute" component={Community} />
-          <Route
-            path="/trouve-ton-skatepark/ajoute-ton-spot"
-            component={SpotAdd}
-          />
-          <Route
-            path="/trouve-ton-matos/ajoute-ton-matos"
-            component={AddSale}
-          />
-          <Route
-            path="/trouve-ton-skatepark/modifie-ton-spot/:skateparkId"
-            component={SpotEdit}
-          />
-          <Route
-            path="/trouve-ton-skatepark/:resultat"
-            component={SearchSkateResults}
-          />
+          <Route path="/trouve-ton-skatepark/ajoute-ton-spot" component={SpotAdd} />
+          <Route path="/trouve-ton-matos/ajoute-ton-matos" component={AddSale} />
+          <Route path="/trouve-ton-skatepark/modifie-ton-spot/:skateparkId" component={SpotEdit} />
+          <Route path="/trouve-ton-skatepark/:resultat" component={SearchSkateResults} />
           <Route path="/trouve-ton-matos/:saleId" component={DetailsArticle} />
           <Route path="/communaute/ajoute-ton-evenement" component={AddPost} />
           <Route path="/communaute/modifie-ton-evenement" component={AddPost} />
@@ -72,6 +66,7 @@ const App = (props) => {
           <Route path="/contact" component={Contact} />
           <Route path="/newsletter" component={NewsLetter} />
           <Route path="/loading" component={Loading} />
+          <Route path="/spinning-squad" component={Squad} />
           <Route component={NotFound} />
         </Switch>
         <Footer />
