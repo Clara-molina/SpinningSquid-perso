@@ -17,14 +17,14 @@ const Community = (props) => {
         {props.isLogged && (
           <Link to="/communaute/ajoute-ton-evenement">
             <button type="button" className="button button-post">
-              Proposer un évènement
+              Ajouter un évènement
             </button>
           </Link>
         )}
         {!props.isLogged && (
           <Link to="/connexion">
             <button type="button" className=" button button-post">
-              Proposer un évènement
+              Ajouter un évènement
             </button>
           </Link>
         )}

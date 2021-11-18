@@ -1,11 +1,12 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import styled from 'styled-components';
 import logo1 from 'src/assets/img/logo-hover-5.png';
 
 const _onChildMouseEnter = (event) => {
-  //console.log('on entering child');
-  //console.log(event);
+  // console.log('on entering child');
+  // console.log(event);
   var sheet = document.createElement('style');
   sheet.id = 'stylesheethovericon';
   const element = '#article' + event;
@@ -39,14 +40,9 @@ const Wrapper = styled.img`
 const hoverIcon = (event) => {
   console.log(event);
 };
-const Marker = (props) => {
-  //console.log('conselog de marker');
-  //console.log(props);
-  //console.log(props.$hover);
-  return (
-    <Wrapper id={'WrapperId' + props.id} className="" src={logo1}></Wrapper>
-  );
-};
+const Marker = (props) => (
+  <Wrapper id={'WrapperId' + props.id} className="" src={logo1} />
+);
 const places = [
   {
     id: 'testid1',
@@ -55,34 +51,28 @@ const places = [
     lng: -122.07427,
   },
 ];
-const MapAndMarkers = (props) => {
-  return (
-    <GoogleMapReact
-      id="googlemapreact"
-      bootstrapURLKeys={{
-        key: 'AIzaSyAglZjyBm532ApJYhxUDEVnmIo0Zd_JsjY',
-      }}
-      center={props.locationOnMap}
-      defaultZoom={6}
-      yesIWantToUseGoogleMapApiInternals
-      onChildMouseEnter={_onChildMouseEnter}
-      onChildMouseLeave={_onChildMouseLeave}
-    >
-      {props.responseAPI.map((place) => {
-        //console.log(place.id);
-        //console.log(place);
-        return (
-          <Marker
-            key={place.id}
-            id={place.id}
-            //text={place.name}
-            lat={place.meta.latitude}
-            lng={place.meta.longitude}
-          />
-        );
-      })}
-    </GoogleMapReact>
-  );
-};
+const MapAndMarkers = (props) => (
+  <GoogleMapReact
+    id="googlemapreact"
+    bootstrapURLKeys={{
+      key: 'AIzaSyAglZjyBm532ApJYhxUDEVnmIo0Zd_JsjY',
+    }}
+    center={props.locationOnMap}
+    defaultZoom={6}
+    yesIWantToUseGoogleMapApiInternals
+    onChildMouseEnter={_onChildMouseEnter}
+    onChildMouseLeave={_onChildMouseLeave}
+  >
+    {props.responseAPI.map((place) => (
+      <Marker
+        key={place.id}
+        id={place.id}
+        // text={place.name}
+        lat={place.meta.latitude}
+        lng={place.meta.longitude}
+      />
+    ))}
+  </GoogleMapReact>
+);
 
 export default MapAndMarkers;
