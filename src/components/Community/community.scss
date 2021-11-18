@@ -1,5 +1,4 @@
 @use 'src/styles/vars';
-
 #community {
   display: flex;
   flex-direction: column;
@@ -11,132 +10,105 @@
     align-items: center;
     justify-content: center;
   }
-
-  .community-header {}
-
-  .community-post {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 2em;
-
-    .button-post {
-      font-size: 1rem;
-      width: 120px;
-      height: 50px;
-    }
+  .button-post {
+    width: 7rem;
+    height: 2rem;
   }
-
-  .community-eventList {
+  .community-list-article {
     display: flex;
     flex-direction: column;
-    max-width: 1400px;
-    margin: auto;
-  }
-
-  .eventList-item {
-    margin: 2rem;
-    display: flex;
-    flex-direction: row;
-    max-height: 300px;
-    background-color: rgba(255, 255, 255, 0.25);
-
-    .item-image {
-      height: 300px;
-      width: 450px;
-    }
-
-    .item-description {
-      width: 100%;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      margin: 2rem;
-
-      .item-title {
-        color: vars.$orange;
-        font-size: 1.2em;
+    .community-eventList {
+      max-width: 1400px;
+      margin: 0 auto;
+      .eventList-item {
+        background-color: vars.$grey;
+        margin: 2rem;
+        display: flex;
+        flex-direction: row;
+        .item-image {
+          height: 300px;
+          width: 450px;
+        }
+        .item-description {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          margin: 2rem;
+          .item-title {
+            color: vars.$orange;
+            font-size: 1.2em;
+            margin-bottom: 0.2rem;
+          }
+          div p {
+            margin-top: 0.1rem;
+          }
+          .description-resume {
+            margin-top: 0.5rem;
+            --responsive: calc(
+              (var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) *
+                ((100vw - 420px) / (1200 - 420))
+            );
+            --max-font: 12;
+            --min-font: 8;
+            font-size: var(--responsive);
+            color: white;
+            text-shadow: black 1px 1px 1px;
+          }
+        }
       }
     }
-
-    .description-resume {
-      --responsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 420px) / (1200 - 420))); 
-      --max-font: 12;
-      --min-font: 8;
-      font-size: var(--responsive) ;
-      color: white ;
-      text-shadow: black 1px 1px 1px ;
-    }
-
-    .description-link {
-      text-align: left;
-      margin: 1.2rem;
-    }
   }
-}
-
-@media (max-width: 800px) {
-  #community {
-    .button {
-      width: 5rem;
-
-    }
-
-    .community-post {
-      right: 1.5%;
-      top: 123px;
-    }
-
-    .description-resume {
-      display: none;
-    }
-
+  .community-list-article :nth-child(2n) {
     .eventList-item {
-      flex-direction: row;
-      margin: 1rem;
-
-      .item-image {
-        margin: 0 auto 0;
-        width: 7rem !important;
-        max-width: 350px !important;
-        min-width: 100px !important;
-      }
-
-      .item-description {
-        width: 7rem !important;
-        --responsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 420px) / (1200 - 420)));
-        --max-font: 30;
-        --min-font: 12;
-        font-size: var(--responsive);
-        color: white;
-        text-shadow: black 1px 1px 1px;
-      }
-
-      .description-link {
-        text-align: center;
-      }
-    }
-
-    .eventList-item:nth-child(2n + 1) {
-      flex-direction: row;
-
-      .description-link {
-        text-align: center;
-      }
+      flex-direction: row-reverse;
     }
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 873px) {
+  #community {
+    #community-img {
+      width: 80vw;
+      height: auto;
+    }
+    .community-list-article {
+      .community-eventList {
+        .eventList-item {
+          flex-direction: column;
+          .item-description {
+            margin: 1rem;
+          }
+        }
+        .description-resume {
+          display: none;
+        }
+      }
+    }
+    //     .eventList-item {
+    //       flex-direction: row;
+    //       margin: 1rem;
 
-  .item-image {
-    width: 100% !important;
-    height: 100% !important;
+    //       .item-image {
+    //         margin: 0 auto 0;
+    //         width: 7rem !important;
+    //         max-width: 350px !important;
+    //         min-width: 100px !important;
+    //       }
 
+    //       .item-description {
+    //         width: 7rem !important;
+    //         --responsive: calc(
+    //           (var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) *
+    //             ((100vw - 420px) / (1200 - 420))
+    //         );
+    //         --max-font: 30;
+    //         --min-font: 12;
+    //         font-size: var(--responsive);
+    //         color: white;
+    //         text-shadow: black 1px 1px 1px;
+    //       }
   }
 }
-
-
 //-------------------------------------------------
 //component AddPost
 //-------------------------------------------------
@@ -182,7 +154,7 @@
       align-items: center;
       width: 98%;
 
-      .addpost-charateristics{
+      .addpost-charateristics {
         width: 100%;
       }
 
@@ -199,7 +171,6 @@
 
 @media (min-width: vars.$smallScreen + 1) and (max-width: vars.$mediumScreen) {
   #addpost {
-
     .addpost-block {
       flex-direction: column;
       align-items: center;
