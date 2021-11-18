@@ -1,4 +1,13 @@
-// @use 'src/styles/vars';
+@use 'src/styles/vars';
+
+.spotadd-container {
+  .spotadd-form {
+    .div-button {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+}
 
 // .spotadd-container {
 //   max-width: 1000px;
@@ -120,3 +129,4 @@
 //     }
 
 //   }
+

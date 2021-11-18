@@ -8,9 +8,12 @@ $orange: #ff8552;
 
 $smallScreen: 480px;
 $mediumScreen: 800px;
-$largeScreen: 1500px;  
+$largeScreen: 1500px;
 
 // Generic class
+.main-container {
+  min-height: calc(100vh - 120px - 70px);
+}
 .block {
   height: auto;
   max-width: 100%;
@@ -24,8 +27,9 @@ $largeScreen: 1500px;
   font-family: 'Sedgwick Ave Display';
 }
 .button {
-  height: 30px;
-  width: 80px;
+  height: fit-content;
+  width: fit-content;
+  padding: 0.5em 1em;
   background-color: $orange;
   border-radius: 50px;
   border: none;

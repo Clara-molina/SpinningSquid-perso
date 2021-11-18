@@ -13,7 +13,7 @@ const DetailsPost = (props) => {
         <img className="detailpost-image" alt="" src={props.image} />
         <div className="detailpost-resume">
           <div>
-            <h2 className="detailpost-title" type="text">
+            <h2 className="title detailpost-title" type="text">
               {props.title}
             </h2>
           </div>
