@@ -84,11 +84,11 @@ const SearchList = (list) => {
           </div>
           <div>
             <h3 className="search-list-description">
-              {item.meta.streetspot
-                ? 'Street'
+              {item.meta.skatepark
+                ? 'Skatepark'
                 : item.meta.pumptrack
-                ? 'PumpTrack'
-                : 'SkatePark'}
+                  ? 'PumpTrack'
+                  : 'Street'}
             </h3>
           </div>
         </div>
