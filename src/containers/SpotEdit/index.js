@@ -4,6 +4,7 @@ import {
   submitUpdateSpot,
   callGetSkateparkDetails,
   fillState,
+  submitDeleteSpot,
 } from 'src/actions/skateparkActions';
 import returnBase64Img from 'src/generic_functions';
 
@@ -12,9 +13,12 @@ import SpotEdit from 'src/components/SpotEdit';
 const mapStateToProps = (state, ownProps) => {
   console.log(ownProps);
   console.log(ownProps.match.params.skateparkId);
+  console.log(state.skatepark.addSpot.id);
+  console.log(ownProps.match.params.skateparkId != state.skatepark.addSpot.id);
   return {
     spotAddIsLoading: state.skatepark.addSpot.spotAddIsLoading,
     skateparkId: ownProps.match.params.skateparkId,
+    checkBadValue: ownProps.match.params.skateparkId != state.skatepark.addSpot.id,
     title: state.skatepark.addSpot.title,
     categorySkatepark: state.skatepark.addSpot.categorySkatepark,
     categoryPumptrack: state.skatepark.addSpot.categoryPumptrack,
@@ -32,7 +36,8 @@ const mapStateToProps = (state, ownProps) => {
     benche: state.skatepark.addSpot.benche,
     etatRadioBtn: state.skatepark.addSpot.etatRadioBtn,
     uploadedImg: state.skatepark.addSpot.imgNameToDisplay,
-}};
+  }
+};
 
 const mapDispatchToProps = (dispatch, state) => ({
   fillState: (skateparkId) => {
@@ -67,6 +72,9 @@ const mapDispatchToProps = (dispatch, state) => ({
     //const encodedImg = createBase64Image(selectedImg);
     //console.log('on passe dans handleSubmitUpdatePost');
     dispatch(submitUpdateSpot());
+  },
+  callDeleteSkatepark: () => {
+    dispatch(submitDeleteSpot());
   },
 });
 

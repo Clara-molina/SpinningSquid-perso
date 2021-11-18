@@ -122,8 +122,11 @@ const authMiddleware = (store) => (next) => (action) => {
       axios
         .get(baseURI + '/users?slug=' + userVar)
         .then((response) => {
-          //console.log('response from API : ');
-          //console.log(response.data);
+          console.log('response from API : ');
+          console.log(response.data);
+          //ajouter dispatch pour utiliser l'id de avatar dans une autre requete
+          //renvoyant l'image du user
+          //baseURI + /media/[idAvatar]
           store.dispatch(getUserDataProfileSuccess(response.data));
           store.dispatch(getUserDataSkatepark(response.data));
           store.dispatch(getUserDataArticle(response.data));
@@ -136,7 +139,7 @@ const authMiddleware = (store) => (next) => (action) => {
       break;
     case GET_USER_SKATEPARK:
       const user_skatepark = store.getState().user.profile.userId;
-      //console.log(user_skatepark);
+      // console.log(user_skatepark);
       axios
         .get(baseURI + '/skatepark?author=' + user_skatepark)
         .then((response) => {
@@ -151,7 +154,7 @@ const authMiddleware = (store) => (next) => (action) => {
       break;
     case GET_USER_ARTICLE:
       const user_article = store.getState().user.profile.userId;
-      console.log(user_article);
+      // console.log(user_article);
       axios
         .get(baseURI + '/article?author=' + user_article)
         .then((response) => {
@@ -166,7 +169,7 @@ const authMiddleware = (store) => (next) => (action) => {
       break;
     case GET_USER_SALE:
       const user_sale = store.getState().user.profile.userId;
-      console.log(user_sale);
+      // console.log(user_sale);
       axios
         .get(baseURI + '/sale?author=' + user_sale)
         .then((response) => {

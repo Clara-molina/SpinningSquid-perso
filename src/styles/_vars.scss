@@ -6,6 +6,10 @@ $white: #ffffff;
 $orange: #ff8552;
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sedgwick+Ave+Display&display=swap');
 
+$smallScreen: 480px;
+$mediumScreen: 800px;
+$largeScreen: 1500px;  
+
 // Generic class
 .block {
   height: auto;
@@ -20,6 +24,8 @@ $orange: #ff8552;
   font-family: 'Sedgwick Ave Display';
 }
 .button {
+  height: 30px;
+  width: 80px;
   background-color: $orange;
   border-radius: 50px;
   border: none;
@@ -31,13 +37,31 @@ $orange: #ff8552;
   color: black;
   box-shadow: 0 0 40px 40px $orange inset, 0 0 0 0 $orange;
   transition: all 150ms ease-in-out;
-  //padding: 1px !important;
 
   &:hover {
     box-shadow: 0 0 10px 0 $orange inset, 0 0 10px 4px $orange;
   }
 }
+.cursor-pointer {
+  cursor: pointer;
+}
+.add-image {
+  margin: 1.5em auto 1em;
+  background-color: $orange;
+  border-radius: 50px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Righteous';
+  color: black;
+  box-shadow: 0 0 40px 40px $orange inset, 0 0 0 0 $orange;
+  transition: all 150ms ease-in-out;
 
+  &:hover {
+    box-shadow: 0 0 10px 0 $orange inset, 0 0 10px 4px $orange;
+  }
+}
 .list {
   display: flex;
   align-items: center;
@@ -61,10 +85,35 @@ $orange: #ff8552;
 .list-item-description {
   margin: auto;
 }
-
 // composant en attente de chargement
 .loading-wheel {
   height: 5rem;
   width: 5rem;
   margin-top: 5rem;
+}
+
+@media (min-width: $largeScreen) {
+  .main-container {
+    width: 1500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: $smallScreen) {
+  .title {
+    padding: 1em;
+    font-size: 1.5em;
+  }
+}
+@media (max-width: $mediumScreen) {
+  .title {
+    padding: 1em;
+    font-size: 2.5em;
+  }
+}
+
+@media (max-width: $smallScreen) {
+  .add-image {
+    width: 200px;
+  }
 }

@@ -39,6 +39,8 @@ const SearchList = (list) => {
     const getImageURL = () => {
       // Vérification : la recette a-t-elle une image
       if (
+        item &&
+        item._embedded &&
         item._embedded['wp:featuredmedia'] &&
         item._embedded['wp:featuredmedia'][0].media_details &&
         item._embedded['wp:featuredmedia'][0].media_details.sizes
@@ -76,14 +78,20 @@ const SearchList = (list) => {
         className="search-list-item"
       >
         <img className="search-list-image" src={getImageURL()} alt="" />
-        <h2 className="search-list-title">{item.title.rendered}</h2>
-        <h3 className="search-list-description">
-          {item.meta.streetspot
-            ? 'Street'
-            : item.meta.pumptrack
-            ? 'PumpTrack'
-            : 'SkatePark'}
-        </h3>
+        <div className="block-titre-type">
+          <div>
+            <h2 className="search-list-title">{item.title.rendered}</h2>
+          </div>
+          <div>
+            <h3 className="search-list-description">
+              {item.meta.streetspot
+                ? 'Street'
+                : item.meta.pumptrack
+                ? 'PumpTrack'
+                : 'SkatePark'}
+            </h3>
+          </div>
+        </div>
         <div className="block-buttons">
           <div id="special-button">
             <button className="button " type="button" onClick={updateMap}>

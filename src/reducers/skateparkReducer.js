@@ -2,6 +2,7 @@ import { UPDATE_FIELD } from 'src/actions/userActions';
 import {
   FILL_STATE,
   SKATEPARK_ON_LOADING,
+  SET_ON_LOADING_FALSE,
   UPDATE_LOCATION_ON_MAP,
   RESET_LOCATION_ON_MAP,
   SKATEPARK_DETAILS_ON_LOADING,
@@ -249,6 +250,11 @@ const reducer = (state = initialState, action = {}) => {
       }
       return state;
 
+    case SET_ON_LOADING_FALSE:
+      return {
+        ...state,
+        isLoading: false,
+      };
     case SKATEPARK_ON_LOADING:
       return {
         ...state,
