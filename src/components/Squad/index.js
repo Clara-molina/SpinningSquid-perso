@@ -1,13 +1,16 @@
 import './squad.scss';
-import logo2 from 'src/assets/img/logo2.png';
+import thomas from 'src/assets/img/thomas.png';
 import clara from 'src/assets/img/clara.png';
+import lucas from 'src/assets/img/lucas.png';
+import romain from 'src/assets/img/romain.png';
+import geoffrey from 'src/assets/img/geoffrey.png';
 
-const Squad = (props) => (
+const Squad = () => (
   <div className="main-container">
     <h1 className="title">Spinning SQUAD</h1>
     <div className="squad-container">
       <div className="item-container">
-        <img className="item-image" alt="" src={logo2} />
+        <img className="item-image" alt="" src={geoffrey} />
         <h3 className="item-name">Geoffrey</h3>
         <h3 className="item-role">Led Dev Front</h3>
       </div>
@@ -18,17 +21,17 @@ const Squad = (props) => (
 
       </div>
       <div className="item-container">
-        <img className="item-image" alt="" src={logo2} />
+        <img className="item-image" alt="" src={thomas} />
         <h3 className="item-name">Thomas</h3>
         <h3 className="item-role">Ref Tech</h3>
       </div>
       <div className="item-container">
-        <img className="item-image" alt="" src={logo2} />
+        <img className="item-image" alt="" src={romain} />
         <h3 className="item-name">Romain</h3>
-        <h3 className="item-role">Scrum Master - Led Dev Back</h3>
+        <h3 className="item-role">Scrum Master <br></br> Led Dev Back</h3>
       </div>
       <div className="item-container">
-        <img className="item-image" alt="" src={logo2} />
+        <img className="item-image" alt="" src={lucas} />
         <h3 className="item-name">Lucas</h3>
         <h3 className="item-role">Git Master</h3>
       </div>

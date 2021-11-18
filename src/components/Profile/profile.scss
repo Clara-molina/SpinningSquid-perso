@@ -2,7 +2,7 @@
 
 .profile {
   color: vars.$white;
-  font-family: 'Righteous';
+  font-family: "Righteous";
 
   .profile-title {
     margin-bottom: 1em;
@@ -30,11 +30,11 @@
     }
 
     .profile-button-dock {
-     display: flex;
+      display: flex;
 
-     button {
-       margin-left: 0.5em;
-     }
+      button {
+        margin-left: 0.5em;
+      }
     }
   }
 
@@ -43,40 +43,41 @@
     height: auto;
     margin: auto;
 
-    .profile-contribution-title{
+    .profile-contribution-title {
       text-align: center;
       font-size: 2.8em;
       margin: 1em;
-      font-family: 'Sedgwick Ave Display';
+      font-family: "Sedgwick Ave Display";
     }
 
     .profile-add-title {
-        text-align: center;
-        margin: 1.5em;
-        font-size: 1.5em;
-      }
+      text-align: center;
+      margin: 1.5em;
+      font-size: 1.5em;
+    }
 
     .profile-contribution-articles {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      flex-wrap: wrap;
       border: solid 1px;
       padding: 1em;
 
       .profile-articles-title {
-        width: 50vh;
+        width: 25vh;
         padding: 0.5em;
-        text-align: center;
+        margin: auto;
       }
 
       .profile-articles-button-dock {
-       display: flex;
+        display: flex;
+        margin: auto;
 
-       button {
-         margin: 0 0.3em;
-       }
+        button {
+          margin: 0 0.5em 0.5em;
+        }
       }
-    } 
+    }
   }
 }
 
@@ -89,55 +90,52 @@
       max-width: 300px;
       margin: 0 auto 2em;
       padding: 1em 0;
-  
+
       .profile-avatar {
         width: 35px;
       }
       .profile-name {
       }
       .profile-button-dock {
-       display: flex;
-       flex-direction: column;
-  
-       button {
-         margin-bottom: 0.5em;
-       }
+        display: flex;
+        flex-direction: column;
+
+        button {
+          margin-bottom: 0.5em;
+        }
       }
     }
     .profile-contribution {
-  
-      .profile-contribution-title{
+      .profile-contribution-title {
         text-align: center;
         font-size: 1.5em;
         margin: 0.5em;
       }
       .profile-add-title {
-          margin: 1em;
-          font-size: 1em;
-        }
+        margin: 1em;
+        font-size: 1em;
+      }
       .profile-contribution-articles {
         display: flex;
         align-items: center;
-        justify-content: space-between;
         border: solid 1px;
         padding: 0.5em;
-  
+        margin: 0.5em;
+
         .profile-articles-title {
           width: 50%;
           text-align: center;
           white-space: pre-line;
           word-break: break-all;
         }
-  
+
         .profile-articles-button-dock {
-         display: flex;
-         flex-direction: column;
-  
-         button {
-          margin-bottom: 0.5em;
-         }
+          display: flex;
+
+          button {
+          }
         }
-      } 
+      }
     }
   }
 }
@@ -150,51 +148,44 @@
       width: 400px;
       margin: 0 auto 2em;
       padding: 1em 0;
-  
+
       .profile-avatar {
         width: 35px;
       }
       .profile-name {
       }
       .profile-button-dock {
-       display: flex;
-       flex-direction: column;
-  
-       button {
-         margin-bottom: 0.5em;
-       }
+        display: flex;
+        flex-direction: column;
+
+        button {
+          margin-bottom: 0.5em;
+        }
       }
     }
-  
+
     .profile-contribution {
-  
-      .profile-contribution-title{
+      .profile-contribution-title {
         font-size: 2em;
       }
-  
+
       .profile-add-title {
-          font-size: 1.2em;
-        }
-  
+        font-size: 1.2em;
+      }
+
       .profile-contribution-articles {
-  
         .profile-articles-title {
           padding: 0.5em;
           text-align: center;
           white-space: pre-line;
           word-break: break-all;
         }
-  
+
         .profile-articles-button-dock {
-         display: flex;
-         flex-direction: column;
-         margin-right: 1em;
-  
-         button {
-          margin-bottom: 0.5em;
-         }
+          button {
+          }
         }
-      } 
+      }
     }
   }
 }
@@ -220,7 +211,6 @@
       height: 300px;
       margin: auto;
 
-
       .form-edit-label {
         float: left;
         padding: 0.3em;
@@ -232,17 +222,13 @@
         margin-left: 1em;
         float: right;
         width: 400px;
-
       }
     }
-      .actions {
-        padding: 10px 5px;
-        display: flex;
-        justify-content: space-evenly;
-        margin: 1em;
-      }
-    
+    .actions {
+      padding: 10px 5px;
+      display: flex;
+      justify-content: space-evenly;
+      margin: 1em;
+    }
   }
-
 }
-
