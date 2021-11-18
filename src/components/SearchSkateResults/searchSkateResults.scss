@@ -6,7 +6,6 @@
   flex-direction: column;
   text-align: center;
   margin-top: 2em;
-  float: center;
   color: white;
 }
 .skateparkDetails-title {
@@ -17,9 +16,9 @@
   text-align: center;
 }
 .skateparkDetails-searchresultimage {
-  float: center;
-  max-width: 90vw;
-  max-height: auto;
+  display: block;
+  width: 90vw;
+  max-width: 1500px;
   object-fit: cover;
   object-position: bottom;
   margin-left: auto;
@@ -57,17 +56,20 @@
   flex-direction: row;
   justify-content: center;
   .skateparkDetails-adresse-etat {
-    padding-right: 2rem;
+    width: 25%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     .skateparkDetails-searchresulttitle {
       text-align: left;
       padding-bottom: 0.5rem;
     }
   }
   .skateparkDetails-equipement {
+    width: 25%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
     .skateparkDetails-detailssearchresult {
       padding-top: 1rem;
       padding-left: 0.5rem;
@@ -135,3 +137,16 @@
   .skateparkDetails-description {
   }
 }
+
+@media (max-width: vars.$mediumScreen) {
+  .skateparkDetails-description {
+    font-size: 0.75em;
+    .skateparkDetails-adresse-etat {
+     width: 50%;
+    }
+    .skateparkDetails-equipement {
+      width: 50%;
+    }
+  }
+}
+
