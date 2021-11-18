@@ -37,7 +37,9 @@
   margin: 0 auto;
   margin-bottom: 2rem;
   width: 90vw;
+  max-width: 900px;
   height: 90vw;
+  max-height: 900px;
   border: solid 1px;
   border-color: vars.$orange;
   box-shadow: 0 0 40px 40px vars.$orange inset, 0 0 0 0 vars.$orange;
@@ -49,6 +51,7 @@
 }
 .skateparkDetails-description {
   width: 90vw;
+  max-width: 1500px;
   margin: 0 auto;
   background-color: vars.$grey;
   display: flex;
@@ -127,4 +130,9 @@
   width: 100%;
   align-items: center;
   justify-content: center;
+}
+
+@media (min-width: vars.$largeScreen) {
+  .skateparkDetails-description {
+  }
 }

@@ -34,7 +34,10 @@ const SearchSkateResults = (props) => {
     props.setOnLoading();
   }
   return (
-    <div id="skateparkDetails" className="skateparkDetails-searchresult">
+    <div
+      id="skateparkDetails"
+      className="skateparkDetails-searchresult main-container"
+    >
       {!props.isLoaded && (
         <>
           <div className="skateparkDetails-loading-wheel">
@@ -126,9 +129,7 @@ const SearchSkateResults = (props) => {
           </div>
         </>
       )}
-      <div className="skateparkDetails-buttons">
-
-      </div>
+      <div className="skateparkDetails-buttons"></div>
     </div>
   );
 };

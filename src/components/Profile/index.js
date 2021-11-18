@@ -3,7 +3,6 @@ import logo2 from 'src/assets/img/logo2.png';
 import Popup from 'reactjs-popup';
 import { Link } from 'react-router-dom';
 
-
 const Profile = (props) => {
   // console.log(props.contributeSkate);
   if (!props.profileIsLoading) {
@@ -12,11 +11,14 @@ const Profile = (props) => {
 
   return (
     <div className="profile main-container">
-      <h1 className="title profile-title">Bienvenue sur ton compte {props.usernameConnection}</h1>
+      <h1 className="title profile-title">
+        Bienvenue sur ton compte {props.usernameConnection}
+      </h1>
 
       <div className="profile-container">
         <img className="profile-avatar" src={logo2} alt="avatar" />
         <p className="profile-name">{props.usernameConnection}</p>
+
         <div className="profile-button-dock">
           <Popup
             trigger={
@@ -157,6 +159,7 @@ const Profile = (props) => {
         <h2 className="profile-contribution-title">Mes contributions</h2>
         <h2 className="profile-add-title">Ajout de Spot</h2>
         <div className="profile-contribution-articles">
+
           {props.contributeSkate && props.contributeSkate.map((item) => {
             const urlSkateId = "/trouve-ton-skatepark/" + item.id
             const urlSkateEditId = "/trouve-ton-skatepark/modifie-ton-spot/" + item.id
@@ -242,9 +245,8 @@ const Profile = (props) => {
             )
           })}
         </div>
-      </div >
-
-    </div >
+      </div>
+    </div>
   );
 };
 
