@@ -28,7 +28,7 @@ const Home = () => (
     <Link to="/trouve-ton-matos" className="home-nav">
       <div className="home-nav-container">
         <img className="home-nav-image" src={image2} alt="skatepark" />
-        <p className="home-nav-description">Tu cherches une planche ? Des trucks ? Des fringues ? Vient voir ce les skateurs de chez toi te proposent</p>
+        <p className="home-nav-description">Tu cherches une planche ? <br></br>Des trucks ? <br></br>Des fringues ? <br></br>Vient voir ce que les skateurs de chez toi te proposent</p>
       </div>
     </Link>
     <Link to="/communaute" className="home-nav">
