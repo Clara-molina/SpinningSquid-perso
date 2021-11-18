@@ -132,9 +132,6 @@ const Profile = (props) => {
                     </label>
                   </div>
                   <div className="actions">
-                    <button type="submit" className="button">
-                      Valider
-                    </button>
                     <button
                       type="button"
                       className="button"
@@ -144,12 +141,15 @@ const Profile = (props) => {
                     >
                       Annuler
                     </button>
+                    <button type="submit" className="button">
+                      Valider
+                    </button>
                   </div>
                 </form>
               </div>
             )}
           </Popup>
-          <button className="button" onClick={props.handleDelete}>Supprimer compte</button>
+          <button className="button" type="button" onClick={props.handleDelete}>Supprimer compte</button>
         </div>
       </div>
 
@@ -182,7 +182,7 @@ const Profile = (props) => {
                   </Link>
                 </div>
               </>
-            )
+            );
           })}
         </div>
         <h2 className="profile-add-title">Matos à vendre</h2>
@@ -210,7 +210,7 @@ const Profile = (props) => {
                   </button>
                 </div>
               </>
-            )
+            );
           })}
         </div>
         <h2 className="profile-add-title">Ajout d'évènement</h2>
@@ -239,12 +239,12 @@ const Profile = (props) => {
                     </button>
                 </div>
               </>
-            )
+            );
           })}
         </div>
-      </div >
+      </div>
 
-    </div >
+    </div>
   );
 };
 
