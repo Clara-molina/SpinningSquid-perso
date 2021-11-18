@@ -1,7 +1,7 @@
 @use 'src/styles/vars';
 
 .notFound {
-  font-family: 'Righteous';
+  font-family: "Righteous";
 
   .notFound-container {
     margin: auto;
@@ -22,19 +22,11 @@
     }
 
     .button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1em;
-      margin: auto;
-      height: 30px;
-      width: 140px;
     }
   }
 }
 
 @media (max-width: vars.$smallScreen) {
-
   .notFound {
     .notFound-container {
       .notFound-image {
@@ -45,7 +37,7 @@
   }
 }
 
-@media (min-width: vars.$smallScreen +1 ) and (max-width: vars.$mediumScreen) {
+@media (min-width: vars.$smallScreen +1) and (max-width: vars.$mediumScreen) {
   .notFound {
     .notFound-container {
       .notFound-image {

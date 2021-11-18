@@ -2,11 +2,12 @@
 
 .spotadd-container {
   color: vars.$white;
-  font-family: 'Righteous';
+  font-family: "Righteous";
   padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+
   .spotadd-title {
     padding: 1em;
     font-size: 1.5em;
@@ -84,7 +85,7 @@
 @media (max-width: 800px) {
   .spotadd-container {
     color: vars.$white;
-    font-family: 'Righteous';
+    font-family: "Righteous";
     padding: 1rem;
     display: flex;
     flex-direction: column;
