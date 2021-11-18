@@ -84,6 +84,10 @@
           width: 80px;
           margin-right: 1em;
         }
+        .search-list-title {
+          white-space: pre-line;
+          word-break: break-all;
+        }
         .block-titre-type {
           display: flex;
           flex-direction: row;
