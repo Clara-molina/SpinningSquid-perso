@@ -1,10 +1,11 @@
 @use 'src/styles/vars';
 
 #marketplace {
-  font-family: 'Righteous';
+  font-family: "Righteous";
 
   .search {
-    .search-title {}
+    .search-title {
+    }
 
     .marketplace-post {
       display: flex;
@@ -27,7 +28,8 @@
       color: vars.$white;
       height: 80px;
 
-      .marketplace-search {}
+      .marketplace-search {
+      }
 
       .marketplace-input {
         font-size: 1.1rem;
@@ -94,7 +96,8 @@
 
 @media (max-width: 764px) {
   #marketplace {
-    .article-list {}
+    .article-list {
+    }
 
     .search {
       display: flex;
@@ -115,7 +118,7 @@
 // PostArticle
 // ------------------------
 #postarticle {
-  font-family: 'Righteous';
+  font-family: "Righteous";
   color: vars.$white;
 
   .postarticle-block {
@@ -192,65 +195,65 @@
   }
 }
 
-  // ---------------------
-  // DetailsArticle
-  // ---------------------
-  .main-container {
-    .detailarticle-block {
-      padding: 2rem;
-      display: flex;
-      align-items: center;
-      max-width: 1500px;
-      height: auto;
-      margin: auto;
-      padding-top: 3em;
+// ---------------------
+// DetailsArticle
+// ---------------------
+.main-container {
+  .detailarticle-block {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    max-width: 1500px;
+    height: auto;
+    margin: auto;
+    padding-top: 3em;
 
-      .detailarticle-image {
-        width: 600px;
-        height: auto;
+    .detailarticle-image {
+      width: 600px;
+      height: auto;
+    }
+
+    .detailarticle-resume {
+      font-weight: bold;
+      font-size: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: flex-start;
+      color: white;
+      margin-left: 1em;
+
+      .detailarticle-title {
+        color: vars.$orange;
+        padding-bottom: 1em;
+        font-size: 1.7em;
       }
 
-      .detailarticle-resume {
-        font-weight: bold;
-        font-size: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        align-content: flex-start;
-        color: white;
-        margin-left: 1em;
+      .detailarticle-adress {
+        padding-bottom: 1em;
+        margin: auto;
+      }
 
-        .detailarticle-title {
-          color: vars.$orange;
-          padding-bottom: 1em;
-          font-size: 1.7em;
-        }
+      .detailarticle-price {
+        padding-bottom: 1em;
+      }
 
-        .detailarticle-adress {
-          padding-bottom: 1em;
-          margin: auto;
-        }
-
-        .detailarticle-price {
-          padding-bottom: 1em;
-        }
-
-        .detailarticle-description {
-          text-align: center;
-          font-size: 0.8em;
-          margin: 1em;
-        }
+      .detailarticle-description {
+        text-align: center;
+        font-size: 0.8em;
+        margin: 1em;
       }
     }
   }
+}
 @media (max-width: vars.$smallScreen) {
-  .main-container { 
+  .main-container {
     .detailarticle-block {
       display: flex;
       flex-direction: column;
 
       .detailarticle-image {
-        display : block;
+        display: block;
         width: 300px;
       }
 
@@ -278,14 +281,13 @@
 }
 
 @media (min-width: vars.$smallScreen +1) and (max-width: vars.$mediumScreen) {
-
-  .main-container { 
+  .main-container {
     .detailarticle-block {
       display: flex;
       flex-direction: column;
 
       .detailarticle-image {
-        display : block;
+        display: block;
         width: 400px;
       }
       .detailarticle-resume {

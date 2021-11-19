@@ -115,7 +115,7 @@ const SearchSkateResults = (props) => {
                 key: 'AIzaSyAglZjyBm532ApJYhxUDEVnmIo0Zd_JsjY',
               }}
               center={props.locationOnMap}
-              defaultZoom={8}
+              defaultZoom={7}
               yesIWantToUseGoogleMapApiInternals
             >
               <Marker
