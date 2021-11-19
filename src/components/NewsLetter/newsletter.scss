@@ -1,7 +1,7 @@
 @use 'src/styles/vars';
 
 .newsletter {
-  font-family: 'Righteous';
+  font-family: "Righteous";
 
   .newsletter-title {
   }
@@ -34,8 +34,8 @@
       }
 
       .newsletter-button {
+        margin-top: 1rem;
       }
     }
   }
 }
-

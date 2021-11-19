@@ -14,13 +14,13 @@ const SearchMap = (props) => {
       {props.isLogged && (
         <button className="button addSpot-button" type="button">
           <Link to="/trouve-ton-skatepark/ajoute-ton-spot">
-            Ajoute ton spot!
+            Ajoute ton spot
           </Link>
         </button>
       )}
       {!props.isLogged && (
         <button className="button addSpot-button" type="button">
-          <Link to="/connexion">Ajoute ton spot!</Link>
+          <Link to="/connexion">Ajoute ton spot</Link>
         </button>
       )}
 

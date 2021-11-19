@@ -18,12 +18,12 @@ const Marketplace = (props) => {
         <div className="marketplace-post">
           {props.isLogged && (
             <Link to="/trouve-ton-matos/ajoute-ton-matos">
-              <button type="button" className="button button-search">Poster une annonce</button>
+              <button type="button" className="button button-search">Ajoute une annonce</button>
             </Link>
           )}
           {!props.isLogged && (
             <Link to="/connexion">
-              <button type="button" className="button button-search">Poster une annonce</button>
+              <button type="button" className="button button-search">Ajoute une annonce</button>
             </Link>
           )}
         </div>
