@@ -87,12 +87,14 @@ const Connection = (props) => {
               value={props.email}
             />
           </label>
-          <label htmlFor="passwordInscription">Password
+          <label htmlFor="passwordInscription">Password (8 charactères minimum)
             <input
               id="passwordInscription"
               type="password"
               className="form-input"
               required
+              minLength={8}
+              pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{8,}$"
               onChange={handleOnChange}
               value={props.passwordInscription}
             />
@@ -121,6 +123,9 @@ const Connection = (props) => {
               type="password"
               className="form-input"
               required
+              minLength={8}
+              pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{8,}$"
+              autoComplete="current-password"
               onChange={handleOnChange}
             />
           </label>

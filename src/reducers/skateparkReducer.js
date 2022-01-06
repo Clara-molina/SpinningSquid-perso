@@ -270,11 +270,6 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         locationOnMap: action.locationOnMap,
       };
-    case RESET_LOCATION_ON_MAP:
-      return {
-        ...state,
-        locationOnMap: action.locationOnMap,
-      };
     case SKATEPARK_DETAILS_ON_LOADING:
       return {
         ...state,

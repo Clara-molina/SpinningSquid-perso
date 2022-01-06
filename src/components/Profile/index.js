@@ -157,7 +157,7 @@ const Profile = (props) => {
 
       <div className="profile-contribution">
         <h2 className="profile-contribution-title">Mes contributions</h2>
-        <h2 className="profile-add-title">Ajout de Spot</h2>
+        <h3 className="profile-add-title">Ajout de Spot</h3>
         <div className="profile-contribution-articles">
 
           {props.contributeSkate && props.contributeSkate.map((item) => {
@@ -239,7 +239,7 @@ const Profile = (props) => {
                     to=""
                   >
                     Modifier
-                    </button>
+                  </button>
                 </div>
               </>
             );
